@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es2018"
+    ],
+    "sourceMap": true,
+    "declaration": true,
+    "declarationDir": "lib/types",
+    "outDir": "lib/esm5",
+    "esModuleInterop": true,
+    "strict": true,
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/__tests__/**/*"
+  ]
+}

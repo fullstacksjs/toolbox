@@ -31,7 +31,7 @@ export const kebabToCamel = (str: string) =>
  * @example
  * getInitials('frontend monsters'); // FM
  */
-export const getInitials = (name: string, fallback = '?') =>
+export const getInitials = (name: string, fallback: string = '?') =>
   typeof name === 'string' && name.length > 0
     ? name
         .replace(/\s+/g, ' ')
@@ -40,3 +40,10 @@ export const getInitials = (name: string, fallback = '?') =>
         .map(v => v && v[0].toUpperCase())
         .join('')
     : fallback;
+
+/**
+ * check if string is null or empty string
+ * @param {string} str
+ * @returns
+ */
+export const isNullOrEmpty = (str: string) => str == null || str === '';

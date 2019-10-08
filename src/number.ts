@@ -14,7 +14,7 @@ export const isNumber = (n: any) => typeof n === 'number' && !Number.isNaN(n);
  * @returns result | fallback
  */
 export const safeDivide = (dividend: number, divisor: number, fallback: any = 0) =>
-  divisor === 0 ? 0 : dividend / divisor;
+  divisor === 0 ? fallback : dividend / divisor;
 
 /**
  * clamp a number between two values
@@ -22,7 +22,7 @@ export const safeDivide = (dividend: number, divisor: number, fallback: any = 0)
  * @param {number[]} [[min, max]=[0, 1]]
  * @returns clamped number
  */
-export const clamp = (value: number, [min, max] = [0, 1]) => Math.max(Math.min(value, max), min);
+export const clamp = (value: number, [min, max]: number[] = [0, 1]) => Math.max(Math.min(value, max), min);
 
 /**
  * returns percentage value of a number from a maximum number

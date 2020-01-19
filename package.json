@@ -16,21 +16,21 @@
   "scripts": {
     "commit": "git-cz",
     "clean": "shx rm -rf lib/*",
-    "prebuild": "npm run clean && npm run verify",
+    "prebuild": "yarn clean && yarn verify",
     "build": "tsc && tsc --target es2018 --outDir lib/esm2015 && rollup -c && rollup -c --environment NODE_ENV:production",
-    "lint": "tslint --project tsconfig.json --fix",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint src --ext js,ts",
+    "lint:fix": "yarn lint --fix",
     "test": "jest --passWithNoTests",
-    "test:watch": "npm t -- --watch",
-    "test:coverage": "npm t -- --coverage",
+    "test:watch": "yarn test --watch",
+    "test:coverage": "yarn test --coverage",
     "lib:build": "builder",
     "lib:pack": "builder --pack",
-    "prerelease": "standard-version",
-    "release": "builder && npm run release:github && npm run release:npm",
+    "prerelease": "builder && standard-version",
+    "release": "yarn release:github && yarn release:npm",
     "release:github": "git push --no-verify --follow-tags origin master",
     "release:npm": "npm publish lib",
     "release:preflight": "npm pack ./lib --dry-run",
-    "verify": "npm run lint && npm run test"
+    "verify": "yarn run lint && yarn run test"
   },
   "config": {
     "commitizen": {
@@ -38,36 +38,35 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "8.1.0",
-    "@commitlint/config-conventional": "8.1.0",
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
     "@frontendmonster/builder": "1.0.0",
-    "@types/jest": "24.0.18",
-    "@types/node": "12.7.5",
+    "@frontendmonster/eslint-config": "3.0.4",
+    "@types/jest": "24.9.0",
+    "@types/node": "13.1.8",
     "commitizen": "4.0.3",
     "cz-conventional-changelog": "3.0.2",
-    "husky": "3.0.5",
+    "eslint": "6.8.0",
+    "husky": "4.0.10",
     "jest": "24.9.0",
-    "lint-staged": "9.2.5",
-    "prettier": "1.18.2",
-    "rollup": "1.21.4",
+    "lint-staged": "9.5.0",
+    "prettier": "1.19.1",
+    "rollup": "1.29.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
-    "rollup-plugin-sourcemaps": "0.4.2",
-    "rollup-plugin-uglify": "6.0.3",
+    "rollup-plugin-sourcemaps": "0.5.0",
+    "rollup-plugin-uglify": "6.0.4",
     "shx": "0.3.2",
-    "standard-version": "7.0.0",
-    "ts-jest": "24.1.0",
-    "tslint": "5.20.0",
-    "tslint-config-prettier": "1.18.0",
-    "tslint-plugin-prettier": "2.0.1",
-    "typescript": "3.6.3",
+    "standard-version": "7.0.1",
+    "ts-jest": "24.3.0",
+    "typescript": "3.7.5",
     "webpack-config-utils": "2.3.1"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged",
-      "pre-push": "npm test -- --bail --onlyChanged"
+      "pre-push": "yarn test --bail --onlyChanged"
     }
   }
 }

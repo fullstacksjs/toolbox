@@ -1,3 +1,3 @@
 module.exports = {
-  '*.ts': ['npm run lint:fix', 'git add'],
+  '*.ts': ['eslint --fix --ext ts', 'git add'],
 };

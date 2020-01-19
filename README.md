@@ -25,6 +25,14 @@ toArray(itratable); //=> [...iteratable]
 toArray(others);    //=> [others]
 ```
 
+## Function
+
+- noop: No operation ¯\_(ツ)_/¯
+
+```javascript
+  noop() //=> undefined
+```
+
 ## Numbers
 
 - randomInt: generate random integer number between range.

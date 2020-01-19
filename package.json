@@ -25,7 +25,7 @@
     "test:coverage": "yarn test --coverage",
     "lib:build": "builder",
     "lib:pack": "builder --pack",
-    "prerelease": "builder && standard-version",
+    "prerelease": "standard-version && builder",
     "release": "yarn release:github && yarn release:npm",
     "release:github": "git push --no-verify --follow-tags origin master",
     "release:npm": "npm publish lib",

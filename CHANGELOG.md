@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/frontendmonster/utils/compare/v0.2.3...v0.2.4) (2020-01-19)
+
+
+### Bug Fixes
+
+* change randomInt max default paramt to Number.MAX_SAFE_INTEGER ([cdd6250](https://github.com/frontendmonster/utils/commit/cdd62508100c538dd6c6c2bffaa19f143d3770dd))
+
 ### [0.2.3](https://github.com/frontendmonster/utils/compare/v0.2.2...v0.2.3) (2020-01-19)
 
 ### [0.2.2](https://github.com/frontendmonster/utils/compare/v0.2.1...v0.2.2) (2020-01-19)

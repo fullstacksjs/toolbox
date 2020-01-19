@@ -30,8 +30,8 @@ toArray(others);    //=> [others]
 - randomInt: generate random integer number between range.
 
 ```javascript
-randomRange();                     //=> <random> 0 -> 100
+randomRange();                      //=> <random> 0 -> Number.MAX_SAFE_INTEGER
 randomRange({ min: -10, max: 50 }); //=> <random> -10 -> 50
 randomRange({ max: 50 });           //=> <random> 0 -> 50
-randomRange({ min: 50 });           //=> <random> 50 -> 100
+randomRange({ min: 50 });           //=> <random> 50 -> Number.MAX_SAFE_INTEGER
 ```

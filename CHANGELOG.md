@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.5](https://github.com/frontendmonster/utils/compare/v0.2.4...v0.2.5) (2020-01-19)
+
+
+### Features
+
+* add noop ([176fbd9](https://github.com/frontendmonster/utils/commit/176fbd91aa138a4f3ee748905029d2429abfed0c))
+
 ### [0.2.4](https://github.com/frontendmonster/utils/compare/v0.2.3...v0.2.4) (2020-01-19)
 
 

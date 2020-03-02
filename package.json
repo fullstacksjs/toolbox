@@ -1,6 +1,6 @@
 {
   "name": "@frontendmonster/utils",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "Common JavaScript utility functions",
@@ -30,7 +30,7 @@
     "release:github": "git push --no-verify --follow-tags origin master",
     "release:npm": "npm run publish lib",
     "release:preflight": "npm run pack ./lib --dry-run",
-    "verify": "npm run run lint && npm run run test"
+    "verify": "npm run lint && npm run test"
   },
   "config": {
     "commitizen": {

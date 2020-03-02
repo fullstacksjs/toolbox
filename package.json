@@ -1,6 +1,6 @@
 {
   "name": "@frontendmonster/utils",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "Common JavaScript utility functions",
@@ -26,7 +26,7 @@
     "lib:build": "builder",
     "lib:pack": "builder --pack",
     "prerelease": "standard-version && builder",
-    "release": "yarn release:github && yarn release:npm",
+    "release": "npm release:github && npm release:npm",
     "release:github": "git push --no-verify --follow-tags origin master",
     "release:npm": "npm publish lib",
     "release:preflight": "npm pack ./lib --dry-run",

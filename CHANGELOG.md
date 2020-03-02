@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/frontendmonster/utils/compare/v0.2.5...v0.2.6) (2020-03-02)
+
+
+### Features
+
+* **function:** add callAll ([e55f141](https://github.com/frontendmonster/utils/commit/e55f1419c2ec84497ca880d32fce578f133c16fb))
+
 ### [0.2.5](https://github.com/frontendmonster/utils/compare/v0.2.4...v0.2.5) (2020-01-19)
 
 

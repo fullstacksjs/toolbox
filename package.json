@@ -28,8 +28,8 @@
     "prerelease": "standard-version && builder",
     "release": "npm run release:github && npm run release:npm",
     "release:github": "git push --no-verify --follow-tags origin master",
-    "release:npm": "npm run publish lib",
-    "release:preflight": "npm run pack ./lib --dry-run",
+    "release:npm": "npm publish lib",
+    "release:preflight": "npm pack ./lib --dry-run",
     "verify": "npm run lint && npm run test"
   },
   "config": {

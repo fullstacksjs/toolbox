@@ -33,6 +33,13 @@ toArray(others);    //=> [others]
   noop() //=> undefined
 ```
 
+- callAll: HOC that call all given functions
+```javascript
+  callAll(foo, bar, baz)(...args)                         //=> void (foo(args), bar(args), baz(args));
+  callAll(bar,'string', 5, null, undefined, baz)(...args) //=> void (baz(args));
+```
+
+
 ## Numbers
 
 - randomInt: generate random integer number between range.

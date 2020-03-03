@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/frontendmonster/utils/compare/v0.2.9...v0.2.10) (2020-03-03)
+
+
+### Bug Fixes
+
+* fix randomInt error ([642ed50](https://github.com/frontendmonster/utils/commit/642ed50fa6f9425be119b5bfc46f41da5e5a2b2c))
+
 ### [0.2.9](https://github.com/frontendmonster/utils/compare/v0.2.8...v0.2.9) (2020-03-02)
 
 ### Bug Fixes

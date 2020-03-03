@@ -38,4 +38,4 @@ export const percent = (value: number, max: number): number => clamp(safeDivide(
  * @returns {number} random integer between min and max
  */
 export const randomInt = ({ min = 0, max = Number.MAX_SAFE_INTEGER }: { min?: number; max?: number } = {}): number =>
-  Math.floor(Math.random() * max - min) + min;
+  Math.floor(Math.random() * (max - min)) + min;

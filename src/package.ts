@@ -15,5 +15,11 @@ export const hasAnyDep = (packageJson: PackageJson) => (dep: string) =>
 export const ifAnyDep = (packageJson: PackageJson) => (dep: string, t: Function, f: Function) =>
   hasAnyDep(packageJson)(dep) ? t() : f();
 
-export const Packages = (packageJson: PackageJson) =>
-  [hasOptDep, hasPeerDep, hasDevDep, hasDep, hasAnyDep, ifAnyDep].map(api => api(packageJson));
+export const Packages = (packageJson: PackageJson) => ({
+  hasOptDep: hasOptDep(packageJson),
+  hasPeerDep: hasPeerDep(packageJson),
+  hasDevDep: hasDevDep(packageJson),
+  hasDep: hasDep(packageJson),
+  hasAnyDep: hasAnyDep(packageJson),
+  ifAnyDep: ifAnyDep(packageJson),
+});

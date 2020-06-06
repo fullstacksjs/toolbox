@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/frontendmonster/utils/compare/v0.3.3...v0.3.4) (2020-06-06)
+
+
+### Bug Fixes
+
+* fix error on missing dep type ([7267dff](https://github.com/frontendmonster/utils/commit/7267dff0f05a36a249227b2096d19958d0a23d4f))
+
 ### [0.3.3](https://github.com/frontendmonster/utils/compare/v0.3.2...v0.3.3) (2020-06-06)
 
 

@@ -12,8 +12,8 @@ export const hasOptDep = (packageJson: PackageJson) => hasDepType(packageJson)('
 export const hasAnyDep = (packageJson: PackageJson) => (dep: string) =>
   [hasDep, hasDevDep, hasPeerDep, hasOptDep].some(isDepExist => isDepExist(packageJson)(dep));
 
-export const ifAnyDep = (packageJson: PackageJson) => (dep: string, t: Function, f: Function) =>
-  hasAnyDep(packageJson)(dep) ? t() : f();
+export const ifAnyDep = (packageJson: PackageJson) => (dep: string, t?: Function, f?: Function) =>
+  hasAnyDep(packageJson)(dep) ? t?.() : f?.();
 
 export const Packages = (packageJson: PackageJson) => ({
   hasOptDep: hasOptDep(packageJson),

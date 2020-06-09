@@ -2,7 +2,7 @@ type PackageJson = Record<Dependencies, any>;
 type Dependencies = 'peerDependencies' | 'devDependencies' | 'dependencies' | 'optionalDependencies';
 
 const hasDepType = (packageJson: PackageJson) => (type: Dependencies) => (dep: string) =>
-  packageJson[type] || Reflect.has(packageJson[type], dep);
+  typeof packageJson[type] === 'object' && Reflect.has(packageJson[type], dep);
 
 export const hasPeerDep = (packageJson: PackageJson) => hasDepType(packageJson)('peerDependencies');
 export const hasDep = (packageJson: PackageJson) => hasDepType(packageJson)('dependencies');

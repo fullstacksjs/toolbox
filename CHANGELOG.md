@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.5](https://github.com/frontendmonster/utils/compare/v0.3.4...v0.3.5) (2020-06-09)
+
+
+### Bug Fixes
+
+* **package:** fix hasDepType issue ([d37c8b2](https://github.com/frontendmonster/utils/commit/d37c8b2744379305bb3847ca83bf2c8f6dd5b6b1))
+
 ### [0.3.4](https://github.com/frontendmonster/utils/compare/v0.3.3...v0.3.4) (2020-06-06)
 
 

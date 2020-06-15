@@ -27,7 +27,7 @@ toArray(others);    //=> [others]
 
 ## Function
 
-- noop: No operation ¯\_(ツ)_/¯
+- noop: No operation ¯\\\_(ツ)_/¯
 
 ```javascript
   noop() //=> undefined

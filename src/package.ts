@@ -15,6 +15,7 @@ export const hasAnyDep = (packageJson: PackageJson) => (dep: string) =>
 export const ifAnyDep = (packageJson: PackageJson) => (dep: string, t?: Function, f?: Function) =>
   hasAnyDep(packageJson)(dep) ? t?.() : f?.();
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const Packages = (packageJson: PackageJson) => ({
   hasOptDep: hasOptDep(packageJson),
   hasPeerDep: hasPeerDep(packageJson),

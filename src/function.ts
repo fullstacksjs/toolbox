@@ -9,5 +9,6 @@ export const noop = (): void => undefined;
  * @param {function[]} fns function to call
  * @returns {function} function that takes arguments
  */
+// eslint-disable-next-line @typescript-eslint/ban-types
 export const callAll = (...fns: Function[]) => (...args: any) =>
   fns.forEach(fn => typeof fn === 'function' && fn(...args));

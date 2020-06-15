@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.6](https://github.com/frontendmonster/utils/compare/v0.3.5...v0.3.6) (2020-06-15)
+
+
+### Features
+
+* **env:** add env utils ([e5210de](https://github.com/frontendmonster/utils/commit/e5210de7db417934620a2089c4cc530172da4409))
+
 ### [0.3.5](https://github.com/frontendmonster/utils/compare/v0.3.4...v0.3.5) (2020-06-09)
 
 

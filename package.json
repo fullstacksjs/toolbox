@@ -1,6 +1,6 @@
 {
   "name": "@frontendmonster/utils",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "Common JavaScript utility functions",

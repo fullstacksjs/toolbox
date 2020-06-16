@@ -1,6 +1,6 @@
 {
   "name": "@frontendmonster/utils",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "Common JavaScript utility functions",
@@ -17,7 +17,7 @@
     "commit": "git-cz",
     "clean": "shx rm -rf lib/*",
     "prebuild": "npm run clean && npm run verify",
-    "build": "tsc && tsc --target es2018 --outDir lib/esm2015 && rollup -c && rollup -c --environment NODE_ENV:production",
+    "build": "tsc && tsc --project ./tsconfig.es2015.json && rollup -c && rollup -c --environment NODE_ENV:production",
     "lint": "eslint src --ext js,ts",
     "lint:fix": "npm run lint --fix",
     "test": "jest --passWithNoTests",

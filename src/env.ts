@@ -24,7 +24,7 @@ export const is = (value: string): boolean => process.env.NODE_ENV === value;
  * @returns {boolean} is given env starts with equal to NODE_ENV
  */
 export function match(value: string): boolean {
-  const env = get(undefined)?.toLocaleLowerCase();
+  const env = get(null)?.toLocaleLowerCase();
   return env?.startsWith(value.toLowerCase()) ?? false;
 }
 
@@ -32,16 +32,21 @@ export function match(value: string): boolean {
  * check env matchs 'development'
  * @returns {boolean} true if env matches "development"
  */
-export const isDev = (): boolean => match(envs.prod);
+export const matchDev = (): boolean => match(envs.dev);
 
 /**
  * check env matchs 'production'
  * @returns {boolean} true if env matches "production"
  */
-export const isProd = (): boolean => match(envs.prod);
+export const matchProd = (): boolean => match(envs.prod);
 
 /**
  * check env matchs 'test'
  * @returns {boolean} true if env matches "test"
  */
-export const isTest = (): boolean => match(envs.test);
+export const matchTest = (): boolean => match(envs.test);
+
+// shortcuts
+export const isDev = matchDev();
+export const isProd = matchProd();
+export const isTest = matchTest();

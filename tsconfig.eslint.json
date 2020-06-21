@@ -6,6 +6,7 @@
   "include": [
     "./src",
     "./*.js",
-    "./.eslintrc.js"
+    "./.eslintrc.js",
+    "./__tests__/*.ts"
   ]
 }

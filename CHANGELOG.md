@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.9](https://github.com/frontendmonster/utils/compare/v0.3.8...v0.3.9) (2020-06-21)
+
+
+### Bug Fixes
+
+* **env:** fix env.isProd returns false ([7936e04](https://github.com/frontendmonster/utils/commit/7936e046ecf3fdd44bb20ce38359fa3379e8e1be))
+
 ### [0.3.8](https://github.com/frontendmonster/utils/compare/v0.3.7...v0.3.8) (2020-06-16)
 
 

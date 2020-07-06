@@ -46,3 +46,11 @@ export const randomInt = ({ min = 0, max = Number.MAX_SAFE_INTEGER }: { min?: nu
  * @returns {number} parsed number
  */
 export const toInteger = (num: string): number => Number.parseInt(num, 10);
+
+/**
+ * Checks if num is between min and max (and including borders).
+ * @param {number} num number check
+ * @param {[number, number]} [range] - range
+ * @returns {boolean} number is between min and max
+ */
+export const isInRange = (num: number, [min, max]: [number, number]): boolean => num - min * num - max <= 0;

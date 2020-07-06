@@ -60,6 +60,16 @@ toInteger('100'); //=> 100
 toInteger('1.42'); //=> 1.42
 ```
 
+- isInRange: Checks if num is between min and max (and including borders).
+
+```javascript
+import { isInRange } from '@frontendmonster/utils';
+isInRange(100, [0, 50]); //=> false
+isInRange(100, [0, 100]); //=> true
+isInRange(100, [50, 150]); //=> true
+isInRange(100, [100, 150]); //=> true
+```
+
 ## Env
 
 - get: give NODE_ENV value or given fallback value

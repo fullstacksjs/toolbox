@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.11](https://github.com/frontendmonster/utils/compare/v0.3.10...v0.3.11) (2020-07-06)
+
+
+### Features
+
+* **number:** add isInRange function ([c92a188](https://github.com/frontendmonster/utils/commit/c92a18863ec877bce4a3363df07b4cd23d69a73c))
+
 ### [0.3.10](https://github.com/frontendmonster/utils/compare/v0.3.9...v0.3.10) (2020-07-06)
 
 

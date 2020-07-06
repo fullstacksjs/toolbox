@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.10](https://github.com/frontendmonster/utils/compare/v0.3.9...v0.3.10) (2020-07-06)
+
+
+### Features
+
+* **number:** add toInteger function ([d1badaf](https://github.com/frontendmonster/utils/commit/d1badaf92aec9fcc02343665200a97e7a8484f8e))
+
 ### [0.3.9](https://github.com/frontendmonster/utils/compare/v0.3.8...v0.3.9) (2020-06-21)
 
 

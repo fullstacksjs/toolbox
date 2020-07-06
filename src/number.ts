@@ -39,3 +39,10 @@ export const percent = (value: number, max: number): number => clamp(safeDivide(
  */
 export const randomInt = ({ min = 0, max = Number.MAX_SAFE_INTEGER }: { min?: number; max?: number } = {}): number =>
   Math.floor(Math.random() * (max - min)) + min;
+
+/**
+ * parse number to integer in radix 10
+ * @param {string} num number to parse
+ * @returns {number} parsed number
+ */
+export const toInteger = (num: string): number => Number.parseInt(num, 10);

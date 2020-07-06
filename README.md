@@ -52,6 +52,14 @@ randomRange({ max: 50 });           //=> <random> 0 -> 50
 randomRange({ min: 50 });           //=> <random> 50 -> Number.MAX_SAFE_INTEGER
 ```
 
+- toInteger: parse string to integer (radix 10)
+
+```javascript
+import { toInteger } from '@frontendmonster/utils';
+toInteger('100'); //=> 100
+toInteger('1.42'); //=> 1.42
+```
+
 ## Env
 
 - get: give NODE_ENV value or given fallback value

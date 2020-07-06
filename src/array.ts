@@ -21,21 +21,9 @@ export const range = (len: number, offset = 0, step = 1): number[] =>
  * @returns {any []} - array representation of value
  */
 export const toArray = (value: any): any[] => {
-  if (value == null) {
-    return [];
-  }
-
-  if (Array.isArray(value)) {
-    return value;
-  }
-
-  if (typeof value === 'string') {
-    return [value];
-  }
-
-  if (typeof value[Symbol.iterator] === 'function') {
-    return [...value];
-  }
-
+  if (value == null) return [];
+  if (Array.isArray(value)) return value;
+  if (typeof value === 'string') return [value];
+  if (typeof value[Symbol.iterator] === 'function') return [...value];
   return [value];
 };

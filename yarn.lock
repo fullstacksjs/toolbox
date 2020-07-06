@@ -451,10 +451,10 @@
   dependencies:
     yargs "^12.0.5"
 
-"@frontendmonster/eslint-config@4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@frontendmonster/eslint-config/-/eslint-config-4.0.2.tgz#368cc808f9ae334bfc261a859fd7cef1e7d1f70f"
-  integrity sha512-778PpL1/BY5yPGP4SVixdZ4MynHIF/o8XI+SQNPU3gskfpJH3mUYuTMz2BA7yEU1oXm/AxykgzidMBQxER7TEQ==
+"@frontendmonster/eslint-config@4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@frontendmonster/eslint-config/-/eslint-config-4.0.3.tgz#717a39556b307138b4f058a20f7cf73d7fbb234c"
+  integrity sha512-9VFI18ZJ2N8I72YFcuSmidbO63o822Et4yMe4gToqi6gZYYf64jM/cGwIcxMM1WCqrQo1eqdxWdCpzSq9S3u9g==
   dependencies:
     "@frontendmonster/utils" "0.3.9"
     "@typescript-eslint/eslint-plugin" "3.6.0"

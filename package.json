@@ -1,12 +1,12 @@
 {
-  "name": "@frontendmonster/utils",
+  "name": "@fullstacksjs/toolbox",
   "version": "0.3.11",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "Common JavaScript utility functions",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frontendmonster/utils.git"
+    "url": "git+https://github.com/fullstacksjs/utils.git"
   },
   "main": "./cjs/index.js",
   "module": "./esm5/index.js",
@@ -24,7 +24,7 @@
     "prebuild": "npm run clean && npm run verify",
     "build": "tsc && tsc --project ./tsconfig.es2015.json && tsc --project ./tsconfig.cjs.json",
     "lint": "eslint src --ext .ts",
-    "lint:fix": "npm run lint --fix",
+    "lint:fix": "npm run lint -- --fix",
     "test": "jest --passWithNoTests",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",

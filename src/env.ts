@@ -1,15 +1,22 @@
-const envs = {
-  prod: 'production',
-  dev: 'development',
-  test: 'test',
-};
+import { fallback, required } from './values';
 
 /**
  * give NODE_ENV value or given fallback value
- * @param {string} [fallback="development"] fallback value if NODE_ENV is not present (default to "development")
- * @returns {string} NODE_ENV || fallback
+ * @param {string} [defaultValue="development"] fallback value if NODE_ENV is not present (default to "development")
+ * @returns {string} environment ?? fallback
  */
-export const get = <T = string>(fallback: string | T = envs.dev): string | T => process.env.NODE_ENV || fallback;
+export const getEnv = (envKey: string, defaultValue?: string): string | undefined =>
+  fallback(process.env[envKey], defaultValue);
+
+/**
+ * give NODE_ENV value or given fallback value
+ * @param {string} [defaultValue="development"] fallback value if NODE_ENV is not present (default to "development")
+ * @returns {string} NODE_ENV ?? fallback
+ */
+export const getNodeEnv = (defaultValue?: string): string | undefined => getEnv('NODE_ENV', defaultValue);
+
+export const getRequiredEnv = (envKey: string, defaultValue?: string): string =>
+  required(getEnv(envKey, defaultValue), envKey);
 
 /**
  * strict check NODE_ENV with given value
@@ -24,27 +31,27 @@ export const is = (value: string): boolean => process.env.NODE_ENV === value;
  * @returns {boolean} is given env starts with equal to NODE_ENV
  */
 export function match(value: string): boolean {
-  const env = get(null)?.toLocaleLowerCase();
+  const env = getNodeEnv()?.toLocaleLowerCase();
   return env?.startsWith(value.toLowerCase()) ?? false;
 }
 
 /**
- * check env matchs 'development'
+ * check env matches 'development'
  * @returns {boolean} true if env matches "development"
  */
-export const matchDev = (): boolean => match(envs.dev);
+export const matchDev = (): boolean => match('dev');
 
 /**
- * check env matchs 'production'
+ * check env matches 'production'
  * @returns {boolean} true if env matches "production"
  */
-export const matchProd = (): boolean => match(envs.prod);
+export const matchProd = (): boolean => match('prod');
 
 /**
- * check env matchs 'test'
+ * check env matches 'test'
  * @returns {boolean} true if env matches "test"
  */
-export const matchTest = (): boolean => match(envs.test);
+export const matchTest = (): boolean => match('test');
 
 // shortcuts
 export const isDev = matchDev();

@@ -1,21 +1,17 @@
+import { isString } from './guards';
+
 /**
  * converts crlf to lf
- * @param {string} str - value
- * @returns {string} value with lf line ending
  */
 export const crlfToLF = (str: string): string => str.replace(/\r\n/g, '\n');
 
 /**
  * uppercase first letter + lowercase rest
- * @param {string} str - word to become capitalize
- * @returns {string} Capitalzed value
  */
 export const toCapitalCase = (str: string): string => str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
 
 /**
  * convert kebab-case to camelCase
- * @param {string} str - kebab-case string
- * @returns {string} camelCase representation of string
  */
 export const kebabToCamel = (str: string): string =>
   str
@@ -26,12 +22,12 @@ export const kebabToCamel = (str: string): string =>
 /**
  * return initial chars of words
  * @param {string} name - value to get initials from
- * @param {string} [fallback='?'] - return value if opration failed
+ * @param {string} [fallback='?'] - return value if operation failed
  * @returns {string} initials chars of a words || fallback
  * @example getInitials('frontend monsters'); //-> FM
  */
 export const getInitials = (name: string, fallback = '?'): string =>
-  typeof name === 'string' && name.length > 0
+  isString(name) && name.length > 0
     ? name
         .replace(/\s+/g, ' ')
         .split(' ')
@@ -41,8 +37,7 @@ export const getInitials = (name: string, fallback = '?'): string =>
     : fallback;
 
 /**
- * check if value is null, undefined or empty string
- * @param {*} x - any value
- * @returns {boolean} is null | undefined | empty string
+ * escape regex chars
+ * Read more on {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#escaping MDN}
  */
-export const isNullOrEmpty = (x: any): boolean => x == null || x === '';
+export const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

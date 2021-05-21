@@ -1,5 +1,5 @@
 type PackageJson = Record<Dependencies, any>;
-type Dependencies = 'peerDependencies' | 'devDependencies' | 'dependencies' | 'optionalDependencies';
+type Dependencies = 'dependencies' | 'devDependencies' | 'optionalDependencies' | 'peerDependencies';
 
 const hasDepType = (packageJson: PackageJson) => (type: Dependencies) => (dep: string) =>
   typeof packageJson[type] === 'object' && Reflect.has(packageJson[type], dep);
@@ -15,7 +15,6 @@ export const hasAnyDep = (packageJson: PackageJson) => (dep: string) =>
 export const ifAnyDep = (packageJson: PackageJson) => (dep: string, t?: Function, f?: Function) =>
   hasAnyDep(packageJson)(dep) ? t?.() : f?.();
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export const Packages = (packageJson: PackageJson) => ({
   hasOptDep: hasOptDep(packageJson),
   hasPeerDep: hasPeerDep(packageJson),

@@ -1,29 +1,32 @@
-/**
- * wrap value with array if value is not an array itself.
- * @param {*} x - any value
- * @returns {any[]} - [value]
- */
-export const forceArray = (x: any): any[] => [].concat(x);
+import { isIterable, isString } from './guards';
 
 /**
- * create array of length n with from offset
- * @param {number} len - total number count
- * @param {number} [offset=0] - first number
- * @param {number} [step=1] - step
- * @returns {number[]} - range
+ * wrap value with array if value is not an array itself.
  */
-export const range = (len: number, offset = 0, step = 1): number[] =>
-  [...Array(len).keys()].map(i => i * step + offset);
+export const ensureArray = <T>(x: T): T extends Array<any> ? T : [T] => (Array.isArray(x) ? (x as any) : [x]);
+
+/**
+ * create array of length n with from offset with an step
+ */
+export const range = (
+  length: number,
+  { offset, step }: { offset: number; step: number } = { offset: 0, step: 1 },
+): number[] => Array.from({ length }, (_, i) => i * step + offset);
+
+interface ToArray {
+  (value: null | undefined): never[];
+  (value: string): [string];
+  <T>(value: Array<T> | Iterable<T> | T): T[];
+  <T>(value: T): [T];
+}
 
 /**
  * returns array representation of a value
- * @param {any} value - any value
- * @returns {any []} - array representation of value
  */
-export const toArray = (value: any): any[] => {
-  if (value == null) return [];
+export const toArray: ToArray = <T>(value: Array<T> | Iterable<T> | T | string | null | undefined) => {
+  if (value == null) return [] as any;
   if (Array.isArray(value)) return value;
-  if (typeof value === 'string') return [value];
-  if (typeof value[Symbol.iterator] === 'function') return [...value];
+  if (isString(value)) return [value] as [string];
+  if (isIterable<T>(value)) return [...value] as T[];
   return [value];
 };

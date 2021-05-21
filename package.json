@@ -8,63 +8,52 @@
     "type": "git",
     "url": "git+https://github.com/frontendmonster/utils.git"
   },
-  "main": "./bundles/index.umd.js",
+  "main": "./cjs/index.js",
   "module": "./esm5/index.js",
   "es2015": "./esm2015/index.js",
   "typings": "./types/index.d.ts",
   "sideEffects": false,
+  "files": [
+    ".npmrc",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "commit": "git-cz",
     "clean": "shx rm -rf lib/*",
     "prebuild": "npm run clean && npm run verify",
-    "build": "tsc && tsc --project ./tsconfig.es2015.json && rollup -c && rollup -c --environment NODE_ENV:production",
-    "lint": "eslint src --ext js,ts",
+    "build": "tsc && tsc --project ./tsconfig.es2015.json && tsc --project ./tsconfig.cjs.json",
+    "lint": "eslint src --ext .ts",
     "lint:fix": "npm run lint --fix",
     "test": "jest --passWithNoTests",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
-    "prerelease": "standard-version && builder",
-    "release": "npm run release:github && npm run release:npm",
-    "release:github": "git push --no-verify --follow-tags origin master",
-    "release:npm": "npm publish lib",
-    "release:preflight": "npm pack ./lib --dry-run",
-    "verify": "npm run lint && npm run test"
+    "release": "builder",
+    "verify": "npm run lint && npm run test",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@frontendmonster/builder": "2.1.3",
+    "@fullstacksjs/eslint-config": "6.0.0",
+    "@types/jest": "26.0.23",
+    "@types/node": "15.6.0",
+    "commitizen": "4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "7.26.0",
+    "husky": "6.0.0",
+    "jest": "26.6.3",
+    "lint-staged": "11.0.0",
+    "pinst": "2.1.6",
+    "prettier": "2.3.0",
+    "shx": "0.3.3",
+    "ts-jest": "26.5.6",
+    "typescript": "4.2.4"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
-    }
-  },
-  "devDependencies": {
-    "@commitlint/cli": "9.0.1",
-    "@commitlint/config-conventional": "9.0.1",
-    "@frontendmonster/builder": "1.0.0",
-    "@frontendmonster/eslint-config": "4.0.3",
-    "@types/jest": "26.0.4",
-    "@types/node": "14.0.18",
-    "commitizen": "4.1.2",
-    "cz-conventional-changelog": "3.2.0",
-    "eslint": "7.4.0",
-    "husky": "4.2.5",
-    "jest": "26.1.0",
-    "lint-staged": "10.2.11",
-    "prettier": "2.0.5",
-    "rollup": "1.32.0",
-    "rollup-plugin-commonjs": "10.1.0",
-    "rollup-plugin-node-resolve": "5.2.0",
-    "rollup-plugin-sourcemaps": "0.5.0",
-    "rollup-plugin-uglify": "6.0.4",
-    "shx": "0.3.2",
-    "standard-version": "8.0.0",
-    "ts-jest": "26.1.1",
-    "typescript": "3.9.6",
-    "webpack-config-utils": "2.3.1"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run test --bail --onlyChanged"
     }
   }
 }

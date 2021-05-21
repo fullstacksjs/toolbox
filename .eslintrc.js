@@ -1,10 +1,8 @@
 module.exports = {
   root: true,
-  extends: ['@frontendmonster'],
-  parserOptions: {
-    project: ['./tsconfig.eslint.json'],
-  },
+  extends: ['@fullstacksjs'],
   rules: {
     '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/array-type': 'off',
   },
 };

@@ -10,13 +10,40 @@
 
 </div>
 
-# fullstacksjs/toolbox
+## Table of Contents <!-- omit in toc -->
 
-Useful JavaScript utility functions
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Array](#array)
+    - [ensureArray](#ensurearray)
+    - [range](#range)
+    - [toArray](#toarray)
+  - [Env](#env)
+    - [getEnv](#getenv)
+    - [getRequiredEnv](#getrequiredenv)
+    - [getNodeEnv](#getnodeenv)
+    - [is](#is)
+    - [match](#match)
+    - [isDev](#isdev)
+    - [isProd](#isprod)
+    - [isTest](#istest)
+  - [Function](#function)
+    - [noop](#noop)
+    - [callAll](#callall)
+  - [Guards](#guards)
+    - [isString](#isstring)
+    - [isIterable](#isiterable)
+    - [isNullOrEmpty](#isnullorempty)
+    - [isFunction](#isfunction)
+  - [Numbers](#numbers)
+    - [safeDivide](#safedivide)
+    - [clamp](#clamp)
+    - [randomInt](#randomint)
+    - [toInteger](#tointeger)
+    - [isInRange](#isinrange)
+- [Credits](#credits)
 
 ## Installation
-
-### npm :
 
 ```sh
 $ npm add --save-dev @fullstacksjs/toolbox
@@ -28,11 +55,13 @@ or using yarn
 $ yarn add --dev @fullstacksjs/toolbox
 ```
 
-### Usage
+## Usage
 
 ### Array
 
-#### ensureArray: force a value to an array
+#### ensureArray
+
+force a value to an array
 
 ensureArray(value)
 
@@ -45,7 +74,9 @@ ensureArray([1, 2, 3]);      // [1, 2, 3]
 ensureArray({ foo: 'bar' }); // [{ foo: 'bar' }]
 ```
 
-#### create array of length n with from offset with an step
+#### range
+
+create array of length n with from offset with an step
 
 range(length, { offset, step })
 
@@ -56,7 +87,9 @@ range(3, { offset: 5 });           // [5,6,7]
 range(3, { offset: -2, step: 10}); // [-2, 8, 18]
 ```
 
-#### toArray: Convert a value to an array
+#### toArray
+
+Convert a value to an array
 
 toArray(value)
 
@@ -73,7 +106,9 @@ toArray(others);     // [others]
 
 ### Env
 
-- getEnv: get environment variable or given fallback
+#### getEnv
+
+get environment variable or given fallback
 
 getEnv(name, fallback)
 
@@ -84,7 +119,9 @@ env.getEnv('BAR');        // undefined
 env.getEnv('BAR', 'bar'); // bar
 ```
 
-- getRequiredEnv: get environment variable or given fallback or throw
+#### getRequiredEnv
+
+get environment variable or given fallback or throw
 
 getRequiredEnv(name, fallback)
 
@@ -95,7 +132,9 @@ env.getRequiredEnv('BAR', 'bar'); // bar
 env.getRequiredEnv('BAR');        // Error: BAR is required
 ```
 
-- getNodeEnv: give NODE_ENV value or given fallback value
+#### getNodeEnv
+
+give NODE_ENV value or given fallback value
 
 getNodeEnv(fallback)
 
@@ -106,7 +145,9 @@ env.getNodeEnv('anything'); // 'anything'
 env.getNodeEnv();           // null
 ```
 
-#### is: strict check NODE_ENV with given value
+#### is
+
+strict check NODE_ENV with given value
 
 ```typescript
 // NODE_ENV=production node
@@ -114,7 +155,9 @@ env.is('development'); // false
 env.is('production');  // true
 ```
 
-#### match: check NODE_ENV starts with given value (case insensitive)
+#### match
+
+check NODE_ENV starts with given value (case insensitive)
 
 ```typescript
 // NODE_ENV=production node
@@ -125,21 +168,27 @@ env.match('duction');     // false
 env.match('development'); // false
 ```
 
-#### isDev: check env matches 'development'
+#### isDev
+
+check env matches 'development'
 
 ```typescript
 // NODE_ENV=development node
 env.isDev(); // true
 ```
 
-#### isProd: check env matches 'production'
+#### isProd
+
+check env matches 'production'
 
 ```typescript
 // NODE_ENV=production node
 env.isProd(); // true
 ```
 
-#### isTest: check env matches 'test'
+#### isTest
+
+check env matches 'test'
 
 ```typescript
 // NODE_ENV=test node
@@ -172,6 +221,7 @@ HOC that call all given functions
 ### Guards
 
 #### isString
+
 check given value is string or not
 
 ```typescript
@@ -194,7 +244,9 @@ isIterable({});                           // false
 isIterable();                             // false
 ```
 
-* isNullOrEmpty: check given value is null/undefined/empty string or not
+#### isNullOrEmpty
+
+check given value is null/undefined/empty string or not
 
 ```typescript
 isNullOrEmpty();          // true
@@ -205,7 +257,9 @@ isNullOrEmpty('f');       // false
 isNullOrEmpty(1);         // false
 ```
 
-* isFunction: check given value is function or not
+#### isFunction
+
+check given value is function or not
 
 ```typescript
 isFunction(() => {}); // true
@@ -213,10 +267,13 @@ isFunction();         // false
 isFunction(true);     // false
 ```
 
-## Numbers
+---
 
-#### safeDivide: divide two numbers returns fallback if result is not a finite number
+### Numbers
 
+#### safeDivide
+
+divide two numbers returns fallback if result is not a finite number
 
 ```typescript
 safeDivide(4, 2);          // 2
@@ -226,18 +283,21 @@ safeDivide(null, NaN, 10); // 10
 safeDivide(4, 0, 'Oops');  // 'Oops'
 ```
 
-#### clamp: clamp a number between two values
-clamp :: number Range -> Number
+#### clamp
+
+clamp a number between two values
 
 ```typescript
-clamp(-10);                      // 0
-clamp(-10, { min: -5 });         // -5
-clamp(10);                       // 1
-clamp(30, { max: 20 });          // 20
-clamp(5, { min: -20, max: 20 }); // 5
+clamp(-10);                        // 0
+clamp(10);                         // 1
+clamp(-10, { min: -5 });           // -5
+clamp(30 , { max: 20 });           // 20
+clamp(5  , { min: -20, max: 20 }); // 5
 ```
 
-#### randomInt: generate random integer number between range.
+#### randomInt
+
+generate random integer number between range.
 
 ```typescript
 randomRange();                      // <random> 0 -> Number.MAX_SAFE_INTEGER
@@ -246,20 +306,24 @@ randomRange({ max: 50 });           // <random> 0 -> 50
 randomRange({ min: 50 });           // <random> 50 -> Number.MAX_SAFE_INTEGER
 ```
 
-#### toInteger: parse string to integer (radix 10)
+#### toInteger
+
+parse string to integer (radix 10)
 
 ```typescript
 toInteger('100'); // 100
 toInteger('1.42'); // 1.42
 ```
 
-#### isInRange: Checks if num is between min and max (and including borders).
+#### isInRange
+
+Checks if num is between min and max (and including borders).
 
 ```typescript
-isInRange(100, [0, 50]); // false
-isInRange(100, [0, 100]); // true
-isInRange(100, [50, 150]); // true
-isInRange(100, [100, 150]); // true
+isInRange(100, { min: 0  , max: 50  }); // false
+isInRange(100, { min: 0  , max: 100 }); // true
+isInRange(100, { min: 50 , max: 150 }); // true
+isInRange(100, { min: 100, max: 150 }); // true
 ```
 
 ## Credits

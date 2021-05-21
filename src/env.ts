@@ -5,15 +5,18 @@ import { fallback, required } from './values';
  * @param {string} [defaultValue="development"] fallback value if NODE_ENV is not present (default to "development")
  * @returns {string} environment ?? fallback
  */
-export const getEnv = (envKey: string, defaultValue?: string): string | undefined =>
-  fallback(process.env[envKey], defaultValue);
+export const getEnv = (
+  envKey: string,
+  defaultValue?: string,
+): string | undefined => fallback(process.env[envKey], defaultValue);
 
 /**
  * give NODE_ENV value or given fallback value
  * @param {string} [defaultValue="development"] fallback value if NODE_ENV is not present (default to "development")
  * @returns {string} NODE_ENV ?? fallback
  */
-export const getNodeEnv = (defaultValue?: string): string | undefined => getEnv('NODE_ENV', defaultValue);
+export const getNodeEnv = (defaultValue?: string): string | undefined =>
+  getEnv('NODE_ENV', defaultValue);
 
 export const getRequiredEnv = (envKey: string, defaultValue?: string): string =>
   required(getEnv(envKey, defaultValue), envKey);

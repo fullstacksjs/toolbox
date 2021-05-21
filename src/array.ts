@@ -3,7 +3,8 @@ import { isIterable, isString } from './guards';
 /**
  * wrap value with array if value is not an array itself.
  */
-export const ensureArray = <T>(x: T): T extends Array<any> ? T : [T] => (Array.isArray(x) ? (x as any) : [x]);
+export const ensureArray = <T>(x: T): T extends Array<any> ? T : [T] =>
+  Array.isArray(x) ? (x as any) : [x];
 
 /**
  * create array of length n with from offset with an step
@@ -23,7 +24,9 @@ interface ToArray {
 /**
  * returns array representation of a value
  */
-export const toArray: ToArray = <T>(value: Array<T> | Iterable<T> | T | string | null | undefined) => {
+export const toArray: ToArray = <T>(
+  value: Array<T> | Iterable<T> | T | string | null | undefined,
+) => {
   if (value == null) return [] as any;
   if (Array.isArray(value)) return value;
   if (isString(value)) return [value] as [string];

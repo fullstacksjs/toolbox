@@ -6,6 +6,11 @@ interface Range {
 }
 
 /**
+ * parse string to integer (radix 10)
+ */
+export const toInteger = (s: string) => Number.parseInt(s, 10);
+
+/**
  * divide two numbers returns fallback if result is not a finite number
  */
 export const safeDivide = <T = number>(

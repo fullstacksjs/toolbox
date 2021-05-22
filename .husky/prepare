@@ -1,0 +1,4 @@
+#!/bin/bash
+
+[ -d .git/ ] && npx husky install
+exit 0

@@ -1,5 +1,5 @@
 export * from './array';
-export * as env from './env';
+export * from './env';
 export * from './function';
 export * from './guards';
 export * from './number';

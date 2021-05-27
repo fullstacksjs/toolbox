@@ -43,3 +43,9 @@ export const getInitials = (name: string, fallback: string = '?'): string =>
  */
 export const escapeRegExp = (s: string) =>
   s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/**
+ * check if value is null, undefined or empty string or array
+ */
+export const isNullOrEmpty = (x: any[] | string): boolean =>
+  x == null || x.length === 0;

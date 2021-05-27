@@ -33,14 +33,15 @@
   - [Guards](#guards)
     - [isString](#isstring)
     - [isIterable](#isiterable)
-    - [isNullOrEmpty](#isnullorempty)
     - [isFunction](#isfunction)
-  - [Numbers](#numbers)
+  - [Number](#number)
     - [safeDivide](#safedivide)
     - [clamp](#clamp)
     - [randomInt](#randomint)
     - [toInteger](#tointeger)
     - [isInRange](#isinrange)
+  - [String](#string)
+    - [isNullOrEmpty](#isnullorempty)
 - [Credits](#credits)
 
 ## Installation
@@ -244,19 +245,6 @@ isIterable({});                           // false
 isIterable();                             // false
 ```
 
-#### isNullOrEmpty
-
-check given value is null/undefined/empty string or not
-
-```typescript
-isNullOrEmpty();          // true
-isNullOrEmpty(null);      // true
-isNullOrEmpty(undefined); // true
-isNullOrEmpty('');        // true
-isNullOrEmpty('f');       // false
-isNullOrEmpty(1);         // false
-```
-
 #### isFunction
 
 check given value is function or not
@@ -269,7 +257,7 @@ isFunction(true);     // false
 
 ---
 
-### Numbers
+### Number
 
 #### safeDivide
 
@@ -325,6 +313,24 @@ isInRange(100, { min: 0  , max: 100 }); // true
 isInRange(100, { min: 50 , max: 150 }); // true
 isInRange(100, { min: 100, max: 150 }); // true
 ```
+
+### String
+
+#### isNullOrEmpty
+
+check given value is null/undefined/empty string/array or not
+
+```typescript
+isNullOrEmpty();          // true
+isNullOrEmpty(null);      // true
+isNullOrEmpty(undefined); // true
+isNullOrEmpty('');        // true
+isNullOrEmpty('f');       // false
+isNullOrEmpty(1);         // false
+isNullOrEmpty([]);        // true
+isNullOrEmpty([1,2,3]);   // false
+```
+
 
 ## Credits
 

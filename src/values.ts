@@ -1,4 +1,4 @@
-import { isNullOrEmpty } from './guards';
+import { isNullOrEmpty } from './string';
 
 export const required = <T>(
   value: T | null | undefined,

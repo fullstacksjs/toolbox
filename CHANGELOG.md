@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/fullstacksjs/utils/compare/v1.0.1...v1.1.0) (2021-05-27)
+
+
+### Features
+
+* isNullOrEmpty now accepts array as well ([e9f14fe](https://github.com/fullstacksjs/utils/commit/e9f14fe1eb26c1bcb95a49b303f907e0b4e501c6))
+
 ### [0.3.11](https://github.com/frontendmonster/utils/compare/v0.3.10...v0.3.11) (2020-07-06)
 
 

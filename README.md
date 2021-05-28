@@ -83,7 +83,7 @@ range(length, { offset, step })
 
 ```typescript
 range(0);                          // []
-range(10);                         // [0,1,2,3,4,5,6,7,8,9,10]
+range(10);                         // [0,1,2,3,4,5,6,7,8,9]
 range(3, { offset: 5 });           // [5,6,7]
 range(3, { offset: -2, step: 10}); // [-2, 8, 18]
 ```

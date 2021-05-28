@@ -239,7 +239,7 @@ check given value is iterable or not
 ```typescript
 isIterable([]);                           // true
 isIterable(new Map());                    // true
-isIterable({ [Symbol.iterator]() { } }]); // true
+isIterable({ [Symbol.iterator]() { } });  // true
 isIterable('some');                       // true
 isIterable({});                           // false
 isIterable();                             // false

@@ -300,7 +300,7 @@ parse string to integer (radix 10)
 
 ```typescript
 toInteger('100'); // 100
-toInteger('1.42'); // 1.42
+toInteger('1.42'); // 1
 ```
 
 #### isInRange

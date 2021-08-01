@@ -23,7 +23,7 @@
   "scripts": {
     "commit": "git-cz",
     "clean": "shx rm -rf lib/*",
-    "prebuild": "npm run clean && npm run verify",
+    "prebuild": "npm run clean",
     "build": "tsc && tsc --project ./tsconfig.es2015.json && tsc --project ./tsconfig.cjs.json",
     "lint": "eslint src --ext .ts",
     "lint:fix": "npm run lint -- --fix",
@@ -31,7 +31,8 @@
     "test:ci": "jest --ci --coverage --coverageReporters='text' --coverageReporters='text-summary'",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
-    "release": "builder --ignoreVersioning --publish && standard-version && git push --follow-tags",
+    "prerelease": "npm run verify",
+    "release": "standard-version && git push --follow-tags && builder --ignoreVersioning --publish",
     "verify": "npm run lint && npm run test",
     "prepublishOnly": "pinst --disable && pkg-ok",
     "postpublish": "pinst --enable",

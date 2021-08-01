@@ -1,6 +1,6 @@
 {
   "name": "@fullstacksjs/toolbox",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "Common JavaScript utility functions",
@@ -48,7 +48,7 @@
     "husky": "7.0.1",
     "jest": "27.0.6",
     "lint-staged": "11.1.1",
-   "pinst": "2.1.6",
+    "pinst": "2.1.6",
     "pkg-ok": "2.3.1",
     "prettier": "2.3.2",
     "shx": "0.3.3",

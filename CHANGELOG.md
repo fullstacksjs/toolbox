@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/fullstacksjs/utils/compare/v1.1.0...v1.2.0) (2021-08-01)
+
+
+### Features
+
+* **function:** add not function ([673b723](https://github.com/fullstacksjs/utils/commit/673b72335320f1669007e582140e89118c9d7142))
+
 ## [1.1.0](https://github.com/fullstacksjs/utils/compare/v1.0.1...v1.1.0) (2021-05-27)
 
 

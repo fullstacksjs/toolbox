@@ -14,3 +14,8 @@ export const callAll =
     fns.forEach(fn => {
       if (isFunction(fn)) fn(...args);
     });
+
+/**
+ * returns the "NOT" of its argument
+ */
+export const not = (b: unknown): boolean => !b;

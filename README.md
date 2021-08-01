@@ -30,6 +30,7 @@
   - [Function](#function)
     - [noop](#noop)
     - [callAll](#callall)
+    - [not](#not)
   - [Guards](#guards)
     - [isString](#isstring)
     - [isIterable](#isiterable)
@@ -215,6 +216,16 @@ HOC that call all given functions
 ```typescript
   callAll(foo, bar, baz)(...args)                         // void (foo(...args), bar(...args), baz(...args));
   callAll(bar,'string', 5, null, undefined, baz)(...args) // void (bar(...args), baz(...args));
+```
+
+#### not
+
+returns the "NOT" of its argument
+
+```typescript
+  not(true)  // false
+  not(false) // true
+  not(0)     // true
 ```
 
 ---

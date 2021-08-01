@@ -36,7 +36,7 @@ describe('guards', () => {
       expect(isIterable(new Map())).toBe(true);
     });
 
-    it('shoud return true for user-defined iterables', () => {
+    it('should return true for user-defined iterables', () => {
       expect(
         isIterable({
           *[Symbol.iterator]() {

@@ -6,7 +6,7 @@ describe('string', () => {
       expect(isNullOrEmpty(null as any)).toBe(true);
     });
 
-    it('should return true for undefiend', () => {
+    it('should return true for undefined', () => {
       expect(isNullOrEmpty(undefined as any)).toBe(true);
     });
 

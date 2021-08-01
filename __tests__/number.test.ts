@@ -7,7 +7,7 @@ import {
 } from '../src/number';
 
 describe('number', () => {
-  describe('safeDevide', () => {
+  describe('safeDivide', () => {
     it('should return the division of two number', () => {
       expect(safeDivide(4, 2)).toBe(2);
     });

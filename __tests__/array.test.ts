@@ -1,4 +1,9 @@
-import { ensureArray, range, toArray } from '../src/array';
+import {
+  concatNullableArrays,
+  ensureArray,
+  range,
+  toArray,
+} from '../src/array';
 
 describe('array', () => {
   describe('ensureArray', () => {
@@ -66,6 +71,42 @@ describe('array', () => {
           },
         }),
       ).toStrictEqual(['foo']);
+    });
+  });
+
+  describe('concatNullableArrays', () => {
+    it('should return empty array with no args', () => {
+      expect(concatNullableArrays()).toEqual([]);
+    });
+
+    it('should return empty array with undefined argument', () => {
+      expect(concatNullableArrays(undefined)).toEqual([]);
+    });
+
+    it('should return empty array with multiple undefined, null argument', () => {
+      expect(concatNullableArrays(null, undefined)).toEqual([]);
+    });
+
+    it('should return empty array with empty array as argument', () => {
+      expect(concatNullableArrays([])).toEqual([]);
+    });
+
+    it('should return array with if pass undefined before and after it', () => {
+      expect(concatNullableArrays(undefined, [1, 2], null)).toEqual([1, 2]);
+    });
+
+    it('should merge multiple arrays even with some undefined arguments', () => {
+      expect(concatNullableArrays(undefined, [1, 2], null, [3, 4])).toEqual([
+        1, 2, 3, 4,
+      ]);
+    });
+
+    it('should merge multiple arrays', () => {
+      expect(concatNullableArrays([1, 2], [3, 4])).toEqual([1, 2, 3, 4]);
+    });
+
+    it('should act as identity for single array argument', () => {
+      expect(concatNullableArrays([1, 2])).toEqual([1, 2]);
     });
   });
 });

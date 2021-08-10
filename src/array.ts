@@ -33,3 +33,7 @@ export const toArray: ToArray = <T>(
   if (isIterable<T>(value)) return [...value] as T[];
   return [value];
 };
+
+export const concatNullableArrays = (...args: any[]) =>
+  args?.map(arr => arr ?? [])?.reduce((curr, arr) => curr.concat(arr), []) ??
+  [];

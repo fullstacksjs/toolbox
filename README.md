@@ -18,6 +18,7 @@
     - [ensureArray](#ensurearray)
     - [range](#range)
     - [toArray](#toarray)
+  - [concatNullableArrays](#concatnullablearrays)
   - [Env](#env)
     - [getEnv](#getenv)
     - [getRequiredEnv](#getrequiredenv)
@@ -104,6 +105,18 @@ toArray(iteratable); // [...iteratable]
 toArray(others);     // [others]
 ```
 
+### concatNullableArrays
+
+concatNullableArrays(...maybeArrays)
+
+```typescript
+concatNullableArrays(null);                            // []
+concatNullableArrays(undefined);                       // []
+concatNullableArrays([]);                              // []
+concatNullableArrays([1]);                             // [1]
+concatNullableArrays(undefined, [1, 2], null);         // [1,2]
+concatNullableArrays(undefined, [1, 2], null, [2, 3]); // [1, 2, 2, 3]
+```
 ---
 
 ### Env

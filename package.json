@@ -1,6 +1,6 @@
 {
   "name": "@fullstacksjs/toolbox",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "Common JavaScript utility functions",

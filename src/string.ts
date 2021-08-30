@@ -1,4 +1,5 @@
 import { isString } from './guards';
+import { tokenize } from './internals/tokenize';
 
 /**
  * converts crlf to lf
@@ -6,19 +7,26 @@ import { isString } from './guards';
 export const crlfToLF = (str: string): string => str.replace(/\r\n/g, '\n');
 
 /**
+ * convert any casing to space separated lowercase
+ */
+export const toSpaceCase = (str: string) =>
+  tokenize(str)
+    .replace(/[\W_]+(.|$)/g, (matches, match) => (match ? ` ${match}` : ''))
+    .trim();
+
+/**
+ * convert any casing to space camelCase
+ */
+export const toCamelCase = (str: string) =>
+  toSpaceCase(str).replace(/\s(\w)/g, (matches, letter) =>
+    letter.toUpperCase(),
+  );
+
+/**
  * uppercase first letter + lowercase rest
  */
 export const toCapitalCase = (str: string): string =>
   str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
-
-/**
- * convert kebab-case to camelCase
- */
-export const kebabToCamel = (str: string): string =>
-  str
-    .split('-')
-    .map((part, key) => (key === 0 ? part : toCapitalCase(part)))
-    .join('');
 
 /**
  * return initial chars of words

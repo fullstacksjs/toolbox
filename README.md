@@ -43,6 +43,8 @@
     - [toInteger](#tointeger)
     - [isInRange](#isinrange)
   - [String](#string)
+    - [toSpaceCase](#tospacecase)
+    - [toCamelCase](#tocamelcase)
     - [isNullOrEmpty](#isnullorempty)
 - [Credits](#credits)
 
@@ -339,6 +341,34 @@ isInRange(100, { min: 100, max: 150 }); // true
 ```
 
 ### String
+
+#### toSpaceCase
+
+convert any casing to space separated lowercase
+
+```typescript
+toSpaceCase('');              // ''
+toSpaceCase('foo bar');       // 'foo bar'
+toSpaceCase('foo-bar');       // 'foo bar'
+toSpaceCase('fooBar');        // 'foo bar'
+toSpaceCase('foo_bar');       // 'foo bar'
+toSpaceCase('FOO-barCode');   // 'foo bar code'
+toSpaceCase('foo -bar _BAZ'); // 'foo -bar _baz'
+```
+
+#### toCamelCase
+
+check given value is null/undefined/empty string/array or not
+
+```typescript
+toCamelCase('');              // ''
+toCamelCase('foo bar');       // 'fooBar'
+toCamelCase('foo-bar');       // 'fooBar'
+toCamelCase('fooBar');        // 'fooBar'
+toCamelCase('foo_bar');       // 'fooBar'
+toCamelCase('FOO-barCode');   // 'fooBarCode'
+toCamelCase('foo -bar _BAZ'); // 'foo -bar _baz'
+```
 
 #### isNullOrEmpty
 

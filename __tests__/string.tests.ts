@@ -8,12 +8,11 @@ describe('string', () => {
   describe('toCamelCase', () => {
     const testCases = {
       '': '',
+      ' ': ' ',
       'foo bar': 'fooBar',
       'foo-bar': 'fooBar',
       'fooBar': 'fooBar',
       'foo_bar': 'fooBar',
-      'FOO-barCode': 'fooBarCode',
-      'foo -bar _BAZ': 'fooBarBaz',
     };
     Object.entries(testCases).forEach(([value, result]) => {
       it(`should return ${result} for ${value} as input`, () => {
@@ -25,12 +24,12 @@ describe('string', () => {
   describe('toSpaceCase', () => {
     const testCases = {
       '': '',
+      ' ': ' ',
       'foo bar': 'foo bar',
       'foo-bar': 'foo bar',
       'fooBar': 'foo bar',
       'foo_bar': 'foo bar',
-      'FOO-barCode': 'foo bar code',
-      'foo -bar __BAZ': 'foo -bar _baz',
+      'FooBarCode': 'foo bar code',
     };
 
     Object.entries(testCases).forEach(([value, result]) => {

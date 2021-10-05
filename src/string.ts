@@ -1,5 +1,5 @@
 import { isString } from './guards';
-import { tokenize } from './internals/tokenize';
+import { hasInvalidCasing, tokenize } from './internals/tokenize';
 
 export const toSpaceCase = tokenize;
 
@@ -18,24 +18,39 @@ export const toCapitalCase = (str: string): string =>
  * convert any casing to camelCase
  */
 export const toCamelCase = (str: string) =>
-  toSpaceCase(str).replace(/\s([a-z])/g, (_, letter) => letter.toUpperCase());
-
+  hasInvalidCasing(str)
+    ? str
+    : toSpaceCase(str).replace(/\s([a-z])/g, (_, letter) =>
+        letter.toUpperCase(),
+      );
+console.log(toCamelCase('Foo--_bar- code'));
 /**
  * convert any casing to snake_case
  */
 export const toSnakeCase = (str: string) =>
-  toSpaceCase(str).replace(/(\s[a-z])/g, (_, letter) => `_${letter.slice(1)}`);
+  hasInvalidCasing(str)
+    ? str
+    : toSpaceCase(str).replace(
+        /(\s[a-z])/g,
+        (_, letter) => `_${letter.slice(1)}`,
+      );
 
 /**
  * convert any casing to kebab-case
  */
 export const toKebabCase = (str: string) =>
-  toSpaceCase(str).replace(/(\s[a-z])/g, (_, letter) => `-${letter.slice(1)}`);
+  hasInvalidCasing(str)
+    ? str
+    : toSpaceCase(str).replace(
+        /(\s[a-z])/g,
+        (_, letter) => `-${letter.slice(1)}`,
+      );
 
 /**
  * convert any casing to PascalCase
  */
-export const toPascalCase = (str: string) => toCapitalCase(toCamelCase(str));
+export const toPascalCase = (str: string) =>
+  hasInvalidCasing(str) ? str : toCapitalCase(toCamelCase(str));
 
 /**
  * return initial chars of words

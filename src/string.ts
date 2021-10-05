@@ -6,7 +6,7 @@ export const toSpaceCase = tokenize;
 /**
  * converts crlf to lf
  */
-export const crlfToLF = (str: string): string => str.replace(/\r\n/g, '\n');
+export const crlfToLf = (str: string): string => str.replace(/\r\n/g, '\n');
 
 /**
  * uppercase first letter + lowercase rest

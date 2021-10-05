@@ -1,32 +1,41 @@
 import { isString } from './guards';
 import { tokenize } from './internals/tokenize';
 
+export const toSpaceCase = tokenize;
+
 /**
  * converts crlf to lf
  */
 export const crlfToLF = (str: string): string => str.replace(/\r\n/g, '\n');
 
 /**
- * convert any casing to space separated lowercase
- */
-export const toSpaceCase = (str: string) =>
-  tokenize(str)
-    .replace(/[\W_]+(.|$)/g, (matches, match) => (match ? ` ${match}` : ''))
-    .trim();
-
-/**
- * convert any casing to space camelCase
- */
-export const toCamelCase = (str: string) =>
-  toSpaceCase(str).replace(/\s(\w)/g, (matches, letter) =>
-    letter.toUpperCase(),
-  );
-
-/**
  * uppercase first letter + lowercase rest
  */
 export const toCapitalCase = (str: string): string =>
   str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
+
+/**
+ * convert any casing to camelCase
+ */
+export const toCamelCase = (str: string) =>
+  toSpaceCase(str).replace(/\s([a-z])/g, (_, letter) => letter.toUpperCase());
+
+/**
+ * convert any casing to snake_case
+ */
+export const toSnakeCase = (str: string) =>
+  toSpaceCase(str).replace(/(\s[a-z])/g, (_, letter) => `_${letter.slice(1)}`);
+
+/**
+ * convert any casing to kebab-case
+ */
+export const toKebabCase = (str: string) =>
+  toSpaceCase(str).replace(/(\s[a-z])/g, (_, letter) => `-${letter.slice(1)}`);
+
+/**
+ * convert any casing to PascalCase
+ */
+export const toPascalCase = (str: string) => toCapitalCase(toCamelCase(str));
 
 /**
  * return initial chars of words
@@ -44,13 +53,6 @@ export const getInitials = (name: string, fallback: string = '?'): string =>
         .map(v => v?.[0]?.toUpperCase())
         .join('')
     : fallback;
-
-/**
- * escape regex chars
- * Read more on {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#escaping MDN}
- */
-export const escapeRegExp = (s: string) =>
-  s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 /**
  * check if value is null, undefined or empty string or array

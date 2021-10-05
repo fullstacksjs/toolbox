@@ -32,10 +32,12 @@
     - [noop](#noop)
     - [callAll](#callall)
     - [not](#not)
+    - [passesMin](#passesmin)
   - [Guards](#guards)
     - [isString](#isstring)
     - [isIterable](#isiterable)
     - [isFunction](#isfunction)
+    - [isNullable](#isnullable)
   - [Number](#number)
     - [safeDivide](#safedivide)
     - [clamp](#clamp)
@@ -46,6 +48,10 @@
     - [toSpaceCase](#tospacecase)
     - [toCamelCase](#tocamelcase)
     - [isNullOrEmpty](#isnullorempty)
+  - [Regex](#regex)
+    - [testRegex](#testRegex)
+  - [Error](#error)
+	- [throwErr](#throwerr) 
 - [Credits](#credits)
 
 ## Installation
@@ -242,8 +248,21 @@ returns the "NOT" of its argument
   not(false) // true
   not(0)     // true
 ```
+#### passesMin
 
----
+returns true if specified minimum predicates pass the given value otherwise false
+```typescript
+const isDivisibleBy3 = x => x % 3 === 0
+const isDivisibleBy5 = x => x % 5 === 0
+const isLargerThan25 = x => x > 25
+
+const isValidNumber = x => passesMin(2, [isDivisibleBy3, isDivisibleBy5, isSmallerThan25], x);
+
+isValidNumber(15) //returns true because its divisible by 5 and 3
+isValidNumber(3)  //returns false because its only divisible by 3
+isValidNumber(26) //returns false because its only larger than 25
+isValidNumber(30) //returns true because its passes minimum 2 cases (being divisible by 5 and 3 and larger than 25)
+```
 
 ### Guards
 
@@ -279,6 +298,18 @@ check given value is function or not
 isFunction(() => {}); // true
 isFunction();         // false
 isFunction(true);     // false
+```
+
+#### isNullable
+
+check given value is null or undefined or not
+
+```typescript
+isNullable(undefined) // true
+isNullable(null)      // true
+isNullable(0)         // false
+isNullable(false);    // false
+isNullable({});       // false
 ```
 
 ---
@@ -384,7 +415,37 @@ isNullOrEmpty(1);         // false
 isNullOrEmpty([]);        // true
 isNullOrEmpty([1,2,3]);   // false
 ```
+### Regex
 
+#### testRegex
+
+check if a string passes a specfic regex
+```typescript
+testRegex(/[A-Z]/, "Abc") // true
+testRegex(/^\d+$/, "2021") // true
+testRegex(/[a-z]/, "( ͡° ͜ʖ ͡°)") // false
+
+const r = /abc/g
+r.test('abc') // true
+r.test('abc') // false
+
+testRegex(r, 'abc') // true
+testRegex(r, 'abc') // true
+```
+
+### Error
+
+#### throwErr
+
+throws an the given error 
+note: (if the given argument is not an instance of the Error class, it converts the value to string with the `String` constructor)
+
+```typescript
+throwError(new Error('msg')) // Uncaught Error: msg
+throwErr('error') // Uncaught error
+throwErr(404) // Uncaught 404
+throwError({}) // Uncaught [object Object]
+```
 
 ## Credits
 

@@ -3,6 +3,7 @@ import {
   crlfToLf,
   isNullOrEmpty,
   toCamelCase,
+  toCapitalCase,
   toKebabCase,
   toPascalCase,
   toSnakeCase,
@@ -140,7 +141,19 @@ describe('string', () => {
     });
   });
   describe('toCapitalCase', () => {
-    // TODO: Need tests
+    const testCases = {
+      '': '',
+      ' ': ' ',
+      'foo': 'Foo',
+      'Foo': 'Foo',
+      'FOOBAR': 'Foobar',
+    };
+
+    Object.entries(testCases).forEach(([value, result]) => {
+      it(`should return ${result} for ${value} as input`, () => {
+        expect(toCapitalCase(value)).toBe(result);
+      });
+    });
   });
 
   describe('isNullOrEmpty', () => {

@@ -23,7 +23,6 @@ export const toCamelCase = (str: string) =>
     : toSpaceCase(str).replace(/\s([a-z])/g, (_, letter) =>
         letter.toUpperCase(),
       );
-console.log(toCamelCase('Foo--_bar- code'));
 /**
  * convert any casing to snake_case
  */

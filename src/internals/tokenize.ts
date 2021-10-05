@@ -5,6 +5,17 @@ const camelOrPascalRegex = /[A-Z]/g;
 const snakeRegex = /_./g;
 const kebabRegex = /-./g;
 
+export const hasInvalidCasing = (str: string) =>
+  passesMin(
+    2,
+    [
+      s => testRegex(snakeRegex, s),
+      s => testRegex(kebabRegex, s),
+      s => testRegex(camelOrPascalRegex, s),
+    ],
+    str,
+  );
+
 const fromCamelOrPascal = (x: string) =>
   x
     .replace(
@@ -36,17 +47,7 @@ const fromKebab = (x: string) =>
  * @return {string}
  */
 export const tokenize = (str: string): string => {
-  const isMoreThanOneCase = passesMin(
-    2,
-    [
-      s => testRegex(snakeRegex, s),
-      s => testRegex(kebabRegex, s),
-      s => testRegex(camelOrPascalRegex, s),
-    ],
-    str,
-  );
-  console.log(isMoreThanOneCase);
-  if (isMoreThanOneCase) return str;
+  if (hasInvalidCasing(str)) return str;
   if (testRegex(snakeRegex, str)) return fromSnake(str);
   if (testRegex(kebabRegex, str)) return fromKebab(str);
   if (testRegex(camelOrPascalRegex, str)) return fromCamelOrPascal(str);

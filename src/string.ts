@@ -1,5 +1,6 @@
 import { isString } from './guards';
 import { hasInvalidCasing, tokenize } from './internals/tokenize';
+import { testRegex } from './regex';
 
 export const toSpaceCase = tokenize;
 
@@ -55,6 +56,14 @@ export const toPascalCase = (str: string) =>
     : toCamelCase(str).replace(/^./, m => m.toUpperCase());
 
 /**
+ * check if value is null, undefined or empty string or array
+ */
+export const isNullOrEmpty = (x: any[] | string): boolean =>
+  x == null || x.length === 0;
+
+const isWordOrWords = (x: string) => testRegex(/(^.+ .)|(^\S+$)/, x);
+
+/**
  * return initial chars of words
  * @param {string} name - value to get initials from
  * @param {string} [fallback='?'] - return value if operation failed
@@ -62,17 +71,10 @@ export const toPascalCase = (str: string) =>
  * @example getInitials('frontend monsters'); //-> FM
  */
 export const getInitials = (name: string, fallback: string = '?'): string =>
-  isString(name) && name.length > 0
+  isString(name) && isWordOrWords(name.trim())
     ? name
         .replace(/\s+/g, ' ')
         .split(' ')
-        .slice(0, 2)
-        .map(v => v?.[0]?.toUpperCase())
+        .map(v => (isNullOrEmpty(v) ? '' : v?.[0]?.toUpperCase()))
         .join('')
     : fallback;
-
-/**
- * check if value is null, undefined or empty string or array
- */
-export const isNullOrEmpty = (x: any[] | string): boolean =>
-  x == null || x.length === 0;

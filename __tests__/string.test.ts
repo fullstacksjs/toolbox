@@ -1,4 +1,6 @@
+/* eslint-disable max-lines-per-function */
 import {
+  crlfToLf,
   isNullOrEmpty,
   toCamelCase,
   toKebabCase,
@@ -9,7 +11,22 @@ import {
 
 describe('string', () => {
   describe('crlfToLf', () => {
-    // TODO: Need tests
+    const testCases = {
+      '': '',
+      ' ': ' ',
+      'hello world': 'hello world',
+      'hello world\n': 'hello world\n',
+      'hello world\r\n': 'hello world\n',
+      'hello world\r\n\n': 'hello world\n\n',
+      'hello world\r\nbut how is world\r\n': 'hello world\nbut how is world\n',
+      'hello world\r': 'hello world\r',
+      'hello world\r\r\r\n': 'hello world\r\r\n',
+    };
+    Object.entries(testCases).forEach(([value, result]) => {
+      it(`should return ${result} for ${value} as input`, () => {
+        expect(crlfToLf(value)).toBe(result);
+      });
+    });
   });
 
   describe('toSpaceCase', () => {

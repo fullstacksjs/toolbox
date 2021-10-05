@@ -4,5 +4,6 @@ export * from './function';
 export * from './guards';
 export * from './number';
 export * from './package';
+export * from './regex';
 export * from './string';
 export * from './values';

@@ -1,6 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import {
   crlfToLf,
+  getInitials,
   isNullOrEmpty,
   toCamelCase,
   toCapitalCase,
@@ -11,6 +12,29 @@ import {
 } from '../src/string';
 
 describe('string', () => {
+  describe('getInitials', () => {
+    const testCases = {
+      '': '?',
+      ' ': '?',
+      'frontend': 'F',
+      'frontend monsters': 'FM',
+      'frontend monster rides a dinosaur in office': 'FMRADIO',
+      '2': '2',
+      '1 2 3 4': '1234',
+      'x @# % * ))__() 1': 'X@%*)1',
+    };
+    Object.entries(testCases).forEach(([value, result]) => {
+      it(`should return ${result} for ${value} as input`, () => {
+        expect(getInitials(value)).toBe(result);
+      });
+    });
+    it(`should return ? for null as input`, () => {
+      expect(getInitials(null as any as string)).toBe('?');
+    });
+    it(`should return ? for objects as input`, () => {
+      expect(getInitials({ str: 'string' } as any as string)).toBe('?');
+    });
+  });
   describe('crlfToLf', () => {
     const testCases = {
       '': '',

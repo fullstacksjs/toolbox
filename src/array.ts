@@ -1,4 +1,4 @@
-import { isIterable, isString } from './guards';
+import { isIterable, isNullable, isString } from './guards';
 
 /**
  * wrap value with array if value is not an array itself.
@@ -27,7 +27,7 @@ interface ToArray {
 export const toArray: ToArray = <T>(
   value: Array<T> | Iterable<T> | T | string | null | undefined,
 ) => {
-  if (value == null) return [] as any;
+  if (isNullable(value)) return [] as any;
   if (Array.isArray(value)) return value;
   if (isString(value)) return [value] as [string];
   if (isIterable<T>(value)) return [...value] as T[];

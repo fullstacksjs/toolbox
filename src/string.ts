@@ -23,6 +23,7 @@ export const toCamelCase = (str: string) =>
     : toSpaceCase(str).replace(/\s([a-z])/g, (_, letter) =>
         letter.toUpperCase(),
       );
+
 /**
  * convert any casing to snake_case
  */
@@ -49,7 +50,9 @@ export const toKebabCase = (str: string) =>
  * convert any casing to PascalCase
  */
 export const toPascalCase = (str: string) =>
-  hasInvalidCasing(str) ? str : toCapitalCase(toCamelCase(str));
+  hasInvalidCasing(str)
+    ? str
+    : toCamelCase(str).replace(/^./, m => m.toUpperCase());
 
 /**
  * return initial chars of words

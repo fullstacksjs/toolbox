@@ -1,6 +1,29 @@
-import { isFunction, isIterable, isString } from '../src/guards';
+import { isFunction, isIterable, isNullable, isString } from '../src/guards';
 
 describe('guards', () => {
+  describe('isNullable', () => {
+    it('should return true for undefined', () => {
+      expect(isNullable(undefined)).toBe(true);
+    });
+    it('should return true for null', () => {
+      expect(isNullable(null)).toBe(true);
+    });
+    it('should return false for string', () => {
+      expect(isNullable('null')).toBe(false);
+    });
+    it('should return false for numbers', () => {
+      expect(isNullable(0)).toBe(false);
+    });
+    it('should return false for array', () => {
+      expect(isNullable([])).toBe(false);
+    });
+    it('should return false for object', () => {
+      expect(isNullable({})).toBe(false);
+    });
+    it('should return false for boolean', () => {
+      expect(isNullable(false)).toBe(false);
+    });
+  });
   describe('isString', () => {
     it('should return false for undefined', () => {
       expect(isString(undefined)).toBe(false);

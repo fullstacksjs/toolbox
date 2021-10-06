@@ -47,6 +47,9 @@
   - [String](#string)
     - [toSpaceCase](#tospacecase)
     - [toCamelCase](#tocamelcase)
+    - [toSnakeCase](#tosnakecase)
+    - [toKebabCase](#tokebabcase)
+    - [toPascalCase](#topascalcase)
     - [isNullOrEmpty](#isnullorempty)
   - [Regex](#regex)
     - [testRegex](#testRegex)
@@ -389,7 +392,8 @@ toSpaceCase('foo -bar _BAZ'); // 'foo -bar _baz'
 
 #### toCamelCase
 
-check given value is null/undefined/empty string/array or not
+transforms a valid casing to camelCase
+if the given value is invalid it just returns the input
 
 ```typescript
 toCamelCase('');              // ''
@@ -397,8 +401,48 @@ toCamelCase('foo bar');       // 'fooBar'
 toCamelCase('foo-bar');       // 'fooBar'
 toCamelCase('fooBar');        // 'fooBar'
 toCamelCase('foo_bar');       // 'fooBar'
-toCamelCase('FOO-barCode');   // 'fooBarCode'
-toCamelCase('foo -bar _BAZ'); // 'foo -bar _baz'
+toCamelCase('FOO-barCode');   // 'FOO-barCode'
+```
+
+#### toSnakeCase
+
+transforms a valid casing to snake_case
+if the given value is invalid it just returns the input
+
+```typescript
+toCamelCase('');              // ''
+toCamelCase('foo bar');       // 'foo_bar'
+toCamelCase('foo-bar');       // 'foo_bar'
+toCamelCase('fooBar');        // 'foo_bar'
+toCamelCase('foo_bar');       // 'foo_bar'
+toCamelCase('FOO-barCode');   // 'FOO-barCode'
+```
+
+#### toKebabCase
+
+transforms a valid casing to kebab-case
+if the given value is invalid it just returns the input
+
+```typescript
+toCamelCase('');              // ''
+toCamelCase('foo bar');       // 'foo-bar'
+toCamelCase('foo-bar');       // 'foo-bar'
+toCamelCase('fooBar');        // 'foo-bar'
+toCamelCase('foo_bar');       // 'foo-bar'
+toCamelCase('FOO-barCode');   // 'FOO-barCode'
+```
+#### toPascalCase
+
+transforms a valid casing to PascalCase
+if the given value is invalid it just returns the input
+
+```typescript
+toCamelCase('');              // ''
+toCamelCase('foo bar');       // 'FooBar'
+toCamelCase('foo-bar');       // 'FooBar'
+toCamelCase('fooBar');        // 'FooBar'
+toCamelCase('foo_bar');       // 'FooBar'
+toCamelCase('FOO-barCode');   // 'FOO-barCode'
 ```
 
 #### isNullOrEmpty

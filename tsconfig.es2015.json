@@ -1,9 +1,0 @@
-{
-  "extends": "@fullstacksjs/tsconfig/esm",
-  "compilerOptions": {
-    "outDir": "./lib/esm2015"
-  },
-  "include": [
-    "src/"
-  ]
-}

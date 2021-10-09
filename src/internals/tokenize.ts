@@ -17,7 +17,7 @@ const unCamelize = (str: string) =>
 /**
  * Remove any starting case from a `string`, like camel or snake, but keep
  * spaces and punctuation that may be important otherwise.
- *
+ * @internal
  * @param {string} str
  * @return {string}
  */

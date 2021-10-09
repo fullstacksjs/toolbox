@@ -1,8 +1,8 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "@fullstacksjs/tsconfig/cjs",
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "ES2018",
-    "outDir": "./lib/cjs"
-  }
+    "declaration": false,
+    "outDir": "./lib/cjs",
+  },
+  "include": ["src/"]
 }

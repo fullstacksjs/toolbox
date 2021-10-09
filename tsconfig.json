@@ -1,8 +1,7 @@
 {
-  "extends": "@fullstacksjs/tsconfig",
+  "extends": "@fullstacksjs/tsconfig/cjs",
   "compilerOptions": {
-    "declarationDir": "lib/types",
-    "outDir": "lib/esm5"
+    "noEmit": true
   },
   "exclude": ["lib/"]
 }

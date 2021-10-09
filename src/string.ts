@@ -41,7 +41,7 @@ export const getInitials = (name: string, fallback: string = '?'): string =>
         .replace(/\s+/g, ' ')
         .split(' ')
         .slice(0, 2)
-        .map(v => v?.[0].toUpperCase())
+        .map(v => v?.[0]?.toUpperCase())
         .join('')
     : fallback;
 

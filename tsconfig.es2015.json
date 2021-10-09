@@ -1,8 +1,9 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "@fullstacksjs/tsconfig/esm",
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ES2018",
     "outDir": "./lib/esm2015"
-  }
+  },
+  "include": [
+    "src/"
+  ]
 }

@@ -16,7 +16,7 @@ describe('function', () => {
     });
 
     it('should not throw with not-callable arguments', () => {
-      const fns = [jest.fn(), jest.fn()];
+      const fns = [jest.fn(), jest.fn()] as const;
       const nonFns = [undefined as any, 'string' as any, null as any, 5 as any];
       const args = [1, 2, 3];
       callAll(fns[0], ...nonFns, fns[1])(...args);

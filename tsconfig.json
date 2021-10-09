@@ -1,21 +1,8 @@
 {
+  "extends": "@fullstacksjs/tsconfig",
   "compilerOptions": {
-    "moduleResolution": "node",
-    "module": "ES2015",
-    "target": "ES5",
-    "lib": [
-      "dom",
-      "es2020"
-    ],
-    "downlevelIteration": true,
-    "sourceMap": true,
-    "declaration": true,
     "declarationDir": "lib/types",
-    "outDir": "lib/esm5",
-    "esModuleInterop": true,
-    "strict": true,
+    "outDir": "lib/esm5"
   },
-  "include": [
-    "src/**/*"
-  ],
+  "exclude": ["lib/"]
 }

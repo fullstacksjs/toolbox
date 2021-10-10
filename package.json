@@ -20,7 +20,7 @@
   "typings": "./types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./mjs/index.js",
+      "import": "./esm/index.js",
       "require": "./cjs/index.js"
     }
   },
@@ -28,17 +28,16 @@
   "scripts": {
     "commit": "git-cz",
     "clean": "shx rm -rf lib/*",
-    "prebuild": "npm run clean",
+    "prebuild": "yarn run clean",
     "build": "tsc --project ./tsconfig.cjs.json && tsc --project ./tsconfig.esm.json && ./fixup",
-    "lint": "eslint src --ext .ts",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint src --ext .ts --fix",
     "test": "jest",
     "test:ci": "jest --ci --coverage --coverageReporters='text' --coverageReporters='text-summary'",
-    "test:watch": "npm run test -- --watch",
-    "test:coverage": "npm run test -- --coverage",
-    "prerelease": "npm run verify",
-    "release": "standard-version &&  git push --follow-tags && builder --ignoreVersioning --publish",
-    "verify": "npm run lint && npm run test",
+    "test:watch": "yarn run test --watch",
+    "test:coverage": "yarn run test --coverage",
+    "prerelease": "yarn run verify",
+    "release": "standard-version && git push --follow-tags && builder --ignoreVersioning --publish",
+    "verify": "yarn run lint && yarn run test",
     "prepublishOnly": "pinst --disable && pkg-ok",
     "postpublish": "pinst --enable",
     "prepare": ".husky/prepare"
@@ -51,7 +50,7 @@
     "@types/node": "16.10.3",
     "commitizen": "4.2.4",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.0.0",
+    "eslint": "7.32.0",
     "husky": "7.0.2",
     "jest": "27.2.5",
     "lint-staged": "11.2.3",

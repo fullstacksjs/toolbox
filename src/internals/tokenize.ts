@@ -5,6 +5,9 @@ const camelOrPascalRegex = /[A-Z]/g;
 const snakeRegex = /_./g;
 const kebabRegex = /-./g;
 
+/**
+ * @internal
+ */
 export const hasInvalidCasing = (str: string) =>
   passesMin(
     2,

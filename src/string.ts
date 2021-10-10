@@ -1,4 +1,4 @@
-import { isNullable, isString } from './guards';
+import { isNull, isString } from './guards';
 import { hasInvalidCasing, tokenize } from './internals/tokenize';
 import { testRegex } from './regex';
 
@@ -59,7 +59,7 @@ export const toPascalCase = (str: string) =>
  * check if value is null, undefined or empty string or array
  */
 export const isNullOrEmpty = (x: any[] | string): boolean =>
-  isNullable(x) || x.length === 0;
+  isNull(x) || x.length === 0;
 
 const isWordOrWords = (x: string) => testRegex(/(^.+ .)|(^\S+$)/, x);
 

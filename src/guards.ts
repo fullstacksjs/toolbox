@@ -13,7 +13,8 @@ export const isIterable = <T>(x: any): x is Iterable<T> =>
  * check given value is a functions or not
  */
 export const isFunction = (fn: any): fn is Function => typeof fn === 'function';
+
 /**
  * check given value is nullable (undefined or null)
  */
-export const isNullable = (x: unknown): x is null | undefined => x == null;
+export const isNull = (x: unknown): x is null | undefined => x == null;

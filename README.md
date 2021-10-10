@@ -37,7 +37,7 @@
     - [isString](#isstring)
     - [isIterable](#isiterable)
     - [isFunction](#isfunction)
-    - [isNullable](#isnullable)
+    - [isNull](#isnull)
   - [Number](#number)
     - [safeDivide](#safedivide)
     - [clamp](#clamp)
@@ -52,9 +52,9 @@
     - [toPascalCase](#topascalcase)
     - [isNullOrEmpty](#isnullorempty)
   - [Regex](#regex)
-    - [testRegex](#testRegex)
+    - [testRegex](#testregex)
   - [Error](#error)
-	- [throwErr](#throwerr) 
+    - [throwErr](#throwerr)
 - [Credits](#credits)
 
 ## Installation
@@ -303,16 +303,16 @@ isFunction();         // false
 isFunction(true);     // false
 ```
 
-#### isNullable
+#### isNull
 
 check given value is null or undefined or not
 
 ```typescript
-isNullable(undefined) // true
-isNullable(null)      // true
-isNullable(0)         // false
-isNullable(false);    // false
-isNullable({});       // false
+isNull(undefined) // true
+isNull(null)      // true
+isNull(0)         // false
+isNull(false);    // false
+isNull({});       // false
 ```
 
 ---
@@ -481,7 +481,7 @@ testRegex(r, 'abc') // true
 
 #### throwErr
 
-throws an the given error 
+throws an the given error
 note: (if the given argument is not an instance of the Error class, it converts the value to string with the `String` constructor)
 
 ```typescript

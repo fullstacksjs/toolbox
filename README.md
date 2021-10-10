@@ -24,7 +24,6 @@
     - [getRequiredEnv](#getrequiredenv)
     - [getNodeEnv](#getnodeenv)
     - [is](#is)
-    - [match](#match)
     - [isDev](#isdev)
     - [isProd](#isprod)
     - [isTest](#istest)
@@ -165,10 +164,10 @@ give NODE_ENV value or given fallback value
 getNodeEnv(fallback)
 
 ```typescript
+// NODE_ENV=anything node
 env.getNodeEnv();           // undefined
 env.getNodeEnv('anything'); // 'anything'
-// NODE_ENV=anything
-env.getNodeEnv();           // null
+env.getNodeEnv('not');      // undefined
 ```
 
 #### is
@@ -181,22 +180,9 @@ env.is('development'); // false
 env.is('production');  // true
 ```
 
-#### match
-
-check NODE_ENV starts with given value (case insensitive)
-
-```typescript
-// NODE_ENV=production node
-env.match('prod');        // true
-env.match('PROD');        // true
-env.match('ProductioN');  // true
-env.match('duction');     // false
-env.match('development'); // false
-```
-
 #### isDev
 
-check env matches 'development'
+check env is 'development'
 
 ```typescript
 // NODE_ENV=development node
@@ -205,7 +191,7 @@ env.isDev(); // true
 
 #### isProd
 
-check env matches 'production'
+check env is 'production'
 
 ```typescript
 // NODE_ENV=production node
@@ -214,7 +200,7 @@ env.isProd(); // true
 
 #### isTest
 
-check env matches 'test'
+check env is 'test'
 
 ```typescript
 // NODE_ENV=test node

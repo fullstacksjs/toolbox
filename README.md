@@ -481,14 +481,13 @@ testRegex(r, 'abc') // true
 
 #### throwErr
 
-throws an the given error
-note: (if the given argument is not an instance of the Error class, it converts the value to string with the `String` constructor)
+throws the given value
 
 ```typescript
 throwError(new Error('msg')) // Uncaught Error: msg
-throwErr('error') // Uncaught error
+throwErr('error') // Uncaught 'error'
 throwErr(404) // Uncaught 404
-throwError({}) // Uncaught [object Object]
+throwError({}) // Uncaught {}
 ```
 
 ## Credits

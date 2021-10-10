@@ -1,5 +1,6 @@
 export * from './array';
 export * from './env';
+export * from './error';
 export * from './function';
 export * from './guards';
 export * from './number';

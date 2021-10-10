@@ -1,5 +1,11 @@
 import { fallback, required } from './values';
 
+export type NodeEnv<T = undefined> =
+  | T
+  | 'development'
+  | 'production'
+  | undefined;
+
 /**
  * give NODE_ENV value or given fallback value
  */
@@ -23,38 +29,11 @@ export const getRequiredEnv = (envKey: string, defaultValue?: string): string =>
 /**
  * strict check NODE_ENV with given value
  */
-const is = (value: string): boolean => process.env.NODE_ENV === value;
-
-/**
- * check NODE_ENV starts with given value (case insensitive)
- */
-function match(value: string): boolean {
-  const env = getNodeEnv()?.toLocaleLowerCase();
-  return env?.startsWith(value.toLowerCase()) ?? false;
-}
-
-/**
- * check env matches 'development'
- */
-const matchDev = (): boolean => match('dev');
-
-/**
- * check env matches 'production'
- */
-const matchProd = (): boolean => match('prod');
-
-/**
- * check env matches 'test'
- */
-const matchTest = (): boolean => match('test');
+const is = <T>(value: NodeEnv<T>): boolean => process.env.NODE_ENV === value;
 
 export const Env = {
   is,
-  match,
-  matchDev,
-  matchTest,
-  matchProd,
-  isDev: matchDev(),
-  isProd: matchProd(),
-  isTest: matchTest(),
+  isDev: is('development'),
+  isProd: is('production'),
+  isTest: is('test'),
 };

@@ -1,7 +1,7 @@
 ---
 name: Proposal
 about: Suggest an utility function
-labels: 'issue: proposal'
+labels: 'proposal'
 ---
 
 ### What utility function do you need?

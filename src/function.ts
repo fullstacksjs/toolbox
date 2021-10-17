@@ -1,4 +1,4 @@
-import { isFunction } from './guards';
+import { isFunction } from './guards.js';
 
 /**
  * noop ¯\_(ツ)_/¯

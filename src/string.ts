@@ -1,6 +1,6 @@
-import { isNull, isString } from './guards';
-import { hasInvalidCasing, tokenize } from './internals/tokenize';
-import { testRegex } from './regex';
+import { isNull, isString } from './guards.js';
+import { hasInvalidCasing, tokenize } from './internals/tokenize.js';
+import { testRegex } from './regex.js';
 
 export const toSpaceCase = tokenize;
 

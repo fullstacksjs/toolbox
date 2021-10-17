@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['@fullstacksjs'],
+  extends: ['@fullstacksjs', '@fullstacksjs/eslint-config/esm.js'],
   rules: {
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/array-type': 'off',

@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@frontendmonster/builder": "2.2.0",
-    "@fullstacksjs/eslint-config": "6.7.2",
+    "@fullstacksjs/eslint-config": "6.8.1",
     "@fullstacksjs/tsconfig": "0.6.0",
     "@types/jest": "27.0.2",
     "@types/node": "16.10.3",

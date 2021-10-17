@@ -1,5 +1,5 @@
-import { passesMin } from '../function';
-import { testRegex } from '../regex';
+import { passesMin } from '../function.js';
+import { testRegex } from '../regex.js';
 
 const camelOrPascalRegex = /[A-Z]/g;
 const snakeRegex = /_./g;
@@ -26,6 +26,7 @@ const fromCamelOrPascal = (x: string) =>
       (match, offset: number) => (offset > 0 ? ' ' : '') + match,
     )
     .toLowerCase();
+
 const fromSnake = (x: string) =>
   x
     .replace(

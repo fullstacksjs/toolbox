@@ -1,4 +1,4 @@
-import { isIterable, isNull, isString } from './guards';
+import { isIterable, isNull, isString } from './guards.js';
 
 /**
  * wrap value with array if value is not an array itself.

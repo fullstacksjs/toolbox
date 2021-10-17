@@ -1,4 +1,4 @@
-import { fallback, required } from './values';
+import { fallback, required } from './values.js';
 
 export type NodeEnv<T = undefined> =
   | T

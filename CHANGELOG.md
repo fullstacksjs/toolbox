@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/fullstacksjs/utils/compare/v2.0.1...v2.0.2) (2021-10-17)
+
+
+### Bug Fixes
+
+* configure test runner for es modules ([8489fa3](https://github.com/fullstacksjs/utils/commit/8489fa331945f150424721171105296abad250b6))
+* fix esm module resolve issue ([2f8c318](https://github.com/fullstacksjs/utils/commit/2f8c318ceaddecee36b5d32fdcbc5159a1cf2934))
+
 ### [2.0.1](https://github.com/fullstacksjs/utils/compare/v2.0.0...v2.0.1) (2021-10-10)
 
 ## [2.0.0](https://github.com/fullstacksjs/utils/compare/v1.3.0...v2.0.0) (2021-10-10)

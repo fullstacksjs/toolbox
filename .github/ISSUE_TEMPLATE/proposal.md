@@ -4,6 +4,12 @@ about: Suggest an utility function
 labels: 'proposal'
 ---
 
+### Function signature
+
+```typescript
+(Write your function signature here.)
+```
+
 ### What utility function do you need?
 
 <!--

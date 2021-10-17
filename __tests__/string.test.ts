@@ -3,6 +3,7 @@ import {
   crlfToLf,
   getInitials,
   isNullOrEmpty,
+  removeTrailingSlash,
   toCamelCase,
   toCapitalCase,
   toKebabCase,
@@ -207,6 +208,22 @@ describe('string', () => {
 
     it('should return false for non-empty string', () => {
       expect(isNullOrEmpty('f')).toBe(false);
+    });
+  });
+});
+
+describe('removeTrailingSlash', () => {
+  const testCases = {
+    '': '',
+    '/': '',
+    'string': 'string',
+    'string/': 'string',
+    'string//': 'string',
+  };
+
+  Object.entries(testCases).forEach(([value, result]) => {
+    it(`should return ${result} for ${value} as input`, () => {
+      expect(removeTrailingSlash(value)).toBe(result);
     });
   });
 });

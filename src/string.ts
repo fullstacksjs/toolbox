@@ -78,3 +78,9 @@ export const getInitials = (name: string, fallback: string = '?'): string =>
         .map(v => (isNullOrEmpty(v) ? '' : v?.[0]?.toUpperCase()))
         .join('')
     : fallback;
+
+/**
+ * removing trailing slash from a string
+ */
+export const removeTrailingSlash = (str: string): string =>
+  str.replace(/\//g, '');

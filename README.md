@@ -146,14 +146,13 @@ env.getEnv('BAR', 'bar'); // bar
 
 #### getRequiredEnv
 
-get environment variable or given fallback or throw
+get environment variable or throw
 
-getRequiredEnv(name, fallback)
+getRequiredEnv(name)
 
 ```typescript
 // FOO=foo BAR=bar node
 env.getRequiredEnv('FOO');        // foo
-env.getRequiredEnv('BAR', 'bar'); // bar
 env.getRequiredEnv('BAR');        // Error: BAR is required
 ```
 

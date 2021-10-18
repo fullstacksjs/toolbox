@@ -23,8 +23,8 @@ export const getNodeEnv = (defaultValue?: string): string | undefined =>
 /**
  * returns NODE_ENV value or given fallback otherwise throws
  */
-export const getRequiredEnv = (envKey: string, defaultValue?: string): string =>
-  required(getEnv(envKey, defaultValue), envKey);
+export const getRequiredEnv = (envKey: string): string =>
+  required(getEnv(envKey), envKey);
 
 /**
  * strict check NODE_ENV with given value

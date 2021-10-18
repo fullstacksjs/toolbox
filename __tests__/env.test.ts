@@ -48,15 +48,9 @@ describe('env', () => {
   });
 
   describe('getRequiredEnv', () => {
-    it('should throw if env and fallback missing', () => {
+    it('should throw if env missing', () => {
       const key = 'key';
       expect(() => getRequiredEnv(key)).toThrowError();
-    });
-
-    it('should return fallback if fallback present', () => {
-      const key = 'key';
-      const fallback = 'fallback';
-      expect(getRequiredEnv(key, fallback)).toBe(fallback);
     });
 
     it('should return value if present', () => {
@@ -64,14 +58,6 @@ describe('env', () => {
       const value = 'value';
       process.env[key] = value;
       expect(getRequiredEnv(key)).toBe(value);
-    });
-
-    it('should return value if both value and fallback present', () => {
-      const key = 'key';
-      const fallback = 'fallback';
-      const value = 'value';
-      process.env[key] = value;
-      expect(getRequiredEnv(key, fallback)).toBe(value);
     });
   });
 

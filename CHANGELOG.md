@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/fullstacksjs/utils/compare/v2.0.2...v2.2.0) (2021-10-19)
+
+
+### Features
+
+* add removeTrailingSlash ([12a88ff](https://github.com/fullstacksjs/utils/commit/12a88ff23bbd77250696dfc6d44105dafc6fcff2))
+
+
+### Bug Fixes
+
+* **function:** fix callAll type ([0cefdc3](https://github.com/fullstacksjs/utils/commit/0cefdc3853c48c13c9db4557363bc9c25557b0f4))
+
 ## [2.1.0](https://github.com/fullstacksjs/utils/compare/v2.0.2...v2.1.0) (2021-10-17)
 
 

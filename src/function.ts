@@ -9,7 +9,7 @@ export const noop = (): void => undefined;
  * call given functions with an args safely
  */
 export const callAll =
-  (...fns: Function[]) =>
+  (...fns: (Function | null | undefined)[]) =>
   (...args: any) =>
     fns.forEach(fn => {
       if (isFunction(fn)) fn(...args);

@@ -1,4 +1,5 @@
-import { isIterable, isNull, isString } from './guards.js';
+import { isIterable, isNull, isString } from './guards';
+import { randomInt } from './number';
 
 /**
  * wrap value with array if value is not an array itself.
@@ -37,3 +38,8 @@ export const toArray: ToArray = <T>(
 export const concatNullableArrays = (...args: any[]) =>
   args?.map(arr => arr ?? [])?.reduce((curr, arr) => curr.concat(arr), []) ??
   [];
+
+export const getRandom = <T>(arr: T[]) => {
+  const randomIndex = randomInt({ max: arr.length - 1 });
+  return arr[randomIndex];
+};

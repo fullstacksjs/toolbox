@@ -2,6 +2,7 @@ import {
   concatNullableArrays,
   copyArray,
   ensureArray,
+  getRandom,
   range,
   shuffle,
   toArray,
@@ -150,6 +151,20 @@ describe('array', () => {
       const copy = copyArray(array);
 
       expect(array).toEqual(copy);
+    });
+  });
+
+  describe('getRandom', () => {
+    it('should return undefined when given empty array', () => {
+      expect(getRandom([])).toEqual(undefined);
+    });
+
+    it('should return first element for array with one element', () => {
+      expect(getRandom([1])).toEqual(1);
+    });
+
+    it('should return one random element of array', () => {
+      expect([1, 2, 3]).toContain(getRandom([1, 2, 3]));
     });
   });
 });

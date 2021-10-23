@@ -1,6 +1,7 @@
 import {
   concatNullableArrays,
   ensureArray,
+  getRandom,
   range,
   toArray,
 } from '../src/array';
@@ -107,6 +108,17 @@ describe('array', () => {
 
     it('should act as identity for single array argument', () => {
       expect(concatNullableArrays([1, 2])).toEqual([1, 2]);
+    });
+  });
+  describe('getRandom', () => {
+    it('should return undefined when given empty array', () => {
+      expect(getRandom([])).toEqual(undefined);
+    });
+    it('should return first element for array with one element', () => {
+      expect(getRandom([1])).toEqual(1);
+    });
+    it('should return one random element of array', () => {
+      expect([1, 2, 3]).toContain(getRandom([1, 2, 3]));
     });
   });
 });

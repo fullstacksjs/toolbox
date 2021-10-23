@@ -1,4 +1,6 @@
 import { isIterable, isNull, isString } from './guards.js';
+import { randomInt } from './number.js';
+
 /**
  * wrap value with array if value is not an array itself.
  */
@@ -52,3 +54,8 @@ export const copyArray = <T extends any[]>(arr: T) => arr.slice() as T;
  */
 export const shuffle = <T extends any[]>(arr: T): T =>
   copyArray(arr).sort(() => (Math.random() < 0.5 ? 1 : -1));
+
+export const getRandom = <T>(arr: T[]) => {
+  const randomIndex = randomInt({ max: arr.length - 1 });
+  return arr[randomIndex];
+};

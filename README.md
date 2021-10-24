@@ -4,7 +4,8 @@
 
 <br/>
 
-![download status][download-badge] ![version][version-badge]
+![download status][download-badge]
+![version][version-badge]
 ![MIT License][license-badge]
 
 </div>
@@ -26,7 +27,6 @@
     - [getRequiredEnv](#getrequiredenv)
     - [getNodeEnv](#getnodeenv)
     - [is](#is)
-    - [match](#match)
     - [isDev](#isdev)
     - [isProd](#isprod)
     - [isTest](#istest)
@@ -89,11 +89,11 @@ force a value to an array
 ensureArray(value)
 
 ```typescript
-ensureArray(null); // [null]
-ensureArray(undefined); // [undefined]
-ensureArray('string'); // ['string']
-ensureArray(['array']); // ['array']
-ensureArray([1, 2, 3]); // [1, 2, 3]
+ensureArray(null);           // [null]
+ensureArray(undefined);      // [undefined]
+ensureArray('string');       // ['string']
+ensureArray(['array']);      // ['array']
+ensureArray([1, 2, 3]);      // [1, 2, 3]
 ensureArray({ foo: 'bar' }); // [{ foo: 'bar' }]
 ```
 
@@ -114,10 +114,10 @@ create array of length n with from offset with an step
 range(length, { offset, step })
 
 ```typescript
-range(0); // []
-range(10); // [0,1,2,3,4,5,6,7,8,9]
-range(3, { offset: 5 }); // [5,6,7]
-range(3, { offset: -2, step: 10 }); // [-2, 8, 18]
+range(0);                          // []
+range(10);                         // [0,1,2,3,4,5,6,7,8,9]
+range(3, { offset: 5 });           // [5,6,7]
+range(3, { offset: -2, step: 10}); // [-2, 8, 18]
 ```
 
 #### toArray
@@ -127,12 +127,12 @@ Convert a value to an array
 toArray(value)
 
 ```typescript
-toArray(null); // []
-toArray(undefined); // []
-toArray('string'); // ['string']
-toArray(['array']); // ['array']
+toArray(null);       // []
+toArray(undefined);  // []
+toArray('string');   // ['string']
+toArray(['array']);  // ['array']
 toArray(iteratable); // [...iteratable]
-toArray(others); // [others]
+toArray(others);     // [others]
 ```
 
 #### copayArray
@@ -159,14 +159,13 @@ copyArray([1, 2, 3 ,4 , 5]);  // [2, 1, 3, 4, 5]
 concatNullableArrays(...maybeArrays)
 
 ```typescript
-concatNullableArrays(null); // []
-concatNullableArrays(undefined); // []
-concatNullableArrays([]); // []
-concatNullableArrays([1]); // [1]
-concatNullableArrays(undefined, [1, 2], null); // [1,2]
+concatNullableArrays(null);                            // []
+concatNullableArrays(undefined);                       // []
+concatNullableArrays([]);                              // []
+concatNullableArrays([1]);                             // [1]
+concatNullableArrays(undefined, [1, 2], null);         // [1,2]
 concatNullableArrays(undefined, [1, 2], null, [2, 3]); // [1, 2, 2, 3]
 ```
-
 ---
 
 ### Env
@@ -179,8 +178,8 @@ getEnv(name, fallback)
 
 ```typescript
 // FOO=foo BAR=bar node
-env.getEnv('FOO'); // foo
-env.getEnv('BAR'); // undefined
+env.getEnv('FOO');        // foo
+env.getEnv('BAR');        // undefined
 env.getEnv('BAR', 'bar'); // bar
 ```
 
@@ -192,9 +191,8 @@ getRequiredEnv(name)
 
 ```typescript
 // FOO=foo BAR=bar node
-env.getRequiredEnv('FOO'); // foo
-env.getRequiredEnv('BAR', 'bar'); // bar
-env.getRequiredEnv('BAR'); // Error: BAR is required
+env.getRequiredEnv('FOO');        // foo
+env.getRequiredEnv('BAR');        // Error: BAR is required
 ```
 
 #### getNodeEnv
@@ -204,10 +202,10 @@ give NODE_ENV value or given fallback value
 getNodeEnv(fallback)
 
 ```typescript
-env.getNodeEnv(); // undefined
+// NODE_ENV=anything node
+env.getNodeEnv();           // undefined
 env.getNodeEnv('anything'); // 'anything'
-// NODE_ENV=anything
-env.getNodeEnv(); // null
+env.getNodeEnv('not');      // undefined
 ```
 
 #### is
@@ -217,20 +215,7 @@ strict check NODE_ENV with given value
 ```typescript
 // NODE_ENV=production node
 env.is('development'); // false
-env.is('production'); // true
-```
-
-#### match
-
-check NODE_ENV starts with given value (case insensitive)
-
-```typescript
-// NODE_ENV=production node
-env.match('prod'); // true
-env.match('PROD'); // true
-env.match('ProductioN'); // true
-env.match('duction'); // false
-env.match('development'); // false
+env.is('production');  // true
 ```
 
 #### isDev
@@ -266,10 +251,10 @@ env.isTest(); // true
 
 #### noop
 
-No operation ¯\\\_(ツ)\_/¯
+No operation ¯\\\_(ツ)_/¯
 
 ```typescript
-noop(); // undefined
+  noop() // undefined
 ```
 
 #### callAll
@@ -277,8 +262,8 @@ noop(); // undefined
 HOC that call all given functions
 
 ```typescript
-callAll(foo, bar, baz)(...args); // void (foo(...args), bar(...args), baz(...args));
-callAll(bar, 'string', 5, null, undefined, baz)(...args); // void (bar(...args), baz(...args));
+  callAll(foo, bar, baz)(...args)                         // void (foo(...args), bar(...args), baz(...args));
+  callAll(bar,'string', 5, null, undefined, baz)(...args) // void (bar(...args), baz(...args));
 ```
 
 #### not
@@ -286,28 +271,24 @@ callAll(bar, 'string', 5, null, undefined, baz)(...args); // void (bar(...args),
 returns the "NOT" of its argument
 
 ```typescript
-not(true); // false
-not(false); // true
-not(0); // true
+  not(true)  // false
+  not(false) // true
+  not(0)     // true
 ```
-
 #### passesMin
 
-returns true if specified minimum predicates pass the given value otherwise
-false
-
+returns true if specified minimum predicates pass the given value otherwise false
 ```typescript
-const isDivisibleBy3 = x => x % 3 === 0;
-const isDivisibleBy5 = x => x % 5 === 0;
-const isLargerThan25 = x => x > 25;
+const isDivisibleBy3 = x => x % 3 === 0
+const isDivisibleBy5 = x => x % 5 === 0
+const isLargerThan25 = x => x > 25
 
-const isValidNumber = x =>
-  passesMin(2, [isDivisibleBy3, isDivisibleBy5, isSmallerThan25], x);
+const isValidNumber = x => passesMin(2, [isDivisibleBy3, isDivisibleBy5, isSmallerThan25], x);
 
-isValidNumber(15); //returns true because its divisible by 5 and 3
-isValidNumber(3); //returns false because its only divisible by 3
-isValidNumber(26); //returns false because its only larger than 25
-isValidNumber(30); //returns true because its passes minimum 2 cases (being divisible by 5 and 3 and larger than 25)
+isValidNumber(15) //returns true because its divisible by 5 and 3
+isValidNumber(3)  //returns false because its only divisible by 3
+isValidNumber(26) //returns false because its only larger than 25
+isValidNumber(30) //returns true because its passes minimum 2 cases (being divisible by 5 and 3 and larger than 25)
 ```
 
 ### Guards
@@ -317,10 +298,10 @@ isValidNumber(30); //returns true because its passes minimum 2 cases (being divi
 check given value is string or not
 
 ```typescript
-isString(); // false
-isString(1); // false
+isString();      // false
+isString(1);     // false
 isString(['1']); // false
-isString('1'); // true
+isString('1');   // true
 ```
 
 #### isIterable
@@ -328,12 +309,12 @@ isString('1'); // true
 check given value is iterable or not
 
 ```typescript
-isIterable([]); // true
-isIterable(new Map()); // true
-isIterable({ [Symbol.iterator]() {} }); // true
-isIterable('some'); // true
-isIterable({}); // false
-isIterable(); // false
+isIterable([]);                           // true
+isIterable(new Map());                    // true
+isIterable({ [Symbol.iterator]() { } });  // true
+isIterable('some');                       // true
+isIterable({});                           // false
+isIterable();                             // false
 ```
 
 #### isFunction
@@ -342,8 +323,8 @@ check given value is function or not
 
 ```typescript
 isFunction(() => {}); // true
-isFunction(); // false
-isFunction(true); // false
+isFunction();         // false
+isFunction(true);     // false
 ```
 
 #### isNull
@@ -395,11 +376,11 @@ isNotNull(NaN);      // false
 divide two numbers returns fallback if result is not a finite number
 
 ```typescript
-safeDivide(4, 2); // 2
-safeDivide(4, 0); // 0
-safeDivide(null, NaN); // 0
+safeDivide(4, 2);          // 2
+safeDivide(4, 0);          // 0
+safeDivide(null, NaN);     // 0
 safeDivide(null, NaN, 10); // 10
-safeDivide(4, 0, 'Oops'); // 'Oops'
+safeDivide(4, 0, 'Oops');  // 'Oops'
 ```
 
 #### clamp
@@ -407,11 +388,11 @@ safeDivide(4, 0, 'Oops'); // 'Oops'
 clamp a number between two values
 
 ```typescript
-clamp(-10); // 0
-clamp(10); // 1
-clamp(-10, { min: -5 }); // -5
-clamp(30, { max: 20 }); // 20
-clamp(5, { min: -20, max: 20 }); // 5
+clamp(-10);                        // 0
+clamp(10);                         // 1
+clamp(-10, { min: -5 });           // -5
+clamp(30 , { max: 20 });           // 20
+clamp(5  , { min: -20, max: 20 }); // 5
 ```
 
 #### randomInt
@@ -419,10 +400,10 @@ clamp(5, { min: -20, max: 20 }); // 5
 generate random integer number between range.
 
 ```typescript
-randomRange(); // <random> 0 -> Number.MAX_SAFE_INTEGER
+randomRange();                      // <random> 0 -> Number.MAX_SAFE_INTEGER
 randomRange({ min: -10, max: 50 }); // <random> -10 -> 50
-randomRange({ max: 50 }); // <random> 0 -> 50
-randomRange({ min: 50 }); // <random> 50 -> Number.MAX_SAFE_INTEGER
+randomRange({ max: 50 });           // <random> 0 -> 50
+randomRange({ min: 50 });           // <random> 50 -> Number.MAX_SAFE_INTEGER
 ```
 
 #### toInteger
@@ -439,9 +420,9 @@ toInteger('1.42'); // 1
 Checks if num is between min and max (and including borders).
 
 ```typescript
-isInRange(100, { min: 0, max: 50 }); // false
-isInRange(100, { min: 0, max: 100 }); // true
-isInRange(100, { min: 50, max: 150 }); // true
+isInRange(100, { min: 0  , max: 50  }); // false
+isInRange(100, { min: 0  , max: 100 }); // true
+isInRange(100, { min: 50 , max: 150 }); // true
 isInRange(100, { min: 100, max: 150 }); // true
 ```
 
@@ -452,69 +433,68 @@ isInRange(100, { min: 100, max: 150 }); // true
 convert any casing to space separated lowercase
 
 ```typescript
-toSpaceCase(''); // ''
-toSpaceCase('foo bar'); // 'foo bar'
-toSpaceCase('foo-bar'); // 'foo bar'
-toSpaceCase('fooBar'); // 'foo bar'
-toSpaceCase('foo_bar'); // 'foo bar'
-toSpaceCase('FOO-barCode'); // 'foo bar code'
+toSpaceCase('');              // ''
+toSpaceCase('foo bar');       // 'foo bar'
+toSpaceCase('foo-bar');       // 'foo bar'
+toSpaceCase('fooBar');        // 'foo bar'
+toSpaceCase('foo_bar');       // 'foo bar'
+toSpaceCase('FOO-barCode');   // 'foo bar code'
 toSpaceCase('foo -bar _BAZ'); // 'foo -bar _baz'
 ```
 
 #### toCamelCase
 
-transforms a valid casing to camelCase if the given value is invalid it just
-returns the input
+transforms a valid casing to camelCase
+if the given value is invalid it just returns the input
 
 ```typescript
-toCamelCase(''); // ''
-toCamelCase('foo bar'); // 'fooBar'
-toCamelCase('foo-bar'); // 'fooBar'
-toCamelCase('fooBar'); // 'fooBar'
-toCamelCase('foo_bar'); // 'fooBar'
-toCamelCase('FOO-barCode'); // 'FOO-barCode'
+toCamelCase('');              // ''
+toCamelCase('foo bar');       // 'fooBar'
+toCamelCase('foo-bar');       // 'fooBar'
+toCamelCase('fooBar');        // 'fooBar'
+toCamelCase('foo_bar');       // 'fooBar'
+toCamelCase('FOO-barCode');   // 'FOO-barCode'
 ```
 
 #### toSnakeCase
 
-transforms a valid casing to snake_case if the given value is invalid it just
-returns the input
+transforms a valid casing to snake_case
+if the given value is invalid it just returns the input
 
 ```typescript
-toCamelCase(''); // ''
-toCamelCase('foo bar'); // 'foo_bar'
-toCamelCase('foo-bar'); // 'foo_bar'
-toCamelCase('fooBar'); // 'foo_bar'
-toCamelCase('foo_bar'); // 'foo_bar'
-toCamelCase('FOO-barCode'); // 'FOO-barCode'
+toCamelCase('');              // ''
+toCamelCase('foo bar');       // 'foo_bar'
+toCamelCase('foo-bar');       // 'foo_bar'
+toCamelCase('fooBar');        // 'foo_bar'
+toCamelCase('foo_bar');       // 'foo_bar'
+toCamelCase('FOO-barCode');   // 'FOO-barCode'
 ```
 
 #### toKebabCase
 
-transforms a valid casing to kebab-case if the given value is invalid it just
-returns the input
+transforms a valid casing to kebab-case
+if the given value is invalid it just returns the input
 
 ```typescript
-toCamelCase(''); // ''
-toCamelCase('foo bar'); // 'foo-bar'
-toCamelCase('foo-bar'); // 'foo-bar'
-toCamelCase('fooBar'); // 'foo-bar'
-toCamelCase('foo_bar'); // 'foo-bar'
-toCamelCase('FOO-barCode'); // 'FOO-barCode'
+toCamelCase('');              // ''
+toCamelCase('foo bar');       // 'foo-bar'
+toCamelCase('foo-bar');       // 'foo-bar'
+toCamelCase('fooBar');        // 'foo-bar'
+toCamelCase('foo_bar');       // 'foo-bar'
+toCamelCase('FOO-barCode');   // 'FOO-barCode'
 ```
-
 #### toPascalCase
 
-transforms a valid casing to PascalCase if the given value is invalid it just
-returns the input
+transforms a valid casing to PascalCase
+if the given value is invalid it just returns the input
 
 ```typescript
-toCamelCase(''); // ''
-toCamelCase('foo bar'); // 'FooBar'
-toCamelCase('foo-bar'); // 'FooBar'
-toCamelCase('fooBar'); // 'FooBar'
-toCamelCase('foo_bar'); // 'FooBar'
-toCamelCase('FOO-barCode'); // 'FOO-barCode'
+toCamelCase('');              // ''
+toCamelCase('foo bar');       // 'FooBar'
+toCamelCase('foo-bar');       // 'FooBar'
+toCamelCase('fooBar');        // 'FooBar'
+toCamelCase('foo_bar');       // 'FooBar'
+toCamelCase('FOO-barCode');   // 'FOO-barCode'
 ```
 
 #### isNullOrEmpty
@@ -522,16 +502,15 @@ toCamelCase('FOO-barCode'); // 'FOO-barCode'
 check given value is null/undefined/empty string/array or not
 
 ```typescript
-isNullOrEmpty(); // true
-isNullOrEmpty(null); // true
+isNullOrEmpty();          // true
+isNullOrEmpty(null);      // true
 isNullOrEmpty(undefined); // true
-isNullOrEmpty(''); // true
-isNullOrEmpty('f'); // false
-isNullOrEmpty(1); // false
-isNullOrEmpty([]); // true
-isNullOrEmpty([1, 2, 3]); // false
+isNullOrEmpty('');        // true
+isNullOrEmpty('f');       // false
+isNullOrEmpty(1);         // false
+isNullOrEmpty([]);        // true
+isNullOrEmpty([1,2,3]);   // false
 ```
-
 ### Regex
 
 #### testRegex
@@ -543,12 +522,12 @@ testRegex(/[A-Z]/, "Abc")     // true
 testRegex(/^\d+$/, "2021")    // true
 testRegex(/[a-z]/, "( ͡° ͜ʖ ͡°)")  // false
 
-const r = /abc/g;
-r.test('abc'); // true
-r.test('abc'); // false
+const r = /abc/g
+r.test('abc') // true
+r.test('abc') // false
 
-testRegex(r, 'abc'); // true
-testRegex(r, 'abc'); // true
+testRegex(r, 'abc') // true
+testRegex(r, 'abc') // true
 ```
 
 ### Error
@@ -613,11 +592,7 @@ type Predicate<number> // (a: number) => boolean;
 
 <div>Icons made by <a href="https://www.flaticon.com/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
-[logo]:
-  https://raw.githubusercontent.com/fullstacksjs/toolbox/master/assets/logo.svg
-[download-badge]:
-  https://img.shields.io/npm/dm/@fullstacksjs/toolbox?color=6464E2&label=DOWNLOADS&style=flat-square
-[version-badge]:
-  https://img.shields.io/npm/v/@fullstacksjs/toolbox?color=6464E2&label=VERSION&style=flat-square
-[license-badge]:
-  https://img.shields.io/npm/l/@fullstacksjs/toolbox?color=6464E2&label=LICENSE&style=flat-square
+[logo]: https://raw.githubusercontent.com/fullstacksjs/toolbox/master/assets/logo.svg
+[download-badge]: https://img.shields.io/npm/dm/@fullstacksjs/toolbox?color=6464E2&label=DOWNLOADS&style=flat-square
+[version-badge]: https://img.shields.io/npm/v/@fullstacksjs/toolbox?color=6464E2&label=VERSION&style=flat-square
+[license-badge]: https://img.shields.io/npm/l/@fullstacksjs/toolbox?color=6464E2&label=LICENSE&style=flat-square

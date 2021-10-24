@@ -1,5 +1,5 @@
-import { isIterable, isNull, isString } from './guards';
-import { randomInt } from './number';
+import { isIterable, isNull, isString } from './guards.js';
+import { randomInt } from './number.js';
 
 /**
  * wrap value with array if value is not an array itself.

@@ -5,24 +5,11 @@ All notable changes to this project will be documented in this file. See [standa
 ## [2.4.0](https://github.com/fullstacksjs/utils/compare/v2.0.2...v2.4.0) (2021-10-25)
 
 
-### Features
-
-* add removeTrailingSlash ([12a88ff](https://github.com/fullstacksjs/utils/commit/12a88ff23bbd77250696dfc6d44105dafc6fcff2))
-* remove getRequiredEnv fallback value ([91768ed](https://github.com/fullstacksjs/utils/commit/91768edfa8bf3beb60ec0c9d0ddf69188b5c4dd9))
-
-
 ### Bug Fixes
 
-* **function:** fix callAll type ([aa2ef41](https://github.com/fullstacksjs/utils/commit/aa2ef41b2e93d9a54988e8400eb74a2865503414))
 * **string:** isNullOrEmpty should accept null and undefined as input ([aad82d6](https://github.com/fullstacksjs/utils/commit/aad82d6c7faae7da1c692ec6164ba72a15a42f3b))
 
 ## [2.3.0](https://github.com/fullstacksjs/utils/compare/v2.0.2...v2.3.0) (2021-10-19)
-
-
-### Features
-
-* add removeTrailingSlash ([12a88ff](https://github.com/fullstacksjs/utils/commit/12a88ff23bbd77250696dfc6d44105dafc6fcff2))
-* remove getRequiredEnv fallback value ([91768ed](https://github.com/fullstacksjs/utils/commit/91768edfa8bf3beb60ec0c9d0ddf69188b5c4dd9))
 
 
 ### Bug Fixes
@@ -34,7 +21,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* add removeTrailingSlash ([12a88ff](https://github.com/fullstacksjs/utils/commit/12a88ff23bbd77250696dfc6d44105dafc6fcff2))
 * remove getRequiredEnv fallback value ([91768ed](https://github.com/fullstacksjs/utils/commit/91768edfa8bf3beb60ec0c9d0ddf69188b5c4dd9))
 
 

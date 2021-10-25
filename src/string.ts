@@ -58,7 +58,7 @@ export const toPascalCase = (str: string) =>
 /**
  * check if value is null, undefined or empty string or array
  */
-export const isNullOrEmpty = (x: any[] | string): boolean =>
+export const isNullOrEmpty = (x: any[] | string | null | undefined): boolean =>
   isNull(x) || x.length === 0;
 
 const isWordOrWords = (x: string) => testRegex(/(^.+ .)|(^\S+$)/, x);

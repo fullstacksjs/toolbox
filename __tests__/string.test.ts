@@ -183,11 +183,11 @@ describe('string', () => {
 
   describe('isNullOrEmpty', () => {
     it('should return true for null', () => {
-      expect(isNullOrEmpty(null as any)).toBe(true);
+      expect(isNullOrEmpty(null)).toBe(true);
     });
 
     it('should return true for undefined', () => {
-      expect(isNullOrEmpty(undefined as any)).toBe(true);
+      expect(isNullOrEmpty(undefined)).toBe(true);
     });
 
     it('should return true for empty string', () => {

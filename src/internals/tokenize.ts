@@ -1,7 +1,7 @@
 import { passesMin } from '../function.js';
 import { testRegex } from '../regex.js';
 
-const camelOrPascalRegex = /[A-Z]/g;
+const camelOrPascalRegex = /[A-Z][a-z]+/g;
 const snakeRegex = /_./g;
 const kebabRegex = /-./g;
 
@@ -55,5 +55,5 @@ export const tokenize = (str: string): string => {
   if (testRegex(snakeRegex, str)) return fromSnake(str);
   if (testRegex(kebabRegex, str)) return fromKebab(str);
   if (testRegex(camelOrPascalRegex, str)) return fromCamelOrPascal(str);
-  return str;
+  return str.toLowerCase();
 };

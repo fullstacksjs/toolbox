@@ -19,7 +19,7 @@ labels: 'bug report'
 ### Actual behavior
 
 <!--
-  What's current behavior?
+  What's the current behavior?
 -->
 
 (Write what happened.)

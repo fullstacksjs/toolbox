@@ -68,6 +68,8 @@ describe('string', () => {
       'foo-bar-code': 'foo bar code',
       'fooBarCode': 'foo bar code',
       'foo_bar_code': 'foo bar code',
+      'FOO_BAR_CODE': 'foo bar code',
+      'FOO BAR CODE': 'foo bar code',
       'foo_ -BaRC ode': 'foo_ -BaRC ode',
     };
 
@@ -91,6 +93,7 @@ describe('string', () => {
       'foo-bar-code': 'fooBarCode',
       'fooBarCode': 'fooBarCode',
       'foo_bar_code': 'fooBarCode',
+      'FOO_BAR_CODE': 'fooBarCode',
       'foo_ -BaRC ode': 'foo_ -BaRC ode',
     };
     Object.entries(testCases).forEach(([value, result]) => {
@@ -113,6 +116,7 @@ describe('string', () => {
       'foo-bar-code': 'FooBarCode',
       'fooBarCode': 'FooBarCode',
       'foo_bar_code': 'FooBarCode',
+      'FOO_BAR_CODE': 'FooBarCode',
       'foo_ -BaRC ode': 'foo_ -BaRC ode',
     };
     Object.entries(testCases).forEach(([value, result]) => {
@@ -135,6 +139,7 @@ describe('string', () => {
       'foo-bar-code': 'foo_bar_code',
       'fooBarCode': 'foo_bar_code',
       'foo_bar_code': 'foo_bar_code',
+      'FOO_BAR_CODE': 'foo_bar_code',
       'foo_ -BaRC ode': 'foo_ -BaRC ode',
     };
 
@@ -157,6 +162,7 @@ describe('string', () => {
       'foo-bar-code': 'foo-bar-code',
       'fooBarCode': 'foo-bar-code',
       'foo_bar_code': 'foo-bar-code',
+      'FOO_BAR_CODE': 'foo-bar-code',
       'foo_ -BaRC ode': 'foo_ -BaRC ode',
     };
     Object.entries(testCases).forEach(([value, result]) => {

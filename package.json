@@ -36,7 +36,7 @@
     "test:watch": "yarn run test --watch",
     "test:coverage": "yarn run test --coverage",
     "prerelease": "yarn run verify",
-    "release": "standard-version && git push --follow-tags && builder --ignoreVersioning --publish",
+    "release": "standard-version && builder --ignoreVersioning --publish && git push --follow-tags --no-verify",
     "verify": "yarn run lint && yarn run test",
     "prepublishOnly": "pinst --disable && pkg-ok",
     "postpublish": "pinst --enable",

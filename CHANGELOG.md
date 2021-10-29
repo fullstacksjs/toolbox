@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.7.0](https://github.com/fullstacksjs/utils/compare/v2.5.0...v2.7.0) (2021-10-29)
+
+
+### Features
+
+* **guards:** add isNotNull and isTruthy ([4596e2c](https://github.com/fullstacksjs/utils/commit/4596e2c313c9b4846e57246c983438421d6c928a))
+* **types:** add CamelCase type ([b6f9e0a](https://github.com/fullstacksjs/utils/commit/b6f9e0adc83647fcd94a1a47ce53314b7956e2d7))
+
 ## [2.6.0](https://github.com/fullstacksjs/utils/compare/v2.5.0...v2.6.0) (2021-10-29)
 
 

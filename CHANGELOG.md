@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.6.0](https://github.com/fullstacksjs/utils/compare/v2.5.0...v2.6.0) (2021-10-29)
+
+
+### Features
+
+* **guards:** add isNotNull and isTruthy ([029a037](https://github.com/fullstacksjs/utils/commit/029a037f9088e1069aebb057c0097d6876f00573))
+
 ## [2.5.0](https://github.com/fullstacksjs/utils/compare/v2.0.2...v2.5.0) (2021-10-26)
 
 

@@ -29,13 +29,16 @@ describe('string', () => {
         expect(getInitials(value)).toBe(result);
       });
     });
+
     it(`should return ? for null as input`, () => {
       expect(getInitials(null as any as string)).toBe('?');
     });
+
     it(`should return ? for objects as input`, () => {
       expect(getInitials({ str: 'string' } as any as string)).toBe('?');
     });
   });
+
   describe('crlfToLf', () => {
     const testCases = {
       '': '',
@@ -149,6 +152,7 @@ describe('string', () => {
       });
     });
   });
+
   describe('toKebabCase', () => {
     const testCases = {
       '': '',
@@ -171,6 +175,7 @@ describe('string', () => {
       });
     });
   });
+
   describe('toCapitalCase', () => {
     const testCases = {
       '': '',

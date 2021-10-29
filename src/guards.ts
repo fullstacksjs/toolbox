@@ -1,3 +1,5 @@
+import { Truthy } from './types';
+
 /**
  * check given value is string or not
  */
@@ -18,3 +20,14 @@ export const isFunction = (fn: any): fn is Function => typeof fn === 'function';
  * check given value is nullable (undefined or null)
  */
 export const isNull = (x: unknown): x is null | undefined => x == null;
+
+/**
+ * check given value is not nullable (undefined or null)
+ */
+export const isNotNull = <T>(value: T): value is NonNullable<T> =>
+  value != null;
+
+/**
+ * check given value is truthy
+ */
+export const isTruthy = <T>(value: T): value is Truthy<T> => Boolean(value);

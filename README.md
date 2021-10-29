@@ -37,6 +37,8 @@
     - [isIterable](#isiterable)
     - [isFunction](#isfunction)
     - [isNull](#isnull)
+    - [isNotNull](#isnotnull)
+    - [isTruthy](#istruthy)
   - [Number](#number)
     - [safeDivide](#safedivide)
     - [clamp](#clamp)
@@ -290,7 +292,7 @@ isFunction(true);     // false
 
 #### isNull
 
-check given value is null or undefined or not
+check given value is either null or undefined
 
 ```typescript
 isNull(undefined) // true
@@ -298,6 +300,34 @@ isNull(null)      // true
 isNull(0)         // false
 isNull(false);    // false
 isNull({});       // false
+isNotNull([]);    // false
+```
+
+#### isNotNull
+
+check given value is neither null nor undefined
+
+```typescript
+isNotNull(undefined) // false
+isNotNull(null)      // false
+isNotNull(0)         // true
+isNotNull(false);    // true
+isNotNull({});       // true
+isNotNull([]);       // true
+```
+
+#### isTruthy
+
+check given value is truthy
+
+```typescript
+isNotNull(undefined) // false
+isNotNull(null)      // false
+isNotNull(0)         // false
+isNotNull(false);    // false
+isNotNull({});       // true
+isNotNull([]);       // true
+isNotNull(NaN);      // false
 ```
 
 ---

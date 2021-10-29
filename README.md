@@ -56,6 +56,9 @@
     - [testRegex](#testregex)
   - [Error](#error)
     - [throwErr](#throwerr)
+- [types](#types)
+  - [Truthy<T>](#truthyt)
+  - [CamelCase<T>](#camelcaset)
 - [Credits](#credits)
 
 ## Installation
@@ -504,6 +507,28 @@ throwErr('error') // Uncaught 'error'
 throwErr(404) // Uncaught 404
 throwError({}) // Uncaught {}
 ```
+
+## types
+
+### Truthy<T>
+
+type guard for truthy values
+
+```typescript
+type X = 1 | 0 | '' | boolean | null | 'String';
+type TX = Truthy<X> // 1 | true | 'String'
+```
+
+### CamelCase<T>
+
+convert snake_case values in a type to camslCase
+
+```typescript
+type X = 'literal_item_0' | 'LITERAL_ITEM_1' | 'LiTeraL_ItEm_2' | 'it_a_recursive_types';
+type TX = CamelCase<X> // 'literalItem0' | 'literalItem1' | 'literalItem2' | 'itsARecursiveTypes';
+```
+
+
 
 ## Credits
 

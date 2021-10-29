@@ -624,10 +624,10 @@
   resolved "https://registry.yarnpkg.com/@frontendmonster/utils/-/utils-0.3.11.tgz#399d11d6e24245a04ee07521ba085c26bf17c443"
   integrity sha512-aRUYAEtfWIMKxs29l3gFMcy9sAnmTulp3puwr0Wk14vOTEFmt5lKCKg0QqH8Ddut/+53/kSXsVUPr0/rB9hJ6A==
 
-"@fullstacksjs/eslint-config@6.8.1":
-  version "6.8.1"
-  resolved "https://registry.yarnpkg.com/@fullstacksjs/eslint-config/-/eslint-config-6.8.1.tgz#aae0b5cf6036b58c0b85141203119691beccf7d9"
-  integrity sha512-bk4dHd7jucGuKWNxvLEeDxwx9v3SBNrzAJRFyFJgZBebGMQxar+5d0+h0nzvPUD0Je6BpTNJeB8rSHtniStJpg==
+"@fullstacksjs/eslint-config@6.9.0":
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/@fullstacksjs/eslint-config/-/eslint-config-6.9.0.tgz#f2390cf525b48241f22f7fbcf36dbd07d232ac87"
+  integrity sha512-uQLPrx3iwzSzOJEmaopU1z0IyrK8GRXjgRmNuJWoJUqD4+rACzeh4tkrwmBeua6zHi42hB8mJaUBNnodbkH13w==
   dependencies:
     "@frontendmonster/utils" "0.3.11"
     "@typescript-eslint/eslint-plugin" "4.33.0"
@@ -638,10 +638,11 @@
     eslint-plugin-fp "2.3.0"
     eslint-plugin-import "2.25.2"
     eslint-plugin-jest "24.4.0"
+    eslint-plugin-jest-formatting "3.0.0"
     eslint-plugin-jsx-a11y "6.4.1"
     eslint-plugin-node "11.1.0"
     eslint-plugin-prettier "4.0.0"
-    eslint-plugin-promise "5.1.0"
+    eslint-plugin-promise "5.1.1"
     eslint-plugin-react "7.25.1"
     eslint-plugin-react-hooks "4.2.0"
     eslint-plugin-simple-import-sort "7.0.0"
@@ -2454,6 +2455,11 @@ eslint-plugin-import@2.25.2:
     resolve "^1.20.0"
     tsconfig-paths "^3.11.0"
 
+eslint-plugin-jest-formatting@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-formatting/-/eslint-plugin-jest-formatting-3.0.0.tgz#a9f45c7d8eabfb72692ec3899998613a3e63f868"
+  integrity sha512-XM1CHe1jX6j+t/NeppcVnm/1zgDAFqwiSLJEyLB7HDpcqBEGbbTFLSayCW2Q9y7VwcXrJbDAKRoO6vZ7jCmRFw==
+
 eslint-plugin-jest@24.4.0:
   version "24.4.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-24.4.0.tgz#fa4b614dbd46a98b652d830377971f097bda9262"
@@ -2497,10 +2503,10 @@ eslint-plugin-prettier@4.0.0:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-eslint-plugin-promise@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-5.1.0.tgz#fb2188fb734e4557993733b41aa1a688f46c6f24"
-  integrity sha512-NGmI6BH5L12pl7ScQHbg7tvtk4wPxxj8yPHH47NvSmMtFneC077PSeY3huFj06ZWZvtbfxSPt3RuOQD5XcR4ng==
+eslint-plugin-promise@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-5.1.1.tgz#9674d11c056d1bafac38e4a3a9060be740988d90"
+  integrity sha512-XgdcdyNzHfmlQyweOPTxmc7pIsS6dE4MvwhXWMQ2Dxs1XAL2GJDilUsjWen6TWik0aSI+zD/PqocZBblcm9rdA==
 
 eslint-plugin-react-hooks@4.2.0:
   version "4.2.0"

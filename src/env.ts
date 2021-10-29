@@ -29,7 +29,7 @@ export const getRequiredEnv = (envKey: string): string =>
 /**
  * strict check NODE_ENV with given value
  */
-const is = <T>(value: NodeEnv<T>): boolean => process.env.NODE_ENV === value;
+const is = <T>(value: NodeEnv<T>): boolean => process.env['NODE_ENV'] === value;
 
 export const Env = {
   is,

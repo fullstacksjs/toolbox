@@ -1,48 +1,70 @@
-import { isFunction, isIterable, isNull, isString } from '../src/guards';
+import {
+  isFunction,
+  isIterable,
+  isNotNull,
+  isNull,
+  isString,
+  isTruthy,
+} from '../src/guards';
 
 describe('guards', () => {
-  describe('isNullable', () => {
-    it('should return true for undefined', () => {
-      expect(isNull(undefined)).toBe(true);
-    });
-    it('should return true for null', () => {
-      expect(isNull(null)).toBe(true);
-    });
-    it('should return false for string', () => {
-      expect(isNull('null')).toBe(false);
-    });
-    it('should return false for numbers', () => {
-      expect(isNull(0)).toBe(false);
-    });
-    it('should return false for array', () => {
-      expect(isNull([])).toBe(false);
-    });
-    it('should return false for object', () => {
-      expect(isNull({})).toBe(false);
-    });
-    it('should return false for boolean', () => {
-      expect(isNull(false)).toBe(false);
+  describe('isNull', () => {
+    it.each`
+      x            | expected
+      ${undefined} | ${true}
+      ${null}      | ${true}
+      ${'null'}    | ${false}
+      ${0}         | ${false}
+      ${[]}        | ${false}
+      ${{}}        | ${false}
+      ${false}     | ${false}
+    `('should return $expected for $x', ({ x, expected }) => {
+      expect(isNull(x)).toBe(expected);
     });
   });
+
+  describe('isNotNull', () => {
+    it.each`
+      x            | expected
+      ${undefined} | ${false}
+      ${null}      | ${false}
+      ${'null'}    | ${true}
+      ${0}         | ${true}
+      ${[]}        | ${true}
+      ${{}}        | ${true}
+      ${false}     | ${true}
+    `('should return $expected for $x', ({ x, expected }) => {
+      expect(isNotNull(x)).toBe(expected);
+    });
+  });
+
+  describe('isTruthy', () => {
+    it.each`
+      x            | expected
+      ${undefined} | ${false}
+      ${NaN}       | ${false}
+      ${false}     | ${false}
+      ${0}         | ${false}
+      ${null}      | ${false}
+      ${'null'}    | ${true}
+      ${1}         | ${true}
+      ${[]}        | ${true}
+      ${{}}        | ${true}
+    `('should return $expected for $x', ({ x, expected }) => {
+      expect(isTruthy(x)).toBe(expected);
+    });
+  });
+
   describe('isString', () => {
-    it('should return false for undefined', () => {
-      expect(isString(undefined)).toBe(false);
-    });
-
-    it('should return false for null', () => {
-      expect(isString(null)).toBe(false);
-    });
-
-    it('should return false for number', () => {
-      expect(isString(1)).toBe(false);
-    });
-
-    it('should return false for array', () => {
-      expect(isString(['1'])).toBe(false);
-    });
-
-    it('should return true for string', () => {
-      expect(isString('1')).toBe(true);
+    it.each`
+      x            | expected
+      ${''}        | ${true}
+      ${undefined} | ${false}
+      ${null}      | ${false}
+      ${1}         | ${false}
+      ${['1']}     | ${false}
+    `('should return $expected for $x', ({ x, expected }) => {
+      expect(isString(x)).toBe(expected);
     });
   });
 

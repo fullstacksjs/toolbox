@@ -67,5 +67,9 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "volta": {
+    "node": "16.13.0",
+    "yarn": "1.22.17"
   }
 }

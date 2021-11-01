@@ -7,5 +7,4 @@ export * from './number.js';
 export * from './package.js';
 export * from './regex.js';
 export * from './string.js';
-export * from './types';
 export * from './values.js';

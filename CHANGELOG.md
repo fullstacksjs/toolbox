@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.1](https://github.com/fullstacksjs/utils/compare/v2.7.0...v2.7.1) (2021-11-01)
+
+
+### Bug Fixes
+
+* **types:** remove types from index.js ([5c69c86](https://github.com/fullstacksjs/utils/commit/5c69c8630339646411808cda5b90eb7e83cd7210))
+
 ## [2.7.0](https://github.com/fullstacksjs/utils/compare/v2.5.0...v2.7.0) (2021-10-29)
 
 

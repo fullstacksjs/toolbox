@@ -1,5 +1,4 @@
 import { isIterable, isNull, isString } from './guards.js';
-
 /**
  * wrap value with array if value is not an array itself.
  */
@@ -43,7 +42,16 @@ export const concatNullableArrays = (...args: any[]) =>
  * @input : [1,2,3]
  * @output : [2,3,1]
  */
-export const shuffle: Function = (arr: Array<any>): Array<any> => {
-  const randomNumber = Math.floor(Math.random() * 2);
-  return arr.sort(() => randomNumber);
+export const shuffle = (arr: Array<any>): Array<any> => {
+  if (!Array.isArray(arr)) {
+    throw Error('shuffle only works on arrays');
+  }
+
+  const copyOfArr: Array<any> = [...arr];
+  const sortRandom = (): number => {
+    const randomNumber = Math.floor(Math.random() * 2);
+    const negativeOrPositive = randomNumber ? 1 : -1;
+    return negativeOrPositive;
+  };
+  return copyOfArr.sort(sortRandom);
 };

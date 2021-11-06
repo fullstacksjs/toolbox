@@ -2,6 +2,7 @@ import {
   concatNullableArrays,
   ensureArray,
   range,
+  shuffle,
   toArray,
 } from '../src/array';
 
@@ -107,6 +108,37 @@ describe('array', () => {
 
     it('should act as identity for single array argument', () => {
       expect(concatNullableArrays([1, 2])).toEqual([1, 2]);
+    });
+  });
+
+  describe('shuffle', () => {
+    it('should return empty array with empty array arg', () => {
+      expect(shuffle([])).toEqual([]);
+    });
+
+    it('should throw an error', () => {
+      expect(() => shuffle(null)).toThrow();
+      expect(() => shuffle('array')).toThrow();
+      expect(() => shuffle(false)).toThrow();
+    });
+
+    it('should return one an array with one item', () => {
+      expect(shuffle([1])).toEqual([1]);
+      expect(shuffle([21])).toEqual([21]);
+      expect(shuffle(['test'])).toEqual(['test']);
+      expect(shuffle([null])).toEqual([null]);
+      expect(shuffle([undefined])).toEqual([undefined]);
+      expect(shuffle([true])).toEqual([true]);
+    });
+
+    it('should return shuffled version of arg', () => {
+      expect(shuffle([1, 2, 3])).toEqual(expect.arrayContaining([1, 2, 3]));
+      expect(shuffle(['a', 'b', 'c'])).toEqual(
+        expect.arrayContaining(['a', 'b', 'c']),
+      );
+      expect(shuffle([null, undefined, false, true])).toEqual(
+        expect.arrayContaining([undefined, false, true, null]),
+      );
     });
   });
 });

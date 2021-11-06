@@ -117,9 +117,9 @@ describe('array', () => {
     });
 
     it('should throw an error', () => {
-      expect(() => shuffle(null)).toThrow();
-      expect(() => shuffle('array')).toThrow();
-      expect(() => shuffle(false)).toThrow();
+      expect(() => shuffle(null as any)).toThrow();
+      expect(() => shuffle('array' as any)).toThrow();
+      expect(() => shuffle(false as any)).toThrow();
     });
 
     it('should return one an array with one item', () => {

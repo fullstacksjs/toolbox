@@ -37,3 +37,13 @@ export const toArray: ToArray = <T>(
 export const concatNullableArrays = (...args: any[]) =>
   args?.map(arr => arr ?? [])?.reduce((curr, arr) => curr.concat(arr), []) ??
   [];
+
+/**
+ * get an array and return a shuffled version of it
+ * @input : [1,2,3]
+ * @output : [2,3,1]
+ */
+export const shuffle: Function = (arr: Array<any>): Array<any> => {
+  const randomNumber = Math.floor(Math.random() * 2);
+  return arr.sort(() => randomNumber);
+};

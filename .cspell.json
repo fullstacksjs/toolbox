@@ -1,0 +1,13 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": ["**/node_modules/**", "./apps/api/prisma/seed/**"],
+  "dictionaryDefinitions": [
+    {
+      "name": "keywords",
+      "description": "Project keywords",
+      "path": "./dictionaries/keywords.txt"
+    }
+  ],
+  "dictionaries": ["node", "keywords"]
+}

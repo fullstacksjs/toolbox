@@ -1,4 +1,4 @@
-import { throwErr } from '../src/error';
+import { assert, throwErr } from '../src/error';
 
 describe('error', () => {
   describe('throwErr', () => {
@@ -26,6 +26,16 @@ describe('error', () => {
 
     it('should throw with arrays', () => {
       expect(() => throwErr([])).toThrowError(String([]));
+    });
+  });
+
+  describe('assert', () => {
+    it('should throw error when condition is false', () => {
+      expect(() => assert(false, 'WTF')).toThrow('WTF');
+    });
+
+    it('should not throw error when condition is true', () => {
+      expect(() => assert(true, 'WTF')).not.toThrow('WTF');
     });
   });
 });

@@ -1,5 +1,6 @@
 import {
   concatNullableArrays,
+  copyArray,
   ensureArray,
   range,
   shuffle,
@@ -116,29 +117,39 @@ describe('array', () => {
       expect(shuffle([])).toEqual([]);
     });
 
-    it('should throw an error', () => {
-      expect(() => shuffle(null as any)).toThrow();
-      expect(() => shuffle('array' as any)).toThrow();
-      expect(() => shuffle(false as any)).toThrow();
-    });
-
     it('should return one an array with one item', () => {
       expect(shuffle([1])).toEqual([1]);
-      expect(shuffle([21])).toEqual([21]);
-      expect(shuffle(['test'])).toEqual(['test']);
-      expect(shuffle([null])).toEqual([null]);
-      expect(shuffle([undefined])).toEqual([undefined]);
-      expect(shuffle([true])).toEqual([true]);
     });
 
-    it('should return shuffled version of arg', () => {
-      expect(shuffle([1, 2, 3])).toEqual(expect.arrayContaining([1, 2, 3]));
-      expect(shuffle(['a', 'b', 'c'])).toEqual(
-        expect.arrayContaining(['a', 'b', 'c']),
-      );
-      expect(shuffle([null, undefined, false, true])).toEqual(
-        expect.arrayContaining([undefined, false, true, null]),
-      );
+    it('should return array with same items', () => {
+      const arr = [1, 2, 3];
+
+      expect(shuffle(arr)).toEqual(expect.arrayContaining(arr));
+    });
+
+    it('should return shuffled version of array', () => {
+      const arr = range(501);
+
+      // This assertion has ~1.0E-164% probability of false negative.
+      expect(shuffle(arr)).not.toEqual(arr);
+    });
+  });
+
+  describe('copyArray', () => {
+    it('return value should be new object', () => {
+      const array = [1];
+      const copy = copyArray(array);
+      copy[0]++;
+
+      expect(array[0]).toBe(1);
+      expect(copy[0]).toBe(2);
+    });
+
+    it('should return same array', () => {
+      const array = [1];
+      const copy = copyArray(array);
+
+      expect(array).toEqual(copy);
     });
   });
 });

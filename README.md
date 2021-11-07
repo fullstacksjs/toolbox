@@ -18,6 +18,8 @@
     - [ensureArray](#ensurearray)
     - [range](#range)
     - [toArray](#toarray)
+    - [copayArray](#copayarray)
+    - [shuffle](#shuffle)
   - [concatNullableArrays](#concatnullablearrays)
   - [Env](#env)
     - [getEnv](#getenv)
@@ -56,9 +58,11 @@
     - [testRegex](#testregex)
   - [Error](#error)
     - [throwErr](#throwerr)
+    - [assert](#assert)
 - [types](#types)
   - [Truthy<T>](#truthyt)
   - [CamelCase<T>](#camelcaset)
+  - [Predicate<T>](#predicatet)
 - [Credits](#credits)
 
 ## Installation
@@ -118,6 +122,25 @@ toArray('string');   // ['string']
 toArray(['array']);  // ['array']
 toArray(iteratable); // [...iteratable]
 toArray(others);     // [others]
+```
+
+#### copayArray
+
+Gets an array and return shallow copy version of it
+
+```typescript
+copyArray([]);   // []
+copyArray([1]);  // []
+```
+
+#### shuffle
+
+Gets an array and return a shuffled version of it
+
+```typescript
+copyArray([]);                // []
+copyArray([1]);               // [1]
+copyArray([1, 2, 3 ,4 , 5]);  // [2, 1, 3, 4, 5]
 ```
 
 ### concatNullableArrays
@@ -481,11 +504,12 @@ isNullOrEmpty([1,2,3]);   // false
 
 #### testRegex
 
-check if a string passes a specfic regex
+Check if a string passes a specific regex
+
 ```typescript
-testRegex(/[A-Z]/, "Abc") // true
-testRegex(/^\d+$/, "2021") // true
-testRegex(/[a-z]/, "( ͡° ͜ʖ ͡°)") // false
+testRegex(/[A-Z]/, "Abc")     // true
+testRegex(/^\d+$/, "2021")    // true
+testRegex(/[a-z]/, "( ͡° ͜ʖ ͡°)")  // false
 
 const r = /abc/g
 r.test('abc') // true
@@ -503,16 +527,33 @@ throws the given value
 
 ```typescript
 throwError(new Error('msg')) // Uncaught Error: msg
-throwErr('error') // Uncaught 'error'
-throwErr(404) // Uncaught 404
-throwError({}) // Uncaught {}
+throwErr('error')            // Uncaught 'error'
+throwErr(404)                // Uncaught 404
+throwError({})               // Uncaught {}
+```
+
+#### assert
+
+throws an error when the condition is false.
+
+```typescript
+assert(false)           // throw new Error('Assertion failed')
+assert(false, 'Error')  // throw new Error('Error')
+assert(true, 'Error')   // undefined
+```
+
+```typescript
+throwError(new Error('msg')) // Uncaught Error: msg
+throwErr('error')            // Uncaught 'error'
+throwErr(404)                // Uncaught 404
+throwError({})               // Uncaught {}
 ```
 
 ## types
 
 ### Truthy<T>
 
-type guard for truthy values
+Type guard for truthy values
 
 ```typescript
 type X = 1 | 0 | '' | boolean | null | 'String';
@@ -521,14 +562,20 @@ type TX = Truthy<X> // 1 | true | 'String'
 
 ### CamelCase<T>
 
-convert snake_case values in a type to camslCase
+Converts snake_case values in a type to camelCase
 
 ```typescript
 type X = 'literal_item_0' | 'LITERAL_ITEM_1' | 'LiTeraL_ItEm_2' | 'it_a_recursive_types';
 type TX = CamelCase<X> // 'literalItem0' | 'literalItem1' | 'literalItem2' | 'itsARecursiveTypes';
 ```
 
+### Predicate<T>
 
+Predicate function type
+
+```typescript
+type Predicate<number> // (a: number) => boolean;
+````
 
 ## Credits
 

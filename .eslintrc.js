@@ -7,4 +7,12 @@ module.exports = {
     '@typescript-eslint/array-type': 'off',
     'dot-notation': 'off',
   },
+  overrides: [
+    {
+      files: ['__test__'],
+      rules: {
+        'max-lines-per-function': 'off',
+      },
+    },
+  ],
 };

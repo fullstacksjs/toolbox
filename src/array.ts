@@ -33,25 +33,22 @@ export const toArray: ToArray = <T>(
   return [value];
 };
 
-export const concatNullableArrays = (...args: any[]) =>
+/**
+ * Gets some nullable arrays and returns concatenation of present arrays
+ */
+export const concatNullableArrays = (
+  ...args: (Array<any> | null | undefined)[]
+) =>
   args?.map(arr => arr ?? [])?.reduce((curr, arr) => curr.concat(arr), []) ??
   [];
 
 /**
- * get an array and return a shuffled version of it
- * @input : [1,2,3]
- * @output : [2,3,1]
+ * Gets an array and return shallow copy version of it
  */
-export const shuffle = (arr: Array<any>): Array<any> => {
-  if (!Array.isArray(arr)) {
-    throw Error('shuffle only works on arrays');
-  }
+export const copyArray = <T extends any[]>(arr: T) => arr.slice() as T;
 
-  const copyOfArr: Array<any> = [...arr];
-  const sortRandom = (): number => {
-    const randomNumber = Math.floor(Math.random() * 2);
-    const negativeOrPositive = randomNumber ? 1 : -1;
-    return negativeOrPositive;
-  };
-  return copyOfArr.sort(sortRandom);
-};
+/**
+ * Gets an array and return a shuffled version of it
+ */
+export const shuffle = <T extends any[]>(arr: T): T =>
+  copyArray(arr).sort(() => (Math.random() < 0.5 ? 1 : -1));

@@ -43,6 +43,8 @@
     "prepare": ".husky/prepare"
   },
   "devDependencies": {
+    "@commitlint/cli": "14.1.0",
+    "@commitlint/config-conventional": "14.1.0",
     "@frontendmonster/builder": "2.2.0",
     "@fullstacksjs/eslint-config": "6.9.0",
     "@fullstacksjs/tsconfig": "0.6.0",

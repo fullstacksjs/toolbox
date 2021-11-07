@@ -1,4 +1,5 @@
 import { isFunction } from './guards.js';
+import { Predicate } from './types.js';
 
 /**
  * noop ¯\_(ツ)_/¯
@@ -19,14 +20,6 @@ export const callAll =
  * returns the "NOT" of its argument
  */
 export const not = (b: unknown): boolean => !b;
-
-/**
- * @template T
- * @callback Predicate
- * @param {T} a
- * @returns {boolean}
- */
-type Predicate<T> = (a: T) => boolean;
 
 /**
  * @template T

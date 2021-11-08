@@ -55,6 +55,9 @@ export const copyArray = <T extends any[]>(arr: T) => arr.slice() as T;
 export const shuffle = <T extends any[]>(arr: T): T =>
   copyArray(arr).sort(() => (Math.random() < 0.5 ? 1 : -1));
 
+/**
+ * Returns a random item from an array
+ */
 export const getRandom = <T>(arr: T[]) => {
   const randomIndex = randomInt({ max: arr.length - 1 });
   return arr[randomIndex];

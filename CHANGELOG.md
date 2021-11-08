@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.8.0](https://github.com/fullstacksjs/utils/compare/v2.7.2...v2.8.0) (2021-11-08)
+
+
+### Features
+
+* add getRandom ([5ab299c](https://github.com/fullstacksjs/utils/commit/5ab299c18194b0a616b801d9d75f3532ca8fc56e))
+* **array:** add shuffle ([8d84332](https://github.com/fullstacksjs/utils/commit/8d843328c08cfbd9785302889681030bb447d3c6))
+* **types:** add Predicate type ([90bdfc2](https://github.com/fullstacksjs/utils/commit/90bdfc258be24e32ff1414b1e87a857f187ffeab))
+
+
+### Bug Fixes
+
+* fix readme formatting ([f5f4ac3](https://github.com/fullstacksjs/utils/commit/f5f4ac359017972d1091b41ba73500b9930708d4))
+
 ### [2.7.2](https://github.com/fullstacksjs/utils/compare/v2.7.1...v2.7.2) (2021-11-01)
 
 

@@ -6,7 +6,7 @@
   "description": "Common JavaScript utility functions",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fullstacksjs/toolbox.git"
+    "url": "https://github.com/fullstacksjs/toolbox.git"
   },
   "files": [
     ".npmrc",
@@ -40,7 +40,8 @@
     "verify": "yarn run lint && yarn run test",
     "prepublishOnly": "pinst --disable && pkg-ok",
     "postpublish": "pinst --enable",
-    "prepare": ".husky/prepare"
+    "prepare": ".husky/prepare",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@commitlint/cli": "14.1.0",
@@ -48,6 +49,9 @@
     "@frontendmonster/builder": "2.2.0",
     "@fullstacksjs/eslint-config": "6.9.0",
     "@fullstacksjs/tsconfig": "0.6.0",
+    "@semantic-release/github": "8.0.2",
+    "@semantic-release/npm": "8.0.3",
+    "@semantic-release/release-notes-generator": "10.0.2",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.6",
     "commitizen": "4.2.4",

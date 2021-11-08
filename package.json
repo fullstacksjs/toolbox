@@ -6,7 +6,7 @@
   "description": "Common JavaScript utility functions",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fullstacksjs/utils.git"
+    "url": "git+https://github.com/fullstacksjs/toolbox.git"
   },
   "files": [
     ".npmrc",
@@ -60,6 +60,7 @@
     "pinst": "2.1.6",
     "pkg-ok": "2.3.1",
     "prettier": "2.4.1",
+    "semantic-release": "18.0.0",
     "shx": "0.3.3",
     "standard-version": "9.3.2",
     "ts-jest": "27.0.7",

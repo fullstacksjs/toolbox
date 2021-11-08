@@ -2,7 +2,7 @@
   "extends": "@fullstacksjs/tsconfig/cjs",
   "compilerOptions": {
     "declaration": false,
-    "outDir": "./lib/cjs",
+    "outDir": "./lib/cjs"
   },
   "include": ["src/"]
 }

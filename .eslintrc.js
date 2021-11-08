@@ -9,7 +9,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['__test__'],
+      files: ['__tests__/**/*.ts'],
       rules: {
         'max-lines-per-function': 'off',
       },

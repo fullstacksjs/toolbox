@@ -1,6 +1,6 @@
 {
   "name": "@fullstacksjs/toolbox",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "license": "MIT",
   "author": "frontendmonster <frontendmonster@gmail.com>",
   "description": "Common JavaScript utility functions",
@@ -37,7 +37,7 @@
     "test:watch": "yarn run test --watch",
     "test:coverage": "yarn run test --coverage",
     "prerelease": "yarn run verify",
-    "release": "standard-version && builder --ignoreVersioning --publish && git push --follow-tags --no-verify",
+    "release": "standard-version && npm publish && git push --follow-tags --no-verify",
     "verify": "yarn run lint && yarn run test",
     "prepublishOnly": "pinst --disable && pkg-ok",
     "postpublish": "pinst --enable",

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.8.2](https://github.com/fullstacksjs/toolbox/compare/v2.8.1...v2.8.2) (2021-11-09)
+
+
+### Bug Fixes
+
+* add lib to files ([0596c5c](https://github.com/fullstacksjs/toolbox/commit/0596c5c4bf03ab510613e1c442a7c826cbb1a956))
+
 ## [2.8.0](https://github.com/fullstacksjs/utils/compare/v2.7.2...v2.8.0) (2021-11-08)
 
 

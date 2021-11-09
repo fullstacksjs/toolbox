@@ -1,6 +1,7 @@
 import { isNull, isString } from './guards.js';
+import { isWordOrWords } from './internals/string.js';
 import { hasInvalidCasing, tokenize } from './internals/tokenize.js';
-import { testRegex } from './regex.js';
+import { Nullish } from './types.js';
 
 export const toSpaceCase = tokenize;
 
@@ -58,10 +59,9 @@ export const toPascalCase = (str: string) =>
 /**
  * check if value is null, undefined or empty string or array
  */
-export const isNullOrEmpty = (x: any[] | string | null | undefined): boolean =>
-  isNull(x) || x.length === 0;
-
-const isWordOrWords = (x: string) => testRegex(/(^.+ .)|(^\S+$)/, x);
+export const isNullOrEmpty = <T extends any[] | string>(
+  x: Nullish | T | '' | [],
+): x is Nullish | (T extends any[] ? [] : '') => isNull(x) || x.length === 0;
 
 /**
  * return initial chars of words
@@ -75,7 +75,7 @@ export const getInitials = (name: string, fallback: string = '?'): string =>
     ? name
         .replace(/\s+/g, ' ')
         .split(' ')
-        .map(v => (isNullOrEmpty(v) ? '' : v?.[0]?.toUpperCase()))
+        .map(v => (isNullOrEmpty(v) ? '' : v.slice(0, 1).toUpperCase()))
         .join('')
     : fallback;
 

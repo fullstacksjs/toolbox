@@ -12,3 +12,5 @@ export type CamelCase<S extends string> =
  * @returns {boolean}
  */
 export type Predicate<T = any> = (a: T) => boolean;
+
+export type Nullish = null | undefined;

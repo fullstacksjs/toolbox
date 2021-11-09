@@ -15,9 +15,9 @@
     "LICENSE",
     ".husky/prepare"
   ],
-  "main": "./cjs/index.js",
-  "module": "./esm/index.js",
-  "typings": "./types/index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "typings": "./lib/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./esm/index.js",

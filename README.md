@@ -7,6 +7,7 @@
 ![download status][download-badge]
 ![version][version-badge]
 ![MIT License][license-badge]
+![semantic-release][semantic-badge]
 
 </div>
 
@@ -596,3 +597,4 @@ type Predicate<number> // (a: number) => boolean;
 [download-badge]: https://img.shields.io/npm/dm/@fullstacksjs/toolbox?color=6464E2&label=DOWNLOADS&style=flat-square
 [version-badge]: https://img.shields.io/npm/v/@fullstacksjs/toolbox?color=6464E2&label=VERSION&style=flat-square
 [license-badge]: https://img.shields.io/npm/l/@fullstacksjs/toolbox?color=6464E2&label=LICENSE&style=flat-square
+[semantic-badge]: https://img.shields.io/badge/semantic-release-e10079.svg?logo=semantic-release&color=6464E2&label=SEMANTIC&style=flat-square (https://github.com/semantic-release/semantic-release)

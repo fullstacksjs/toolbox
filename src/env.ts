@@ -1,5 +1,4 @@
 import { fallback, required } from './values.js';
-
 export type NodeEnv<T = undefined> =
   | T
   | 'development'
@@ -9,16 +8,18 @@ export type NodeEnv<T = undefined> =
 /**
  * give NODE_ENV value or given fallback value
  */
-export const getEnv = (
+export const getEnv = <T extends string | undefined>(
   envKey: string,
-  defaultValue?: string,
-): string | undefined => fallback(process.env[envKey], defaultValue);
+  defaultValue?: T,
+): T extends string ? string : T =>
+  fallback(process.env[envKey], defaultValue) as any;
 
 /**
  * returns NODE_ENV value or given fallback value
  */
-export const getNodeEnv = (defaultValue?: string): string | undefined =>
-  getEnv('NODE_ENV', defaultValue);
+export const getNodeEnv = <T extends string | undefined>(
+  defaultValue?: T,
+): T extends string ? string : T => getEnv('NODE_ENV', defaultValue);
 
 /**
  * returns NODE_ENV value or given fallback otherwise throws

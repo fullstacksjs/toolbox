@@ -1,5 +1,5 @@
 import { isFunction } from './guards.js';
-import { Predicate } from './types.js';
+import type { Predicate } from './types.js';
 
 /**
  * noop ¯\_(ツ)_/¯

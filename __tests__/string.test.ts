@@ -1,4 +1,3 @@
-/* eslint-disable max-lines-per-function */
 import {
   crlfToLf,
   getInitials,
@@ -14,20 +13,18 @@ import {
 
 describe('string', () => {
   describe('getInitials', () => {
-    const testCases = {
-      '': '?',
-      ' ': '?',
-      'frontend': 'F',
-      'frontend monsters': 'FM',
-      'frontend monster rides a dinosaur in office': 'FMRADIO',
-      '2': '2',
-      '1 2 3 4': '1234',
-      'x @# % * ))__() 1': 'X@%*)1',
-    };
-    Object.entries(testCases).forEach(([value, result]) => {
-      it(`should return ${result} for ${value} as input`, () => {
-        expect(getInitials(value)).toBe(result);
-      });
+    it.each`
+      x                                                | expected
+      ${''}                                            | ${'?'}
+      ${' '}                                           | ${'?'}
+      ${'frontend'}                                    | ${'F'}
+      ${'frontend monsters'}                           | ${'FM'}
+      ${'frontend monster rides a dinosaur in office'} | ${'FMRADIO'}
+      ${'2'}                                           | ${'2'}
+      ${'1 2 3 4'}                                     | ${'1234'}
+      ${'x @# % * ))__() 1'}                           | ${'X@%*)1'}
+    `('should return $expected for $x as input', ({ x, expected }) => {
+      expect(getInitials(x)).toBe(expected);
     });
 
     it(`should return ? for null as input`, () => {
@@ -40,201 +37,166 @@ describe('string', () => {
   });
 
   describe('crlfToLf', () => {
-    const testCases = {
-      '': '',
-      ' ': ' ',
-      'hello world': 'hello world',
-      'hello world\n': 'hello world\n',
-      'hello world\r\n': 'hello world\n',
-      'hello world\r\n\n': 'hello world\n\n',
-      'hello world\r\nbut how is world\r\n': 'hello world\nbut how is world\n',
-      'hello world\r': 'hello world\r',
-      'hello world\r\r\r\n': 'hello world\r\r\n',
-    };
-    Object.entries(testCases).forEach(([value, result]) => {
-      it(`should return ${result} for ${value} as input`, () => {
-        expect(crlfToLf(value)).toBe(result);
-      });
+    it.each`
+      x                                        | expected
+      ${''}                                    | ${''}
+      ${' '}                                   | ${' '}
+      ${'hello world'}                         | ${'hello world'}
+      ${'hello world\n'}                       | ${'hello world\n'}
+      ${'hello world\r\n'}                     | ${'hello world\n'}
+      ${'hello world\r\n\n'}                   | ${'hello world\n\n'}
+      ${'hello world\r\nbut how is world\r\n'} | ${'hello world\nbut how is world\n'}
+      ${'hello world\r'}                       | ${'hello world\r'}
+      ${'hello world\r\r\r\n'}                 | ${'hello world\r\r\n'}
+    `('should return $expected for $x as input', ({ x, expected }) => {
+      expect(crlfToLf(x)).toBe(expected);
     });
   });
 
   describe('toSpaceCase', () => {
-    const testCases = {
-      '': '',
-      ' ': ' ',
-      'foo': 'foo',
-      'foo bar': 'foo bar',
-      'foo-bar': 'foo bar',
-      'fooBar': 'foo bar',
-      'foo_bar': 'foo bar',
-      'foo bar code': 'foo bar code',
-      'foo-bar-code': 'foo bar code',
-      'fooBarCode': 'foo bar code',
-      'foo_bar_code': 'foo bar code',
-      'FOO_BAR_CODE': 'foo bar code',
-      'FOO BAR CODE': 'foo bar code',
-      'foo_ -BaRC ode': 'foo_ -BaRC ode',
-    };
-
-    Object.entries(testCases).forEach(([value, result]) => {
-      it(`should return ${result} for ${value} as input`, () => {
-        expect(toSpaceCase(value)).toBe(result);
-      });
+    it.each`
+      x                   | expected
+      ${''}               | ${''}
+      ${' '}              | ${' '}
+      ${'foo'}            | ${'foo'}
+      ${'foo bar'}        | ${'foo bar'}
+      ${'foo-bar'}        | ${'foo bar'}
+      ${'fooBar'}         | ${'foo bar'}
+      ${'foo_bar'}        | ${'foo bar'}
+      ${'foo bar code'}   | ${'foo bar code'}
+      ${'foo-bar-code'}   | ${'foo bar code'}
+      ${'fooBarCode'}     | ${'foo bar code'}
+      ${'foo_bar_code'}   | ${'foo bar code'}
+      ${'FOO_BAR_CODE'}   | ${'foo bar code'}
+      ${'FOO BAR CODE'}   | ${'foo bar code'}
+      ${'foo_ -BaRC ode'} | ${'foo_ -BaRC ode'}
+    `('should return $expected for $x as input', ({ x, expected }) => {
+      expect(toSpaceCase(x)).toBe(expected);
     });
   });
 
   describe('toCamelCase', () => {
-    const testCases = {
-      '': '',
-      ' ': ' ',
-      'foo': 'foo',
-      'foo bar': 'fooBar',
-      'foo-bar': 'fooBar',
-      'fooBar': 'fooBar',
-      'foo_bar': 'fooBar',
-      'foo bar code': 'fooBarCode',
-      'foo-bar-code': 'fooBarCode',
-      'fooBarCode': 'fooBarCode',
-      'foo_bar_code': 'fooBarCode',
-      'FOO_BAR_CODE': 'fooBarCode',
-      'foo_ -BaRC ode': 'foo_ -BaRC ode',
-    };
-    Object.entries(testCases).forEach(([value, result]) => {
-      it(`should return ${result} for ${value} as input`, () => {
-        expect(toCamelCase(value)).toBe(result);
-      });
+    it.each`
+      x                   | expected
+      ${''}               | ${''}
+      ${' '}              | ${' '}
+      ${'foo'}            | ${'foo'}
+      ${'foo bar'}        | ${'fooBar'}
+      ${'foo-bar'}        | ${'fooBar'}
+      ${'fooBar'}         | ${'fooBar'}
+      ${'foo_bar'}        | ${'fooBar'}
+      ${'foo bar code'}   | ${'fooBarCode'}
+      ${'foo-bar-code'}   | ${'fooBarCode'}
+      ${'fooBarCode'}     | ${'fooBarCode'}
+      ${'foo_bar_code'}   | ${'fooBarCode'}
+      ${'FOO_BAR_CODE'}   | ${'fooBarCode'}
+      ${'foo_ -BaRC ode'} | ${'foo_ -BaRC ode'}
+    `('should return $expected for $x as input', ({ x, expected }) => {
+      expect(toCamelCase(x)).toBe(expected);
     });
   });
 
   describe('toPascalCase', () => {
-    const testCases = {
-      '': '',
-      ' ': ' ',
-      'foo': 'Foo',
-      'foo bar': 'FooBar',
-      'foo-bar': 'FooBar',
-      'fooBar': 'FooBar',
-      'foo_bar': 'FooBar',
-      'foo bar code': 'FooBarCode',
-      'foo-bar-code': 'FooBarCode',
-      'fooBarCode': 'FooBarCode',
-      'foo_bar_code': 'FooBarCode',
-      'FOO_BAR_CODE': 'FooBarCode',
-      'foo_ -BaRC ode': 'foo_ -BaRC ode',
-    };
-    Object.entries(testCases).forEach(([value, result]) => {
-      it(`should return ${result} for ${value} as input`, () => {
-        expect(toPascalCase(value)).toBe(result);
-      });
+    it.each`
+      x                   | expected
+      ${''}               | ${''}
+      ${' '}              | ${' '}
+      ${'foo'}            | ${'Foo'}
+      ${'foo bar'}        | ${'FooBar'}
+      ${'foo-bar'}        | ${'FooBar'}
+      ${'fooBar'}         | ${'FooBar'}
+      ${'foo_bar'}        | ${'FooBar'}
+      ${'foo bar code'}   | ${'FooBarCode'}
+      ${'foo-bar-code'}   | ${'FooBarCode'}
+      ${'fooBarCode'}     | ${'FooBarCode'}
+      ${'foo_bar_code'}   | ${'FooBarCode'}
+      ${'FOO_BAR_CODE'}   | ${'FooBarCode'}
+      ${'foo_ -BaRC ode'} | ${'foo_ -BaRC ode'}
+    `('should return $expected for $x as input', ({ x, expected }) => {
+      expect(toPascalCase(x)).toBe(expected);
     });
   });
 
   describe('toSnakeCase', () => {
-    const testCases = {
-      '': '',
-      ' ': ' ',
-      'foo': 'foo',
-      'foo bar': 'foo_bar',
-      'foo-bar': 'foo_bar',
-      'fooBar': 'foo_bar',
-      'foo_bar': 'foo_bar',
-      'foo bar code': 'foo_bar_code',
-      'foo-bar-code': 'foo_bar_code',
-      'fooBarCode': 'foo_bar_code',
-      'foo_bar_code': 'foo_bar_code',
-      'FOO_BAR_CODE': 'foo_bar_code',
-      'foo_ -BaRC ode': 'foo_ -BaRC ode',
-    };
-
-    Object.entries(testCases).forEach(([value, result]) => {
-      it(`should return ${result} for ${value} as input`, () => {
-        expect(toSnakeCase(value)).toBe(result);
-      });
+    it.each`
+      x                   | expected
+      ${''}               | ${''}
+      ${' '}              | ${' '}
+      ${'foo'}            | ${'foo'}
+      ${'foo bar'}        | ${'foo_bar'}
+      ${'foo-bar'}        | ${'foo_bar'}
+      ${'fooBar'}         | ${'foo_bar'}
+      ${'foo_bar'}        | ${'foo_bar'}
+      ${'foo bar code'}   | ${'foo_bar_code'}
+      ${'foo-bar-code'}   | ${'foo_bar_code'}
+      ${'fooBarCode'}     | ${'foo_bar_code'}
+      ${'foo_bar_code'}   | ${'foo_bar_code'}
+      ${'FOO_BAR_CODE'}   | ${'foo_bar_code'}
+      ${'foo_ -BaRC ode'} | ${'foo_ -BaRC ode'}
+    `('should return $expected for $x as input', ({ x, expected }) => {
+      expect(toSnakeCase(x)).toBe(expected);
     });
   });
 
   describe('toKebabCase', () => {
-    const testCases = {
-      '': '',
-      ' ': ' ',
-      'foo': 'foo',
-      'foo bar': 'foo-bar',
-      'foo-bar': 'foo-bar',
-      'fooBar': 'foo-bar',
-      'foo_bar': 'foo-bar',
-      'foo bar code': 'foo-bar-code',
-      'foo-bar-code': 'foo-bar-code',
-      'fooBarCode': 'foo-bar-code',
-      'foo_bar_code': 'foo-bar-code',
-      'FOO_BAR_CODE': 'foo-bar-code',
-      'foo_ -BaRC ode': 'foo_ -BaRC ode',
-    };
-    Object.entries(testCases).forEach(([value, result]) => {
-      it(`should return ${result} for ${value} as input`, () => {
-        expect(toKebabCase(value)).toBe(result);
-      });
-    });
-  });
-
-  describe('toCapitalCase', () => {
-    const testCases = {
-      '': '',
-      ' ': ' ',
-      'foo': 'Foo',
-      'Foo': 'Foo',
-      'FOOBAR': 'Foobar',
-    };
-
-    Object.entries(testCases).forEach(([value, result]) => {
-      it(`should return ${result} for ${value} as input`, () => {
-        expect(toCapitalCase(value)).toBe(result);
-      });
-    });
-  });
-
-  describe('isNullOrEmpty', () => {
-    it('should return true for null', () => {
-      expect(isNullOrEmpty(null)).toBe(true);
-    });
-
-    it('should return true for undefined', () => {
-      expect(isNullOrEmpty(undefined)).toBe(true);
-    });
-
-    it('should return true for empty string', () => {
-      expect(isNullOrEmpty('')).toBe(true);
-    });
-
-    it('should return true for an empty array', () => {
-      expect(isNullOrEmpty([])).toBe(true);
-    });
-
-    it('should return false for a number', () => {
-      expect(isNullOrEmpty(1 as any)).toBe(false);
-    });
-
-    it('should return false for a non-empty array', () => {
-      expect(isNullOrEmpty([1, 2, 3])).toBe(false);
-    });
-
-    it('should return false for non-empty string', () => {
-      expect(isNullOrEmpty('f')).toBe(false);
+    it.each`
+      x                   | expected
+      ${''}               | ${''}
+      ${' '}              | ${' '}
+      ${'foo'}            | ${'foo'}
+      ${'foo bar'}        | ${'foo-bar'}
+      ${'foo-bar'}        | ${'foo-bar'}
+      ${'fooBar'}         | ${'foo-bar'}
+      ${'foo_bar'}        | ${'foo-bar'}
+      ${'foo bar code'}   | ${'foo-bar-code'}
+      ${'foo-bar-code'}   | ${'foo-bar-code'}
+      ${'fooBarCode'}     | ${'foo-bar-code'}
+      ${'foo_bar_code'}   | ${'foo-bar-code'}
+      ${'FOO_BAR_CODE'}   | ${'foo-bar-code'}
+      ${'foo_ -BaRC ode'} | ${'foo_ -BaRC ode'}
+    `('should return $expected for $x as input', ({ x, expected }) => {
+      expect(toKebabCase(x)).toBe(expected);
     });
   });
 });
 
-describe('removeTrailingSlash', () => {
-  const testCases = {
-    '': '',
-    '/': '',
-    'string': 'string',
-    'string/': 'string',
-    'string//': 'string',
-  };
+describe('toCapitalCase', () => {
+  it.each`
+    x           | expected
+    ${''}       | ${''}
+    ${' '}      | ${' '}
+    ${'foo'}    | ${'Foo'}
+    ${'Foo'}    | ${'Foo'}
+    ${'FOOBAR'} | ${'Foobar'}
+  `('should return $expected for $x as input', ({ x, expected }) => {
+    expect(toCapitalCase(x)).toBe(expected);
+  });
+});
 
-  Object.entries(testCases).forEach(([value, result]) => {
-    it(`should return ${result} for ${value} as input`, () => {
-      expect(removeTrailingSlash(value)).toBe(result);
-    });
+describe('isNullOrEmpty', () => {
+  it.each`
+    x            | expected
+    ${null}      | ${true}
+    ${undefined} | ${true}
+    ${''}        | ${true}
+    ${[]}        | ${true}
+    ${1}         | ${false}
+    ${[1]}       | ${false}
+    ${'f'}       | ${false}
+  `('should return $expected for $x as input', ({ x, expected }) => {
+    expect(isNullOrEmpty(x)).toBe(expected);
+  });
+});
+
+describe('removeTrailingSlash', () => {
+  it.each`
+    x             | expected
+    ${''}         | ${''}
+    ${'/'}        | ${''}
+    ${'string'}   | ${'string'}
+    ${'string/'}  | ${'string'}
+    ${'string//'} | ${'string'}
+  `('should return $expected for $x as input', ({ x, expected }) => {
+    expect(removeTrailingSlash(x)).toBe(expected);
   });
 });

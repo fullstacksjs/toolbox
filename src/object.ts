@@ -1,11 +1,11 @@
-import { isNullOrEmpty } from './string.js';
+import { isNull } from './guards.js';
 
 /**
- * returns clean object
+ * remove null and empty property from an object
  */
-export const pruneNullOrEmpty = <T>(obj: T) =>
+export const pruneNullOrEmpty = <T extends Record<string, unknown>>(
+  obj: T,
+): T =>
   Object.fromEntries(
-    Object.entries(obj).filter(
-      ([_, value]: [string, any]) => !isNullOrEmpty(value),
-    ),
-  );
+    Object.entries(obj).filter(([_, value]) => !isNull(value) && value !== ''),
+  ) as T;

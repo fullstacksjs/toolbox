@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.9.0](https://github.com/fullstacksjs/toolbox/compare/v2.8.4...v2.9.0) (2021-12-09)
+
+
+### Features
+
+* add pruneNullOrEmpty ([4df7908](https://github.com/fullstacksjs/toolbox/commit/4df7908b2a09a211469a8471ee0d8f675f7b3011))
+* **test:** add tests for pruneNullOrEmpty ([a47022b](https://github.com/fullstacksjs/toolbox/commit/a47022b719932c3833f667116221556381ec8530))
+
 ### [2.8.2](https://github.com/fullstacksjs/toolbox/compare/v2.8.1...v2.8.2) (2021-11-09)
 
 

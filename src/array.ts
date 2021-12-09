@@ -4,7 +4,7 @@ import { randomInt } from './number.js';
 /**
  * wrap value with array if value is not an array itself.
  */
-export const ensureArray = <T>(x: T): T extends Array<any> ? T : [T] =>
+export const ensureArray = <T>(x: T): T extends any[] ? T : [T] =>
   Array.isArray(x) ? (x as any) : [x];
 
 /**
@@ -18,7 +18,7 @@ export const range = (
 interface ToArray {
   (value: null | undefined): never[];
   (value: string): [string];
-  <T>(value: Array<T> | Iterable<T> | T): T[];
+  <T>(value: Iterable<T> | T | T[]): T[];
   <T>(value: T): [T];
 }
 
@@ -26,7 +26,7 @@ interface ToArray {
  * returns array representation of a value
  */
 export const toArray: ToArray = <T>(
-  value: Array<T> | Iterable<T> | T | string | null | undefined,
+  value: Iterable<T> | T | T[] | string | null | undefined,
 ) => {
   if (isNull(value)) return [] as any;
   if (Array.isArray(value)) return value;
@@ -38,9 +38,7 @@ export const toArray: ToArray = <T>(
 /**
  * Gets some nullable arrays and returns concatenation of present arrays
  */
-export const concatNullableArrays = (
-  ...args: (Array<any> | null | undefined)[]
-) =>
+export const concatNullableArrays = (...args: (any[] | null | undefined)[]) =>
   args?.map(arr => arr ?? [])?.reduce((curr, arr) => curr.concat(arr), []) ??
   [];
 

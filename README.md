@@ -49,6 +49,8 @@
     - [randomInt](#randomint)
     - [toInteger](#tointeger)
     - [isInRange](#isinrange)
+  - [Object](#object)
+    - [pruneNullOrEmpty](#prunenullorempty)
   - [String](#string)
     - [toSpaceCase](#tospacecase)
     - [toCamelCase](#tocamelcase)
@@ -427,6 +429,20 @@ isInRange(100, { min: 50 , max: 150 }); // true
 isInRange(100, { min: 100, max: 150 }); // true
 ```
 
+### Object
+
+#### pruneNullOrEmpty
+
+remove null and empty property from an object
+
+```typescript
+pruneNullOrEmpty({ name: 'John', age: null, status: '', nickname: undefined }) // {  name: 'John'  }
+pruneNullOrEmpty({ foo: { bar: null } }) // { foo: { bar: null } }
+pruneNullOrEmpty({ foo: {} })            // { name: {} }
+pruneNullOrEmpty({ foo: { length: 0 } }) // { name: { length: 0 } }
+pruneNullOrEmpty({ foo: [] })            // { name: [] }
+```
+
 ### String
 
 #### toSpaceCase
@@ -512,6 +528,7 @@ isNullOrEmpty(1);         // false
 isNullOrEmpty([]);        // true
 isNullOrEmpty([1,2,3]);   // false
 ```
+
 ### Regex
 
 #### testRegex

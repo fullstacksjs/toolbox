@@ -10,20 +10,14 @@ import {
 
 describe('array', () => {
   describe('ensureArray', () => {
-    it('should wrap undefined value with an array', () => {
-      expect(ensureArray(undefined)).toStrictEqual([undefined]);
-    });
-
-    it('should wrap null value with an array', () => {
-      expect(ensureArray(null)).toStrictEqual([null]);
-    });
-
-    it('should wrap string value with an array', () => {
-      expect(ensureArray('string')).toStrictEqual(['string']);
-    });
-
-    it('should wrap object with an array', () => {
-      expect(ensureArray({ foo: 'bar' })).toStrictEqual([{ foo: 'bar' }]);
+    it.each`
+      x            | expected
+      ${null}      | ${[null]}
+      ${undefined} | ${[undefined]}
+      ${'string'}  | ${['string']}
+      ${{}}        | ${[{}]}
+    `('should wrap $x with an array', ({ x, expected }) => {
+      expect(ensureArray(x)).toStrictEqual(expected);
     });
 
     it("should return the argument if it's already an array", () => {

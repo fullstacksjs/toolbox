@@ -12,10 +12,13 @@ const hasDepType =
 
 export const hasPeerDep = (packageJson: PackageJson) =>
   hasDepType(packageJson)('peerDependencies');
+
 export const hasDep = (packageJson: PackageJson) =>
   hasDepType(packageJson)('dependencies');
+
 export const hasDevDep = (packageJson: PackageJson) =>
   hasDepType(packageJson)('devDependencies');
+
 export const hasOptDep = (packageJson: PackageJson) =>
   hasDepType(packageJson)('optionalDependencies');
 

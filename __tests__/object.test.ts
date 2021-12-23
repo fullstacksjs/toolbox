@@ -18,5 +18,19 @@ describe('Objects', () => {
         }),
       ).toEqual({ name: 'John' });
     });
+
+    it('should not prune nested object', () => {
+      expect(pruneNullOrEmpty({ foo: { bar: null } })).toEqual({
+        foo: { bar: null },
+      });
+    });
+
+    it('should not remove empty object', () => {
+      expect(pruneNullOrEmpty({ name: {} })).toEqual({ name: {} });
+    });
+
+    it('should not remove empty array', () => {
+      expect(pruneNullOrEmpty({ name: [] })).toEqual({ name: [] });
+    });
   });
 });

@@ -181,9 +181,9 @@ getEnv(name, fallback)
 
 ```typescript
 // FOO=foo BAR=bar node
-env.getEnv('FOO');        // foo
-env.getEnv('BAR');        // undefined
-env.getEnv('BAR', 'bar'); // bar
+Env.getEnv('FOO');        // foo
+Env.getEnv('BAR');        // undefined
+Env.getEnv('BAR', 'bar'); // bar
 ```
 
 #### getRequiredEnv
@@ -194,8 +194,8 @@ getRequiredEnv(name)
 
 ```typescript
 // FOO=foo BAR=bar node
-env.getRequiredEnv('FOO');        // foo
-env.getRequiredEnv('BAR');        // Error: BAR is required
+Env.getRequiredEnv('FOO');        // foo
+Env.getRequiredEnv('BAR');        // Error: BAR is required
 ```
 
 #### getNodeEnv
@@ -206,9 +206,9 @@ getNodeEnv(fallback)
 
 ```typescript
 // NODE_ENV=anything node
-env.getNodeEnv();           // undefined
-env.getNodeEnv('anything'); // 'anything'
-env.getNodeEnv('not');      // undefined
+Env.getNodeEnv();           // undefined
+Env.getNodeEnv('anything'); // 'anything'
+Env.getNodeEnv('not');      // undefined
 ```
 
 #### is
@@ -217,8 +217,8 @@ strict check NODE_ENV with given value
 
 ```typescript
 // NODE_ENV=production node
-env.is('development'); // false
-env.is('production');  // true
+Env.is('development'); // false
+Env.is('production');  // true
 ```
 
 #### isDev
@@ -227,7 +227,7 @@ check env is 'development'
 
 ```typescript
 // NODE_ENV=development node
-env.isDev(); // true
+Env.isDev; // true
 ```
 
 #### isProd
@@ -236,7 +236,7 @@ check env is 'production'
 
 ```typescript
 // NODE_ENV=production node
-env.isProd(); // true
+Env.isProd; // true
 ```
 
 #### isTest
@@ -245,7 +245,7 @@ check env is 'test'
 
 ```typescript
 // NODE_ENV=test node
-env.isTest(); // true
+Env.isTest; // true
 ```
 
 ---

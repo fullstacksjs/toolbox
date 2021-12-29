@@ -66,6 +66,14 @@ describe('env', () => {
 
       expect(getRequiredEnv(key)).toBe(value);
     });
+
+    it('should throw if env is empty string', () => {
+      const key = 'key';
+      const value = '';
+      process.env[key] = value;
+
+      expect(() => getRequiredEnv(key)).toThrowError();
+    });
   });
 
   describe('is', () => {

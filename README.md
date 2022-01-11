@@ -43,6 +43,7 @@
     - [isNull](#isnull)
     - [isNotNull](#isnotnull)
     - [isTruthy](#istruthy)
+    - [isObject](#isobject)
   - [Number](#number)
     - [safeDivide](#safedivide)
     - [clamp](#clamp)
@@ -368,6 +369,21 @@ isNotNull(false);    // false
 isNotNull({});       // true
 isNotNull([]);       // true
 isNotNull(NaN);      // false
+```
+
+---
+
+#### isObject
+
+check given value is object
+
+```typescript
+isObject('hello world');         // false
+isObject(null);                  // false
+isObject(true);                  // false
+isObject([]);                    // false
+isObject({ x: 'word'});          // true
+isObject({ 2: 'numeric index'}); // true
 ```
 
 ---

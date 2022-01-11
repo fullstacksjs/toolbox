@@ -31,3 +31,9 @@ export const isNotNull = <T>(value: T): value is NonNullable<T> =>
  * check given value is truthy
  */
 export const isTruthy = <T>(value: T): value is Truthy<T> => Boolean(value);
+
+/**
+ * check given value is object
+ */
+export const isObject = <T>(x: T): x is Record<number | string | symbol, any> =>
+  typeof x === 'object' && !Array.isArray(x) && x !== null;

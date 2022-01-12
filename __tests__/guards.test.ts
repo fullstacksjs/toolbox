@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import {
   isFunction,
   isIterable,
   isNotNull,
   isNull,
+  isObject,
   isString,
   isTruthy,
 } from '../src/guards';
@@ -115,6 +117,27 @@ describe('guards', () => {
 
     it('should return true for function', () => {
       expect(isFunction(() => 1)).toBe(true);
+    });
+  });
+  describe('isObject', () => {
+    it.each`
+      x                | expected
+      ${''}            | ${false}
+      ${'hello world'} | ${false}
+      ${null}          | ${false}
+      ${true}          | ${false}
+      ${undefined}     | ${false}
+      ${NaN}           | ${false}
+      ${0}             | ${false}
+      ${() => {}}      | ${false}
+      ${false}         | ${false}
+      ${[]}            | ${false}
+      ${[2]}           | ${false}
+      ${{}}            | ${true}
+      ${{ a: 2 }}      | ${true}
+      ${{ 2: 'a' }}    | ${true}
+    `('should return $expected for $x as input', ({ x, expected }) => {
+      expect(isObject(x)).toBe(expected);
     });
   });
 });

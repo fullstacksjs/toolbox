@@ -375,7 +375,7 @@ isNotNull(NaN);      // false
 
 #### isObject
 
-check given value is object
+check given value is an object
 
 ```typescript
 isObject('hello world');         // false

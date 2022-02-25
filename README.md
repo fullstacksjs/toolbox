@@ -13,6 +13,8 @@
 
 ## Table of Contents <!-- omit in toc -->
 
+<!-- cspell:disable -->
+
 - [Installation](#installation)
 - [Usage](#usage)
   - [Array](#array)
@@ -68,7 +70,11 @@
   - [Truthy<T>](#truthyt)
   - [CamelCase<T>](#camelcaset)
   - [Predicate<T>](#predicatet)
+  - [MaybePromise<T>](#maybepromiset)
+  - [VoidFn<TArgs = any[]>](#voidfntargs--any)
 - [Credits](#credits)
+
+<!-- cspell:enable -->
 
 ## Installation
 
@@ -619,7 +625,20 @@ type TX = CamelCase<X> // 'literalItem0' | 'literalItem1' | 'literalItem2' | 'it
 Predicate function type
 
 ```typescript
-type Predicate<number> // (a: number) => boolean;
+type Predicate<T> // (a: T) => boolean;
+````
+
+### MaybePromise<T>
+
+```typescript
+type MaybePromise<T> // T | Promise<T>;
+````
+
+### VoidFn<TArgs = any[]>
+
+```typescript
+type VoidFn    = (...args: any) => void | Promise<void>;
+type VoidFn<T> = ( ...args: T) => void | Promise<void>;
 ````
 
 ## Credits

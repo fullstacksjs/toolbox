@@ -14,3 +14,9 @@ export type CamelCase<S extends string> =
 export type Predicate<T = any> = (a: T) => boolean;
 
 export type Nullish = null | undefined;
+
+export type MaybePromise<T> = Promise<T> | T;
+
+export type VoidFn<TArgs extends any[] = any[]> = (
+  ...args: TArgs
+) => MaybePromise<void>;

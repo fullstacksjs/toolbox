@@ -22,3 +22,10 @@ chainable
 tailwindcss
 semibold
 commitlint
+flaticon
+npmrc
+npmignore
+postpublish
+prebuild
+pinst
+iteratable

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.10.0](https://github.com/fullstacksjs/toolbox/compare/v2.9.1...v2.10.0) (2022-02-25)
+
+
+### Features
+
+* **types:** add VoidFn, MaybePromise ([ba2fc56](https://github.com/fullstacksjs/toolbox/commit/ba2fc56e0808679a6fb42cb050ef97becf860f0e))
+
 ### [2.9.1](https://github.com/fullstacksjs/toolbox/compare/v2.9.0...v2.9.1) (2021-12-09)
 
 ## [2.9.0](https://github.com/fullstacksjs/toolbox/compare/v2.8.4...v2.9.0) (2021-12-09)
@@ -123,11 +130,11 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * add cspell to check commit message ([5fbc050](https://github.com/fullstacksjs/utils/commit/5fbc050f9c43872bedd698f6c73c2c2b5d693808))
-* add exampl for passesMin ([2514b01](https://github.com/fullstacksjs/utils/commit/2514b014da5bdd9a58d7e840f260dfeb0cc7d43d))
+* add example for passesMin ([2514b01](https://github.com/fullstacksjs/utils/commit/2514b014da5bdd9a58d7e840f260dfeb0cc7d43d))
 * add hasInvalidCasing ([c4efb0a](https://github.com/fullstacksjs/utils/commit/c4efb0acd25a86aa49d20a7f0ef82fd51e5fa0d0))
 * add isNullable ([8701c55](https://github.com/fullstacksjs/utils/commit/8701c551922c9275d7368c13ffc161f856629969))
 * add passesMin ([faf7ccb](https://github.com/fullstacksjs/utils/commit/faf7ccb49568bea2bb4992e397510b0784070bfb))
-* add testRegex and extract regexes in to its own file ([de676db](https://github.com/fullstacksjs/utils/commit/de676db85fad1e93c036d70b53e657eac055935f))
+* add testRegex and extract regex in to its own file ([de676db](https://github.com/fullstacksjs/utils/commit/de676db85fad1e93c036d70b53e657eac055935f))
 * add throwErr ([c7040b7](https://github.com/fullstacksjs/utils/commit/c7040b75482c881456d2cf28d47dc526db0caace))
 * add toSpaceCase and toCamelCase ([1be7e98](https://github.com/fullstacksjs/utils/commit/1be7e9859c3a385145e3c2b9f25ebdbea92a5895))
 * **guards:** rename isNullable to isNull ([fecec3e](https://github.com/fullstacksjs/utils/commit/fecec3e75616f8802112d6d72e86cc8b377c61bf))
@@ -140,10 +147,10 @@ All notable changes to this project will be documented in this file. See [standa
 * fix and add all case convertor functions ([b1e3f5f](https://github.com/fullstacksjs/utils/commit/b1e3f5f317505f43cb4d3d54ad2d7b03c1082073))
 * fix getInitials ([b809f0b](https://github.com/fullstacksjs/utils/commit/b809f0bc167ef03e540c82e1643bde8ccb519002))
 * fix regex before testing too ([d170fa1](https://github.com/fullstacksjs/utils/commit/d170fa1285feb29f691184786e39a392f082cbee))
-* fix toPascalCase returning lowercases ([efaa708](https://github.com/fullstacksjs/utils/commit/efaa708565269de8d0d925110b15ea0d42740a4f))
+* fix toPascalCase returning lower cases ([efaa708](https://github.com/fullstacksjs/utils/commit/efaa708565269de8d0d925110b15ea0d42740a4f))
 * remove debatable test cases ([3c80b4d](https://github.com/fullstacksjs/utils/commit/3c80b4dbf6cb8a0ec030cc52edc72723b4b7f544))
 * remove the log ([97d08e6](https://github.com/fullstacksjs/utils/commit/97d08e6854596df16dd1f9ac88af99fae1884c8c))
-* rename clrfToLF to clrfToLf ([0f70f62](https://github.com/fullstacksjs/utils/commit/0f70f62941825fecc00f4d23bacbaacc203d958f))
+* rename crlfToLF to crlfToLf ([0f70f62](https://github.com/fullstacksjs/utils/commit/0f70f62941825fecc00f4d23bacbaacc203d958f))
 * tokenizer ([d279e94](https://github.com/fullstacksjs/utils/commit/d279e94db9c8cb1e7723c4e42176f12bd1c42659))
 
 
@@ -277,7 +284,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* change randomInt max default paramt to Number.MAX_SAFE_INTEGER ([cdd6250](https://github.com/frontendmonster/utils/commit/cdd62508100c538dd6c6c2bffaa19f143d3770dd))
+* change randomInt max default param to Number.MAX_SAFE_INTEGER ([cdd6250](https://github.com/frontendmonster/utils/commit/cdd62508100c538dd6c6c2bffaa19f143d3770dd))
 
 ### [0.2.2](https://github.com/frontendmonster/utils/compare/v0.2.1...v0.2.2) (2020-01-19)
 

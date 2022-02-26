@@ -1,11 +1,11 @@
-import type { EnvironmentVariable, NodeEnv } from './types.js';
+import type { EnvironmentKey, EnvironmentVariable, NodeEnv } from './types.js';
 import { fallback, required } from './values.js';
 
 /**
  * give NODE_ENV value or given fallback value
  */
 export const getEnv = <T extends EnvironmentVariable>(
-  envKey: string,
+  envKey: EnvironmentKey,
   defaultValue?: T,
 ): T => fallback(process.env[envKey], defaultValue) as any;
 
@@ -19,8 +19,8 @@ export const getNodeEnv = <T extends string = never>(
 /**
  * returns NODE_ENV value or given fallback otherwise throws
  */
-export const getRequiredEnv = (envKey: string): string =>
-  required(getEnv(envKey), envKey);
+export const getRequiredEnv = (envKey: EnvironmentKey): string =>
+  required(getEnv(envKey), envKey as string);
 
 /**
  * strict check NODE_ENV with given value

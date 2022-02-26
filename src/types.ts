@@ -25,10 +25,7 @@ export type NodeEnv<T extends string = never> = EnvironmentVariable<
   T | 'development' | 'production'
 >;
 
-export type EnvironmentKey = keyof typeof process.env;
-
 // ObjectPath is coming from https://twitter.com/diegohaz/status/1309489079378219009
-
 type PathDots<T, Key extends keyof T> = Key extends string
   ? T[Key] extends Record<string, any>
     ?

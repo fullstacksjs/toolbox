@@ -186,38 +186,38 @@ concatNullableArrays(undefined, [1, 2], null, [2, 3]); // [1, 2, 2, 3]
 
 get environment variable or given fallback
 
-getEnv(name, fallback)
+getEnv<TEnvKey, TValue>(name, fallback)
 
 ```typescript
 // FOO=foo BAR=bar node
-Env.getEnv('FOO');        // foo
-Env.getEnv('BAR');        // undefined
-Env.getEnv('BAR', 'bar'); // bar
+Env.getEnv<TEnvKey>('FOO');        // foo
+Env.getEnv<TEnvKey>('BAR');        // undefined
+Env.getEnv<TEnvKey>('BAR', 'bar'); // bar
 ```
 
 #### getRequiredEnv
 
 get environment variable or throw
 
-getRequiredEnv(name)
+getRequiredEnv<TEnvKey, TValue>(name)
 
 ```typescript
 // FOO=foo BAR=bar node
-Env.getRequiredEnv('FOO');        // foo
-Env.getRequiredEnv('BAR');        // Error: BAR is required
+Env.getRequiredEnv<TEnvKey>('FOO');        // foo
+Env.getRequiredEnv<TENvKey>('BAR');        // Error: BAR is required
 ```
 
 #### getNodeEnv
 
 give NODE_ENV value or given fallback value
 
-getNodeEnv(fallback)
+getNodeEnv<T>(fallback)
 
 ```typescript
 // NODE_ENV=anything node
-Env.getNodeEnv();           // undefined
-Env.getNodeEnv('anything'); // 'anything'
-Env.getNodeEnv('not');      // undefined
+Env.getNodeEnv();                       // undefined
+Env.getNodeEnv<'anything'>('anything'); // 'anything'
+Env.getNodeEnv<'not'>('not');           // undefined
 ```
 
 #### is

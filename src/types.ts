@@ -24,5 +24,3 @@ export type EnvironmentVariable<T extends string = string> = T | undefined;
 export type NodeEnv<T extends string = never> = EnvironmentVariable<
   T | 'development' | 'production'
 >;
-
-export type EnvironmentKey = keyof typeof process.env;

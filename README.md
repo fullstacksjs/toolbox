@@ -72,6 +72,8 @@
   - [Predicate<T>](#predicatet)
   - [MaybePromise<T>](#maybepromiset)
   - [VoidFn<TArgs = any[]>](#voidfntargs--any)
+  - [EnvironmentVariable<T extends string>](#environmentvariablet-extends-string)
+  - [NodeEnv<T extends string>](#nodeenvt-extends-string)
 - [Credits](#credits)
 
 <!-- cspell:enable -->
@@ -639,6 +641,20 @@ type MaybePromise<T> // T | Promise<T>;
 ```typescript
 type VoidFn    = (...args: any) => void | Promise<void>;
 type VoidFn<T> = ( ...args: T) => void | Promise<void>;
+````
+
+### EnvironmentVariable<T extends string>
+
+```typescript
+type EnvironmentVariable = string | undefined;
+type EnvironmentVariable<T> = T | undefined;
+````
+
+### NodeEnv<T extends string>
+
+```typescript
+type NodeEnv    = 'production' | 'development | undefined;
+type NodeEnv<T> = 'production' | 'development | undefined | T;
 ````
 
 ## Credits

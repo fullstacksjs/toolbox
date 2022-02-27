@@ -1,11 +1,11 @@
 import { isNull } from './guards.js';
 import { isNullOrEmpty } from './string.js';
 
-export const required = <T>(
+export const required = <T extends any[] | string>(
   value: T | null | undefined,
   name: string = 'value',
 ): T => {
-  if (isNull(value)) throw Error(`${name} is required`);
+  if (isNullOrEmpty(value)) throw Error(`${name} is required`);
   return value;
 };
 

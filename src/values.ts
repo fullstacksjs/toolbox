@@ -1,10 +1,8 @@
 import { isNull } from './guards.js';
 import { isNullOrEmpty } from './string.js';
+import type { Nullish } from './types.js';
 
-export const required = <T>(
-  value: T | null | undefined,
-  name: string = 'value',
-): T => {
+export const required = <T>(value: Nullish | T, name: string = 'value'): T => {
   if (isNull(value)) throw Error(`${name} is required`);
   return value;
 };

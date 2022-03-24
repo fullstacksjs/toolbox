@@ -190,12 +190,16 @@ describe('isNullOrEmpty', () => {
 
 describe('removeTrailingSlash', () => {
   it.each`
-    x             | expected
-    ${''}         | ${''}
-    ${'/'}        | ${''}
-    ${'string'}   | ${'string'}
-    ${'string/'}  | ${'string'}
-    ${'string//'} | ${'string'}
+    x                              | expected
+    ${''}                          | ${''}
+    ${'/'}                         | ${''}
+    ${'string'}                    | ${'string'}
+    ${'string/'}                   | ${'string'}
+    ${'string//'}                  | ${'string'}
+    ${'string//'}                  | ${'string'}
+    ${'/string//'}                 | ${'/string'}
+    ${'https://domain.com/path/'}  | ${'https://domain.com/path'}
+    ${'https://domain.com/path//'} | ${'https://domain.com/path'}
   `('should return $expected for $x as input', ({ x, expected }) => {
     expect(removeTrailingSlash(x)).toBe(expected);
   });

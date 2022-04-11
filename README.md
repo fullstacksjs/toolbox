@@ -70,10 +70,8 @@
   - [Truthy<T>](#truthyt)
   - [CamelCase<T>](#camelcaset)
   - [Predicate<T>](#predicatet)
-  - [MaybePromise<T>](#maybepromiset)
-  - [VoidFn<TArgs = any[]>](#voidfntargs--any)
-  - [EnvironmentVariable<T extends string>](#environmentvariablet-extends-string)
-  - [NodeEnv<T extends string>](#nodeenvt-extends-string)
+  - [RequiredBy<T, K>](#requiredbyt-k)
+  - [PartialBy<T, K>](#partialbyt-k)
 - [Credits](#credits)
 
 <!-- cspell:enable -->
@@ -667,6 +665,32 @@ const foo = {
   },
 };
 type FooObjectPath = ObjectPath<typeof foo>; // "bar" | "bar.baz" | "bar.baz.qux"
+```
+
+### RequiredBy<T, K>
+
+Create type from type `T` with `K` keys are required.
+
+```typescript
+interface Foo {
+  x? : string;
+  y?: string;
+}
+
+type Bar = RequiredBy<T, 'x'> // { x: string, y?: string }
+```
+
+### PartialBy<T, K>
+
+Create type from type `T` with `K` keys are optional.
+
+```typescript
+interface Foo {
+  x : string;
+  y: string;
+}
+
+type Bar = PartialBy<T, 'x'> // { x?: string, y: string }
 ```
 
 ## Credits

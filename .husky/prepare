@@ -1,4 +1,4 @@
 #!/bin/bash
 
-[ -d .git/ ] && yarn husky install
+[ -d .git/ ] && npx --no-install -- husky install
 exit 0

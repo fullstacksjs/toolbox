@@ -29,16 +29,15 @@
   "scripts": {
     "commit": "git-cz",
     "clean": "shx rm -rf lib/*",
-    "prebuild": "yarn run clean",
+    "prebuild": "npm run clean",
     "build": "tsc --project ./tsconfig.cjs.json && tsc --project ./tsconfig.esm.json && ./fixup",
     "lint": "eslint src --ext .ts --fix",
-    "test": "vitest",
-    "test:ci": "vitest --coverage",
-    "test:watch": "yarn run test --watch",
-    "test:coverage": "yarn run test --coverage",
-    "prerelease": "yarn run verify",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage",
+    "prerelease": "npm run verify",
     "release": "standard-version && npm publish && git push --follow-tags --no-verify",
-    "verify": "yarn run lint && yarn run test",
+    "verify": "npm run lint && npm run test",
     "prepublishOnly": "pinst --disable && pkg-ok",
     "postpublish": "pinst --enable",
     "prepare": ".husky/prepare",
@@ -76,6 +75,6 @@
   },
   "volta": {
     "node": "16.13.0",
-    "yarn": "1.22.17"
+    "npm": "8.7.0"
   }
 }

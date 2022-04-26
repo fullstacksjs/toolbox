@@ -1,3 +1,5 @@
+import { describe, expect, it, vi } from 'vitest';
+
 import { callAll, noop, not } from '../src/function';
 
 describe('function', () => {
@@ -9,14 +11,14 @@ describe('function', () => {
 
   describe('callAll', () => {
     it('should call given functions with an args', () => {
-      const fns = [jest.fn(), jest.fn(), jest.fn()];
+      const fns = [vi.fn(), vi.fn(), vi.fn()];
       const args = [1, 2, 3];
       callAll(...fns)(...args);
       fns.forEach(fn => expect(fn).toHaveBeenCalledWith(...args));
     });
 
     it('should not throw with not-callable arguments', () => {
-      const fns = [jest.fn(), jest.fn()] as const;
+      const fns = [vi.fn(), vi.fn()] as const;
       const nonFns = [undefined as any, 'string' as any, null as any, 5 as any];
       const args = [1, 2, 3];
       callAll(fns[0], ...nonFns, fns[1])(...args);

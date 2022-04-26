@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import {
   concatNullableArrays,
   copyArray,
@@ -10,13 +12,14 @@ import {
 
 describe('array', () => {
   describe('ensureArray', () => {
-    it.each`
-      x            | expected
-      ${null}      | ${[null]}
-      ${undefined} | ${[undefined]}
-      ${'string'}  | ${['string']}
-      ${{}}        | ${[{}]}
-    `('should wrap $x with an array', ({ x, expected }) => {
+    const cases = [
+      { x: null, expected: [null] },
+      { x: undefined, expected: [undefined] },
+      { x: 'string', expected: ['string'] },
+      { x: {}, expected: [{}] },
+    ];
+
+    it.each(cases)('should wrap $x with an array', ({ x, expected }) => {
       expect(ensureArray(x)).toStrictEqual(expected);
     });
 

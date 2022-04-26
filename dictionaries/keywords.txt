@@ -30,3 +30,4 @@ prebuild
 pinst
 iteratable
 FMRADIO
+vitest

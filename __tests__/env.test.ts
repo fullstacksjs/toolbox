@@ -1,3 +1,5 @@
+import { beforeEach, describe, expect, it } from 'vitest';
+
 import { Env, getEnv, getNodeEnv, getRequiredEnv } from '../src/env';
 
 const envs = {

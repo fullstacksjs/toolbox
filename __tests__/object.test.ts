@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { pruneNullOrEmpty } from '../src/object';
 
 describe('Objects', () => {

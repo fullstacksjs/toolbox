@@ -1,4 +1,4 @@
-import { isIterable, isNull, isString } from './guards.js';
+import { isIterable, isNotNull, isNull, isString } from './guards.js';
 import { randomInt } from './number.js';
 
 /**
@@ -60,3 +60,17 @@ export const getRandom = <T>(arr: T[]) => {
   const randomIndex = randomInt({ max: arr.length - 1 });
   return arr[randomIndex];
 };
+
+type FilterNullable<T extends unknown[]> = T extends []
+  ? []
+  : T extends [infer H, ...infer R]
+  ? H extends null | undefined
+    ? FilterNullable<R>
+    : [H, ...FilterNullable<R>]
+  : NonNullable<T[0]>;
+
+/**
+ * filters nulls from array/tuple
+ */
+export const compact = <T>(xs: [...T]): FilterNullable<[...T]> =>
+  xs.filter(isNotNull);

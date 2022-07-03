@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import {
+  compact,
   concatNullableArrays,
   copyArray,
   ensureArray,
@@ -162,6 +163,29 @@ describe('array', () => {
 
     it('should return one random element of array', () => {
       expect([1, 2, 3]).toContain(getRandom([1, 2, 3]));
+    });
+  });
+
+  describe('compact', () => {
+    it('should return empty array with empty array arg', () => {
+      expect(compact([])).toEqual([]);
+    });
+
+    it('should return 1 for array with one item being 1', () => {
+      expect(compact([1])).toEqual([1]);
+    });
+
+    it('should return array with same items', () => {
+      expect(compact([1, 2, 3])).toEqual(expect.arrayContaining([1, 2, 3]));
+    });
+
+    it('should remove null values', () => {
+      expect(compact([1, 'yo', null, false, NaN, {}, undefined])).toEqual(
+        expect.arrayContaining([1, 'yo', false, NaN, {}]),
+      );
+    });
+    it('should not remove null values in nested cases', () => {
+      expect(compact([1, 2, 3, [undefined]])).toEqual([1, 2, 3, [undefined]]);
     });
   });
 });

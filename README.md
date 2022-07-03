@@ -24,6 +24,7 @@
     - [toArray](#toarray)
     - [copayArray](#copayarray)
     - [shuffle](#shuffle)
+    - [compact](#compact)
   - [concatNullableArrays](#concatnullablearrays)
   - [Env](#env)
     - [getEnv](#getenv)
@@ -162,6 +163,16 @@ Gets an array and return a shuffled version of it
 copyArray([]);                // []
 copyArray([1]);               // [1]
 copyArray([1, 2, 3 ,4 , 5]);  // [2, 1, 3, 4, 5]
+```
+
+#### compact
+
+filters nulls from array
+
+```typescript
+compact([1, false, null, 2, undefined]); // [1, false, 2]
+compact([NaN, false, null, 0, undefined]); // [NaN, false, 0]
+
 ```
 
 ### concatNullableArrays

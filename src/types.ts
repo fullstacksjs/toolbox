@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export type Truthy<T> = T extends '' | 0 | false | null | undefined ? never : T;
 
 export type CamelCase<S extends string> =
@@ -46,9 +47,21 @@ export type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 export type RequiredBy<T, K extends keyof T> = Omit<T, K> &
   Required<Pick<T, K>>;
 
-type FilterNullishTuple<T extends readonly unknown[]> = T extends readonly []
+type FilterNullishReadonlyArray<T extends readonly unknown[]> =
+  T[number] extends infer R ? readonly NonNullable<R>[] : never;
+
+type FilterNullishReadonlyTuple<T extends readonly unknown[]> =
+  T extends readonly []
+    ? []
+    : T extends readonly [infer H, ...infer R]
+    ? H extends null | undefined
+      ? FilterNullishReadonlyTuple<R>
+      : readonly [H, ...FilterNullishReadonlyTuple<R>]
+    : readonly [NonNullable<T[0]>];
+
+type FilterNullishTuple<T extends unknown[]> = T extends []
   ? []
-  : T extends readonly [infer H, ...infer R]
+  : T extends [infer H, ...infer R]
   ? H extends null | undefined
     ? FilterNullishTuple<R>
     : [H, ...FilterNullishTuple<R>]
@@ -59,4 +72,10 @@ type FilterNullishArray<T extends unknown[]> = T[number] extends infer R
   : never;
 
 export type FilterNullish<T extends unknown[] | readonly unknown[]> =
-  T extends unknown[] ? FilterNullishArray<T> : FilterNullishTuple<T>;
+  T extends unknown[]
+    ? T extends (number extends T['length'] ? [] : any[])
+      ? FilterNullishTuple<T>
+      : FilterNullishArray<T>
+    : T extends (number extends T['length'] ? readonly [] : readonly any[])
+    ? FilterNullishReadonlyTuple<T>
+    : FilterNullishReadonlyArray<T>;

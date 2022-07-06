@@ -73,6 +73,7 @@
   - [Predicate<T>](#predicatet)
   - [RequiredBy<T, K>](#requiredbyt-k)
   - [PartialBy<T, K>](#partialbyt-k)
+  - [FilterNullish<T>](#filternullisht)
 - [Credits](#credits)
 
 <!-- cspell:enable -->
@@ -702,6 +703,15 @@ interface Foo {
 }
 
 type Bar = PartialBy<T, 'x'> // { x?: string, y: string }
+```
+
+### FilterNullish<T>
+
+```typescript
+type Arr    = FilterNullish<(number | undefined | string | null)[]>          // (number | string)[]
+type Tuple  = FilterNullish<[number, null, string, undefined]>               // [number, string]
+type RArr   = FilterNullish<readonly (number | undefined | string | null)[]> // readonly (number | string)[]
+type RTuple = FilterNullish<readonly [number, null, string, undefined]>      // readonly [number, string]
 ```
 
 ## Credits

@@ -45,3 +45,18 @@ export type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 
 export type RequiredBy<T, K extends keyof T> = Omit<T, K> &
   Required<Pick<T, K>>;
+
+type FilterNullishTuple<T extends readonly unknown[]> = T extends readonly []
+  ? []
+  : T extends readonly [infer H, ...infer R]
+  ? H extends null | undefined
+    ? FilterNullishTuple<R>
+    : [H, ...FilterNullishTuple<R>]
+  : [NonNullable<T[0]>];
+
+type FilterNullishArray<T extends unknown[]> = T[number] extends infer R
+  ? NonNullable<R>[]
+  : never;
+
+export type FilterNullish<T extends unknown[] | readonly unknown[]> =
+  T extends unknown[] ? FilterNullishArray<T> : FilterNullishTuple<T>;

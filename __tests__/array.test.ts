@@ -184,6 +184,7 @@ describe('array', () => {
         expect.arrayContaining([1, 'yo', false, NaN, {}]),
       );
     });
+
     it('should not remove null values in nested cases', () => {
       expect(compact([1, 2, 3, [undefined]])).toEqual([1, 2, 3, [undefined]]);
     });

@@ -70,12 +70,12 @@
     - [throwErr](#throwerr)
     - [assert](#assert)
 - [types](#types)
-  - [Truthy<T>](#truthyt)
-  - [CamelCase<T>](#camelcaset)
-  - [Predicate<T>](#predicatet)
+  - [Truthy\<T>](#truthyt)
+  - [CamelCase\<T>](#camelcaset)
+  - [Predicate\<T>](#predicatet)
   - [RequiredBy<T, K>](#requiredbyt-k)
   - [PartialBy<T, K>](#partialbyt-k)
-  - [FilterNullish<T>](#filternullisht)
+  - [FilterNullish\<T>](#filternullisht)
 - [Credits](#credits)
 
 <!-- cspell:enable -->
@@ -568,7 +568,7 @@ isNullOrEmpty([1,2,3]);   // false
 ###  Nullable
 
   
- ###  Nullable<T>
+ ###  Nullable\<T>
 
 ```typescript
 type name = Nullable<string> // null | string
@@ -643,7 +643,7 @@ throwError({})               // Uncaught {}
 
 ## types
 
-### Truthy<T>
+### Truthy\<T>
 
 Type guard for truthy values
 
@@ -652,7 +652,7 @@ type X = 1 | 0 | '' | boolean | null | 'String';
 type TX = Truthy<X> // 1 | true | 'String'
 ```
 
-### CamelCase<T>
+### CamelCase\<T>
 
 Converts snake_case values in a type to camelCase
 
@@ -661,7 +661,7 @@ type X = 'literal_item_0' | 'LITERAL_ITEM_1' | 'LiTeraL_ItEm_2' | 'it_a_recursiv
 type TX = CamelCase<X> // 'literalItem0' | 'literalItem1' | 'literalItem2' | 'itsARecursiveTypes';
 ```
 
-### Predicate<T>
+### Predicate\<T>
 
 Predicate function type
 
@@ -669,7 +669,7 @@ Predicate function type
 type Predicate<T> // (a: T) => boolean;
 ````
 
-### MaybePromise<T>
+### MaybePromise\<T>
 
 ```typescript
 type MaybePromise<T> // T | Promise<T>;
@@ -696,7 +696,7 @@ type NodeEnv    = 'production' | 'development | undefined;
 type NodeEnv<T> = 'production' | 'development | undefined | T;
 ````
 
-### ObjectPath<T>
+### ObjectPath\<T>
 ```typescript
 const foo = {
   bar: {
@@ -734,7 +734,7 @@ interface Foo {
 type Bar = PartialBy<T, 'x'> // { x?: string, y: string }
 ```
 
-### FilterNullish<T>
+### FilterNullish\<T>
 
 ```typescript
 type Arr    = FilterNullish<(number | undefined | string | null)[]>          // (number | string)[]

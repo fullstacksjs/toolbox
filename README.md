@@ -62,6 +62,8 @@
     - [toKebabCase](#tokebabcase)
     - [toPascalCase](#topascalcase)
     - [isNullOrEmpty](#isnullorempty)
+  - [Nullable](#nullable)
+    - [chain](#chain)
   - [Regex](#regex)
     - [testRegex](#testregex)
   - [Error](#error)
@@ -561,6 +563,33 @@ isNullOrEmpty('f');       // false
 isNullOrEmpty(1);         // false
 isNullOrEmpty([]);        // true
 isNullOrEmpty([1,2,3]);   // false
+```
+
+###  Nullable
+
+  
+ ###  Nullable<T>
+
+```typescript
+type name = Nullable<string> // null | string
+```
+
+####  chain
+
+chain nullable function together
+
+```typescript
+
+const  f  = (x:  string):  string[] =>  x.split('');
+const  g  = (x:  string[]):  number  =>  Number.parseInt(x[0]!, 10);
+const  h  = (x:  number):  Nullable<number> => (Number.isNaN(x) ? null : x);
+const  k  = (x:  number):  string  => (x === 2 ? 'yes' : 'no');
+
+chain('2', f, g, h, k); // 'yes'
+chain('3', f, g, h, k); // 'no'
+chain('n', f, g, h, k); // null
+chain(null, f, g, h, k); // null
+
 ```
 
 ### Regex

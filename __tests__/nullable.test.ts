@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
 
 import type { Nullable } from '../src/nullable';
-import { chain } from '../src/nullable';
+import { bind } from '../src/nullable';
 
 describe('nullable', () => {
-  describe('chain', () => {
+  describe('bind', () => {
     const getNull = () => null;
     const fromNullToNum = (n: null) => 100;
     const f = (x: string) => 2;
@@ -26,23 +26,23 @@ describe('nullable', () => {
     it.each(cases)(
       'should compose %# functions given $x',
       ({ x, fns, expected }) => {
-        expect(chain(x, ...(fns as [any]))).toStrictEqual(expected);
+        expect(bind(x, ...(fns as [any]))).toStrictEqual(expected);
       },
     );
     it('should return null if first arg is null', () => {
-      expect(chain(null, f, g, h, j, k)).eq(null);
+      expect(bind(null, f, g, h, j, k)).eq(null);
     });
 
     it('should return null if any composed function returned null', () => {
-      expect(chain(null, f, g, h, j, k)).eq(null);
+      expect(bind(null, f, g, h, j, k)).eq(null);
     });
 
     it('should return null if any composed function returned null', () => {
-      expect(chain('normal', f, g, getNull, h, j)).eq(null);
+      expect(bind('normal', f, g, getNull, h, j)).eq(null);
     });
 
     it('should return null if any composed function returned null and should stop calling the next function', () => {
-      expect(chain('normal', f, g, getNull, fromNullToNum)).eq(null);
+      expect(bind('normal', f, g, getNull, fromNullToNum)).eq(null);
     });
   });
 });

@@ -45,6 +45,3 @@ export function bind<A, B, C, D, E, F, G>(
 export function bind<A>(x: Nullable<A>, ...fns: any[]) {
   return fns.reduce((v, f) => (v === null ? null : f(v)), x);
 }
-
-const f = (x: string) => x.charCodeAt(0);
-console.log(bind(null, f));

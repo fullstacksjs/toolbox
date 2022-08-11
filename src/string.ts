@@ -80,7 +80,12 @@ export const getInitials = (name: string, fallback: string = '?'): string =>
     : fallback;
 
 /**
- * removing trailing slash from a string
+ * removing trailing slashes from a string
  */
-export const removeTrailingSlash = (str: string): string =>
+export const removeTrailingSlashes = (str: string): string =>
   str.replace(/\/+$/g, '');
+
+/**
+ * removing leading slashes from a string
+ */
+export const removeLeadingSlashes = (s: string) => s.replace(/^\/+/, '');

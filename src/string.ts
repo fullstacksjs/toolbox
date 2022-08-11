@@ -89,3 +89,13 @@ export const removeTrailingSlashes = (str: string): string =>
  * removing leading slashes from a string
  */
 export const removeLeadingSlashes = (s: string) => s.replace(/^\/+/, '');
+
+/**
+ * join path parts with / and without trailing and leading slashes
+ */
+export const joinPath = (...paths: string[]): string => {
+  const result = paths.map(el =>
+    removeLeadingSlashes(removeTrailingSlashes(el)),
+  );
+  return result.join('/');
+};

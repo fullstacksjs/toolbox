@@ -28,6 +28,7 @@
     - [concatNullableArrays](#concatnullablearrays)
     - [isEmpty](#isempty)
     - [isLastIndex](#islastindex)
+    - [joinPath](#joinpath)
   - [Env](#env)
     - [getEnv](#getenv)
     - [getRequiredEnv](#getrequiredenv)
@@ -228,6 +229,32 @@ isLastIndex([null], 0)        // true
 isLastIndex([,], 0)           // true
 isLastIndex([, null], 1)      // true
 isLastIndex([, undefined], 1) // true
+```
+
+#### joinPath
+
+join path parts with "/" and without trailing and leading slashes
+
+```typescript
+joinPath(['a', 'b'])                               // 'a/b'
+joinPath(['a', '/b'])                              // 'a/b'
+joinPath(['a', 'b/'])                              // 'a/b'
+joinPath(['a', '/b/'])                             // 'a/b'
+joinPath(['a/', 'b'])                              // 'a/b'
+joinPath(['a/', '/b'])                             // 'a/b'
+joinPath(['a/', 'b/'])                             // 'a/b'
+joinPath(['a/', '/b/'])                            // 'a/b'
+joinPath(['/a', 'b'])                              // 'a/b'
+joinPath(['/a', '/b'])                             // 'a/b'
+joinPath(['/a', 'b/'])                             // 'a/b'
+joinPath(['/a', '/b/'])                            // 'a/b'
+joinPath(['https://a.com', 'b'])                   // 'https://a.com/b'
+joinPath(['https://a.com', '/b'])                  // 'https://a.com/b'
+joinPath(['https://a.com', 'b/'])                  // 'https://a.com/b'
+joinPath(['https://a.com/', '/b/'])                // 'https://a.com/b'
+joinPath(['https://a.com/', '?b=a'])               // 'https://a.com/?b=a'
+joinPath(['https://a.com/', '/b/', '?query'])      // 'https://a.com/b/?query',
+joinPath(['https://a.com/', '?query', '&a=query']) // 'https://a.com/?query/&a=query',
 ```
 
 ---

@@ -25,6 +25,7 @@
     - [copayArray](#copayarray)
     - [shuffle](#shuffle)
     - [compact](#compact)
+    - [isEmpty](#isempty)
   - [concatNullableArrays](#concatnullablearrays)
   - [Env](#env)
     - [getEnv](#getenv)
@@ -178,7 +179,21 @@ filters nulls from array
 ```typescript
 compact([1, false, null, 2, undefined]); // [1, false, 2]
 compact([NaN, false, null, 0, undefined]); // [NaN, false, 0]
+```
 
+#### isEmpty
+
+return whether an array is empty or not
+
+```typescript
+isEmpty([])            // true
+isEmpty([1])           // false
+isEmpty([[], [], []])  // false
+isEmpty([undefined])   // false
+isEmpty([null])        // false
+isEmpty([,])           // false
+isEmpty([, null])      // false
+isEmpty([, undefined]) // false
 ```
 
 ### concatNullableArrays

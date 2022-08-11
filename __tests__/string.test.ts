@@ -4,7 +4,8 @@ import {
   crlfToLf,
   getInitials,
   isNullOrEmpty,
-  removeTrailingSlash,
+  removeLeadingSlashes,
+  removeTrailingSlashes,
   toCamelCase,
   toCapitalCase,
   toKebabCase,
@@ -179,60 +180,78 @@ describe('string', () => {
       },
     );
   });
-});
 
-describe('toCapitalCase', () => {
-  const cases = [
-    { x: '', expected: '' },
-    { x: ' ', expected: ' ' },
-    { x: 'foo', expected: 'Foo' },
-    { x: 'Foo', expected: 'Foo' },
-    { x: 'FOOBAR', expected: 'Foobar' },
-  ];
+  describe('toCapitalCase', () => {
+    const cases = [
+      { x: '', expected: '' },
+      { x: ' ', expected: ' ' },
+      { x: 'foo', expected: 'Foo' },
+      { x: 'Foo', expected: 'Foo' },
+      { x: 'FOOBAR', expected: 'Foobar' },
+    ];
 
-  it.each(cases)(
-    'should return $expected for $x as input',
-    ({ x, expected }) => {
-      expect(toCapitalCase(x)).toBe(expected);
-    },
-  );
-});
+    it.each(cases)(
+      'should return $expected for $x as input',
+      ({ x, expected }) => {
+        expect(toCapitalCase(x)).toBe(expected);
+      },
+    );
+  });
 
-describe('isNullOrEmpty', () => {
-  const cases = [
-    { x: null, expected: true },
-    { x: undefined, expected: true },
-    { x: '', expected: true },
-    { x: [], expected: true },
-    { x: [1], expected: false },
-    { x: 'f', expected: false },
-  ];
+  describe('isNullOrEmpty', () => {
+    const cases = [
+      { x: null, expected: true },
+      { x: undefined, expected: true },
+      { x: '', expected: true },
+      { x: [], expected: true },
+      { x: [1], expected: false },
+      { x: 'f', expected: false },
+    ];
 
-  it.each(cases)(
-    'should return $expected for $x as input',
-    ({ x, expected }) => {
-      expect(isNullOrEmpty(x)).toBe(expected);
-    },
-  );
-});
+    it.each(cases)(
+      'should return $expected for $x as input',
+      ({ x, expected }) => {
+        expect(isNullOrEmpty(x)).toBe(expected);
+      },
+    );
+  });
 
-describe('removeTrailingSlash', () => {
-  const cases = [
-    { x: '', expected: '' },
-    { x: '/', expected: '' },
-    { x: 'string', expected: 'string' },
-    { x: 'string/', expected: 'string' },
-    { x: 'string//', expected: 'string' },
-    { x: 'string//', expected: 'string' },
-    { x: '/string//', expected: '/string' },
-    { x: 'https://domain.com/path/', expected: 'https://domain.com/path' },
-    { x: 'https://domain.com/path//', expected: 'https://domain.com/path' },
-  ];
+  describe('removeTrailingSlash', () => {
+    const cases = [
+      { x: '', expected: '' },
+      { x: '/', expected: '' },
+      { x: 'string', expected: 'string' },
+      { x: 'string/', expected: 'string' },
+      { x: 'string//', expected: 'string' },
+      { x: '/string//', expected: '/string' },
+      { x: 'https://domain.com/path/', expected: 'https://domain.com/path' },
+      { x: 'https://domain.com/path//', expected: 'https://domain.com/path' },
+    ];
 
-  it.each(cases)(
-    'should return $expected for $x as input',
-    ({ x, expected }) => {
-      expect(removeTrailingSlash(x)).toBe(expected);
-    },
-  );
+    it.each(cases)(
+      'should return $expected for $x as input',
+      ({ x, expected }) => {
+        expect(removeTrailingSlashes(x)).toBe(expected);
+      },
+    );
+  });
+
+  describe('removeLeadingSlash', () => {
+    const cases = [
+      { x: '', expected: '' },
+      { x: '/', expected: '' },
+      { x: 'string', expected: 'string' },
+      { x: '/string', expected: 'string' },
+      { x: '//string', expected: 'string' },
+      { x: '//string/', expected: 'string/' },
+      { x: '//string/a', expected: 'string/a' },
+    ];
+
+    it.each(cases)(
+      'should return $expected for $x as input',
+      ({ x, expected }) => {
+        expect(removeLeadingSlashes(x)).toBe(expected);
+      },
+    );
+  });
 });

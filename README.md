@@ -62,14 +62,17 @@
     - [toKebabCase](#tokebabcase)
     - [toPascalCase](#topascalcase)
     - [isNullOrEmpty](#isnullorempty)
-  - [Nullable](#nullable)
-    - [bind](#bind)
+    - [removeTrailingSlashes](#removetrailingslashes)
+    - [removeLeadingSlash](#removeleadingslash)
   - [Regex](#regex)
     - [testRegex](#testregex)
   - [Error](#error)
     - [throwErr](#throwerr)
     - [assert](#assert)
+- [Nullable](#nullable)
+    - [bind](#bind)
 - [types](#types)
+  - [Nullable\<T>](#nullablet)
   - [Truthy\<T>](#truthyt)
   - [CamelCase\<T>](#camelcaset)
   - [Predicate\<T>](#predicatet)
@@ -565,31 +568,33 @@ isNullOrEmpty([]);        // true
 isNullOrEmpty([1,2,3]);   // false
 ```
 
-###  Nullable
+#### removeTrailingSlashes
 
-  
- ###  Nullable\<T>
+Removing trailing slashes from a string
 
 ```typescript
-type name = Nullable<string> // null | string
+removeTrailingSlashes('');                          // ''
+removeTrailingSlashes('/');                         // ''
+removeTrailingSlashes('string');                    // string
+removeTrailingSlashes('string/');                   // string
+removeTrailingSlashes('string//');                  // string
+removeTrailingSlashes('/string//');                 // /string
+removeTrailingSlashes('https://domain.com/path/');  // https://domain.com/path
+removeTrailingSlashes('https://domain.com/path//'); // https://domain.com/path
 ```
 
-####  bind
+#### removeLeadingSlash
 
-bind nullable function together
+Removing leading slashes from a string
 
 ```typescript
-
-const  f  = (x:  string):  string[] =>  x.split('');
-const  g  = (x:  string[]):  number  =>  Number.parseInt(x[0]!, 10);
-const  h  = (x:  number):  Nullable<number> => (Number.isNaN(x) ? null : x);
-const  k  = (x:  number):  string  => (x === 2 ? 'yes' : 'no');
-
-bind('2', f, g, h, k); // 'yes'
-bind('3', f, g, h, k); // 'no'
-bind('n', f, g, h, k); // null
-bind(null, f, g, h, k); // null
-
+removeLeadingSlashes('');           // ''
+removeLeadingSlashes('/');          // ''
+removeLeadingSlashes('string');     // 'string'
+removeLeadingSlashes('/string');    // 'string'
+removeLeadingSlashes('//string');   // 'string'
+removeLeadingSlashes('//string/');  // 'string/'
+removeLeadingSlashes('//string/a'); // 'string/a'
 ```
 
 ### Regex
@@ -641,7 +646,34 @@ throwErr(404)                // Uncaught 404
 throwError({})               // Uncaught {}
 ```
 
+## Nullable
+
+#### bind
+
+bind nullable function together
+
+```typescript
+
+const  f  = (x:  string):  string[] =>  x.split('');
+const  g  = (x:  string[]):  number  =>  Number.parseInt(x[0]!, 10);
+const  h  = (x:  number):  Nullable<number> => (Number.isNaN(x) ? null : x);
+const  k  = (x:  number):  string  => (x === 2 ? 'yes' : 'no');
+
+bind('2', f, g, h, k); // 'yes'
+bind('3', f, g, h, k); // 'no'
+bind('n', f, g, h, k); // null
+bind(null, f, g, h, k); // null
+
+```
+
+
 ## types
+
+### Nullable\<T>
+
+```typescript
+type name = Nullable<string> // null | string
+```
 
 ### Truthy\<T>
 

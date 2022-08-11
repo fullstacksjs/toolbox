@@ -25,8 +25,9 @@
     - [copayArray](#copayarray)
     - [shuffle](#shuffle)
     - [compact](#compact)
+    - [concatNullableArrays](#concatnullablearrays)
     - [isEmpty](#isempty)
-  - [concatNullableArrays](#concatnullablearrays)
+    - [isLastIndex](#islastindex)
   - [Env](#env)
     - [getEnv](#getenv)
     - [getRequiredEnv](#getrequiredenv)
@@ -70,16 +71,16 @@
   - [Error](#error)
     - [throwErr](#throwerr)
     - [assert](#assert)
-- [Nullable](#nullable)
+  - [Nullable](#nullable)
     - [bind](#bind)
-- [types](#types)
-  - [Nullable\<T>](#nullablet)
-  - [Truthy\<T>](#truthyt)
-  - [CamelCase\<T>](#camelcaset)
-  - [Predicate\<T>](#predicatet)
-  - [RequiredBy<T, K>](#requiredbyt-k)
-  - [PartialBy<T, K>](#partialbyt-k)
-  - [FilterNullish\<T>](#filternullisht)
+  - [types](#types)
+    - [Nullable\<T>](#nullablet)
+    - [Truthy\<T>](#truthyt)
+    - [CamelCase\<T>](#camelcaset)
+    - [Predicate\<T>](#predicatet)
+    - [RequiredBy<T, K>](#requiredbyt-k)
+    - [PartialBy<T, K>](#partialbyt-k)
+    - [FilterNullish\<T>](#filternullisht)
 - [Credits](#credits)
 
 <!-- cspell:enable -->
@@ -181,6 +182,21 @@ compact([1, false, null, 2, undefined]); // [1, false, 2]
 compact([NaN, false, null, 0, undefined]); // [NaN, false, 0]
 ```
 
+
+#### concatNullableArrays
+
+concatNullableArrays(...maybeArrays)
+
+```typescript
+concatNullableArrays(null);                            // []
+concatNullableArrays(undefined);                       // []
+concatNullableArrays([]);                              // []
+concatNullableArrays([1]);                             // [1]
+concatNullableArrays(undefined, [1, 2], null);         // [1,2]
+concatNullableArrays(undefined, [1, 2], null, [2, 3]); // [1, 2, 2, 3]
+```
+
+
 #### isEmpty
 
 return whether an array is empty or not
@@ -196,18 +212,24 @@ isEmpty([, null])      // false
 isEmpty([, undefined]) // false
 ```
 
-### concatNullableArrays
+#### isLastIndex
 
-concatNullableArrays(...maybeArrays)
+is an index is the last index in an array
 
 ```typescript
-concatNullableArrays(null);                            // []
-concatNullableArrays(undefined);                       // []
-concatNullableArrays([]);                              // []
-concatNullableArrays([1]);                             // [1]
-concatNullableArrays(undefined, [1, 2], null);         // [1,2]
-concatNullableArrays(undefined, [1, 2], null, [2, 3]); // [1, 2, 2, 3]
+isLastIndex([], 0)            // false
+isLastIndex([1], 0)           // true
+isLastIndex([1, 2], 1)        // true
+isLastIndex([], -1)           // false
+isLastIndex([[], [], []], 0)  // false
+isLastIndex([[], [], []], 2)  // true
+isLastIndex([undefined], 0)   // true
+isLastIndex([null], 0)        // true
+isLastIndex([,], 0)           // true
+isLastIndex([, null], 1)      // true
+isLastIndex([, undefined], 1) // true
 ```
+
 ---
 
 ### Env
@@ -317,6 +339,7 @@ returns the "NOT" of its argument
   not(false) // true
   not(0)     // true
 ```
+
 #### passesMin
 
 returns true if specified minimum predicates pass the given value otherwise false
@@ -332,6 +355,8 @@ isValidNumber(3)  //returns false because its only divisible by 3
 isValidNumber(26) //returns false because its only larger than 25
 isValidNumber(30) //returns true because its passes minimum 2 cases (being divisible by 5 and 3 and larger than 25)
 ```
+
+---
 
 ### Guards
 
@@ -483,6 +508,8 @@ isInRange(100, { min: 50 , max: 150 }); // true
 isInRange(100, { min: 100, max: 150 }); // true
 ```
 
+---
+
 ### Object
 
 #### pruneNullOrEmpty
@@ -496,6 +523,8 @@ pruneNullOrEmpty({ foo: {} })            // { name: {} }
 pruneNullOrEmpty({ foo: { length: 0 } }) // { name: { length: 0 } }
 pruneNullOrEmpty({ foo: [] })            // { name: [] }
 ```
+
+---
 
 ### String
 
@@ -612,6 +641,8 @@ removeLeadingSlashes('//string/');  // 'string/'
 removeLeadingSlashes('//string/a'); // 'string/a'
 ```
 
+---
+
 ### Regex
 
 #### testRegex
@@ -630,6 +661,8 @@ r.test('abc') // false
 testRegex(r, 'abc') // true
 testRegex(r, 'abc') // true
 ```
+
+---
 
 ### Error
 
@@ -661,7 +694,9 @@ throwErr(404)                // Uncaught 404
 throwError({})               // Uncaught {}
 ```
 
-## Nullable
+---
+
+### Nullable
 
 #### bind
 
@@ -681,16 +716,17 @@ bind(null, f, g, h, k); // null
 
 ```
 
+---
 
-## types
+### types
 
-### Nullable\<T>
+#### Nullable\<T>
 
 ```typescript
 type name = Nullable<string> // null | string
 ```
 
-### Truthy\<T>
+#### Truthy\<T>
 
 Type guard for truthy values
 
@@ -699,7 +735,7 @@ type X = 1 | 0 | '' | boolean | null | 'String';
 type TX = Truthy<X> // 1 | true | 'String'
 ```
 
-### CamelCase\<T>
+#### CamelCase\<T>
 
 Converts snake_case values in a type to camelCase
 
@@ -708,7 +744,7 @@ type X = 'literal_item_0' | 'LITERAL_ITEM_1' | 'LiTeraL_ItEm_2' | 'it_a_recursiv
 type TX = CamelCase<X> // 'literalItem0' | 'literalItem1' | 'literalItem2' | 'itsARecursiveTypes';
 ```
 
-### Predicate\<T>
+#### Predicate\<T>
 
 Predicate function type
 
@@ -716,34 +752,34 @@ Predicate function type
 type Predicate<T> // (a: T) => boolean;
 ````
 
-### MaybePromise\<T>
+#### MaybePromise\<T>
 
 ```typescript
 type MaybePromise<T> // T | Promise<T>;
 ````
 
-### VoidFn<TArgs = any[]>
+#### VoidFn<TArgs = any[]>
 
 ```typescript
 type VoidFn    = (...args: any) => void | Promise<void>;
 type VoidFn<T> = ( ...args: T) => void | Promise<void>;
 ````
 
-### EnvironmentVariable<T extends string>
+#### EnvironmentVariable<T extends string>
 
 ```typescript
 type EnvironmentVariable = string | undefined;
 type EnvironmentVariable<T> = T | undefined;
 ````
 
-### NodeEnv<T extends string>
+#### NodeEnv<T extends string>
 
 ```typescript
 type NodeEnv    = 'production' | 'development | undefined;
 type NodeEnv<T> = 'production' | 'development | undefined | T;
 ````
 
-### ObjectPath\<T>
+#### ObjectPath\<T>
 ```typescript
 const foo = {
   bar: {
@@ -755,7 +791,7 @@ const foo = {
 type FooObjectPath = ObjectPath<typeof foo>; // "bar" | "bar.baz" | "bar.baz.qux"
 ```
 
-### RequiredBy<T, K>
+#### RequiredBy<T, K>
 
 Create type from type `T` with `K` keys are required.
 
@@ -768,7 +804,7 @@ interface Foo {
 type Bar = RequiredBy<T, 'x'> // { x: string, y?: string }
 ```
 
-### PartialBy<T, K>
+#### PartialBy<T, K>
 
 Create type from type `T` with `K` keys are optional.
 
@@ -781,7 +817,7 @@ interface Foo {
 type Bar = PartialBy<T, 'x'> // { x?: string, y: string }
 ```
 
-### FilterNullish\<T>
+#### FilterNullish\<T>
 
 ```typescript
 type Arr    = FilterNullish<(number | undefined | string | null)[]>          // (number | string)[]

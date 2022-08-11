@@ -68,3 +68,8 @@ export const getRandom = <T>(arr: T[]) => {
 export const compact = <T extends readonly unknown[]>(
   xs: T,
 ): FilterNullish<T> => xs.filter(isNotNull) as FilterNullish<T>;
+
+/**
+ * return whether an array is empty or not
+ */
+export const isEmpty = (x: unknown[]): boolean => x.length === 0;

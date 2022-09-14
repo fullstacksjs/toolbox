@@ -22,6 +22,7 @@ describe('guards', () => {
       { x: {}, expected: false },
       { x: false, expected: false },
     ];
+
     it.each(cases)('should return $expected for $x', ({ x, expected }) => {
       expect(isNull(x)).toBe(expected);
     });
@@ -37,6 +38,7 @@ describe('guards', () => {
       { x: {}, expected: true },
       { x: false, expected: true },
     ];
+
     it.each(cases)('should return $expected for $x', ({ x, expected }) => {
       expect(isNotNull(x)).toBe(expected);
     });
@@ -54,6 +56,7 @@ describe('guards', () => {
       { x: [], expected: true },
       { x: {}, expected: true },
     ];
+
     it.each(cases)('should return $expected for $x', ({ x, expected }) => {
       expect(isTruthy(x)).toBe(expected);
     });
@@ -67,6 +70,7 @@ describe('guards', () => {
       { x: 1, expected: false },
       { x: ['1'], expected: false },
     ];
+
     it.each(cases)('should return $expected for $x', ({ x, expected }) => {
       expect(isString(x)).toBe(expected);
     });
@@ -121,6 +125,7 @@ describe('guards', () => {
       expect(isFunction(() => 1)).toBe(true);
     });
   });
+
   describe('isObject', () => {
     const cases = [
       { x: '', expected: false },

@@ -125,6 +125,7 @@ describe('string', () => {
       { x: 'FOO_BAR_CODE', expected: 'FooBarCode' },
       { x: 'foo_ -BaRC ode', expected: 'foo_ -BaRC ode' },
     ];
+
     it.each(cases)(
       'should return $expected for $x as input',
       ({ x, expected }) => {
@@ -149,6 +150,7 @@ describe('string', () => {
       { x: 'FOO_BAR_CODE', expected: 'foo_bar_code' },
       { x: 'foo_ -BaRC ode', expected: 'foo_ -BaRC ode' },
     ];
+
     it.each(cases)(
       'should return $expected for $x as input',
       ({ x, expected }) => {

@@ -3,17 +3,17 @@ import { describe, expect, it } from 'vitest';
 import type { Nullable } from '../src/nullable';
 import { bind } from '../src/nullable';
 
+const getNull = () => null;
+const fromNullToNum = (_n: null) => 100;
+const f = (_x: string) => 2;
+const g = (_x: number): Nullable<number[]> => [1, 3];
+const h = (_x: number[]) => ({ msg: 2 });
+const j = (_x: Record<string, unknown>): Nullable<boolean> => false;
+const k = (x: Nullable<boolean>) => x;
+const l = (_x: (number | string)[]) => 50;
+
 describe('nullable', () => {
   describe('bind', () => {
-    const getNull = () => null;
-    const fromNullToNum = (n: null) => 100;
-    const f = (x: string) => 2;
-    const g = (x: number): Nullable<number[]> => [1, 3];
-    const h = (x: number[]) => ({ msg: 2 });
-    const j = (x: Record<string, unknown>): Nullable<boolean> => false;
-    const k = (x: Nullable<boolean>) => x;
-    const l = (x: (number | string)[]) => 50;
-
     const cases = [
       { x: 'normal', fns: [f], expected: 2 },
       { x: 'normal', fns: [f, g], expected: [1, 3] },
@@ -29,6 +29,7 @@ describe('nullable', () => {
         expect(bind(x, ...(fns as [any]))).toStrictEqual(expected);
       },
     );
+
     it('should return null if first arg is null', () => {
       expect(bind(null, f, g, h, j, k)).eq(null);
     });

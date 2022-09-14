@@ -9,6 +9,9 @@ module.exports = {
       files: ['__tests__/**/*.ts'],
       rules: {
         'max-lines-per-function': 'off',
+        'jest/no-deprecated-functions': 'off',
+        'jest/unbound-method': 'off',
+        'jest/require-hook': 'off',
       },
     },
   ],

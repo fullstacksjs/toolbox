@@ -526,6 +526,7 @@ toInteger('?'); // NaN
 toInteger('?', 1); // 1
 toInteger('?', 1.5); // 1.5
 toInteger('?', NaN); // NaN
+toInteger('?', undefined); // NaN
 ```
 
 #### isInRange

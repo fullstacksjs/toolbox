@@ -75,12 +75,12 @@ describe('number', () => {
       expect(toInteger('1.42')).toBe(1);
     });
 
-    it('should return NaN if input is nut a number', () => {
+    it('should return NaN if input is not a number', () => {
       expect(toInteger('S')).toBe(NaN);
     });
 
-    it('should return fallback for NaN', () => {
-      expect(toInteger('S', 1.4)).toBe(1.4);
+    it.only('should return undefined if input is not a number and fallback is undefined', () => {
+      expect(toInteger('S'), undefined).toBe(NaN);
     });
   });
 

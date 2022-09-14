@@ -6,7 +6,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['__tests__/**/*.ts'],
+      files: ['*.spec.ts'],
       rules: {
         'max-lines-per-function': 'off',
         'jest/no-deprecated-functions': 'off',

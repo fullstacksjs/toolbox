@@ -1,12 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import {
-  clamp,
-  isInRange,
-  randomInt,
-  safeDivide,
-  toInteger,
-} from '../src/number';
+import { clamp, isInRange, randomInt, safeDivide, toInteger } from './number';
 
 describe('number', () => {
   describe('safeDivide', () => {

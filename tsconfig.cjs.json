@@ -1,8 +1,9 @@
 {
   "extends": "@fullstacksjs/tsconfig/cjs",
   "compilerOptions": {
-    "declaration": false,
-    "outDir": "./lib/cjs"
+    "outDir": "./lib/cjs",
+    "declaration": false
   },
-  "include": ["src/"]
+  "include": ["src/"],
+  "exclude": ["**/*.spec.ts"]
 }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { noop } from '../src/function';
+import { noop } from './function';
 import {
   isFunction,
   isIterable,
@@ -9,7 +9,7 @@ import {
   isObject,
   isString,
   isTruthy,
-} from '../src/guards';
+} from './guards';
 
 describe('guards', () => {
   describe('isNull', () => {

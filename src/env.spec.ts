@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { Env, getEnv, getNodeEnv, getRequiredEnv } from '../src/env';
+import { Env, getEnv, getNodeEnv, getRequiredEnv } from './env';
 
 const envs = {
   prod: 'production',

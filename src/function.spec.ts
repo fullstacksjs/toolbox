@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { callAll, noop, not } from '../src/function';
+import { callAll, noop, not } from './function';
 
 describe('function', () => {
   describe('noop', () => {

@@ -11,7 +11,7 @@ import {
   range,
   shuffle,
   toArray,
-} from '../src/array';
+} from './array';
 
 describe('array', () => {
   describe('ensureArray', () => {

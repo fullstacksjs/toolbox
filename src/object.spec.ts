@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { pruneNullOrEmpty } from '../src/object';
+import { pruneNullOrEmpty } from './object';
 
 describe('Objects', () => {
   describe('pruneNullOrEmpty', () => {

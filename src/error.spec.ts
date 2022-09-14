@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { assert, throwErr } from '../src/error';
+import { assert, throwErr } from './error';
 
 describe('error', () => {
   describe('throwErr', () => {

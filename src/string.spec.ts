@@ -13,7 +13,7 @@ import {
   toPascalCase,
   toSnakeCase,
   toSpaceCase,
-} from '../src/string';
+} from './string';
 
 describe('string', () => {
   describe('getInitials', () => {

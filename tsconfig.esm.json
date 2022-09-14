@@ -4,5 +4,6 @@
     "outDir": "lib/esm",
     "declarationDir": "lib/types"
   },
-  "include": ["src/"]
+  "include": ["src/"],
+  "exclude": ["**/*.spec.ts"]
 }

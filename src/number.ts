@@ -8,7 +8,10 @@ interface Range {
 /**
  * parse string to integer (radix 10)
  */
-export const toInteger = (s: string) => Number.parseInt(s, 10);
+export const toInteger = (s: string, fallback = NaN) => {
+  const parsed = Number.parseInt(s, 10);
+  return isNaN(parsed) ? fallback : parsed;
+};
 
 /**
  * divide two numbers returns fallback if result is not a finite number

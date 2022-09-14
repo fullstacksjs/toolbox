@@ -80,6 +80,14 @@ describe('number', () => {
     it('should truncate decimals', () => {
       expect(toInteger('1.42')).toBe(1);
     });
+
+    it('should return NaN if input is nut a number', () => {
+      expect(toInteger('S')).toBe(NaN);
+    });
+
+    it('should return fallback for NaN', () => {
+      expect(toInteger('S', 1.4)).toBe(1.4);
+    });
   });
 
   describe('isInRange', () => {

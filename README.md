@@ -517,11 +517,15 @@ randomRange({ min: 50 });           // <random> 50 -> Number.MAX_SAFE_INTEGER
 
 #### toInteger
 
-parse string to integer (radix 10)
+parse string to integer (radix 10), returns fallback if result is NaN.
 
 ```typescript
 toInteger('100'); // 100
 toInteger('1.42'); // 1
+toInteger('?'); // NaN
+toInteger('?', 1); // 1
+toInteger('?', 1.5); // 1.5
+toInteger('?', NaN); // NaN
 ```
 
 #### isInRange

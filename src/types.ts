@@ -79,3 +79,14 @@ export type FilterNullish<T extends unknown[] | readonly unknown[]> =
     : T extends (number extends T['length'] ? readonly [] : readonly any[])
     ? FilterNullishReadonlyTuple<T>
     : FilterNullishReadonlyArray<T>;
+
+declare type _TupleOf<
+  T,
+  N extends number,
+  R extends unknown[],
+> = R['length'] extends N ? R : _TupleOf<T, N, [T, ...R]>;
+export declare type Tuple<T, N extends number> = N extends N
+  ? number extends N
+    ? T[]
+    : _TupleOf<T, N, []>
+  : never;

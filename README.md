@@ -82,6 +82,7 @@
     - [RequiredBy<T, K>](#requiredbyt-k)
     - [PartialBy<T, K>](#partialbyt-k)
     - [FilterNullish\<T>](#filternullisht)
+    - [Tuple<T, N extends number>](#tuplet-n-extends-number)
 - [Credits](#credits)
 
 <!-- cspell:enable -->
@@ -857,6 +858,13 @@ type Tuple  = FilterNullish<[number, null, string, undefined]>               // 
 type RArr   = FilterNullish<readonly (number | undefined | string | null)[]> // readonly (number | string)[]
 type RTuple = FilterNullish<readonly [number, null, string, undefined]>      // readonly [number, string]
 ```
+
+#### Tuple<T, N extends number>
+
+```typescript
+type T = Tuple<string, 3> // [string, string, string]
+type T = Tuple<undefined, 2> // [undefined, undefined]
+````
 
 ## Credits
 

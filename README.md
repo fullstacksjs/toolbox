@@ -58,6 +58,7 @@
     - [isInRange](#isinrange)
   - [Object](#object)
     - [pruneNullOrEmpty](#prunenullorempty)
+    - [pruneUndefinedOrEmpty](#pruneundefinedorempty)
   - [String](#string)
     - [toSpaceCase](#tospacecase)
     - [toCamelCase](#tocamelcase)
@@ -550,11 +551,23 @@ isInRange(100, { min: 100, max: 150 }); // true
 remove null and empty property from an object
 
 ```typescript
-pruneNullOrEmpty({ name: 'John', age: null, status: '', nickname: undefined }) // {  name: 'John'  }
+pruneNullOrEmpty({ name: 'John', age: null, status: '', nickname: undefined }) // { name: 'John' }
 pruneNullOrEmpty({ foo: { bar: null } }) // { foo: { bar: null } }
-pruneNullOrEmpty({ foo: {} })            // { name: {} }
-pruneNullOrEmpty({ foo: { length: 0 } }) // { name: { length: 0 } }
-pruneNullOrEmpty({ foo: [] })            // { name: [] }
+pruneNullOrEmpty({ foo: {} })            // { foo: {} }
+pruneNullOrEmpty({ foo: { length: 0 } }) // { foo: { length: 0 } }
+pruneNullOrEmpty({ foo: [] })            // { foo: [] }
+```
+
+#### pruneUndefinedOrEmpty
+
+remove null and empty property from an object
+
+```typescript
+pruneUndefinedOrEmpty({ name: 'John', age: null, status: '', nickname: undefined }) // { name: 'John', nickname: null }
+pruneUndefinedOrEmpty({ foo: { bar: null } }) // { foo: { bar: null } }
+pruneUndefinedOrEmpty({ foo: {} })            // { foo: {} }
+pruneUndefinedOrEmpty({ foo: { length: 0 } }) // { foo: { length: 0 } }
+pruneUndefinedOrEmpty({ foo: [] })            // { foo: [] }
 ```
 
 ---

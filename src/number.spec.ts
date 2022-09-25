@@ -79,7 +79,7 @@ describe('number', () => {
       expect(toInteger('S')).toBe(NaN);
     });
 
-    it.only('should return undefined if input is not a number and fallback is undefined', () => {
+    it('should return undefined if input is not a number and fallback is undefined', () => {
       expect(toInteger('S'), undefined).toBe(NaN);
     });
   });

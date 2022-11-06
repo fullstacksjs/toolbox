@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import { noop } from './function';
 import {
+  isBoolean,
   isFunction,
   isIterable,
   isNotNull,
@@ -73,6 +74,22 @@ describe('guards', () => {
 
     it.each(cases)('should return $expected for $x', ({ x, expected }) => {
       expect(isString(x)).toBe(expected);
+    });
+  });
+
+  describe('isBoolean', () => {
+    const cases = [
+      { x: true, expected: true },
+      { x: false, expected: true },
+      { x: '', expected: false },
+      { x: undefined, expected: false },
+      { x: null, expected: false },
+      { x: 1, expected: false },
+      { x: ['1'], expected: false },
+    ];
+
+    it.each(cases)('should return $expected for $x', ({ x, expected }) => {
+      expect(isBoolean(x)).toBe(expected);
     });
   });
 

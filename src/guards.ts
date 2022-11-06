@@ -3,7 +3,12 @@ import type { Truthy } from './types.js';
 /**
  * check given value is string or not
  */
-export const isString = (s: any): s is string => typeof s === 'string';
+export const isString = (s: unknown): s is string => typeof s === 'string';
+
+/**
+ * check given value is boolean or not
+ */
+export const isBoolean = (s: unknown): s is boolean => typeof s === 'boolean';
 
 /**
  * check given value is iteratable or not

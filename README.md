@@ -43,6 +43,7 @@
     - [not](#not)
     - [passesMin](#passesmin)
   - [Guards](#guards)
+    - [isBoolean](#isboolean)
     - [isString](#isstring)
     - [isIterable](#isiterable)
     - [isFunction](#isfunction)
@@ -388,6 +389,19 @@ isValidNumber(30) //returns true because its passes minimum 2 cases (being divis
 ---
 
 ### Guards
+
+#### isBoolean
+
+check given value is boolean or not
+
+```typescript
+isBoolean(true);  // true
+isBoolean(false); // true
+isBoolean();      // false
+isBoolean(1);     // false
+isBoolean(['1']); // false
+isBoolean('1');   // false
+```
 
 #### isString
 

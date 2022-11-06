@@ -1,3 +1,4 @@
+import { isBoolean, isNull } from './guards.js';
 import type { NodeEnv } from './types.js';
 import { fallback, required } from './values.js';
 
@@ -34,6 +35,26 @@ export const getRequiredEnv = <
 >(
   envKey: TKey,
 ): TValue => required(getEnv(envKey) as TValue, envKey);
+
+/**
+ * parse environment to a boolean or throw error
+ * if env does not exist, returns fallback value.
+ */
+export function getBooleanEnv<TKey extends string = string>(
+  key: TKey,
+  defaultValue?: boolean,
+): boolean | undefined {
+  const value = getEnv(key);
+  if (isNull(value)) return defaultValue;
+
+  try {
+    const boolean = JSON.parse(value);
+    if (!isBoolean(boolean)) throw Error('Not a boolean');
+    return boolean;
+  } catch {
+    throw Error(`Invalid boolean environment for ${key}, received ${value}`);
+  }
+}
 
 /**
  * strict check NODE_ENV with given value

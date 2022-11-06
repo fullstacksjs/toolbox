@@ -31,6 +31,7 @@
     - [joinPath](#joinpath)
   - [Env](#env)
     - [getEnv](#getenv)
+    - [getBooleanEnv](#getbooleanenv)
     - [getRequiredEnv](#getrequiredenv)
     - [getNodeEnv](#getnodeenv)
     - [is](#is)
@@ -275,6 +276,23 @@ getEnv<TEnvKey, TValue>(name, fallback)
 Env.getEnv<TEnvKey>('FOO');        // foo
 Env.getEnv<TEnvKey>('BAR');        // undefined
 Env.getEnv<TEnvKey>('BAR', 'bar'); // bar
+```
+
+#### getBooleanEnv
+
+Parse an environment to a boolean or throw error. If env does not exist, it returns the fallback value.
+
+getBooleanEnv<TEnvKey>(name, fallback): boolean | undefined
+
+```typescript
+// j={} f=foo t=true f=false node
+Env.getBooleanEnv<TEnvKey>('j');        // <Error>
+Env.getBooleanEnv<TEnvKey>('f');        // <Error>
+Env.getBooleanEnv<TEnvKey>('t');        // true
+Env.getBooleanEnv<TEnvKey>('f');        // false
+Env.getBooleanEnv<TEnvKey>('n');        // undefined
+Env.getBooleanEnv<TEnvKey>('n', false); // false
+Env.getBooleanEnv<TEnvKey>('n', true);  // true
 ```
 
 #### getRequiredEnv

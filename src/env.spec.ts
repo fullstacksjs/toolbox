@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { Env, getEnv, getNodeEnv, getRequiredEnv } from './env';
+import { Env, getBooleanEnv, getEnv, getNodeEnv, getRequiredEnv } from './env';
 
 const envs = {
   prod: 'production',
@@ -22,7 +22,7 @@ describe('env', () => {
       expect(getEnv(key)).toBe(ENV);
     });
 
-    it('should return env even fallback is exists', () => {
+    it('should return env even if fallback exists', () => {
       const value = 'value';
       const key = 'key';
       const fallback = 'fallback';
@@ -36,6 +36,50 @@ describe('env', () => {
       const fallback = 'fallback';
 
       expect(getEnv(key, fallback)).toBe(fallback);
+    });
+
+    it('should undefined when env does not exist', () => {
+      expect(getBooleanEnv('not-existed')).toBe(undefined);
+    });
+  });
+
+  describe('getBooleanEnv', () => {
+    it('should return boolean env if exists', () => {
+      const falseKey = 'false';
+      process.env[falseKey] = 'false';
+      const trueKey = 'true';
+      process.env[trueKey] = 'true';
+
+      expect(getBooleanEnv(falseKey)).toBe(false);
+      expect(getBooleanEnv(trueKey)).toBe(true);
+      expect(getBooleanEnv(falseKey, true)).toBe(false);
+      expect(getBooleanEnv(trueKey, false)).toBe(true);
+    });
+
+    it('should fallback to given fallback', () => {
+      const fallback = false;
+
+      expect(getBooleanEnv('not-existed', fallback)).toBe(fallback);
+    });
+
+    it('should throw error if env is not a json', () => {
+      const key = 'key';
+      process.env[key] = 'NOT-JSON';
+
+      expect(() => getBooleanEnv(key)).toThrowError();
+      expect(() => getBooleanEnv(key, false)).toThrowError();
+    });
+
+    it('should throw error if env is a json but not a boolean', () => {
+      const key = 'key';
+      process.env[key] = '{}';
+
+      expect(() => getBooleanEnv(key)).toThrowError();
+      expect(() => getBooleanEnv(key, false)).toThrowError();
+    });
+
+    it('should undefined when env does not exist', () => {
+      expect(getBooleanEnv('not-existed')).toBe(undefined);
     });
   });
 

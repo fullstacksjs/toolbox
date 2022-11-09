@@ -1,22 +1,19 @@
-import { isBoolean, isNull } from './guards.js';
+import { isBoolean } from './guards.js';
+import { isNullOrEmpty } from './string.js';
 import type { NodeEnv } from './types.js';
-import { fallback, required } from './values.js';
+import { required } from './values.js';
+
+export type EnvKey = 'NODE_ENV';
 
 /**
  * give NODE_ENV value or given fallback value
  */
-export function getEnv<TKey extends string = string>(
-  key: TKey,
-): string | undefined;
 export function getEnv<
   TKey extends string = string,
-  TValue extends string | undefined = string,
->(key: TKey, defaultValue: TValue): TValue;
-export function getEnv<
-  TKey extends string = string,
-  TValue extends string | undefined = string,
+  TValue extends string | null | undefined = string,
 >(key: TKey, defaultValue?: TValue): TValue | undefined {
-  return fallback(process.env[key] as TValue, defaultValue);
+  const value = process.env[key] as TValue;
+  return isNullOrEmpty(value) ? defaultValue : value;
 }
 
 /**
@@ -29,12 +26,9 @@ export const getNodeEnv = <T extends string = never>(
 /**
  * returns NODE_ENV value or given fallback otherwise throws
  */
-export const getRequiredEnv = <
-  TKey extends string = string,
-  TValue extends string = string,
->(
+export const getRequiredEnv = <TKey extends string = string>(
   envKey: TKey,
-): TValue => required(getEnv(envKey) as TValue, envKey);
+): string => required(getEnv(envKey, null), envKey);
 
 /**
  * parse environment to a boolean or throw error
@@ -45,7 +39,7 @@ export function getBooleanEnv<TKey extends string = string>(
   defaultValue?: boolean,
 ): boolean | undefined {
   const value = getEnv(key);
-  if (isNull(value)) return defaultValue;
+  if (isNullOrEmpty(value)) return defaultValue;
 
   try {
     const boolean = JSON.parse(value);

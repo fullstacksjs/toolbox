@@ -38,6 +38,14 @@ describe('env', () => {
       expect(getEnv(key, fallback)).toBe(fallback);
     });
 
+    it('should fallback to given fallback if value is empty string', () => {
+      const key = 'key';
+      const fallback = 'fallback';
+      process.env[key] = '';
+
+      expect(getEnv(key, fallback)).toBe(fallback);
+    });
+
     it('should undefined when env does not exist', () => {
       expect(getBooleanEnv('not-existed')).toBe(undefined);
     });
@@ -60,6 +68,20 @@ describe('env', () => {
       const fallback = false;
 
       expect(getBooleanEnv('not-existed', fallback)).toBe(fallback);
+    });
+
+    it('should fallback to given fallback', () => {
+      const fallback = false;
+
+      expect(getBooleanEnv('not-existed', fallback)).toBe(fallback);
+    });
+
+    it('should fallback to given fallback if env is empty string', () => {
+      const fallback = false;
+      const key = 'key';
+      process.env[key] = '';
+
+      expect(getBooleanEnv(key, fallback)).toBe(fallback);
     });
 
     it('should throw error if env is not a json', () => {
@@ -101,6 +123,13 @@ describe('env', () => {
   describe('getRequiredEnv', () => {
     it('should throw if env missing', () => {
       const key = 'key';
+
+      expect(() => getRequiredEnv(key)).toThrowError();
+    });
+
+    it('should throw if env empty string', () => {
+      const key = 'key';
+      process.env[key] = '';
 
       expect(() => getRequiredEnv(key)).toThrowError();
     });

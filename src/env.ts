@@ -1,19 +1,28 @@
 import { isBoolean } from './guards.js';
 import { isNullOrEmpty } from './string.js';
-import type { NodeEnv } from './types.js';
-import { required } from './values.js';
+import type { NodeEnv, Nullish } from './types.js';
+import { fallbackString, required } from './values.js';
 
 export type EnvKey = 'NODE_ENV';
 
 /**
  * give NODE_ENV value or given fallback value
  */
+
+export function getEnv<TKey extends string = string>(
+  key: TKey,
+): Nullish | string;
 export function getEnv<
   TKey extends string = string,
-  TValue extends string | null | undefined = string,
->(key: TKey, defaultValue?: TValue): TValue | undefined {
-  const value = process.env[key] as TValue;
-  return isNullOrEmpty(value) ? defaultValue : value;
+  TValue extends Nullish | string = string,
+>(key: TKey, defaultValue: TValue): TValue;
+
+export function getEnv<
+  TKey extends string = string,
+  TValue extends Nullish | string = string,
+>(key: TKey, defaultValue?: TValue): Nullish | TValue {
+  const value = process.env[key];
+  return fallbackString(value, defaultValue) as TValue;
 }
 
 /**

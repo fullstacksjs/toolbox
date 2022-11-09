@@ -19,6 +19,6 @@ export const fallbackNumber = <T = number>(
 ): T | number => (Number.isFinite(value) ? value : defaultValue);
 
 export const fallbackString = <T = string>(
-  value: string,
+  value: Nullish | string,
   defaultValue: T,
 ): T | string => (isNullOrEmpty(value) ? defaultValue : value);

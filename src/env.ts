@@ -11,7 +11,7 @@ export type EnvKey = 'NODE_ENV';
 
 export function getEnv<TKey extends string = string>(
   key: TKey,
-): Nullish | string;
+): string | undefined;
 export function getEnv<
   TKey extends string = string,
   TValue extends Nullish | string = string,

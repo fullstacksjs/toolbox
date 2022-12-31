@@ -22,7 +22,7 @@
     - [getRandom](#getrandom)
     - [range](#range)
     - [toArray](#toarray)
-    - [copayArray](#copayarray)
+    - [copyArray](#copyarray)
     - [shuffle](#shuffle)
     - [compact](#compact)
     - [concatNullableArrays](#concatnullablearrays)
@@ -159,7 +159,7 @@ toArray(iteratable); // [...iteratable]
 toArray(others);     // [others]
 ```
 
-#### copayArray
+#### copyArray
 
 Gets an array and return shallow copy version of it
 

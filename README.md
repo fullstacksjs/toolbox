@@ -70,6 +70,7 @@
     - [isNullOrEmpty](#isnullorempty)
     - [removeTrailingSlashes](#removetrailingslashes)
     - [removeLeadingSlash](#removeleadingslash)
+    - [comparePaths](#comparepaths)
   - [Regex](#regex)
     - [testRegex](#testregex)
   - [Error](#error)
@@ -78,14 +79,19 @@
   - [Nullable](#nullable)
     - [bind](#bind)
   - [types](#types)
-    - [Nullable\<T>](#nullablet)
-    - [Truthy\<T>](#truthyt)
-    - [CamelCase\<T>](#camelcaset)
-    - [Predicate\<T>](#predicatet)
-    - [RequiredBy<T, K>](#requiredbyt-k)
-    - [PartialBy<T, K>](#partialbyt-k)
-    - [FilterNullish\<T>](#filternullisht)
-    - [Tuple<T, N extends number>](#tuplet-n-extends-number)
+    - [Nullable\<T\>](#nullablet)
+    - [Truthy\<T\>](#truthyt)
+    - [CamelCase\<T\>](#camelcaset)
+    - [Predicate\<T\>](#predicatet)
+    - [MaybePromise\<T\>](#maybepromiset)
+    - [VoidFn\<TArgs = any\[\]\>](#voidfntargs--any)
+    - [EnvironmentVariable](#environmentvariable)
+    - [NodeEnv](#nodeenv)
+    - [ObjectPath\<T\>](#objectpatht)
+    - [RequiredBy\<T, K\>](#requiredbyt-k)
+    - [PartialBy\<T, K\>](#partialbyt-k)
+    - [FilterNullish\<T\>](#filternullisht)
+    - [Tuple\<T, N extends number\>](#tuplet-n-extends-number)
 - [Credits](#credits)
 
 <!-- cspell:enable -->
@@ -661,6 +667,7 @@ toCamelCase('fooBar');        // 'foo-bar'
 toCamelCase('foo_bar');       // 'foo-bar'
 toCamelCase('FOO-barCode');   // 'FOO-barCode'
 ```
+
 #### toPascalCase
 
 transforms a valid casing to PascalCase
@@ -717,6 +724,19 @@ removeLeadingSlashes('/string');    // 'string'
 removeLeadingSlashes('//string');   // 'string'
 removeLeadingSlashes('//string/');  // 'string/'
 removeLeadingSlashes('//string/a'); // 'string/a'
+```
+
+#### comparePaths
+
+Compare two path without trailing and leading slashes
+
+```typescript
+comparePaths('/path1/', '/path1/')   // 0
+comparePaths('b', 'a')               // 1
+comparePaths('a', 'b');              // -1
+comparePaths('path', 'PAth')         // 0
+comparePaths('reserve', 'réservé')   // 0
+comparePaths('reserve', 'reserve//') // 0
 ```
 
 ---

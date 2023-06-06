@@ -305,6 +305,10 @@ describe('string', () => {
       expect(comparePaths('b', 'a')).toBe(1);
     });
 
+    it('should return 1 if path1 is smaller', () => {
+      expect(comparePaths('a', 'b')).toBe(-1);
+    });
+
     it('should return 0 if path1 is equal to path2 but with different case', () => {
       expect(comparePaths('path', 'PAth')).toBe(0);
     });

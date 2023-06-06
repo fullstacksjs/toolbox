@@ -41,7 +41,7 @@
     "prerelease": "npm run verify",
     "release": "standard-version && npm publish && git push --follow-tags --no-verify",
     "verify": "npm run lint && npm run test",
-    "prepublishOnly": "pinst --disable && pkg-ok",
+    "prepublishOnly": "pinst --disable && pkg-ok ./lib/esm && pkg-ok ./lib/cjs",
     "postpublish": "pinst --enable",
     "prepare": ".husky/prepare",
     "semantic-release": "semantic-release"

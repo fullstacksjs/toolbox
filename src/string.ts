@@ -1,7 +1,7 @@
 import { isNull, isString } from './guards.js';
 import { isWordOrWords } from './internals/string.js';
 import { hasInvalidCasing, tokenize } from './internals/tokenize.js';
-import type { Nullish } from './types.js';
+import type { Nullish, Sensitivity } from './types.js';
 
 export const toSpaceCase = tokenize;
 
@@ -34,7 +34,7 @@ export const toSnakeCase = (str: string) =>
     ? str
     : toSpaceCase(str).replace(
         /(\s[a-z])/g,
-        (_, letter) => `_${letter.slice(1)}`,
+        (_, letter: string) => `_${letter.slice(1)}`,
       );
 
 /**
@@ -45,7 +45,7 @@ export const toKebabCase = (str: string) =>
     ? str
     : toSpaceCase(str).replace(
         /(\s[a-z])/g,
-        (_, letter) => `-${letter.slice(1)}`,
+        (_, letter: string) => `-${letter.slice(1)}`,
       );
 
 /**
@@ -98,4 +98,22 @@ export const joinPath = (...paths: string[]): string => {
     removeLeadingSlashes(removeTrailingSlashes(el)),
   );
   return result.join('/');
+};
+
+/**
+ * Compare two path without trailing and leading slashes
+ * @param {string} path1: first path
+ * @param {string} path2: second path
+ * @return {boolean} is they are equal
+ */
+export const comparePaths = (
+  path1: string,
+  path2: string,
+  { sensitivity = 'accent' }: { sensitivity?: Sensitivity } = {},
+): number => {
+  const normalPath1 = removeLeadingSlashes(removeTrailingSlashes(path1));
+  const normalPath2 = removeLeadingSlashes(removeTrailingSlashes(path2));
+  return normalPath1.localeCompare(normalPath2, undefined, {
+    sensitivity,
+  });
 };

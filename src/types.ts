@@ -89,3 +89,5 @@ export type Tuple<T, N extends number> = N extends N
     ? T[]
     : TupleOf<T, N, []>
   : never;
+
+export type Sensitivity = 'accent' | 'base' | 'case' | 'variant';

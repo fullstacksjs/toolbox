@@ -1,18 +1,14 @@
-module.exports = {
+const { init } = require('@fullstacksjs/eslint-config/init');
+
+module.exports = init({
   root: true,
-  extends: ['@fullstacksjs', '@fullstacksjs/eslint-config/esm.js'],
+  modules: {
+    typescript: {
+      parserProject: './tsconfig.json',
+    },
+    test: true,
+  },
   rules: {
     '@typescript-eslint/ban-types': 'off',
   },
-  overrides: [
-    {
-      files: ['*.spec.ts'],
-      rules: {
-        'max-lines-per-function': 'off',
-        'jest/no-deprecated-functions': 'off',
-        'jest/unbound-method': 'off',
-        'jest/require-hook': 'off',
-      },
-    },
-  ],
-};
+});

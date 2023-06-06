@@ -47,29 +47,29 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.1.2",
-    "@commitlint/config-conventional": "17.1.0",
+    "@commitlint/cli": "17.6.5",
+    "@commitlint/config-conventional": "17.6.5",
     "@frontendmonster/builder": "2.2.0",
-    "@fullstacksjs/eslint-config": "8.7.2",
-    "@fullstacksjs/tsconfig": "0.6.0",
-    "@semantic-release/github": "8.0.6",
-    "@semantic-release/npm": "9.0.1",
-    "@semantic-release/release-notes-generator": "10.0.3",
-    "@types/node": "18.7.18",
-    "commitizen": "4.2.5",
-    "cspell": "6.8.2",
+    "@fullstacksjs/eslint-config": "9.5.1",
+    "@fullstacksjs/tsconfig": "1.1.0",
+    "@semantic-release/github": "9.0.2",
+    "@semantic-release/npm": "10.0.3",
+    "@semantic-release/release-notes-generator": "11.0.2",
+    "@types/node": "20.2.5",
+    "commitizen": "4.3.0",
+    "cspell": "6.31.1",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.23.1",
-    "husky": "8.0.1",
-    "lint-staged": "13.0.3",
+    "eslint": "8.42.0",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.2",
     "pinst": "3.0.0",
-    "pkg-ok": "2.3.1",
-    "prettier": "2.7.1",
-    "semantic-release": "19.0.5",
+    "pkg-ok": "3.0.0",
+    "prettier": "2.8.8",
+    "semantic-release": "21.0.3",
     "shx": "0.3.4",
     "standard-version": "9.5.0",
-    "typescript": "4.8.3",
-    "vitest": "0.23.2"
+    "typescript": "5.1.3",
+    "vitest": "0.31.4"
   },
   "config": {
     "commitizen": {
@@ -77,7 +77,7 @@
     }
   },
   "volta": {
-    "node": "16.15.1",
-    "npm": "8.13.2"
+    "node": "18.16.0",
+    "npm": "9.6.7"
   }
 }

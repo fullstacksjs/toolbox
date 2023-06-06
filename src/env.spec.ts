@@ -108,7 +108,7 @@ describe('env', () => {
   describe('getNodeEnv', () => {
     it('should return current node env', () => {
       const ENV = 'current';
-      process.env['NODE_ENV'] = ENV;
+      process.env.NODE_ENV = ENV;
 
       expect(getNodeEnv()).toBe(ENV);
     });
@@ -145,25 +145,25 @@ describe('env', () => {
 
   describe('is', () => {
     it('should return true in development environment', () => {
-      process.env['NODE_ENV'] = envs.dev;
+      process.env.NODE_ENV = envs.dev;
 
       expect(Env.is(envs.dev)).toBe(true);
     });
 
     it('should return true in dev environment', () => {
-      process.env['NODE_ENV'] = 'dev';
+      process.env.NODE_ENV = 'dev';
 
       expect(Env.is(envs.dev)).toBe(false);
     });
 
     it('should return true in production', () => {
-      process.env['NODE_ENV'] = envs.prod;
+      process.env.NODE_ENV = envs.prod;
 
       expect(Env.is(envs.prod)).toBe(true);
     });
 
     it('should return true in prod environment', () => {
-      process.env['NODE_ENV'] = 'prod';
+      process.env.NODE_ENV = 'prod';
 
       expect(Env.is(envs.prod)).toBe(false);
     });

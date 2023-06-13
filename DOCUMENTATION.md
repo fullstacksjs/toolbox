@@ -736,34 +736,34 @@ Predicate function type
 
 ```typescript
 type Predicate<T> // (a: T) => boolean;
-````
+```
 
 #### MaybePromise\<T>
 
 ```typescript
 type MaybePromise<T> // T | Promise<T>;
-````
+```
 
 #### VoidFn<TArgs = any[]>
 
 ```typescript
 type VoidFn    = (...args: any) => void | Promise<void>;
 type VoidFn<T> = ( ...args: T) => void | Promise<void>;
-````
+```
 
 #### EnvironmentVariable<T extends string>
 
 ```typescript
 type EnvironmentVariable = string | undefined;
 type EnvironmentVariable<T> = T | undefined;
-````
+```
 
 #### NodeEnv<T extends string>
 
 ```typescript
 type NodeEnv    = 'production' | 'development | undefined;
 type NodeEnv<T> = 'production' | 'development | undefined | T;
-````
+```
 
 #### ObjectPath\<T>
 ```typescript
@@ -817,4 +817,10 @@ type RTuple = FilterNullish<readonly [number, null, string, undefined]>      // 
 ```typescript
 type T = Tuple<string, 3> // [string, string, string]
 type T = Tuple<undefined, 2> // [undefined, undefined]
-````
+```
+
+#### IdFn<T>
+
+```typescript
+type T = IdFn<string> // (x: string) => string
+```

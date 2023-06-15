@@ -298,6 +298,14 @@ isValidNumber(26) //returns false because its only larger than 25
 isValidNumber(30) //returns true because its passes minimum 2 cases (being divisible by 5 and 3 and larger than 25)
 ```
 
+#### sleep
+
+returns a promise that resolves after a certain milliseconds.
+
+```typescript
+await sleep(1000) // Resolves after 1 second
+```
+
 ---
 
 ### Guards

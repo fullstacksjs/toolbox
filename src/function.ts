@@ -42,3 +42,12 @@ export const not = (b: unknown): boolean => !b;
  */
 export const passesMin = <T>(min: number, ps: Predicate<T>[], a: T): boolean =>
   ps.reduce((m, f) => (f(a) ? m - 1 : m), min) <= 0;
+
+/**
+ * @param {number} ms timeout in milliseconds
+ * @returns {Promise<void>} a Promise that resolves after timeout
+ */
+export const sleep = (ms: number): Promise<void> =>
+  new Promise<void>(resolve => {
+    setTimeout(() => resolve(), ms);
+  });

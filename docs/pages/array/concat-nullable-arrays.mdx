@@ -1,0 +1,23 @@
+# concatNullableArrays
+
+wothout description!
+
+import:
+```javascript
+import { concatNullableArrays } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```javascript
+concatNullableArrays(...maybeArrays)
+```
+
+example:
+```javascript copy
+concatNullableArrays(null);                            // []
+concatNullableArrays(undefined);                       // []
+concatNullableArrays([]);                              // []
+concatNullableArrays([1]);                             // [1]
+concatNullableArrays(undefined, [1, 2], null);         // [1,2]
+concatNullableArrays(undefined, [1, 2], null, [2, 3]); // [1, 2, 2, 3]
+```

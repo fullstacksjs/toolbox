@@ -1,0 +1,23 @@
+# toArray
+
+Convert a value to an array
+
+import:
+```javascript
+import { toArray } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```javascript
+toArray(value)
+```
+
+example:
+```javascript copy
+toArray(null);       // []
+toArray(undefined);  // []
+toArray('string');   // ['string']
+toArray(['array']);  // ['array']
+toArray(iteratable); // [...iteratable]
+toArray(others);     // [others]
+```

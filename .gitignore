@@ -41,3 +41,11 @@ yarn-error.log*
 
 # Yarn Integrity file
 .yarn-integrity
+
+# next.js
+/.next/
+.next
+/out/
+
+# docs production
+/build

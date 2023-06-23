@@ -1,0 +1,25 @@
+# isEmpty
+
+return whether an array is empty or not
+
+import:
+```javascript
+import { isEmpty } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```javascript
+isEmpty(array)
+```
+
+example:
+```javascript copy
+isEmpty([])            // true
+isEmpty([1])           // false
+isEmpty([[], [], []])  // false
+isEmpty([undefined])   // false
+isEmpty([null])        // false
+isEmpty([,])           // false
+isEmpty([, null])      // false
+isEmpty([, undefined]) // false
+```

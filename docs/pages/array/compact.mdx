@@ -1,0 +1,19 @@
+# compact
+
+filters nulls from array
+
+import:
+```javascript
+import { compact } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```javascript
+compact(array)
+```
+
+example:
+```javascript copy
+compact([1, false, null, 2, undefined]); // [1, false, 2]
+compact([NaN, false, null, 0, undefined]); // [NaN, false, 0]
+```

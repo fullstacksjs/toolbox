@@ -1,0 +1,13 @@
+{
+  "ensure-array": "ensureArray",
+  "get-random": "getRandom",
+  "range": "range",
+  "to-array": "toArray",
+  "copy-array": "copyArray",
+  "shuffle": "shuffle",
+  "compact": "compact",
+  "concat-nullable-arrays": "concatNullableArrays",
+  "is-empty": "isEmpty",
+  "is-last-index": "isLastIndex",
+  "join-path": "joinPath"
+}

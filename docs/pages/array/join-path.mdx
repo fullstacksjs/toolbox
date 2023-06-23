@@ -1,0 +1,36 @@
+# joinPath
+
+join path parts with "/" and without trailing and leading slashes
+
+import:
+```javascript
+import { joinPath } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```javascript
+joinPath(array)
+```
+
+example:
+```javascript copy
+joinPath(['a', 'b'])                               // 'a/b'
+joinPath(['a', '/b'])                              // 'a/b'
+joinPath(['a', 'b/'])                              // 'a/b'
+joinPath(['a', '/b/'])                             // 'a/b'
+joinPath(['a/', 'b'])                              // 'a/b'
+joinPath(['a/', '/b'])                             // 'a/b'
+joinPath(['a/', 'b/'])                             // 'a/b'
+joinPath(['a/', '/b/'])                            // 'a/b'
+joinPath(['/a', 'b'])                              // 'a/b'
+joinPath(['/a', '/b'])                             // 'a/b'
+joinPath(['/a', 'b/'])                             // 'a/b'
+joinPath(['/a', '/b/'])                            // 'a/b'
+joinPath(['https://a.com', 'b'])                   // 'https://a.com/b'
+joinPath(['https://a.com', '/b'])                  // 'https://a.com/b'
+joinPath(['https://a.com', 'b/'])                  // 'https://a.com/b'
+joinPath(['https://a.com/', '/b/'])                // 'https://a.com/b'
+joinPath(['https://a.com/', '?b=a'])               // 'https://a.com/?b=a'
+joinPath(['https://a.com/', '/b/', '?query'])      // 'https://a.com/b/?query',
+joinPath(['https://a.com/', '?query', '&a=query']) // 'https://a.com/?query/&a=query',
+```

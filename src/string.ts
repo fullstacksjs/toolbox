@@ -1,7 +1,7 @@
-import { isNull, isString } from './guards.js';
-import { isWordOrWords } from './internals/string.js';
-import { hasInvalidCasing, tokenize } from './internals/tokenize.js';
-import type { Nullish, Sensitivity } from './types.js';
+import { isNull, isString } from './guards.ts';
+import { isWordOrWords } from './internals/string.ts';
+import { hasInvalidCasing, tokenize } from './internals/tokenize.ts';
+import type { Nullish, Sensitivity } from './types.ts';
 
 export const toSpaceCase = tokenize;
 

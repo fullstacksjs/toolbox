@@ -1,0 +1,10 @@
+{
+  "lock": true,
+  "imports": {
+    "vitest": "npm:vitest"
+  },
+  "tasks": {
+    "dev": "deno run --watch main.ts",
+    "test": "vitest --run" // not working
+  }
+}

@@ -1,6 +1,6 @@
-import { isNull } from './guards.js';
-import { isNullOrEmpty } from './string.js';
-import type { Nullish } from './types.js';
+import { isNull } from './guards.ts';
+import { isNullOrEmpty } from './string.ts';
+import type { Nullish } from './types.ts';
 
 export const required = <T>(
   value: Nullish | T,

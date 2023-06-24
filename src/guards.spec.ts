@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { noop } from './function';
+import { noop } from './function.ts';
 import {
   isBoolean,
   isFunction,
@@ -10,7 +10,7 @@ import {
   isObject,
   isString,
   isTruthy,
-} from './guards';
+} from './guards.ts';
 
 describe('guards', () => {
   describe('isNull', () => {

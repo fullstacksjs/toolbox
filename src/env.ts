@@ -1,7 +1,7 @@
-import { isBoolean } from './guards.js';
-import { isNullOrEmpty } from './string.js';
-import type { NodeEnv, Nullish } from './types.js';
-import { fallbackString, required } from './values.js';
+import { isBoolean } from './guards.ts';
+import { isNullOrEmpty } from './string.ts';
+import type { NodeEnv, Nullish } from './types.ts';
+import { fallbackString, required } from './values.ts';
 
 export type EnvKey = 'NODE_ENV';
 

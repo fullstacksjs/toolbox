@@ -1,6 +1,12 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { Env, getBooleanEnv, getEnv, getNodeEnv, getRequiredEnv } from './env';
+import {
+  Env,
+  getBooleanEnv,
+  getEnv,
+  getNodeEnv,
+  getRequiredEnv,
+} from './env.ts';
 
 const envs = {
   prod: 'production',

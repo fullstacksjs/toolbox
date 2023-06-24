@@ -1,4 +1,4 @@
-import { isNull } from './guards.js';
+import { isNull } from './guards.ts';
 
 /**
  * remove null and empty property from an object

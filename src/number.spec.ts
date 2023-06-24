@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest';
 
-import { clamp, isInRange, randomInt, safeDivide, toInteger } from './number';
+import {
+  clamp,
+  isInRange,
+  randomInt,
+  safeDivide,
+  toInteger,
+} from './number.ts';
 
 describe('number', () => {
   describe('safeDivide', () => {

@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { callAll, noop, not, sleep } from './function';
+import { callAll, noop, not, sleep } from './function.ts';
 
 describe('function', () => {
   describe('noop', () => {

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import type { Nullable } from './nullable';
-import { bind } from './nullable';
+import type { Nullable } from './nullable.ts';
+import { bind } from './nullable.ts';
 
 const getNull = () => null;
 const fromNullToNum = (_n: null) => 100;

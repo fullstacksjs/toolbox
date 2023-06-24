@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { pruneNullOrEmpty, pruneUndefinedOrEmpty } from './object';
+import { pruneNullOrEmpty, pruneUndefinedOrEmpty } from './object.ts';
 
 describe('Objects', () => {
   describe('pruneNullOrEmpty', () => {

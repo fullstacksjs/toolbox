@@ -2,17 +2,17 @@
 
 HOC that call all given functions.
 
-import:
+### Import
 ```typescript copy
-import { callAll } from '@fullstacksjs/toolbox'
+import { callAll } from '@fullstacksjs/toolbox';
 ```
 
-usage:
+### Signature
 ```typescript copy
 callAll(...functions)
 ```
 
-example:
+### Examples
 ```typescript copy
   callAll(foo, bar, baz)(...args)                         // void (foo(...args), bar(...args), baz(...args));
   callAll(bar,'string', 5, null, undefined, baz)(...args) // void (bar(...args), baz(...args));

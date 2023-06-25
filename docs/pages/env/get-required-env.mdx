@@ -2,17 +2,17 @@
 
 get environment variable or throw.
 
-import:
+### Import
 ```typescript copy
-import { getRequiredEnv } from '@fullstacksjs/toolbox'
+import { getRequiredEnv } from '@fullstacksjs/toolbox';
 ```
 
-usage:
+### Signature
 ```typescript copy
 getRequiredEnv<TEnvKey, TValue>(name)
 ```
 
-example:
+### Examples
 ```typescript copy
 // FOO=foo BAR=bar node
 getRequiredEnv<TEnvKey>('FOO')         // foo

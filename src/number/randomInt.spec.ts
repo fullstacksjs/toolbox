@@ -10,4 +10,20 @@ describe('randomInt', () => {
       expect(number).toBeLessThan(2);
     }
   });
+
+  it('should select the first item', () => {
+    let i = 0;
+
+    for (; i < 100; i++) if (randomInt(0, 1) === 0) break;
+
+    expect(i).toBeLessThan(100);
+  });
+
+  it('should not select the last item', () => {
+    let i = 0;
+
+    for (; i < 100; i++) if (randomInt(0, 1) === 1) break;
+
+    expect(i).toBe(100);
+  });
 });

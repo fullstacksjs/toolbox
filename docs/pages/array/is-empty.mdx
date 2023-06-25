@@ -1,22 +1,24 @@
 # isEmpty
 
-return whether an array is empty or not.
+Return whether an array is empty or not
 
 ### Import
+
 ```typescript copy
 import { isEmpty } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-isEmpty(array)
+function isEmpty(x: unknown[]): boolean {}
 ```
 
 ### Examples
+
 ```typescript copy
 isEmpty([])            // true
 isEmpty([1])           // false
-isEmpty([[], [], []])  // false
 isEmpty([undefined])   // false
 isEmpty([null])        // false
 isEmpty([,])           // false

@@ -1,7 +1,4 @@
-/**
- * return whether an array is empty or not
- */
-export const isEmpty = (x: unknown[]): boolean => x.length === 0;
+import { isEmpty } from './isEmpty';
 
 /**
  * is an index is the last index in an array

@@ -4,12 +4,12 @@
   "array": "Array",
   "env": "Env",
   "function": "Function",
-  "guards": "Guards",
+  "guard": "Guard",
   "number": "Number",
   "object": "Object",
   "string": "String",
   "regex": "Regex",
   "error": "Error",
   "nullable": "Nullable",
-  "types": "Types"
+  "type": "Type"
 }

@@ -1,4 +1,4 @@
-import { fallbackNumber } from './values.js';
+import { fallbackNumber } from '../values/values.js';
 
 interface Range {
   min: number;

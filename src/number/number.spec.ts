@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { clamp, isInRange, randomInt, safeDivide, toInteger } from './number';
+import { clamp, isInRange, safeDivide, toInteger } from './number';
 
 describe('number', () => {
   describe('safeDivide', () => {
@@ -40,29 +40,6 @@ describe('number', () => {
 
     it("should return the value if it's within range", () => {
       expect(clamp(5, { min: -20, max: 20 })).toBe(5);
-    });
-  });
-
-  describe('randomInt', () => {
-    it('should return an integer between the range of min and max', () => {
-      const number = randomInt({ min: -10, max: 50 });
-
-      expect(number).toBeGreaterThanOrEqual(-10);
-      expect(number).toBeLessThan(50);
-    });
-
-    it('default min should be 0', () => {
-      const number = randomInt({ max: 50 });
-
-      expect(number).toBeGreaterThanOrEqual(0);
-      expect(number).toBeLessThan(50);
-    });
-
-    it('default max should be MAX_SAFE_INTEGER', () => {
-      const number = randomInt({ min: 50 });
-
-      expect(number).toBeGreaterThanOrEqual(50);
-      expect(number).toBeLessThan(Number.MAX_SAFE_INTEGER);
     });
   });
 

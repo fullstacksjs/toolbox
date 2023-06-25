@@ -2,7 +2,6 @@ import { describe, expect, it } from 'vitest';
 
 import {
   compact,
-  concatNullableArrays,
   copyArray,
   getRandom,
   isEmpty,
@@ -12,42 +11,6 @@ import {
 import { range } from './range';
 
 describe('array', () => {
-  describe('concatNullableArrays', () => {
-    it('should return empty array with no args', () => {
-      expect(concatNullableArrays()).toEqual([]);
-    });
-
-    it('should return empty array with undefined argument', () => {
-      expect(concatNullableArrays(undefined)).toEqual([]);
-    });
-
-    it('should return empty array with multiple undefined, null argument', () => {
-      expect(concatNullableArrays(null, undefined)).toEqual([]);
-    });
-
-    it('should return empty array with empty array as argument', () => {
-      expect(concatNullableArrays([])).toEqual([]);
-    });
-
-    it('should return array with if pass undefined before and after it', () => {
-      expect(concatNullableArrays(undefined, [1, 2], null)).toEqual([1, 2]);
-    });
-
-    it('should merge multiple arrays even with some undefined arguments', () => {
-      expect(concatNullableArrays(undefined, [1, 2], null, [3, 4])).toEqual([
-        1, 2, 3, 4,
-      ]);
-    });
-
-    it('should merge multiple arrays', () => {
-      expect(concatNullableArrays([1, 2], [3, 4])).toEqual([1, 2, 3, 4]);
-    });
-
-    it('should act as identity for single array argument', () => {
-      expect(concatNullableArrays([1, 2])).toEqual([1, 2]);
-    });
-  });
-
   describe('shuffle', () => {
     it('should return empty array with empty array arg', () => {
       expect(shuffle([])).toEqual([]);

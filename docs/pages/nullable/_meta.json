@@ -1,3 +1,4 @@
 {
-  "bind": "bind"
+  "bind": "bind",
+  "concat-arrays": "concatArrays"
 }

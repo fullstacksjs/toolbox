@@ -1,5 +1,3 @@
-import { ensureArray, getRandom, range } from './src/array.ts';
+import { runtime } from './src/runtime/runtime.ts';
 
-console.log('ensureArray::', ensureArray([null]));
-console.log('getRandom::', getRandom([1, 2, 3]));
-console.log('getRandom::', range(20));
+console.log(runtime.getEnv('key'));

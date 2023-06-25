@@ -1,0 +1,23 @@
+# isNull
+
+check given value is either null or undefined.
+
+import:
+```typescript copy
+import { isNull } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```typescript copy
+isNull(value): boolean
+```
+
+example:
+```typescript copy
+isNull(undefined) // true
+isNull(null)      // true
+isNull(0)         // false
+isNull(false);    // false
+isNull({});       // false
+isNull([]);       // false
+```

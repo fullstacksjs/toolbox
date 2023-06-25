@@ -1,0 +1,20 @@
+# isFunction
+
+check given value is function or not.
+
+import:
+```typescript copy
+import { isFunction } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```typescript copy
+isFunction(value): boolean
+```
+
+example:
+```typescript copy
+isFunction(() => {})  // true
+isFunction()          // false
+isFunction(true)      // false
+```

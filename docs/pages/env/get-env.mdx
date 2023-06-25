@@ -15,7 +15,7 @@ getEnv<TEnvKey, TValue>(name, fallback)
 example:
 ```typescript copy
 // FOO=foo BAR=bar node
-getEnv<TEnvKey>('FOO');        // foo
-getEnv<TEnvKey>('BAR');        // undefined
-getEnv<TEnvKey>('BAR', 'bar'); // bar
+getEnv<TEnvKey>('FOO')         // foo
+getEnv<TEnvKey>('BAR')         // undefined
+getEnv<TEnvKey>('BAR', 'bar')  // bar
 ```

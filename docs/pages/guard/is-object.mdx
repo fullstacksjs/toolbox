@@ -1,0 +1,23 @@
+# isObject
+
+check given value is an object.
+
+import:
+```typescript copy
+import { isObject } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```typescript copy
+isObject(value): boolean
+```
+
+example:
+```typescript copy
+isObject('hello world')          // false
+isObject(null)                   // false
+isObject(true)                   // false
+isObject([])                     // false
+isObject({ x: 'word'})           // true
+isObject({ 2: 'numeric index'})  // true
+```

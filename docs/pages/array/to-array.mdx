@@ -1,23 +1,34 @@
 # toArray
 
-Convert a value to an array.
+Returns array representation of a value.
 
-import:
+- when the value is already an array it return the value.
+- when the value is `undefined` or `null` it returns \[\].
+- when the value is iterable it returns array representation of the value.
+- otherwise it wraps the value in an array.
+
+### Import
+
 ```typescript copy
-import { toArray } from '@fullstacksjs/toolbox'
+import { toArray } from '@fullstacksjs/toolbox';
 ```
 
-usage:
+### Signature
+
 ```typescript copy
-toArray(value)
+function toArray(value: null | undefined): [];
+function toArray<T extends any[]>(value: T): T;
+function toArray<T>(value: Iterable<T> | T[]): T[];
+function toArray<T>(value: T): [T];
+function toArray<T>(value: Iterable<T> | T | T[] | null | undefined) {}
 ```
 
-example:
+### Examples
+
 ```typescript copy
-toArray(null)        // []
-toArray(undefined)   // []
-toArray('string')    // ['string']
-toArray(['array'])   // ['array']
-toArray(iteratable)  // [...iteratable]
-toArray(others)      // [others]
+toArray(null)      // []
+toArray(undefined) // []
+toArray('str')     // ['s', 't', 'r']
+toArray([1])       // [1]
+toArray(2)         // [2]
 ```

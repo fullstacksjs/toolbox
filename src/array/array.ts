@@ -1,26 +1,6 @@
-import { isIterable, isNotNull, isNull, isString } from '../guards/guards.js';
+import { isNotNull } from '../guards/guards.js';
 import { randomInt } from '../number/number.js';
 import type { FilterNullish } from '../types/types.js';
-
-interface ToArray {
-  (value: null | undefined): never[];
-  (value: string): [string];
-  <T>(value: Iterable<T> | T | T[]): T[];
-  <T>(value: T): [T];
-}
-
-/**
- * returns array representation of a value
- */
-export const toArray: ToArray = <T>(
-  value: Iterable<T> | T | T[] | string | null | undefined,
-) => {
-  if (isNull(value)) return [] as any;
-  if (Array.isArray(value)) return value;
-  if (isString(value)) return [value] as [string];
-  if (isIterable<T>(value)) return [...value] as T[];
-  return [value];
-};
 
 /**
  * Gets some nullable arrays and returns concatenation of present arrays

@@ -3,13 +3,6 @@ import { randomInt } from '../number/number.js';
 import type { FilterNullish } from '../types/types.js';
 
 /**
- * Gets some nullable arrays and returns concatenation of present arrays
- */
-export const concatNullableArrays = (...args: (any[] | null | undefined)[]) =>
-  args?.map(arr => arr ?? [])?.reduce((curr, arr) => curr.concat(arr), []) ??
-  [];
-
-/**
  * Gets an array and return shallow copy version of it
  */
 export const copyArray = <T extends any[]>(arr: T) => arr.slice() as T;

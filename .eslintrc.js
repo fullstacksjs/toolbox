@@ -10,5 +10,8 @@ module.exports = init({
   },
   rules: {
     '@typescript-eslint/ban-types': 'off',
+    'fp/no-let': 'off',
+    '@typescript-eslint/prefer-for-of': 'off',
+    'fp/no-loops': 'off',
   },
 });

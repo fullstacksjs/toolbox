@@ -1,4 +1,4 @@
-import { passesMin } from '../function.js';
+import { passesMin } from '../function/function.js';
 import { testRegex } from '../regex/regex.js';
 
 const camelOrPascalRegex = /[A-Z][a-z]+/g;

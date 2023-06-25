@@ -1,13 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import {
-  compact,
-  copyArray,
-  getRandom,
-  isEmpty,
-  isLastIndex,
-  shuffle,
-} from './array';
+import { compact, getRandom, isEmpty, isLastIndex, shuffle } from './array';
 import { range } from './range';
 
 describe('array', () => {
@@ -31,24 +24,6 @@ describe('array', () => {
 
       // This assertion has ~1.0E-164% probability of false negative.
       expect(shuffle(arr)).not.toEqual(arr);
-    });
-  });
-
-  describe('copyArray', () => {
-    it('return value should be new object', () => {
-      const array = [1];
-      const copy = copyArray(array);
-      copy[0]++;
-
-      expect(array[0]).toBe(1);
-      expect(copy[0]).toBe(2);
-    });
-
-    it('should return same array', () => {
-      const array = [1];
-      const copy = copyArray(array);
-
-      expect(array).toEqual(copy);
     });
   });
 

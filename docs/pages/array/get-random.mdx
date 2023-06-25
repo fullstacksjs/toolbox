@@ -1,20 +1,23 @@
 # getRandom
 
-get a random element from an array.
+Returns a random item from an array
 
 ### Import
+
 ```typescript copy
 import { getRandom } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-getRandom(value)
+function getRandom<T>(arr: T[]): T {}
 ```
 
 ### Examples
+
 ```typescript copy
-getRandom([1, 2, 3])    // 1 or 2 or 3
-getRandom([])           // undefined
-getRandom('list')       // Error: not an array
+getRandom([])        // undefined
+getRandom([1])       // 1
+getRandom([1, 2, 3]) // 1 | 2 | 3
 ```

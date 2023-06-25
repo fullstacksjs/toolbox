@@ -1,32 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
-import { compact, getRandom, isEmpty, isLastIndex, shuffle } from './array';
-import { range } from './range';
+import { compact, getRandom, isEmpty, isLastIndex } from './array';
 
 describe('array', () => {
-  describe('shuffle', () => {
-    it('should return empty array with empty array arg', () => {
-      expect(shuffle([])).toEqual([]);
-    });
-
-    it('should return one an array with one item', () => {
-      expect(shuffle([1])).toEqual([1]);
-    });
-
-    it('should return array with same items', () => {
-      const arr = [1, 2, 3];
-
-      expect(shuffle(arr)).toEqual(expect.arrayContaining(arr));
-    });
-
-    it('should return shuffled version of array', () => {
-      const arr = range(501);
-
-      // This assertion has ~1.0E-164% probability of false negative.
-      expect(shuffle(arr)).not.toEqual(arr);
-    });
-  });
-
   describe('getRandom', () => {
     it('should return undefined when given empty array', () => {
       expect(getRandom([])).toEqual(undefined);

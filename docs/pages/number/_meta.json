@@ -1,3 +1,4 @@
 {
-  "safe-divide": "safeDivide"
+  "safe-divide": "safeDivide",
+  "random-int": "randomInt"
 }

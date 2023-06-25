@@ -35,15 +35,6 @@ export const percent = (value: number, max: number): number =>
   clamp(safeDivide(value, max)) * 100;
 
 /**
- * generate random int between two value
- */
-export const randomInt = ({
-  min = 0,
-  max = Number.MAX_SAFE_INTEGER,
-}: Partial<Range> = {}): number =>
-  Math.floor(Math.random() * (max - min)) + min;
-
-/**
  * Checks if num is between min and max (and including borders).
  */
 export const isInRange = (num: number, { min, max }: Range): boolean =>

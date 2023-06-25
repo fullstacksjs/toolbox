@@ -4,7 +4,6 @@ import {
   compact,
   concatNullableArrays,
   copyArray,
-  ensureArray,
   getRandom,
   isEmpty,
   isLastIndex,
@@ -14,23 +13,6 @@ import {
 } from './array';
 
 describe('array', () => {
-  describe('ensureArray', () => {
-    const cases = [
-      { x: null, expected: [null] },
-      { x: undefined, expected: [undefined] },
-      { x: 'string', expected: ['string'] },
-      { x: {}, expected: [{}] },
-    ];
-
-    it.each(cases)('should wrap $x with an array', ({ x, expected }) => {
-      expect(ensureArray(x)).toStrictEqual(expected);
-    });
-
-    it("should return the argument if it's already an array", () => {
-      expect(ensureArray(['array'])).toStrictEqual(['array']);
-    });
-  });
-
   describe('range', () => {
     it('should create an empty array for zero-length', () => {
       expect(range(0)).toStrictEqual([]);

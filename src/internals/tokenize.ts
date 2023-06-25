@@ -1,5 +1,5 @@
 import { passesMin } from '../function.js';
-import { testRegex } from '../regex.js';
+import { testRegex } from '../regex/regex.js';
 
 const camelOrPascalRegex = /[A-Z][a-z]+/g;
 const snakeRegex = /_./g;

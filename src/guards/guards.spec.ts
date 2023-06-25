@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { noop } from './function';
+import { noop } from '../function/function.js';
 import {
   isBoolean,
   isFunction,

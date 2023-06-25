@@ -1,19 +1,23 @@
 # compact
 
-filters nulls from array.
+Filters nullish items from an array
 
 ### Import
+
 ```typescript copy
 import { compact } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-compact(array)
+function compact<T extends readonly unknown[]>(xs: T): FilterNullish<T> {}
 ```
 
 ### Examples
+
 ```typescript copy
-compact([1, false, null, 2, undefined]) // [1, false, 2]
-compact([NaN, false, null, 0, undefined]) // [NaN, false, 0]
+compact([])                                    // []
+compact([1])                                   // [1]
+compact([0, '', null, false, NaN, undefined]) // [0, '', false, NaN, {}]
 ```

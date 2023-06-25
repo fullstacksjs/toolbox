@@ -6,6 +6,15 @@ import type { EnsureArray } from '../types/types';
  * @template T
  * @param {T} value - any value
  * @returns {T[]}
+ *
+ * @example
+ *
+ * ensureArray(null);           // [null]
+ * ensureArray(undefined);      // [undefined]
+ * ensureArray('string');       // ['string']
+ * ensureArray(['array']);      // ['array']
+ * ensureArray([1, 2, 3]);      // [1, 2, 3]
+ * ensureArray({ foo: 'bar' }); // [{ foo: 'bar' }]
  */
 export function ensureArray<T>(x: T): EnsureArray<T> {
   return Array.isArray(x) ? (x as any) : [x];

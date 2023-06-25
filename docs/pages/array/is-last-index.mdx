@@ -1,28 +1,32 @@
 # isLastIndex
 
-is an index is the last index in an array.
+Check whether an index is the last index of an array.
 
 ### Import
+
 ```typescript copy
 import { isLastIndex } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-isLastIndex(array, index)
+function isLastIndex(arr: unknown[], index: number): boolean {}
 ```
 
 ### Examples
+
 ```typescript copy
-isLastIndex([], 0)            // false
 isLastIndex([1], 0)           // true
 isLastIndex([1, 2], 1)        // true
-isLastIndex([], -1)           // false
-isLastIndex([[], [], []], 0)  // false
 isLastIndex([[], [], []], 2)  // true
 isLastIndex([undefined], 0)   // true
 isLastIndex([null], 0)        // true
 isLastIndex([,], 0)           // true
+isLastIndex([,,], 1)          // true
 isLastIndex([, null], 1)      // true
 isLastIndex([, undefined], 1) // true
+isLastIndex([], 0)            // false
+isLastIndex([], -1)           // false
+isLastIndex([[], [], []], 0)  // false
 ```

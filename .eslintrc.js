@@ -4,7 +4,7 @@ module.exports = init({
   root: true,
   modules: {
     typescript: {
-      parserProject: './tsconfig.json',
+      parserProject: './tsconfig.eslint.json',
     },
     test: true,
   },

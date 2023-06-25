@@ -1,14 +1,5 @@
 import { isNotNull } from '../guards/guards.js';
-import { randomInt } from '../number/number.js';
 import type { FilterNullish } from '../types/types.js';
-
-/**
- * Returns a random item from an array
- */
-export const getRandom = <T>(arr: T[]) => {
-  const randomIndex = randomInt({ max: arr.length - 1 });
-  return arr[randomIndex];
-};
 
 /**
  * filters nullish from an array/tuple

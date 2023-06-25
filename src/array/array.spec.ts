@@ -1,22 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
-import { compact, getRandom, isEmpty, isLastIndex } from './array';
+import { compact, isEmpty, isLastIndex } from './array';
 
 describe('array', () => {
-  describe('getRandom', () => {
-    it('should return undefined when given empty array', () => {
-      expect(getRandom([])).toEqual(undefined);
-    });
-
-    it('should return first element for array with one element', () => {
-      expect(getRandom([1])).toEqual(1);
-    });
-
-    it('should return one random element of array', () => {
-      expect([1, 2, 3]).toContain(getRandom([1, 2, 3]));
-    });
-  });
-
   describe('compact', () => {
     it('should return empty array with empty array arg', () => {
       expect(compact([])).toEqual([]);

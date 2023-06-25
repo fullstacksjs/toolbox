@@ -1,6 +1,6 @@
-import { isIterable, isNotNull, isNull, isString } from './guards.js';
-import { randomInt } from './number.js';
-import type { FilterNullish } from './types.js';
+import { isIterable, isNotNull, isNull, isString } from '../guards/guards.js';
+import { randomInt } from '../number/number.js';
+import type { FilterNullish } from '../types/types.js';
 
 /**
  * wrap value with array if value is not an array itself.

@@ -1,0 +1,7 @@
+{
+  "extends": "@fullstacksjs/tsconfig/cjs",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "exclude": ["lib/"]
+}

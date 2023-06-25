@@ -20,6 +20,8 @@ export type MaybePromise<T> = Promise<T> | T;
 
 export type VoidFn = () => MaybePromise<void>;
 
+export type EnsureArray<T> = T extends any[] ? T : [T];
+
 export type EnvironmentVariable<T extends string = string> = T | undefined;
 
 export type NodeEnv<T extends string = never> = EnvironmentVariable<

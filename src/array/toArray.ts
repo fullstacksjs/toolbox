@@ -5,7 +5,7 @@ import { isIterable, isNull } from '../guards/guards.js';
  * returns array representation of a value
  *
  * when the value is already an array it return the value.
- * when the value is "undefined" or "null" it returns [].
+ * when the value is `undefined` or `null` it returns [].
  * when the value is iterable it returns array representation of the value.
  * otherwise it wraps the value in an array.
  *

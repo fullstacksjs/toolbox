@@ -3,15 +3,10 @@ import { randomInt } from '../number/number.js';
 import type { FilterNullish } from '../types/types.js';
 
 /**
- * Gets an array and return shallow copy version of it
- */
-export const copyArray = <T extends any[]>(arr: T) => arr.slice() as T;
-
-/**
  * Gets an array and return a shuffled version of it
  */
 export const shuffle = <T extends any[]>(arr: T): T =>
-  copyArray(arr).sort(() => (Math.random() < 0.5 ? 1 : -1));
+  (arr.slice() as T).sort(() => (Math.random() < 0.5 ? 1 : -1));
 
 /**
  * Returns a random item from an array

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { isLastIndex } from './array';
+import { isLastIndex } from './isLastIndex';
 
 describe('array', () => {
   describe('isLastIndex', () => {
@@ -14,6 +14,7 @@ describe('array', () => {
       { arr: [undefined], index: 0, expected: true },
       { arr: [null], index: 0, expected: true },
       { arr: [,], index: 0, expected: true }, // eslint-disable-line no-sparse-arrays
+      { arr: [, ,], index: 1, expected: true }, // eslint-disable-line no-sparse-arrays
       { arr: [, null], index: 1, expected: true }, // eslint-disable-line no-sparse-arrays
       { arr: [, undefined], index: 1, expected: true }, // eslint-disable-line no-sparse-arrays
     ];

@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { Env, getBooleanEnv, getEnv, getNodeEnv, getRequiredEnv } from './env';
 
@@ -9,24 +9,24 @@ const envs = {
 };
 
 describe('env', () => {
-  beforeEach(() => {
-    process.env = {};
+  afterEach(() => {
+    vi.unstubAllEnvs();
   });
 
   describe('getEnv', () => {
     it('should return env if exists', () => {
-      const ENV = 'current';
+      const value = 'current';
       const key = 'key';
-      process.env[key] = ENV;
+      vi.stubEnv(key, value);
 
-      expect(getEnv(key)).toBe(ENV);
+      expect(getEnv(key)).toBe(value);
     });
 
     it('should return env even if fallback exists', () => {
       const value = 'value';
       const key = 'key';
       const fallback = 'fallback';
-      process.env[key] = value;
+      vi.stubEnv(key, value);
 
       expect(getEnv(key, fallback)).toBe(value);
     });
@@ -41,7 +41,7 @@ describe('env', () => {
     it('should fallback to given fallback if value is empty string', () => {
       const key = 'key';
       const fallback = 'fallback';
-      process.env[key] = '';
+      vi.stubEnv(key, '');
 
       expect(getEnv(key, fallback)).toBe(fallback);
     });
@@ -54,9 +54,9 @@ describe('env', () => {
   describe('getBooleanEnv', () => {
     it('should return boolean env if exists', () => {
       const falseKey = 'false';
-      process.env[falseKey] = 'false';
+      vi.stubEnv(falseKey, 'false');
       const trueKey = 'true';
-      process.env[trueKey] = 'true';
+      vi.stubEnv(trueKey, 'true');
 
       expect(getBooleanEnv(falseKey)).toBe(false);
       expect(getBooleanEnv(trueKey)).toBe(true);
@@ -108,7 +108,7 @@ describe('env', () => {
   describe('getNodeEnv', () => {
     it('should return current node env', () => {
       const ENV = 'current';
-      process.env.NODE_ENV = ENV;
+      vi.stubEnv('NODE_ENV', ENV);
 
       expect(getNodeEnv()).toBe(ENV);
     });
@@ -145,25 +145,25 @@ describe('env', () => {
 
   describe('is', () => {
     it('should return true in development environment', () => {
-      process.env.NODE_ENV = envs.dev;
+      vi.stubEnv('NODE_ENV', envs.dev);
 
       expect(Env.is(envs.dev)).toBe(true);
     });
 
     it('should return true in dev environment', () => {
-      process.env.NODE_ENV = 'dev';
+      vi.stubEnv('NODE_ENV', 'dev');
 
       expect(Env.is(envs.dev)).toBe(false);
     });
 
     it('should return true in production', () => {
-      process.env.NODE_ENV = envs.prod;
+      vi.stubEnv('NODE_ENV', envs.prod);
 
       expect(Env.is(envs.prod)).toBe(true);
     });
 
     it('should return true in prod environment', () => {
-      process.env.NODE_ENV = 'prod';
+      vi.stubEnv('NODE_ENV', 'prod');
 
       expect(Env.is(envs.prod)).toBe(false);
     });

@@ -1,0 +1,25 @@
+# getBooleanEnv
+
+Parse an environment to a boolean or throw error. If env does not exist, it returns the fallback value.
+
+import:
+```typescript copy
+import { getBooleanEnv } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```typescript copy
+getBooleanEnv(name, fallback): boolean | undefined
+```
+
+example:
+```typescript copy
+// j={} f=foo t=true f=false node
+getBooleanEnv<TEnvKey>('j');        // <Error>
+getBooleanEnv<TEnvKey>('f');        // <Error>
+getBooleanEnv<TEnvKey>('t');        // true
+getBooleanEnv<TEnvKey>('f');        // false
+getBooleanEnv<TEnvKey>('n');        // undefined
+getBooleanEnv<TEnvKey>('n', false); // false
+getBooleanEnv<TEnvKey>('n', true);  // true
+```

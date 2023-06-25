@@ -1,0 +1,20 @@
+# getRequiredEnv
+
+get environment variable or throw.
+
+import:
+```typescript copy
+import { getRequiredEnv } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```typescript copy
+getRequiredEnv<TEnvKey, TValue>(name)
+```
+
+example:
+```typescript copy
+// FOO=foo BAR=bar node
+getRequiredEnv<TEnvKey>('FOO');        // foo
+getRequiredEnv<TENvKey>('BAR');        // Error: BAR is required
+```

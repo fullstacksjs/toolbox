@@ -15,6 +15,6 @@ getRequiredEnv<TEnvKey, TValue>(name)
 example:
 ```typescript copy
 // FOO=foo BAR=bar node
-getRequiredEnv<TEnvKey>('FOO');        // foo
-getRequiredEnv<TENvKey>('BAR');        // Error: BAR is required
+getRequiredEnv<TEnvKey>('FOO')         // foo
+getRequiredEnv<TENvKey>('BAR')         // Error: BAR is required
 ```

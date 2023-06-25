@@ -1,3 +1,23 @@
 # isBoolean
 
-check given value is boolean or not
+check given value is boolean or not.
+
+import:
+```typescript copy
+import { isBoolean } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```typescript copy
+isBoolean(value): boolean
+```
+
+example:
+```typescript copy
+isBoolean(true)   // true
+isBoolean(false)  // true
+isBoolean()       // false
+isBoolean(1)      // false
+isBoolean(['1'])  // false
+isBoolean('1')    // false
+```

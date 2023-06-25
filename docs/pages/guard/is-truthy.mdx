@@ -1,0 +1,24 @@
+# isTruthy
+
+check given value is truthy.
+
+import:
+```typescript copy
+import { isTruthy } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```typescript copy
+isTruthy(value): boolean
+```
+
+example:
+```typescript copy
+isTruthy(undefined) // false
+isTruthy(null)      // false
+isTruthy(0)         // false
+isTruthy(false);    // false
+isTruthy({});       // true
+isTruthy([]);       // true
+isTruthy(NaN);      // false
+```

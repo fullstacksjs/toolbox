@@ -15,11 +15,11 @@ getBooleanEnv(name, fallback): boolean | undefined
 example:
 ```typescript copy
 // j={} f=foo t=true f=false node
-getBooleanEnv<TEnvKey>('j');        // <Error>
-getBooleanEnv<TEnvKey>('f');        // <Error>
-getBooleanEnv<TEnvKey>('t');        // true
-getBooleanEnv<TEnvKey>('f');        // false
-getBooleanEnv<TEnvKey>('n');        // undefined
-getBooleanEnv<TEnvKey>('n', false); // false
-getBooleanEnv<TEnvKey>('n', true);  // true
+getBooleanEnv<TEnvKey>('j')         // <Error>
+getBooleanEnv<TEnvKey>('f')         // <Error>
+getBooleanEnv<TEnvKey>('t')         // true
+getBooleanEnv<TEnvKey>('f')         // false
+getBooleanEnv<TEnvKey>('n')         // undefined
+getBooleanEnv<TEnvKey>('n', false)  // false
+getBooleanEnv<TEnvKey>('n', true)   // true
 ```

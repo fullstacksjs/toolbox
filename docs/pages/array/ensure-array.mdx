@@ -1,23 +1,26 @@
 # ensureArray
 
-force a value to an array.
+If the given value is not an array already, it wraps the value in an array.
 
-import:
+### Import
+
 ```typescript copy
-import { ensureArray } from '@fullstacksjs/toolbox'
+import { ensureArray } from '@fullstacksjs/toolbox';
 ```
 
-usage:
+### Signature:
+
 ```typescript copy
-ensureArray(value)
+function ensureArray<T>(value: T): EnsureArray<T> {}
 ```
 
-example:
+### Examples:
+
 ```typescript copy
-ensureArray(null)            // [null]
-ensureArray(undefined)       // [undefined]
-ensureArray('string')        // ['string']
-ensureArray(['array'])       // ['array']
-ensureArray([1, 2, 3])       // [1, 2, 3]
-ensureArray({ foo: 'bar' })  // [{ foo: 'bar' }]
+ensureArray(null);           // [null]
+ensureArray(undefined);      // [undefined]
+ensureArray('string');       // ['string']
+ensureArray(['array']);      // ['array']
+ensureArray([1, 2, 3]);      // [1, 2, 3]
+ensureArray({ foo: 'bar' }); // [{ foo: 'bar' }]
 ```

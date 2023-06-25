@@ -67,7 +67,7 @@ Before submitting a pull request, please make sure the following is done:
 
 Please check out the [documentation page](./DOCUMENTATION.md)
 
-[logo]: https://raw.githubusercontent.com/fullstacksjs/toolbox/master/assets/logo.svg
+[logo]: https://raw.githubusercontent.com/fullstacksjs/toolbox/main/assets/logo.svg
 [download-badge]: https://img.shields.io/npm/dm/@fullstacksjs/toolbox?color=EA5F12&label=DOWNLOADS&style=flat-square
 [version-badge]: https://img.shields.io/npm/v/@fullstacksjs/toolbox?color=EA5F12&label=VERSION&style=flat-square
 [license-badge]: https://img.shields.io/npm/l/@fullstacksjs/toolbox?color=EA5F12&label=LICENSE&style=flat-square

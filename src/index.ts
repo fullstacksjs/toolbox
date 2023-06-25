@@ -1,3 +1,4 @@
+export * from './array/ensureArray.js';
 export * from './array/array.js';
 export * from './env/env.js';
 export * from './error/error.js';

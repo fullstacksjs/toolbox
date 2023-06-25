@@ -1,3 +1,7 @@
 {
-  "noop": "noop"
+  "noop": "noop",
+  "call-all": "callAll",
+  "not": "not",
+  "passes-min": "passesMin",
+  "sleep": "sleep"
 }

@@ -2,20 +2,6 @@ import { isIterable, isNotNull, isNull, isString } from '../guards/guards.js';
 import { randomInt } from '../number/number.js';
 import type { FilterNullish } from '../types/types.js';
 
-/**
- * wrap value with array if value is not an array itself.
- */
-export const ensureArray = <T>(x: T): T extends any[] ? T : [T] =>
-  Array.isArray(x) ? (x as any) : [x];
-
-/**
- * create array of length n with from offset with an step
- */
-export const range = (
-  length: number,
-  { offset, step }: { offset: number; step: number } = { offset: 0, step: 1 },
-): number[] => Array.from({ length }, (_, i) => i * step + offset);
-
 interface ToArray {
   (value: null | undefined): never[];
   (value: string): [string];

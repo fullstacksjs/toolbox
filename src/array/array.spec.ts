@@ -7,30 +7,12 @@ import {
   getRandom,
   isEmpty,
   isLastIndex,
-  range,
   shuffle,
   toArray,
 } from './array';
+import { range } from './range';
 
 describe('array', () => {
-  describe('range', () => {
-    it('should create an empty array for zero-length', () => {
-      expect(range(0)).toStrictEqual([]);
-    });
-
-    it('should create an array of length n from zero-offset with a one-step', () => {
-      expect(range(10)).toStrictEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-    });
-
-    it('should create an array with from specified offset', () => {
-      expect(range(3, { offset: 5, step: 1 })).toStrictEqual([5, 6, 7]);
-    });
-
-    it('should create an array with specified offset and step', () => {
-      expect(range(3, { offset: -2, step: 10 })).toStrictEqual([-2, 8, 18]);
-    });
-  });
-
   describe('toArray', () => {
     it('should return an empty array for null', () => {
       expect(toArray(null)).toStrictEqual([]);

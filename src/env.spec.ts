@@ -1,4 +1,12 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import {
+  beforeEach,
+  afterAll,
+  beforeAll,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 
 import { Env, getBooleanEnv, getEnv, getNodeEnv, getRequiredEnv } from './env';
 
@@ -8,9 +16,20 @@ const envs = {
   test: 'test',
 };
 
+let originalEnv = process.env;
+
 describe('env', () => {
-  afterEach(() => {
-    vi.unstubAllEnvs();
+  beforeAll(() => {
+    originalEnv = process.env;
+  });
+
+  beforeEach(() => {
+    // @ts-ignore Clear env
+    process.env = {};
+  });
+
+  afterAll(() => {
+    process.env = originalEnv;
   });
 
   describe('getEnv', () => {
@@ -34,6 +53,7 @@ describe('env', () => {
     it('should fallback to given fallback', () => {
       const key = 'key';
       const fallback = 'fallback';
+      process.env[key] = undefined;
 
       expect(getEnv(key, fallback)).toBe(fallback);
     });
@@ -123,15 +143,16 @@ describe('env', () => {
   describe('getRequiredEnv', () => {
     it('should throw if env missing', () => {
       const key = 'key';
+      process.env[key] = undefined;
 
-      expect(() => getRequiredEnv(key)).toThrowError();
+      expect(() => getRequiredEnv(key)).toThrowError(/required/);
     });
 
     it('should throw if env empty string', () => {
       const key = 'key';
       process.env[key] = '';
 
-      expect(() => getRequiredEnv(key)).toThrowError();
+      expect(() => getRequiredEnv(key)).toThrowError(/required/);
     });
 
     it('should return value if present', () => {

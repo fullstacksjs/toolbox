@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/padding-line-between-statements */
 import { isBoolean } from './guards.js';
 import { isNullOrEmpty } from './string.js';
 import type { NodeEnv, Nullish } from './types.js';
@@ -16,7 +17,6 @@ export function getEnv<
   TKey extends string = string,
   TValue extends Nullish | string = string,
 >(key: TKey, defaultValue: TValue): TValue;
-
 export function getEnv<
   TKey extends string = string,
   TValue extends Nullish | string = string,

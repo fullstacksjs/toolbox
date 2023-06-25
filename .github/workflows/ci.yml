@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node.JS
         uses: actions/setup-node@v3
         with:
-          node-version: 16.15.18.16.01
+          node-version: 18.16.0
           cache: 'npm'
 
       - name: Install dependencies
@@ -51,7 +51,7 @@ jobs:
       - name: Setup Node.JS
         uses: actions/setup-node@v3
         with:
-          node-version: 16.15.18.16.01
+          node-version: 18.16.0
           cache: 'npm'
 
       - name: Install dependencies

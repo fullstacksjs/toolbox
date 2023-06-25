@@ -1,19 +1,19 @@
 # joinPath
 
-join path parts with "/" and without trailing and leading slashes
+join path parts with "/" and without trailing and leading slashes.
 
 import:
-```javascript copy
+```typescript copy
 import { joinPath } from '@fullstacksjs/toolbox'
 ```
 
 usage:
-```javascript copy
+```typescript copy
 joinPath(array)
 ```
 
 example:
-```javascript copy
+```typescript copy
 joinPath(['a', 'b'])                               // 'a/b'
 joinPath(['a', '/b'])                              // 'a/b'
 joinPath(['a', 'b/'])                              // 'a/b'

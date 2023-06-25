@@ -1,0 +1,20 @@
+# is
+
+strict check NODE_ENV with given value.
+
+import:
+```typescript copy
+import { is } from '@fullstacksjs/toolbox'
+```
+
+usage:
+```typescript copy
+is(name): boolean
+```
+
+example:
+```typescript copy
+// NODE_ENV=production node
+Env.is('development'); // false
+Env.is('production');  // true
+```

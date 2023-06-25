@@ -1,3 +1,10 @@
 {
-  "get-env": "getEnv"
+  "get-env": "getEnv",
+  "get-boolean-env": "getBooleanEnv",
+  "get-required-env": "getRequiredEnv",
+  "get-node-env": "getNodeEnv",
+  "is": "is",
+  "is-dev": "isDev",
+  "is-prod": "isProd",
+  "is-test": "isTest"
 }

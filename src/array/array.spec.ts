@@ -8,39 +8,10 @@ import {
   isEmpty,
   isLastIndex,
   shuffle,
-  toArray,
 } from './array';
 import { range } from './range';
 
 describe('array', () => {
-  describe('toArray', () => {
-    it('should return an empty array for null', () => {
-      expect(toArray(null)).toStrictEqual([]);
-    });
-
-    it('should return an empty array for undefined', () => {
-      expect(toArray(undefined)).toStrictEqual([]);
-    });
-
-    it('should wrap string value with an array', () => {
-      expect(toArray('string')).toStrictEqual(['string']);
-    });
-
-    it("should return the argument if it's already an array", () => {
-      expect(toArray(['array'])).toStrictEqual(['array']);
-    });
-
-    it('should spread iterables', () => {
-      expect(
-        toArray({
-          *[Symbol.iterator]() {
-            yield 'foo';
-          },
-        }),
-      ).toStrictEqual(['foo']);
-    });
-  });
-
   describe('concatNullableArrays', () => {
     it('should return empty array with no args', () => {
       expect(concatNullableArrays()).toEqual([]);

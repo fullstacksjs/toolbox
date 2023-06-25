@@ -1,5 +1,5 @@
 /**
- * test regex without worrying about mutation on global regexes
+ * test regex without worrying about mutation on global regex
  */
 export const testRegex = (regex: RegExp, str: string) => {
   regex.lastIndex = 0;

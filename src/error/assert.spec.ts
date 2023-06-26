@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { assert } from './error';
+import { assert } from './assert';
 
 describe('assert', () => {
   it('should throw error when condition is false', () => {

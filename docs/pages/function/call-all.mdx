@@ -1,20 +1,22 @@
 # callAll
 
-HOC that call all given functions.
+a HOC function that can call all given functions.
 
 ### Import
+
 ```typescript copy
 import { callAll } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-callAll(...functions)
+function callAll<T>(...fns: Function[]) {}
 ```
 
 ### Examples
-```typescript copy
-  callAll(foo, bar, baz)(...args)                         // void (foo(...args), bar(...args), baz(...args));
-  callAll(bar,'string', 5, null, undefined, baz)(...args) // void (bar(...args), baz(...args));
-```
 
+```typescript copy
+callAll(foo, bar, baz)(1);                         // void(foo(1), bar(1), baz(1))
+callAll(bar, 'string', 5, null, undefined, baz)(); // void (bar(), baz());
+```

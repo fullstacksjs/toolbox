@@ -1,15 +1,4 @@
-import { isFunction } from '../guards/guards.js';
 import type { Predicate } from '../types/types.js';
-
-/**
- * call given functions with an args safely
- */
-export function callAll(...fns: (Function | null | undefined)[]) {
-  return (...args: any) =>
-    fns.forEach(fn => {
-      if (isFunction(fn)) fn(...args);
-    });
-}
 
 /**
  * returns the "NOT" of its argument

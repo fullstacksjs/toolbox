@@ -1,0 +1,22 @@
+# assert
+
+Throws an error when the condition is not true.
+
+### Import
+
+```typescript copy
+import { assert } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function assert(condition: boolean, msg: string = 'Assertion failed'): void {}
+```
+
+### Examples
+
+```typescript copy
+assert(false, 'WTF') // Throw 'WTF'
+assert(true, 'WTF')  // noop
+```

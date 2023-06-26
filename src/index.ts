@@ -1,6 +1,6 @@
 export * from './array/index.js';
 export * from './env/env.js';
-export * from './error/assert.js';
+export * from './error/index.js';
 export * from './function/function.js';
 export * from './guards/guards.js';
 export * from './nullable/nullable.js';

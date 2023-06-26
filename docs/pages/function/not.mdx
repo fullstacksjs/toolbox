@@ -1,15 +1,17 @@
 # not
 
-returns the "NOT" of its argument.
+Returns the complement of its argument.
 
 ### Import
+
 ```typescript copy
 import { not } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-not(): boolean
+function not(b: any): boolean {}
 ```
 
 ### Examples
@@ -17,4 +19,5 @@ not(): boolean
 not(true)  // false
 not(false) // true
 not(0)     // true
+not(1)     // false
 ```

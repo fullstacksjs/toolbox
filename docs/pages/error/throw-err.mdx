@@ -1,3 +1,23 @@
 # throwErr
 
-throws the given value
+Expression form of throw
+
+### Import
+
+```typescript copy
+import { throwErr } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function throwErr(err: unknown): never {}
+```
+
+### Examples
+
+```typescript copy
+throwErr('oops')              // throw 'oops'
+throwErr(Error('oops'))       // throw Error('oops')
+throwErr(CustomError('oops')) // throw CustomError('oops')
+```

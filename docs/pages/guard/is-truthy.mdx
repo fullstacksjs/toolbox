@@ -1,24 +1,29 @@
 # isTruthy
 
-check given value is truthy.
+Check whether the given value is truthy
 
 ### Import
+
 ```typescript copy
 import { isTruthy } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-isTruthy(value): boolean
+const isTruthy = <T>(x: T): x is Truthy<T> => {};
 ```
 
 ### Examples
+
 ```typescript copy
 isTruthy(undefined) // false
-isTruthy(null)      // false
-isTruthy(0)         // false
-isTruthy(false);    // false
-isTruthy({});       // true
-isTruthy([]);       // true
-isTruthy(NaN);      // false
+isTruthy(NaN)    // false
+isTruthy(false)  // false
+isTruthy(0)      // false
+isTruthy(null)   // false
+isTruthy('null') // true
+isTruthy(1)      // true
+isTruthy([])     // true
+isTruthy({})     // true
 ```

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/padding-line-between-statements */
-import { isIterable, isNull } from '../guards/guards.js';
+
+import { isIterable } from '../guards/isIterable';
 
 /**
  * returns array representation of a value
@@ -26,7 +27,7 @@ export function toArray<T extends any[]>(value: T): T;
 export function toArray<T>(value: Iterable<T> | T[]): T[];
 export function toArray<T>(value: T): [T];
 export function toArray<T>(value: Iterable<T> | T | T[] | null | undefined) {
-  if (isNull(value)) return [];
+  if (value == null) return [];
   if (Array.isArray(value)) return value;
   if (isIterable<T>(value)) return Array.from(value);
   return [value];

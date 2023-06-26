@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/padding-line-between-statements */
-import { isBoolean } from '../guards/guards.js';
+import { isBoolean } from '../guards/isBoolean.js';
 import { isNullOrEmpty } from '../string/string.js';
 import type { NodeEnv, Nullish } from '../types/types.js';
 import { fallbackString, required } from '../values/values.js';

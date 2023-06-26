@@ -1,21 +1,25 @@
 # isString
 
-check given value is string or not.
+Check whether the given value is string or not
 
 ### Import
+
 ```typescript copy
 import { isString } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-isString(value): boolean
+const isString = (x: unknown): x is string => {}
 ```
 
 ### Examples
+
 ```typescript copy
-isString()       // false
-isString(1)      // false
-isString(['1'])  // false
-isString('1')    // true
+isString('')        // true
+isString(undefined) // false
+isString(null)      // false
+isString(1)         // false
+isString(['1'])     // false
 ```

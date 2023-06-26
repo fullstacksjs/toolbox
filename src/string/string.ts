@@ -1,4 +1,3 @@
-import { isNull, isString } from '../guards/guards.js';
 import { isWordOrWords } from '../internals/string.js';
 import { hasInvalidCasing, tokenize } from '../internals/tokenize.js';
 import type { Nullish, Sensitivity } from '../types/types.js';
@@ -61,7 +60,7 @@ export const toPascalCase = (str: string) =>
  */
 export const isNullOrEmpty = <T extends any[] | string>(
   x: Nullish | T | '' | [],
-): x is Nullish | (T extends any[] ? [] : '') => isNull(x) || x.length === 0;
+): x is Nullish | (T extends any[] ? [] : '') => x == null || x.length === 0;
 
 /**
  * return initial chars of words
@@ -71,7 +70,7 @@ export const isNullOrEmpty = <T extends any[] | string>(
  * @example getInitials('frontend monsters'); //-> FM
  */
 export const getInitials = (name: string, fallback: string = '?'): string =>
-  isString(name) && isWordOrWords(name.trim())
+  typeof name === 'string' && isWordOrWords(name.trim())
     ? name
         .replace(/\s+/g, ' ')
         .split(' ')

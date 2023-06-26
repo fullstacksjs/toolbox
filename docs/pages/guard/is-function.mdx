@@ -1,20 +1,24 @@
 # isFunction
 
-check given value is function or not.
+Check whether the given value is a functions or not
 
 ### Import
+
 ```typescript copy
 import { isFunction } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-isFunction(value): boolean
+const isFunction = (x: unknown): x is Function => {}
 ```
 
 ### Examples
+
 ```typescript copy
-isFunction(() => {})  // true
-isFunction()          // false
+isFunction(() => 1)   // true
+isFunction(undefined) // false
 isFunction(true)      // false
+isFunction('string')  // false
 ```

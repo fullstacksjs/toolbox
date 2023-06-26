@@ -19,5 +19,11 @@ module.exports = init({
         'func-style': ['error', 'declaration'],
       },
     },
+    {
+      files: ['./src/guards/**/*.ts'],
+      rules: {
+        'func-style': 'off',
+      },
+    },
   ],
 });

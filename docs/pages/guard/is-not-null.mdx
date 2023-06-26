@@ -1,23 +1,27 @@
 # isNotNull
 
-check given value is neither null nor undefined
+Check whether the given value is not nullable (undefined or null)
 
 ### Import
+
 ```typescript copy
 import { isNotNull } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-isNotNull(value): boolean
+const isNotNull = <T>(x: T): x is NonNullable<T> => {}
 ```
 
 ### Examples
+
 ```typescript copy
 isNotNull(undefined) // false
 isNotNull(null)      // false
+isNotNull('null')    // true
 isNotNull(0)         // true
-isNotNull(false);    // true
-isNotNull({});       // true
-isNotNull([]);       // true
+isNotNull([])        // true
+isNotNull({})        // true
+isNotNull(false)     // true
 ```

@@ -1,23 +1,25 @@
 # isIterable
 
-check given value is iterable or not.
+Check whether the given value is iteratable or not
 
 ### Import
+
 ```typescript copy
 import { isIterable } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-isIterable(value): boolean
+const isIterable = <T>(x: unknown): x is Iterable<T> => {}
 ```
 
 ### Examples
+
 ```typescript copy
-isIterable([])                            // true
-isIterable(new Map())                     // true
-isIterable({ [Symbol.iterator]() { } })   // true
-isIterable('some')                        // true
-isIterable({})                            // false
-isIterable()                              // false
+isIterable([])        // true
+isIterable(new Map()) // true
+isIterable('some')    // true
+isIterable({})        // false
+isIterable(undefined) // false
 ```

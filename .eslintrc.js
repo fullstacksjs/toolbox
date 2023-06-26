@@ -8,10 +8,16 @@ module.exports = init({
     },
     test: true,
   },
-  rules: {
-    '@typescript-eslint/ban-types': 'off',
-    'fp/no-let': 'off',
-    '@typescript-eslint/prefer-for-of': 'off',
-    'fp/no-loops': 'off',
-  },
+  overrides: [
+    {
+      files: ['./src/**/*.ts'],
+      rules: {
+        '@typescript-eslint/ban-types': 'off',
+        'fp/no-let': 'off',
+        '@typescript-eslint/prefer-for-of': 'off',
+        'fp/no-loops': 'off',
+        'func-style': ['error', 'declaration'],
+      },
+    },
+  ],
 });

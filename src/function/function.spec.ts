@@ -1,14 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { callAll, noop, not, sleep } from './function';
+import { callAll, not, sleep } from './function';
 
 describe('function', () => {
-  describe('noop', () => {
-    it('should return undefined', () => {
-      expect(noop()).toBe(undefined);
-    });
-  });
-
   describe('callAll', () => {
     it('should call given functions with an args', () => {
       const fns = [vi.fn(), vi.fn(), vi.fn()];

@@ -2,24 +2,21 @@ import { isFunction } from '../guards/guards.js';
 import type { Predicate } from '../types/types.js';
 
 /**
- * noop ¯\_(ツ)_/¯
- */
-export const noop = (): void => undefined;
-
-/**
  * call given functions with an args safely
  */
-export const callAll =
-  (...fns: (Function | null | undefined)[]) =>
-  (...args: any) =>
+export function callAll(...fns: (Function | null | undefined)[]) {
+  return (...args: any) =>
     fns.forEach(fn => {
       if (isFunction(fn)) fn(...args);
     });
+}
 
 /**
  * returns the "NOT" of its argument
  */
-export const not = (b: unknown): boolean => !b;
+export function not(b: unknown): boolean {
+  return !b;
+}
 
 /**
  * @template T
@@ -40,14 +37,16 @@ export const not = (b: unknown): boolean => !b;
  * isValidNumber(26) // returns false because its only larger than 25
  * isValidNumber(30) // returns true because its passes minimum 2 cases (being divisible by 5 and 3 and larger than 25)
  */
-export const passesMin = <T>(min: number, ps: Predicate<T>[], a: T): boolean =>
-  ps.reduce((m, f) => (f(a) ? m - 1 : m), min) <= 0;
+export function passesMin<T>(min: number, ps: Predicate<T>[], a: T): boolean {
+  return ps.reduce((m, f) => (f(a) ? m - 1 : m), min) <= 0;
+}
 
 /**
  * @param {number} ms timeout in milliseconds
  * @returns {Promise<void>} a Promise that resolves after timeout
  */
-export const sleep = (ms: number): Promise<void> =>
-  new Promise<void>(resolve => {
+export function sleep(ms: number): Promise<void> {
+  return new Promise<void>(resolve => {
     setTimeout(() => resolve(), ms);
   });
+}

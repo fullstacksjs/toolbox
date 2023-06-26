@@ -1,18 +1,21 @@
 # sleep
 
-returns a promise that resolves after a certain milliseconds.
+Returns a promise that resolves after a certain milliseconds.
 
 ### Import
+
 ```typescript copy
 import { sleep } from '@fullstacksjs/toolbox';
 ```
 
 ### Signature
+
 ```typescript copy
-sleep(number)
+function sleep(ms: number): Promise<void> {}
 ```
 
 ### Examples
 ```typescript copy
-await sleep(1000) // Resolves after 1 second
+sleep(1000).then(() => console.log("Hi")) // Logs hi after 1 second
+await sleep(1000); console.log("Hi")      // Logs hi after 1 second
 ```

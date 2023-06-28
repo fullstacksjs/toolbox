@@ -3,18 +3,18 @@ import { pruneKeyWhen } from './pruneKeyWhen';
 
 describe('pruneKeyWhen', () => {
   it('should return empty object', () => {
-    expect(pruneKeyWhen({ name: null, age: '' }, key => key === 'age')).toEqual(
-      { name: null },
-    );
+    expect(pruneKeyWhen({ a: null, b: '' }, key => key === 'b')).toEqual({
+      a: null,
+    });
   });
 
   it("should return object with just one property 'name'", () => {
-    expect(pruneKeyWhen({ name: 'John', age: {} }, () => true)).toEqual({});
+    expect(pruneKeyWhen({ a: 'John', b: {} }, () => true)).toEqual({});
   });
 
   it('should not prune nested object', () => {
-    expect(pruneKeyWhen({ foo: { bar: null } }, () => false)).toEqual({
-      foo: { bar: null },
+    expect(pruneKeyWhen({ a: { b: null } }, () => false)).toEqual({
+      a: { b: null },
     });
   });
 });

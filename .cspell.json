@@ -6,7 +6,7 @@
     {
       "name": "keywords",
       "description": "Project keywords",
-      "path": "./dictionaries/keywords.txt"
+      "path": "./keywords.txt"
     }
   ],
   "dictionaries": ["node", "keywords"]

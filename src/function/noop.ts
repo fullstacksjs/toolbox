@@ -3,8 +3,10 @@
 /**
  * noop ¯\_(ツ)_/¯
  *
+ * @returns {undefined} nothing
+ *
  * @example
  *
  * noop() // ¯\_(ツ)_/¯
  */
-export function noop() {}
+export function noop(): undefined {}

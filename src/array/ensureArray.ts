@@ -4,8 +4,8 @@ import type { EnsureArray } from '../types/types';
  * If the given value is not an array already, it wraps the value in an array.
  *
  * @template T
- * @param {T} value - any value
- * @returns {T[]}
+ * @param {T} x any value
+ * @returns {T[]} array version of the value
  *
  * @example
  *

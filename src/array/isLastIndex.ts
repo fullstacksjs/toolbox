@@ -1,6 +1,10 @@
 /**
  * Check whether an index is the last index of an array.
  *
+ * @param {unknown[]} arr an array
+ * @param {number} index an index
+ * @returns {boolean} true when the index is the last index of the array
+ *
  * @example
  *
  *  isLastIndex([1], 0)            // true

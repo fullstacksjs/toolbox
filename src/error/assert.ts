@@ -2,9 +2,9 @@
  * Throws an error when the condition is not true.
  *
  * @export
- * @param {boolean} condition
- * @param {string} [msg='Assertion failed']
- * @returns {void}
+ * @param {boolean} condition a condition
+ * @param {string} [msg='Assertion failed'] a message you want to throw
+ * @returns {void} throw when the condition is false
  *
  * @example
  *

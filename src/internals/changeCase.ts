@@ -6,9 +6,6 @@ export interface Options {
 const nonWordCharsRegex = /[^A-Z0-9]+/gi;
 const wordRegex = /([a-z0-9])([A-Z])|([A-Z])([A-Z][a-z])/g;
 
-/**
- * General function that can tokenize input and merge them together
- */
 export function changeCase(
   input: string,
   { map = s => s.toLowerCase(), delimiter = ' ' }: Options = {},

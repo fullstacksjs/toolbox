@@ -1,6 +1,9 @@
 /**
  * Return whether an array is empty or not
  *
+ * @param {unknown[]} x any value
+ * @returns {boolean} true when the value length is zero
+ *
  * @example
  *
  * isEmpty([])            // true

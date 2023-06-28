@@ -1,8 +1,8 @@
 /**
  * a HOC function that can call all given functions.
  *
- * @param {...Function} fns
- * @returns {Function}
+ * @param {...Function} fns list of functions
+ * @returns {Function} a function that calls all the given function
  *
  * @example
  *

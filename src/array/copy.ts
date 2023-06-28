@@ -2,8 +2,8 @@
  * Returns a shallow copy version an array
  *
  * @template T
- * @param {T} array
- * @returns {T}
+ * @param {T} arr an array
+ * @returns {T} shallow copy of the array
  *
  * @example
  * copy([])  // []

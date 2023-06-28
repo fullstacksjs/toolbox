@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { joinPath } from './joinPaths';
+import { joinPaths } from './joinPaths';
 
-describe('joinPath', () => {
+describe('joinPaths', () => {
   const cases = [
     { args: ['a', 'b'], expected: 'a/b' },
     { args: ['a', '/b'], expected: 'a/b' },
@@ -33,7 +33,7 @@ describe('joinPath', () => {
   it.each(cases)(
     'should return $expected for $args as an input',
     ({ args, expected }) => {
-      expect(joinPath(...args)).toBe(expected);
+      expect(joinPaths(...args)).toBe(expected);
     },
   );
 });

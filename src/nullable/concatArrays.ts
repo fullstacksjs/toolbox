@@ -2,8 +2,8 @@
  * Gets some nullable arrays and returns concatenation of existing ones.
  *
  * @template T
- * @param {...T} mas
- * @returns {T[]}
+ * @param {...T} mas arrays or nulls
+ * @returns {T[]} concatenation of all provided arrays
  *
  * @examples
  *

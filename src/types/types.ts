@@ -95,3 +95,5 @@ export type Tuple<T, N extends number> = N extends N
 export type Sensitivity = 'accent' | 'base' | 'case' | 'variant';
 
 export type IdFn = <T>(x: T) => T;
+
+export type Nullable<T> = T | null;

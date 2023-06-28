@@ -1,6 +1,6 @@
 {
-  "noop": "noop",
   "call-all": "callAll",
+  "noop": "noop",
   "not": "not",
   "passes-min": "passesMin",
   "sleep": "sleep"

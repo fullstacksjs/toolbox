@@ -1,8 +1,8 @@
 /**
  * Check whether the given value is string or not
  *
- * @param {unknown} x
- * @returns {x is string}
+ * @param {unknown} x any value
+ * @returns {boolean} true when the value is a string
  *
  * @example
  *

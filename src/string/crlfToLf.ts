@@ -2,8 +2,8 @@
  * Converts crlf to lf
  *
  * @export
- * @param {string} str
- * @returns {string}
+ * @param {string} str any string
+ * @returns {string} the lf version of the string
  *
  * @example
  *

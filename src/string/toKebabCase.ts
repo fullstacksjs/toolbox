@@ -3,8 +3,8 @@ import { changeCase } from '../internals/changeCase';
 /**
  * Converts any casing to kebab-case
  *
- * @param {string} str
- * @returns {string}
+ * @param {string} str any string
+ * @returns {string} kebab-case version of the input
  *
  * @example
  *

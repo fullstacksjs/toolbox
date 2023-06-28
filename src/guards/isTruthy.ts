@@ -4,8 +4,8 @@ import type { Truthy } from '../types/types';
  * Check whether the given value is truthy
  *
  * @template T
- * @param {T} x
- * @returns {boolean}
+ * @param {T} x any value
+ * @returns {boolean} true when the value is truthy
  *
  * @example
  *

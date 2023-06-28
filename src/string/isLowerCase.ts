@@ -1,8 +1,8 @@
 /**
  * Returns a boolean indicating whether the string is lower case.
  *
- * @param {string} str
- * @returns {boolean}
+ * @param {string} str any string
+ * @returns {boolean} is all character is lowercase
  *
  * @example
  *

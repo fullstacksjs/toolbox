@@ -1,8 +1,8 @@
 /**
  * Check whether the given value is iteratable or not
  *
- * @param {unknown} x
- * @returns {boolean}
+ * @param {unknown} x any value
+ * @returns {boolean} true if the value is iterable
  *
  * @example
  *

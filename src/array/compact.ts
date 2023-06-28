@@ -3,6 +3,10 @@ import type { FilterNullish } from '../types/types';
 /**
  * Filters nullish items from an array
  *
+ * @template T
+ * @param {T} xs an array
+ * @returns {T} a new array that has not nullish value
+ *
  * @example
  *
  * compact([])                                    // []

@@ -2,8 +2,8 @@
  * Returns the complement of its argument.
  *
  * @export
- * @param {any} b
- * @returns {boolean}
+ * @param {any} b any value
+ * @returns {boolean} complement of the value
  *
  * @example
  *

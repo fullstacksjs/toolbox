@@ -26,27 +26,6 @@ export function toSnakeCase(str: string) {
 }
 
 /**
- * convert any casing to kebab-case
- */
-export function toKebabCase(str: string) {
-  if (hasInvalidCasing(str)) return str;
-
-  return tokenize(str).replace(
-    /(\s[a-z])/g,
-    (_, letter: string) => `-${letter.slice(1)}`,
-  );
-}
-
-/**
- * convert any casing to PascalCase
- */
-export function toPascalCase(str: string) {
-  if (hasInvalidCasing(str)) return str;
-
-  return toCamelCase(str).replace(/^./, m => m.toUpperCase());
-}
-
-/**
  * check if value is null, undefined or empty string or array
  */
 export function isNullOrEmpty<T extends any[] | string>(

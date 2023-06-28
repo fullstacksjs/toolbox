@@ -26,5 +26,5 @@ import { changeCase } from '../internals/tokenize';
  * toCapitalCase('ThisIs-fullstacksjs radio__and--I-loveCoding') // This Is Fullstacksjs Radio And I Love Coding
  */
 export function toCapitalCase(str: string): string {
-  return changeCase(str, { delimiter: ' ', map: capitalize });
+  return changeCase(str, { map: capitalize });
 }

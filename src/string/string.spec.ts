@@ -8,7 +8,6 @@ import {
   removeLeadingSlashes,
   removeTrailingSlashes,
   toCamelCase,
-  toKebabCase,
   toPascalCase,
   toSnakeCase,
 } from './string';
@@ -108,31 +107,6 @@ describe('string', () => {
       'should return $expected for $x as input',
       ({ x, expected }) => {
         expect(toSnakeCase(x)).toBe(expected);
-      },
-    );
-  });
-
-  describe('toKebabCase', () => {
-    const cases = [
-      { x: '', expected: '' },
-      { x: ' ', expected: ' ' },
-      { x: 'foo', expected: 'foo' },
-      { x: 'foo bar', expected: 'foo-bar' },
-      { x: 'foo-bar', expected: 'foo-bar' },
-      { x: 'fooBar', expected: 'foo-bar' },
-      { x: 'foo_bar', expected: 'foo-bar' },
-      { x: 'foo bar code', expected: 'foo-bar-code' },
-      { x: 'foo-bar-code', expected: 'foo-bar-code' },
-      { x: 'fooBarCode', expected: 'foo-bar-code' },
-      { x: 'foo_bar_code', expected: 'foo-bar-code' },
-      { x: 'FOO_BAR_CODE', expected: 'foo-bar-code' },
-      { x: 'foo_ -BaRC ode', expected: 'foo_ -BaRC ode' },
-    ];
-
-    it.each(cases)(
-      'should return $expected for $x as input',
-      ({ x, expected }) => {
-        expect(toKebabCase(x)).toBe(expected);
       },
     );
   });

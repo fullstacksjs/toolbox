@@ -2,8 +2,8 @@
  * Return a shuffled version of an array
  *
  * @template T
- * @param {T} arr
- * @returns {T}
+ * @param {T} arr an array
+ * @returns {T} a copy version of array with random item order
  *
  * @example
  *

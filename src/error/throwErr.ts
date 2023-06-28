@@ -1,8 +1,8 @@
 /**
  * Expression form of throw
  *
- * @param {any} err
- * @returns {never}
+ * @param {any} err error to throw
+ * @returns {never} never returns!
  *
  * @example
  *

@@ -4,7 +4,7 @@ import { randomInt } from '../number/randomInt';
  * Returns a random item from an array
  *
  * @template T
- * @param {T[]} arr
+ * @param {T[]} arr an array
  * @returns {T} random item of array
  *
  * @example

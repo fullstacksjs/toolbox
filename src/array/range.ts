@@ -4,7 +4,7 @@
  * @param {number} length The length of array
  * @param {number} [offset=0] The start value of range
  * @param {number} [step=1] The value to increment or decrement by
- * @returns {number[]}
+ * @returns {number[]} an array with length start from offset
  *
  * @example
  *

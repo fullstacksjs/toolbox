@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { toSpaceCase } from './toSpaceCase';
 
 describe('toSpaceCase', () => {
-  it.each([
+  const cases = [
     { x: '', expected: '' },
-    { x: ' ', expected: ' ' },
+    { x: ' ', expected: '' },
     { x: 'foo', expected: 'foo' },
     { x: 'foo bar', expected: 'foo bar' },
     { x: 'foo-bar', expected: 'foo bar' },
@@ -16,8 +16,14 @@ describe('toSpaceCase', () => {
     { x: 'foo_bar_code', expected: 'foo bar code' },
     { x: 'FOO_BAR_CODE', expected: 'foo bar code' },
     { x: 'FOO BAR CODE', expected: 'foo bar code' },
-    { x: 'foo_ -BaRC ode', expected: 'foo_ -BaRC ode' },
-  ])('should return $expected for $x as input', ({ x, expected }) => {
+    { x: 'foo_ -BaRC ode', expected: 'foo ba rc ode' },
+    {
+      x: 'ThisIs-fullstacksjs radio__and--I-loveCoding',
+      expected: 'this is fullstacksjs radio and i love coding',
+    },
+  ];
+
+  it.each(cases)('$x -> $expected', ({ x, expected }) => {
     expect(toSpaceCase(x)).toBe(expected);
   });
 });

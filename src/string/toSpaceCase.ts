@@ -1,4 +1,4 @@
-import { tokenize } from '../internals/tokenize';
+import { changeCase } from '../internals/tokenize';
 
 /**
  * Separates words by space and makes them lowercase.
@@ -10,7 +10,7 @@ import { tokenize } from '../internals/tokenize';
  * @example
  *
  * toSpaceCase('')               // ''
- * toSpaceCase(' ')              // ' '
+ * toSpaceCase(' ')              // ''
  * toSpaceCase('foo')            // 'foo'
  * toSpaceCase('foo bar')        // 'foo bar'
  * toSpaceCase('foo-bar')        // 'foo bar'
@@ -22,6 +22,9 @@ import { tokenize } from '../internals/tokenize';
  * toSpaceCase('foo_bar_code')   // 'foo bar code'
  * toSpaceCase('FOO_BAR_CODE')   // 'foo bar code'
  * toSpaceCase('FOO BAR CODE')   // 'foo bar code'
- * toSpaceCase('foo_ -BaRC ode') // 'foo_ -BaRC ode'
+ * toSpaceCase('foo_ -BaRC ode') // 'foo ba rc ode'
+ * toSpaceCase('ThisIs-fullstacksjs radio__and--I-loveCoding') // 'this is fullstacksjs radio and i love coding'
  */
-export const toSpaceCase = tokenize;
+export function toSpaceCase(str: string): string {
+  return changeCase(str, { delimiter: ' ' });
+}

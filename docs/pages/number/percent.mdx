@@ -1,0 +1,27 @@
+# percent
+
+Returns percentage value of a number from a maximum number
+
+### Import
+
+```typescript copy
+import { percent } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function percent(value: number, max: number): number {}
+```
+
+### Examples
+
+```typescript copy
+clamp(0, 10)   // 0
+clamp(1, 10)   // 10
+clamp(-1, 10)  // 0
+clamp(20, 10)  // 100
+clamp(NaN, 10) // 0
+clamp(10, NaN) // 0
+clamp(1, 3)    // 33.33333333333333
+```

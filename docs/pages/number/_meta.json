@@ -1,6 +1,7 @@
 {
   "clamp": "clamp",
   "divide": "divide",
+  "is-in-range": "isInRange",
   "percent": "percent",
   "random-int": "randomInt",
   "to-decimal": "toDecimal"

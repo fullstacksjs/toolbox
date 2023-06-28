@@ -1,4 +1,5 @@
-import { hasInvalidCasing, tokenize } from '../internals/tokenize';
+import { capitalize } from '../internals/capitalize';
+import { changeCase } from '../internals/tokenize';
 
 /**
  * Converts the starting letter of every word into an upper case
@@ -11,7 +12,7 @@ import { hasInvalidCasing, tokenize } from '../internals/tokenize';
  * @example
  *
  * toCapitalCase('')              // ''
- * toCapitalCase(' ')             // ' '
+ * toCapitalCase(' ')             // ''
  * toCapitalCase('foo')           // 'Foo'
  * toCapitalCase('foo bar')       // 'Foo Bar'
  * toCapitalCase('foo-bar')       // 'Foo Bar'
@@ -22,9 +23,8 @@ import { hasInvalidCasing, tokenize } from '../internals/tokenize';
  * toCapitalCase('fooBarCode')    // 'Foo Bar Code'
  * toCapitalCase('foo_bar_code')  // 'Foo Bar Code'
  * toCapitalCase('FOO_BAR_CODE')  // 'Foo Bar Code'
+ * toCapitalCase('ThisIs-fullstacksjs radio__and--I-loveCoding') // This Is Fullstacksjs Radio And I Love Coding
  */
 export function toCapitalCase(str: string): string {
-  if (hasInvalidCasing(str)) return str;
-
-  return tokenize(str).replace(/\b\w/g, match => match.toUpperCase());
+  return changeCase(str, { delimiter: ' ', map: capitalize });
 }

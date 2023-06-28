@@ -1,4 +1,4 @@
-import { changeCase } from '../internals/tokenize';
+import { changeCase } from '../internals/changeCase';
 
 /**
  * Separates words by space and makes them lowercase.

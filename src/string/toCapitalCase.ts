@@ -1,5 +1,5 @@
 import { capitalize } from '../internals/capitalize';
-import { changeCase } from '../internals/tokenize';
+import { changeCase } from '../internals/changeCase';
 
 /**
  * Converts the starting letter of every word into an upper case

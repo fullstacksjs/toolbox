@@ -2,64 +2,48 @@ import { isWordOrWords } from '../internals/isWordOrWords.js';
 import { hasInvalidCasing, tokenize } from '../internals/tokenize.js';
 import type { Nullish, Sensitivity } from '../types/types.js';
 
-export const toSpaceCase = tokenize;
-
-/**
- * converts crlf to lf
- */
-export function crlfToLf(str: string): string {
-  return str.replace(/\r\n/g, '\n');
-}
-
-/**
- * uppercase first letter + lowercase rest
- */
-export function toCapitalCase(str: string): string {
-  return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
-}
-
 /**
  * convert any casing to camelCase
  */
 export function toCamelCase(str: string): string {
-  return hasInvalidCasing(str)
-    ? str
-    : toSpaceCase(str).replace(/\s([a-z])/g, (_, letter) =>
-        letter.toUpperCase(),
-      );
+  if (hasInvalidCasing(str)) return str;
+
+  return tokenize(str).replace(/\s([a-z])/g, (_, letter) =>
+    letter.toUpperCase(),
+  );
 }
 
 /**
  * convert any casing to snake_case
  */
 export function toSnakeCase(str: string) {
-  return hasInvalidCasing(str)
-    ? str
-    : toSpaceCase(str).replace(
-        /(\s[a-z])/g,
-        (_, letter: string) => `_${letter.slice(1)}`,
-      );
+  if (hasInvalidCasing(str)) return str;
+
+  return tokenize(str).replace(
+    /(\s[a-z])/g,
+    (_, letter: string) => `_${letter.slice(1)}`,
+  );
 }
 
 /**
  * convert any casing to kebab-case
  */
 export function toKebabCase(str: string) {
-  return hasInvalidCasing(str)
-    ? str
-    : toSpaceCase(str).replace(
-        /(\s[a-z])/g,
-        (_, letter: string) => `-${letter.slice(1)}`,
-      );
+  if (hasInvalidCasing(str)) return str;
+
+  return tokenize(str).replace(
+    /(\s[a-z])/g,
+    (_, letter: string) => `-${letter.slice(1)}`,
+  );
 }
 
 /**
  * convert any casing to PascalCase
  */
 export function toPascalCase(str: string) {
-  return hasInvalidCasing(str)
-    ? str
-    : toCamelCase(str).replace(/^./, m => m.toUpperCase());
+  if (hasInvalidCasing(str)) return str;
+
+  return toCamelCase(str).replace(/^./, m => m.toUpperCase());
 }
 
 /**

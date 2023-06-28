@@ -1,0 +1,26 @@
+# isLowerCase
+
+Returns a boolean indicating whether the string is lower case.
+
+### Import
+
+```typescript copy
+import { isLowerCase } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function isLowerCase(str: string): boolean {}
+```
+
+### Examples
+
+```typescript copy
+isLowerCase('')           // false
+isLowerCase('test')       // true
+isLowerCase('TEST')       // false
+isLowerCase('Test')       // false
+isLowerCase('123')        // false
+isLowerCase('snake_case') // true
+```

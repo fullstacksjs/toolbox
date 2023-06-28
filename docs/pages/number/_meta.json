@@ -1,4 +1,5 @@
 {
-  "safe-divide": "safeDivide",
+  "divide": "divide",
+  "clamp": "clamp",
   "random-int": "randomInt"
 }

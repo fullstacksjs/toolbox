@@ -1,5 +1,5 @@
 import { capitalize } from '../internals/capitalize';
-import { changeCase } from '../internals/tokenize';
+import { changeCase } from '../internals/changeCase';
 
 /**
  * Converts any casing to PascalCase

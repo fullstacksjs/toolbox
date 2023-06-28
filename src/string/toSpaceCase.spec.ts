@@ -1,0 +1,23 @@
+import { describe, expect, it } from 'vitest';
+import { toSpaceCase } from './toSpaceCase';
+
+describe('toSpaceCase', () => {
+  it.each([
+    { x: '', expected: '' },
+    { x: ' ', expected: ' ' },
+    { x: 'foo', expected: 'foo' },
+    { x: 'foo bar', expected: 'foo bar' },
+    { x: 'foo-bar', expected: 'foo bar' },
+    { x: 'fooBar', expected: 'foo bar' },
+    { x: 'foo_bar', expected: 'foo bar' },
+    { x: 'foo bar code', expected: 'foo bar code' },
+    { x: 'foo-bar-code', expected: 'foo bar code' },
+    { x: 'fooBarCode', expected: 'foo bar code' },
+    { x: 'foo_bar_code', expected: 'foo bar code' },
+    { x: 'FOO_BAR_CODE', expected: 'foo bar code' },
+    { x: 'FOO BAR CODE', expected: 'foo bar code' },
+    { x: 'foo_ -BaRC ode', expected: 'foo_ -BaRC ode' },
+  ])('should return $expected for $x as input', ({ x, expected }) => {
+    expect(toSpaceCase(x)).toBe(expected);
+  });
+});

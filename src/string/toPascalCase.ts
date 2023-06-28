@@ -4,8 +4,8 @@ import { changeCase } from '../internals/changeCase';
 /**
  * Converts any casing to PascalCase
  *
- * @param {string} str
- * @returns {string}
+ * @param {string} str any string
+ * @returns {string} PascalCase version of the input
  *
  * @example
  *

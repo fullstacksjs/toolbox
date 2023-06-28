@@ -3,8 +3,8 @@ import { changeCase } from '../internals/changeCase';
 /**
  * Converts any casing to snake_case
  *
- * @param {string} str
- * @returns {string}
+ * @param {string} str any string
+ * @returns {string} snake_case version of the input
  *
  * @example
  *

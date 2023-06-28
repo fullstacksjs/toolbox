@@ -1,8 +1,8 @@
 /**
  * Check whether the given value is an object
  *
- * @param {unknown} x
- * @returns {boolean}
+ * @param {unknown} x any value
+ * @returns {boolean} true when the value is an object
  *
  * @example
  *

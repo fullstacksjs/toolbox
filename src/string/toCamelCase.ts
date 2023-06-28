@@ -8,8 +8,8 @@ export function camelCaseTransform(input: string, index: number) {
 /**
  * Converts any casing to camelCase
  *
- * @param {string} str
- * @returns {string}
+ * @param {string} str any string
+ * @returns {string} camelCase version of input
  *
  * @example
  *

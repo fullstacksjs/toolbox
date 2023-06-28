@@ -1,8 +1,8 @@
 /**
  * Checks whether the given value is boolean or not
  *
- * @param {unknown} x
- * @returns {boolean}
+ * @param {unknown} x any value
+ * @returns {boolean} is the value boolean
  *
  * @example
  *

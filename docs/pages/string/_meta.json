@@ -1,3 +1,10 @@
 {
+  "crlf-to-lf": "crlfToLf",
+  "is-lower-case": "isLowerCase",
+  "to-camel-case": "toCamelCase",
+  "to-capital-case": "toCapitalCase",
+  "to-kebab-case": "toKebabCase",
+  "to-pascal-case": "toPascalCase",
+  "to-snake-case": "toSnakeCase",
   "to-space-case": "toSpaceCase"
 }

@@ -1,3 +1,35 @@
 # toSpaceCase
 
-convert any casing to space separated lowercase
+Separates words by space and makes them lowercase.
+
+### Import
+
+```typescript copy
+import { toSpaceCase } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function toSpaceCase(str: string): string {}
+```
+
+### Examples
+
+```typescript copy
+toSpaceCase(''); // ''
+toSpaceCase(' '); // ''
+toSpaceCase('foo'); // 'foo'
+toSpaceCase('foo bar'); // 'foo bar'
+toSpaceCase('foo-bar'); // 'foo bar'
+toSpaceCase('fooBar'); // 'foo bar'
+toSpaceCase('foo_bar'); // 'foo bar'
+toSpaceCase('foo bar code'); // 'foo bar code'
+toSpaceCase('foo-bar-code'); // 'foo bar code'
+toSpaceCase('fooBarCode'); // 'foo bar code'
+toSpaceCase('foo_bar_code'); // 'foo bar code'
+toSpaceCase('FOO_BAR_CODE'); // 'foo bar code'
+toSpaceCase('FOO BAR CODE'); // 'foo bar code'
+toSpaceCase('foo_ -BaRC ode'); // 'foo ba rc ode'
+toSpaceCase('ThisIs-fullstacksjs radio__and--I-loveCoding'); // 'this is fullstacksjs radio and i love coding'
+```

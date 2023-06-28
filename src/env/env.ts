@@ -1,7 +1,9 @@
+/* eslint-disable func-style */
 /* eslint-disable @typescript-eslint/padding-line-between-statements */
 import { isBoolean } from '../guards/isBoolean.js';
 import type { NodeEnv, Nullable } from '../types/types.js';
-import { fallbackString, required } from '../values/values.js';
+import { fallbackString } from '../values/fallbackString.js';
+import { required } from '../values/required.js';
 
 export type EnvKey = 'NODE_ENV';
 

@@ -1,8 +1,8 @@
 /**
  * Generate a random integer number between two values. (max is not included)
  *
- * @param {number} [min=0]
- * @param {number} [max=Number.MAX_SAFE_INTEGER]
+ * @param {number} [min=0] lower bond
+ * @param {number} [max=Number.MAX_SAFE_INTEGER] upper bound
  * @returns {number} random number
  *
  * @example

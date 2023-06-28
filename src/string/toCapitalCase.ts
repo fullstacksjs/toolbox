@@ -5,9 +5,8 @@ import { changeCase } from '../internals/changeCase';
  * Converts the starting letter of every word into an upper case
  * and will leave the remaining letters as lower case ones.
  *
- * @export
- * @param {string} str
- * @returns {string}
+ * @param {string} str any string
+ * @returns {string} capital case version fo input
  *
  * @example
  *

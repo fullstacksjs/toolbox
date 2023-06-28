@@ -3,8 +3,8 @@ import type { Nullish } from '../types/types';
 /**
  * Check whether the given value is nullable (undefined or null)
  *
- * @param {unknown} x
- * @returns {boolean}
+ * @param {unknown} x any value
+ * @returns {boolean} true if the value is null
  *
  * @example
  *

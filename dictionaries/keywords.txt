@@ -34,3 +34,4 @@ vitest
 réservé
 nextra
 unstub
+jsdoc

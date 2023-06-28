@@ -1,8 +1,8 @@
 /**
  * Check whether the given value is not nullable (undefined or null)
  *
- * @param {unknown} x
- * @returns {boolean}
+ * @param {unknown} x any value
+ * @returns {boolean} true if the value is not null or undefined
  *
  * @example
  *

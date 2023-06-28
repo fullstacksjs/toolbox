@@ -4,8 +4,8 @@ import { changeCase } from '../internals/changeCase';
  * Separates words by space and makes them lowercase.
  *
  * @export
- * @param {string} str
- * @returns {string}
+ * @param {string} str any string
+ * @returns {string} space separated version of the input
  *
  * @example
  *

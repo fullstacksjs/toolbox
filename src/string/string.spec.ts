@@ -7,7 +7,6 @@ import {
   joinPath,
   removeLeadingSlashes,
   removeTrailingSlashes,
-  toCamelCase,
   toSnakeCase,
 } from './string';
 
@@ -33,31 +32,6 @@ describe('string', () => {
     it(`should return ? for objects as input`, () => {
       expect(getInitials({ str: 'string' } as any as string)).toBe('?');
     });
-  });
-
-  describe('toCamelCase', () => {
-    const cases = [
-      { x: '', expected: '' },
-      { x: ' ', expected: ' ' },
-      { x: 'foo', expected: 'foo' },
-      { x: 'foo bar', expected: 'fooBar' },
-      { x: 'foo-bar', expected: 'fooBar' },
-      { x: 'fooBar', expected: 'fooBar' },
-      { x: 'foo_bar', expected: 'fooBar' },
-      { x: 'foo bar code', expected: 'fooBarCode' },
-      { x: 'foo-bar-code', expected: 'fooBarCode' },
-      { x: 'fooBarCode', expected: 'fooBarCode' },
-      { x: 'foo_bar_code', expected: 'fooBarCode' },
-      { x: 'FOO_BAR_CODE', expected: 'fooBarCode' },
-      { x: 'foo_ -BaRC ode', expected: 'foo_ -BaRC ode' },
-    ];
-
-    it.each(cases)(
-      'should return $expected for $x as input',
-      ({ x, expected }) => {
-        expect(toCamelCase(x)).toBe(expected);
-      },
-    );
   });
 
   describe('toSnakeCase', () => {

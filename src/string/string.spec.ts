@@ -2,18 +2,15 @@ import { describe, expect, it } from 'vitest';
 
 import {
   comparePaths,
-  crlfToLf,
   getInitials,
   isNullOrEmpty,
   joinPath,
   removeLeadingSlashes,
   removeTrailingSlashes,
   toCamelCase,
-  toCapitalCase,
   toKebabCase,
   toPascalCase,
   toSnakeCase,
-  toSpaceCase,
 } from './string';
 
 describe('string', () => {
@@ -37,51 +34,6 @@ describe('string', () => {
 
     it(`should return ? for objects as input`, () => {
       expect(getInitials({ str: 'string' } as any as string)).toBe('?');
-    });
-  });
-
-  describe('crlfToLf', () => {
-    const cases = [
-      { x: '', expected: '' },
-      { x: ' ', expected: ' ' },
-      { x: 'hello world', expected: 'hello world' },
-      { x: 'hello world\n', expected: 'hello world\n' },
-      { x: 'hello world\r\n', expected: 'hello world\n' },
-      { x: 'hello world\r\n\n', expected: 'hello world\n\n' },
-      {
-        x: 'hello world\r\nbut how is world\r\n',
-        expected: 'hello world\nbut how is world\n',
-      },
-      { x: 'hello world\r', expected: 'hello world\r' },
-      { x: 'hello world\r\r\r\n', expected: 'hello world\r\r\n' },
-    ];
-
-    it.each(cases)(
-      'should return $expected for $x as input',
-      ({ x, expected }) => {
-        expect(crlfToLf(x)).toBe(expected);
-      },
-    );
-  });
-
-  describe('toSpaceCase', () => {
-    it.each([
-      { x: '', expected: '' },
-      { x: ' ', expected: ' ' },
-      { x: 'foo', expected: 'foo' },
-      { x: 'foo bar', expected: 'foo bar' },
-      { x: 'foo-bar', expected: 'foo bar' },
-      { x: 'fooBar', expected: 'foo bar' },
-      { x: 'foo_bar', expected: 'foo bar' },
-      { x: 'foo bar code', expected: 'foo bar code' },
-      { x: 'foo-bar-code', expected: 'foo bar code' },
-      { x: 'fooBarCode', expected: 'foo bar code' },
-      { x: 'foo_bar_code', expected: 'foo bar code' },
-      { x: 'FOO_BAR_CODE', expected: 'foo bar code' },
-      { x: 'FOO BAR CODE', expected: 'foo bar code' },
-      { x: 'foo_ -BaRC ode', expected: 'foo_ -BaRC ode' },
-    ])('should return $expected for $x as input', ({ x, expected }) => {
-      expect(toSpaceCase(x)).toBe(expected);
     });
   });
 
@@ -181,23 +133,6 @@ describe('string', () => {
       'should return $expected for $x as input',
       ({ x, expected }) => {
         expect(toKebabCase(x)).toBe(expected);
-      },
-    );
-  });
-
-  describe('toCapitalCase', () => {
-    const cases = [
-      { x: '', expected: '' },
-      { x: ' ', expected: ' ' },
-      { x: 'foo', expected: 'Foo' },
-      { x: 'Foo', expected: 'Foo' },
-      { x: 'FOOBAR', expected: 'Foobar' },
-    ];
-
-    it.each(cases)(
-      'should return $expected for $x as input',
-      ({ x, expected }) => {
-        expect(toCapitalCase(x)).toBe(expected);
       },
     );
   });

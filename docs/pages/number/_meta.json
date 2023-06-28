@@ -1,6 +1,7 @@
 {
-  "divide": "divide",
   "clamp": "clamp",
+  "divide": "divide",
+  "percent": "percent",
   "random-int": "randomInt",
   "to-decimal": "toDecimal"
 }

@@ -1,0 +1,23 @@
+# pruneValueWhen
+
+Remove property from an object when predicate is true
+
+### Import
+
+```typescript copy
+import { pruneValueWhen } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function pruneValueWhen(min: number = 0, max: number = Number.MAX_SAFE_INTEGER): number {}
+```
+
+### Examples
+
+```typescript copy
+pruneValueWhen({ a: { b: null } }, v => !v)                          // { a: { b: null } }
+pruneValueWhen({ a: null, b: '', c: undefined }, v => !v)            // {}
+pruneValueWhen({ a: 'John', b: null, c: '', d: undefined }, v => !v) // { a: 'John' }
+```

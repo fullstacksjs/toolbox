@@ -4,30 +4,22 @@ import { pruneValueWhen } from './pruneValueWhen';
 describe('pruneValueWhen', () => {
   it('should return empty object', () => {
     expect(
-      pruneValueWhen(
-        { name: null, age: '', nickname: undefined },
-        value => !value,
-      ),
+      pruneValueWhen({ a: null, b: '', c: undefined }, value => !value),
     ).toEqual({});
   });
 
   it("should return object with just one property 'name'", () => {
     expect(
       pruneValueWhen(
-        {
-          name: 'John',
-          age: null,
-          status: '',
-          nickname: undefined,
-        },
+        { a: 'John', b: null, c: '', d: undefined },
         value => !value,
       ),
-    ).toEqual({ name: 'John' });
+    ).toEqual({ a: 'John' });
   });
 
   it('should not prune nested object', () => {
-    expect(pruneValueWhen({ foo: { bar: null } }, value => !value)).toEqual({
-      foo: { bar: null },
+    expect(pruneValueWhen({ a: { b: null } }, value => !value)).toEqual({
+      a: { b: null },
     });
   });
 });

@@ -1,3 +1,4 @@
 {
-  "prune-null-or-empty": "pruneNullOrEmpty"
+  "prune-key-when": "pruneKeyWhen",
+  "prune-value-when": "pruneValueWhen"
 }

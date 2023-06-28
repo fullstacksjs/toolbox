@@ -1,0 +1,27 @@
+# isLowerCase
+
+Removes leading slashes from a string
+
+### Import
+
+```typescript copy
+import { isLowerCase } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function removeLeadingSlashes(str: string): string {}
+```
+
+### Examples
+
+```typescript copy
+removeLeadingSlashes('')           // ''
+removeLeadingSlashes('/')          // ''
+removeLeadingSlashes('string')     // 'string'
+removeLeadingSlashes('/string')    // 'string'
+removeLeadingSlashes('//string')   // 'string'
+removeLeadingSlashes('//string/')  // 'string/'
+removeLeadingSlashes('//string/a') // 'string/a'
+```

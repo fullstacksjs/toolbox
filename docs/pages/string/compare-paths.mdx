@@ -1,0 +1,33 @@
+# comparePaths
+
+Compare two path without trailing and leading slashes
+
+### Import
+
+```typescript copy
+import { comparePaths } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function comparePaths(
+  path1: string,
+  path2: string,
+  { sensitivity = 'accent' }: { sensitivity?: Sensitivity } = {},
+): number {}
+```
+
+### Examples
+
+```typescript copy
+comparePaths('b', 'a')                // 1
+comparePaths('a', 'b')                // -1
+comparePaths('path', 'PAth')          // 0
+comparePaths('reserve', 'réservé')    // 0
+comparePaths('/path1/', '/path1/')    // 0
+comparePaths('reserve', 'reserve//')  // 0
+comparePaths('//reserve', 'reserve')  // 0
+comparePaths('reserve//', 'reserve/') // 0
+comparePaths('/reserve', '//reserve') // 0
+```

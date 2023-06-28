@@ -6,5 +6,11 @@
   "to-kebab-case": "toKebabCase",
   "to-pascal-case": "toPascalCase",
   "to-snake-case": "toSnakeCase",
-  "to-space-case": "toSpaceCase"
+  "to-space-case": "toSpaceCase",
+  "is-null-or-empty": "toSpaceCase",
+  "get-initials": "getInitials",
+  "compare-paths": "comparePaths",
+  "join-paths": "joinPaths",
+  "remove-leading-slashes": "removeLeadingSlashes",
+  "remove-trailing-slashes": "removeTrailingSlashes"
 }

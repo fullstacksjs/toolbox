@@ -14,6 +14,6 @@ import { randomInt } from '../number/randomInt';
  * getRandom([1, 2, 3]) // 1 | 2 | 3
  */
 export function getRandom<T>(arr: T[]): T {
-  const randomIndex = randomInt(0, arr.length);
+  const randomIndex = randomInt(0, arr.length - 1);
   return arr[randomIndex]!;
 }

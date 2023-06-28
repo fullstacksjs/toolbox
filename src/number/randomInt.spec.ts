@@ -7,7 +7,7 @@ describe('randomInt', () => {
       const number = randomInt(1, 2);
 
       expect(number).toBeGreaterThanOrEqual(1);
-      expect(number).toBeLessThan(2);
+      expect(number).toBeLessThan(3);
     }
   });
 
@@ -19,11 +19,11 @@ describe('randomInt', () => {
     expect(i).toBeLessThan(100);
   });
 
-  it('should not select the last item', () => {
+  it('should select the last item', () => {
     let i = 0;
 
     for (; i < 100; i++) if (randomInt(0, 1) === 1) break;
 
-    expect(i).toBe(100);
+    expect(i).toBeLessThan(100);
   });
 });

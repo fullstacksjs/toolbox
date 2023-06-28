@@ -1,18 +1,5 @@
 import { isWordOrWords } from '../internals/isWordOrWords.js';
-import { hasInvalidCasing, tokenize } from '../internals/tokenize.js';
 import type { Nullish, Sensitivity } from '../types/types.js';
-
-/**
- * convert any casing to snake_case
- */
-export function toSnakeCase(str: string) {
-  if (hasInvalidCasing(str)) return str;
-
-  return tokenize(str).replace(
-    /(\s[a-z])/g,
-    (_, letter: string) => `_${letter.slice(1)}`,
-  );
-}
 
 /**
  * check if value is null, undefined or empty string or array

@@ -7,7 +7,6 @@ import {
   joinPath,
   removeLeadingSlashes,
   removeTrailingSlashes,
-  toSnakeCase,
 } from './string';
 
 describe('string', () => {
@@ -32,31 +31,6 @@ describe('string', () => {
     it(`should return ? for objects as input`, () => {
       expect(getInitials({ str: 'string' } as any as string)).toBe('?');
     });
-  });
-
-  describe('toSnakeCase', () => {
-    const cases = [
-      { x: '', expected: '' },
-      { x: ' ', expected: ' ' },
-      { x: 'foo', expected: 'foo' },
-      { x: 'foo bar', expected: 'foo_bar' },
-      { x: 'foo-bar', expected: 'foo_bar' },
-      { x: 'fooBar', expected: 'foo_bar' },
-      { x: 'foo_bar', expected: 'foo_bar' },
-      { x: 'foo bar code', expected: 'foo_bar_code' },
-      { x: 'foo-bar-code', expected: 'foo_bar_code' },
-      { x: 'fooBarCode', expected: 'foo_bar_code' },
-      { x: 'foo_bar_code', expected: 'foo_bar_code' },
-      { x: 'FOO_BAR_CODE', expected: 'foo_bar_code' },
-      { x: 'foo_ -BaRC ode', expected: 'foo_ -BaRC ode' },
-    ];
-
-    it.each(cases)(
-      'should return $expected for $x as input',
-      ({ x, expected }) => {
-        expect(toSnakeCase(x)).toBe(expected);
-      },
-    );
   });
 
   describe('isNullOrEmpty', () => {

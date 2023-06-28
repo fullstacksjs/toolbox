@@ -1,9 +1,9 @@
 {
   "is-boolean": "isBoolean",
-  "is-string": "isString",
-  "is-iterable": "isIterable",
   "is-function": "isFunction",
-  "is-null": "isNull",
+  "is-iterable": "isIterable",
   "is-not-null": "isNotNull",
+  "is-null": "isNull",
+  "is-string": "isString",
   "is-truthy": "isTruthy"
 }

@@ -1,6 +1,23 @@
-export type Nullable<T> = T | null;
+/* eslint-disable @typescript-eslint/padding-line-between-statements */
 
-export function bind(x: null, ...fs: any[]): null;
+import type { Nullable } from '../types/types';
+
+/**
+ * Safely pass a nullable value to composition of functions
+ *
+ * @template T U
+ * @param {Nullable<T>} x a nullable value
+ * @param {...Function[]} fns list of functions
+ * @returns {Nullable<U>} mapped version of nullable value
+ *
+ * @example
+ *
+ * bind(null,f)           // null
+ * bind(1, f)             // f(1)
+ * bind(2, f, g, h)       // h(g(f(2)))
+ * bind(null, f, g, h, j) // null
+ */
+export function bind(x: null, ...fns: any[]): null;
 export function bind<A, B>(
   x: Nullable<A>,
   f: (x: A) => Nullable<B>,
@@ -10,7 +27,6 @@ export function bind<A, B, C>(
   f: (x: A) => Nullable<B>,
   g: (x: B) => Nullable<C>,
 ): Nullable<C>;
-
 export function bind<A, B, C, D>(
   x: Nullable<A>,
   f: (x: A) => Nullable<B>,
@@ -41,7 +57,6 @@ export function bind<A, B, C, D, E, F, G>(
   k: (x: E) => Nullable<F>,
   l: (x: F) => Nullable<G>,
 ): Nullable<G>;
-
 export function bind<A>(x: Nullable<A>, ...fns: any[]) {
   return fns.reduce((v, f) => (v === null ? null : f(v)), x);
 }

@@ -3,17 +3,6 @@ import { hasInvalidCasing, tokenize } from '../internals/tokenize.js';
 import type { Nullish, Sensitivity } from '../types/types.js';
 
 /**
- * convert any casing to camelCase
- */
-export function toCamelCase(str: string): string {
-  if (hasInvalidCasing(str)) return str;
-
-  return tokenize(str).replace(/\s([a-z])/g, (_, letter) =>
-    letter.toUpperCase(),
-  );
-}
-
-/**
  * convert any casing to snake_case
  */
 export function toSnakeCase(str: string) {

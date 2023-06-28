@@ -14,8 +14,6 @@ export type CamelCase<S extends string> =
  */
 export type Predicate<T = any> = (a: T) => boolean;
 
-export type Nullish = null | undefined;
-
 export type MaybePromise<T> = Promise<T> | T;
 
 export type VoidFn = () => MaybePromise<void>;
@@ -96,4 +94,4 @@ export type Sensitivity = 'accent' | 'base' | 'case' | 'variant';
 
 export type IdFn = <T>(x: T) => T;
 
-export type Nullable<T> = T | null;
+export type Nullable<T = never> = T | null | undefined;

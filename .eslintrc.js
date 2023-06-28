@@ -21,7 +21,7 @@ module.exports = init({
       },
     },
     {
-      files: ['./src/guards/**/*.ts'],
+      files: ['./src/guards/**/*.ts', '*.spec.ts'],
       rules: {
         'func-style': 'off',
       },

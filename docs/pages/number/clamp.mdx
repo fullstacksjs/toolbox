@@ -1,0 +1,23 @@
+# clamp
+
+Clamps a number between two values
+
+### Import
+
+```typescript copy
+import { clamp } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function clamp(value: number, min: number, max: number): number {}
+```
+
+### Examples
+
+```typescript copy
+clamp(5, 0, 100)   // 5
+clamp(-10, 0, 100) // 0
+clamp(101, 0, 100) // 100
+```

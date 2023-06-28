@@ -7,6 +7,6 @@ export * from './number/number.js';
 export * from './object/object.js';
 export * from './package/package.js';
 export * from './regex/regex.js';
-export * from './string/string.js';
+export * from './string/index.js';
 export * from './types/types.js';
 export * from './values/values.js';

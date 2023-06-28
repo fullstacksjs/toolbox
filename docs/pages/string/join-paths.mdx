@@ -1,0 +1,40 @@
+# joinPaths
+
+Joins path parts with / and remove trailing and leading slashes
+
+### Import
+
+```typescript copy
+import { joinPaths } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function joinPaths(...paths: string[]): string {}
+```
+
+### Examples
+
+```typescript copy
+joinPaths('a', 'b')                               // 'a/b'
+joinPaths('a', '/b')                              // 'a/b'
+joinPaths('a', 'b/')                              // 'a/b'
+joinPaths('a', '/b/')                             // 'a/b'
+joinPaths('a/', 'b')                              // 'a/b'
+joinPaths('a/', '/b')                             // 'a/b'
+joinPaths('a/', 'b/')                             // 'a/b'
+joinPaths('a/', '/b/')                            // 'a/b'
+joinPaths('/a', 'b')                              // 'a/b'
+joinPaths('/a', '/b')                             // 'a/b'
+joinPaths('/a', 'b/')                             // 'a/b'
+joinPaths('/a', '/b/')                            // 'a/b'
+joinPaths('https://a.com', 'b')                   // 'https://a.com/b'
+joinPaths('https://a.com', '/b')                  // 'https://a.com/b'
+joinPaths('https://a.com', 'b/')                  // 'https://a.com/b'
+joinPaths('https://a.com/', '/b/')                // 'https://a.com/b'
+joinPaths('https://a.com/', '?b=a')               // 'https://a.com/?b=a'
+joinPaths('https://a.com/', '/b/', '?query')      // 'https://a.com/b/?query'
+joinPaths('https://a.com/', '?query', '&a=query') // 'https://a.com/?query/&a=query'
+```
+

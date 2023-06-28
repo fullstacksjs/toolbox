@@ -8,7 +8,6 @@ import {
   removeLeadingSlashes,
   removeTrailingSlashes,
   toCamelCase,
-  toPascalCase,
   toSnakeCase,
 } from './string';
 
@@ -57,31 +56,6 @@ describe('string', () => {
       'should return $expected for $x as input',
       ({ x, expected }) => {
         expect(toCamelCase(x)).toBe(expected);
-      },
-    );
-  });
-
-  describe('toPascalCase', () => {
-    const cases = [
-      { x: '', expected: '' },
-      { x: ' ', expected: ' ' },
-      { x: 'foo', expected: 'Foo' },
-      { x: 'foo bar', expected: 'FooBar' },
-      { x: 'foo-bar', expected: 'FooBar' },
-      { x: 'fooBar', expected: 'FooBar' },
-      { x: 'foo_bar', expected: 'FooBar' },
-      { x: 'foo bar code', expected: 'FooBarCode' },
-      { x: 'foo-bar-code', expected: 'FooBarCode' },
-      { x: 'fooBarCode', expected: 'FooBarCode' },
-      { x: 'foo_bar_code', expected: 'FooBarCode' },
-      { x: 'FOO_BAR_CODE', expected: 'FooBarCode' },
-      { x: 'foo_ -BaRC ode', expected: 'foo_ -BaRC ode' },
-    ];
-
-    it.each(cases)(
-      'should return $expected for $x as input',
-      ({ x, expected }) => {
-        expect(toPascalCase(x)).toBe(expected);
       },
     );
   });

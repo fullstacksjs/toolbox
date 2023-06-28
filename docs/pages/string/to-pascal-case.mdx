@@ -1,0 +1,34 @@
+# toPascalCase
+
+Converts any casing to PascalCase
+
+### Import
+
+```typescript copy
+import { toPascalCase } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function toPascalCase(str: string): string {}
+```
+
+### Examples
+
+```typescript copy
+toPascalCase('')              '// '
+toPascalCase(' ')             '// '
+toPascalCase('foo')            // 'Foo'
+toPascalCase('foo bar')        // 'FooBar'
+toPascalCase('foo-bar')        // 'FooBar'
+toPascalCase('fooBar')         // 'FooBar'
+toPascalCase('foo_bar')        // 'FooBar'
+toPascalCase('foo bar code')   // 'FooBarCode'
+toPascalCase('foo-bar-code')   // 'FooBarCode'
+toPascalCase('fooBarCode')     // 'FooBarCode'
+toPascalCase('foo_bar_code')   // 'FooBarCode'
+toPascalCase('FOO_BAR_CODE')   // 'FooBarCode'
+toPascalCase('foo_ -BaRC ode') // 'FooBaRcOde'
+toPascalCase('ThisIs-fullstacksjs radio__and--I-loveCoding') // 'ThisIsFullstacksjsRadioAndILoveCoding'
+```

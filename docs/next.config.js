@@ -5,8 +5,6 @@ const withNextra = require('nextra')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/toolbox',
-  assetPrefix: '/toolbox',
   eslint: {
     ignoreDuringBuilds: true,
   },

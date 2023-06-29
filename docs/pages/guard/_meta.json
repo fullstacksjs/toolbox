@@ -4,6 +4,7 @@
   "is-iterable": "isIterable",
   "is-not-null": "isNotNull",
   "is-null": "isNull",
+  "is-object": "isObject",
   "is-string": "isString",
   "is-truthy": "isTruthy"
 }

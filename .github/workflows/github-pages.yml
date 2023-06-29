@@ -1,0 +1,36 @@
+name: Github Pages
+
+on:
+  push:
+    branches:
+      - dev
+    paths:
+      - docs/**
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    concurrency: gh-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v4
+        with:
+          cache: 'npm'
+
+      - name: Install dependencies
+        working-directory: docs/
+        run: npm ci
+
+      - name: Build Stories
+        working-directory: docs/
+        run: npm run export
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          BRANCH: gh-pages
+          FOLDER: docs/out/

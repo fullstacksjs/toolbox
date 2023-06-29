@@ -1,0 +1,9 @@
+import { describe, expect, it } from 'vitest';
+import { escapeRegex } from './escapeRegex';
+
+describe('escapeRegex', () => {
+  it('should escape all especial characters', () => {
+    expect(new RegExp(escapeRegex('^[](){}$')).test('^[](){}$')).toBe(true);
+    expect(new RegExp(escapeRegex('^a$')).test('a')).toBe(false);
+  });
+});

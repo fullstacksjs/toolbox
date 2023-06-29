@@ -35,3 +35,4 @@ réservé
 nextra
 unstub
 jsdoc
+unoptimized

@@ -29,8 +29,6 @@ const themeConfig = {
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:title" content="Nextra" />
-      <meta property="og:description" content="The next site builder" />
     </>
   ),
   primaryHue: 31,

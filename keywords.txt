@@ -36,3 +36,4 @@ nextra
 unstub
 jsdoc
 unoptimized
+nojekyll

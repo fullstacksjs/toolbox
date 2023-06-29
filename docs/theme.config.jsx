@@ -9,6 +9,10 @@ const ogImage = {
 
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
 const themeConfig = {
+  nextThemes: {
+    defaultTheme: 'dark',
+  },
+  darkMode: false,
   logo: (
     <div className="flex gap-1 items-center">
       <Image src="/logo.svg" alt="Logo" width={60} height={60} />
@@ -29,6 +33,7 @@ const themeConfig = {
       <meta property="og:description" content="The next site builder" />
     </>
   ),
+  primaryHue: 31,
   useNextSeoProps() {
     return {
       titleTemplate: '%s - Toolbox',

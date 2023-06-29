@@ -4,6 +4,13 @@ const withNextra = require('nextra')({
 });
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  images: {
+    unoptimized: true,
+  },
+};
 
 module.exports = withNextra(nextConfig);

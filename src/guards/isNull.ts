@@ -1,4 +1,4 @@
-import type { Nullish } from '../types/types';
+import type { Nullable } from '../types/types';
 
 /**
  * Check whether the given value is nullable (undefined or null)
@@ -16,4 +16,4 @@ import type { Nullish } from '../types/types';
  * isNull({})        // false
  * isNull(false)     // false
  */
-export const isNull = (x: unknown): x is Nullish => x == null;
+export const isNull = (x: unknown): x is Nullable => x == null;

@@ -24,5 +24,6 @@ function escapeRegex(s: string): string {}
 ### Examples
 
 ```typescript copy
-// TODO
+new RegExp(escapeRegex('^[](){}$')).test('^[](){}$') // true
+new RegExp(escapeRegex('^a$')).test('a')             // false
 ```

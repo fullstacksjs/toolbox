@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Node.JS
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 16.15.1
+          node-version-file: 'package.json'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
@@ -26,10 +26,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Node.JS
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 16.15.1
+          node-version-file: 'package.json'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
@@ -46,10 +46,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Node.JS
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 16.15.1
+          node-version-file: 'package.json'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci

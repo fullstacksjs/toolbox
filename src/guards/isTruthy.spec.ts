@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { isTruthy } from './isTruthy';
+import { isTruthy } from './isTruthy.ts';
 
 describe('isTruthy', () => {
   const cases = [

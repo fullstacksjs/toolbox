@@ -1,5 +1,5 @@
 import { describe, it, vi, expect } from 'vitest';
-import { callAll } from './callAll';
+import { callAll } from './callAll.ts';
 
 describe('callAll', () => {
   it('should call given functions with an args', () => {

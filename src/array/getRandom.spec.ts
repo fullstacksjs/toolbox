@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getRandom } from './getRandom';
+import { getRandom } from './getRandom.ts';
 
 describe('getRandom', () => {
   it('should return undefined when given empty array', () => {

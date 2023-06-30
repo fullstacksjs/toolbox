@@ -1,4 +1,4 @@
-import type { EnsureArray } from '../types/types';
+import type { EnsureArray } from '../types/types.ts';
 
 /**
  * If the given value is not an array already, it wraps the value in an array.

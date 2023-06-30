@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { isLastIndex } from './isLastIndex';
+import { isLastIndex } from './isLastIndex.ts';
 
 describe('array', () => {
   describe('isLastIndex', () => {

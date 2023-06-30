@@ -1,0 +1,6 @@
+{
+  "lock": true,
+  "imports": {
+    "vitest": "npm:vitest"
+  }
+}

@@ -1,6 +1,8 @@
 :root {
   --bg: 35 37 46;
   --bg-1: #313744;
+  --bg-2: rgb(27, 30, 37);
+  --muted: #ffffff1a;
 }
 
 :is(html[class~='dark'] body) {
@@ -12,7 +14,7 @@
 }
 
 :is(html[class~='dark'] hr.dark\:nx-border-neutral-800) {
-  border-color: #ffffff1a !important;
+  border-color: var(--muted) !important;
 }
 
 :is(html[class~='dark'] .nextra-sidebar-container) {
@@ -32,7 +34,7 @@
 }
 
 :is(html[class~='dark'] .dark\:nx-bg-primary-300\/10) {
-  background-color: var(--bg-1);
+  background-color: var(--bg-2);
 }
 
 :is(html[class~='dark'] .dark\:nx-bg-primary-400\/10) {
@@ -51,4 +53,12 @@
 :is(html[class~='dark'] [tabindex]:not([tabindex='-1']):focus-visible) {
   box-shadow: none;
   outline: 1px solid rgb(243, 159, 71);
+}
+
+.nx-rounded-xl {
+  border-radius: 4px;
+}
+
+.nextra-card {
+  border: 1px solid var(--muted) !important;
 }

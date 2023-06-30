@@ -1,4 +1,4 @@
-import type { Nullable } from '../types/types.js';
+import type { Nullable } from '../types/types.ts';
 
 export function required<T>(
   value: Nullable<T>,

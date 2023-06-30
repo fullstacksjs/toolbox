@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { isNullOrEmpty } from './isNullOrEmpty';
+import { isNullOrEmpty } from './isNullOrEmpty.ts';
 
 describe('isNullOrEmpty', () => {
   const cases = [

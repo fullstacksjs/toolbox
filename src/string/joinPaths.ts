@@ -1,5 +1,5 @@
-import { removeLeadingSlashes } from './removeLeadingSlashes';
-import { removeTrailingSlashes } from './removeTrailingSlashes';
+import { removeLeadingSlashes } from './removeLeadingSlashes.ts';
+import { removeTrailingSlashes } from './removeTrailingSlashes.ts';
 
 /**
  * Joins path parts with / and remove trailing and leading slashes

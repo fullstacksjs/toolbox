@@ -1,4 +1,4 @@
-import { isWordOrWords } from '../internals/isWordOrWords';
+import { isWordOrWords } from '../internals/isWordOrWords.ts';
 
 /**
  * Returns initial characters of spaces separated words

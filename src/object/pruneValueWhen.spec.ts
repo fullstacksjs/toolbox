@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { pruneValueWhen } from './pruneValueWhen';
+import { pruneValueWhen } from './pruneValueWhen.ts';
 
 describe('pruneValueWhen', () => {
   it('should return empty object', () => {

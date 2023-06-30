@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { testRegex } from './testRegex';
+import { testRegex } from './testRegex.ts';
 
 describe('testRegex', () => {
   it('should return true when regex is found', () => {

@@ -3,7 +3,7 @@ import Image from 'next/image';
 const title = 'We Grow together';
 const description = 'We Grow together';
 const ogImage = {
-  url: 'https://github.com/fullstacksjs/toolbox/blob/main/assets/thumbnail.png',
+  url: 'https://toolbox.fullstacksjs.com/thumbnail.png',
   alt: 'FullstacksJS - Toolbox',
 };
 

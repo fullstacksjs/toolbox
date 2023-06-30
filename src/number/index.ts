@@ -1,6 +1,6 @@
-export { clamp } from './clamp';
-export { randomInt } from './randomInt';
-export { divide } from './divide';
-export { isInRange } from './isInRange';
-export { percent } from './percent';
-export { toDecimal } from './toDecimal';
+export { clamp } from './clamp.ts';
+export { randomInt } from './randomInt.ts';
+export { divide } from './divide.ts';
+export { isInRange } from './isInRange.ts';
+export { percent } from './percent.ts';
+export { toDecimal } from './toDecimal.ts';

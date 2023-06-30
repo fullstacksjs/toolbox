@@ -1,4 +1,4 @@
-import type { Nullable } from '../types/types.js';
+import type { Nullable } from '../types/types.ts';
 
 export function fallbackString<T = string>(
   value: Nullable<string>,

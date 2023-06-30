@@ -1,4 +1,4 @@
-import type { Predicate } from '../types/types';
+import type { Predicate } from '../types/types.ts';
 
 /**
  * Remove key from an object when predicate is true

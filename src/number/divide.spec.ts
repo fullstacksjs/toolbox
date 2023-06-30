@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { divide } from './divide';
+import { divide } from './divide.ts';
 
 describe('divide', () => {
   it('should return the division of two number', () => {

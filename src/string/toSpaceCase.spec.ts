@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { toSpaceCase } from './toSpaceCase';
+import { toSpaceCase } from './toSpaceCase.ts';
 
 describe('toSpaceCase', () => {
   const cases = [

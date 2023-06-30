@@ -1,4 +1,4 @@
-import { changeCase } from '../internals/changeCase';
+import { changeCase } from '../internals/changeCase.ts';
 
 /**
  * Converts any casing to snake_case

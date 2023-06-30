@@ -1,2 +1,2 @@
-export { pruneKeyWhen } from './pruneKeyWhen';
-export { pruneValueWhen } from './pruneValueWhen';
+export { pruneKeyWhen } from './pruneKeyWhen.ts';
+export { pruneValueWhen } from './pruneValueWhen.ts';

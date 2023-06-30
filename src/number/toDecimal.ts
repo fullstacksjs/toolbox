@@ -1,4 +1,4 @@
-import { fallbackNumber } from '../values';
+import { fallbackNumber } from '../values.ts';
 
 /**
  * Parses the string to integer (radix 10)

@@ -1,2 +1,2 @@
-export * from './bind';
-export * from './concatArrays';
+export * from './bind.ts';
+export * from './concatArrays.ts';

@@ -1,6 +1,6 @@
-import type { Sensitivity } from '../types/types.js';
-import { removeLeadingSlashes } from './removeLeadingSlashes.js';
-import { removeTrailingSlashes } from './removeTrailingSlashes.js';
+import type { Sensitivity } from '../types/types.ts';
+import { removeLeadingSlashes } from './removeLeadingSlashes.ts';
+import { removeTrailingSlashes } from './removeTrailingSlashes.ts';
 
 /**
  * Compare two path without trailing and leading slashes

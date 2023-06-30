@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { toDecimal } from './toDecimal';
+import { toDecimal } from './toDecimal.ts';
 
 describe('toDecimal', () => {
   it('should convert the string to an integer', () => {

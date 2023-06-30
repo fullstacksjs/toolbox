@@ -29,6 +29,14 @@ const themeConfig = {
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={ogImage.url} />
+      <meta property="og:image:alt" content={ogImage.alt}/>
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage.url} />
+      <meta name="twitter:card" content="summary_large_image" />
     </>
   ),
   primaryHue: 31,

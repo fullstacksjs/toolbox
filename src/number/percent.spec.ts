@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { percent } from './percent';
+import { percent } from './percent.ts';
 
 describe('percent', () => {
   const cases = [

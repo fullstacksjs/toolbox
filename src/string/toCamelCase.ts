@@ -1,5 +1,5 @@
-import { capitalize } from '../internals/capitalize';
-import { changeCase } from '../internals/changeCase';
+import { capitalize } from '../internals/capitalize.ts';
+import { changeCase } from '../internals/changeCase.ts';
 
 export function camelCaseTransform(input: string, index: number) {
   return index === 0 ? input.toLowerCase() : capitalize(input);

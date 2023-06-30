@@ -15,9 +15,11 @@ class Runtime {
     this.env = {};
 
     if (isNode) {
-      this.env = process.env;
-    } else {
-      this.env = Deno.env.toObject();
+      // @ts-ignore we are in deno runtime
+      this.env = process?.env;
+    } else if (isDeno) {
+      // @ts-ignore we are in node runtime
+      this.env = Deno?.env?.toObject();
     }
   }
 }

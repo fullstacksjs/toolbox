@@ -6,7 +6,8 @@
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "moduleResolution": "node",
-    "allowJs": true
+    "allowJs": true,
+    "types": ["./lib.deno.d.ts", "node"]
   },
   "include": ["src/"],
   "exclude": ["**/*.spec.ts"]

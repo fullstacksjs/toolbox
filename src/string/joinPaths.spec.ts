@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { joinPaths } from './joinPaths';
+import { joinPaths } from './joinPaths.ts';
 
 describe('joinPaths', () => {
   const cases = [

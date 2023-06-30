@@ -1,4 +1,4 @@
-import type { Nullable } from '../types/types';
+import type { Nullable } from '../types/types.ts';
 
 /**
  * Checks whether the given value is null, undefined or empty string.

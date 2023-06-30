@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { toCapitalCase } from './toCapitalCase';
+import { toCapitalCase } from './toCapitalCase.ts';
 
 describe('toCapitalCase', () => {
   const cases = [

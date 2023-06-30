@@ -1,4 +1,4 @@
-import { changeCase } from '../internals/changeCase';
+import { changeCase } from '../internals/changeCase.ts';
 
 /**
  * Separates words by space and makes them lowercase.

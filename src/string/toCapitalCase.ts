@@ -1,5 +1,5 @@
-import { capitalize } from '../internals/capitalize';
-import { changeCase } from '../internals/changeCase';
+import { capitalize } from '../internals/capitalize.ts';
+import { changeCase } from '../internals/changeCase.ts';
 
 /**
  * Converts the starting letter of every word into an upper case

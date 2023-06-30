@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getInitials } from './getInitials';
+import { getInitials } from './getInitials.ts';
 
 describe('getInitials', () => {
   const cases = [

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { crlfToLf } from './crlfToLf';
+import { crlfToLf } from './crlfToLf.ts';
 
 describe('crlfToLf', () => {
   const cases = [

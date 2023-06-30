@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/padding-line-between-statements */
 
-import { isIterable } from '../guards/isIterable';
+import { isIterable } from '../guards/isIterable.ts';
 
 /**
  * returns array representation of a value

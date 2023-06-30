@@ -1,4 +1,4 @@
-import type { FilterNullish } from '../types/types';
+import type { FilterNullish } from '../types/types.ts';
 
 /**
  * Filters nullish items from an array

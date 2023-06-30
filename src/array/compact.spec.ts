@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { compact } from './compact';
+import { compact } from './compact.ts';
 
 describe('compact', () => {
   it('should return empty array with an empty array as arg', () => {

@@ -9,4 +9,4 @@
  *
  * noop() // ¯\_(ツ)_/¯
  */
-export function noop(): undefined {}
+export function noop(): void {}

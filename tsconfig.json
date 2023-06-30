@@ -1,7 +1,10 @@
 {
   "extends": "@fullstacksjs/tsconfig/cjs",
   "compilerOptions": {
-    "noEmit": true
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "node",
+    "allowJs": true
   },
   "exclude": ["lib/", "docs/"]
 }

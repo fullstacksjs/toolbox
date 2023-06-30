@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { isNull } from './isNull';
+import { isNull } from './isNull.ts';
 
 describe('isNull', () => {
   const cases = [

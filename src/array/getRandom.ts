@@ -1,4 +1,4 @@
-import { randomInt } from '../number/randomInt';
+import { randomInt } from '../number/randomInt.ts';
 
 /**
  * Returns a random item from an array

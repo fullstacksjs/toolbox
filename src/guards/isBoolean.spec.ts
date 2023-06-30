@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { isBoolean } from './isBoolean';
+import { isBoolean } from './isBoolean.ts';
 
 describe('isBoolean', () => {
   const cases = [

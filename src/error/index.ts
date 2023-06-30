@@ -1,2 +1,2 @@
-export { assert } from './assert';
-export { throwErr } from './throwErr';
+export { assert } from './assert.ts';
+export { throwErr } from './throwErr.ts';

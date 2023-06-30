@@ -1,7 +1,7 @@
-export { isBoolean } from './isBoolean';
-export { isFunction } from './isFunction';
-export { isIterable } from './isIterable';
-export { isNotNull } from './isNotNull';
-export { isNull } from './isNull';
-export { isObject } from './isObject';
-export { isTruthy } from './isTruthy';
+export { isBoolean } from './isBoolean.ts';
+export { isFunction } from './isFunction.ts';
+export { isIterable } from './isIterable.ts';
+export { isNotNull } from './isNotNull.ts';
+export { isNull } from './isNull.ts';
+export { isObject } from './isObject.ts';
+export { isTruthy } from './isTruthy.ts';

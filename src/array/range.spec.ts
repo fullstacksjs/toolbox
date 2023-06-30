@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { range } from './range';
+import { range } from './range.ts';
 
 describe('range', () => {
   it('should create an empty array for zero-length', () => {

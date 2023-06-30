@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ensureArray } from './ensureArray';
+import { ensureArray } from './ensureArray.ts';
 
 describe('ensureArray', () => {
   it(`should return [undefined] when arg is undefined array`, () => {

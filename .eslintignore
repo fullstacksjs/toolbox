@@ -1,2 +1,5 @@
 *.md
 lib/**
+node_modules/
+.next/
+out/

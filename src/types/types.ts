@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 export type Truthy<T> = T extends '' | 0 | false | null | undefined ? never : T;
 
 export type CamelCase<S extends string> =

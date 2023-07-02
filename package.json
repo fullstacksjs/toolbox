@@ -2,8 +2,8 @@
   "name": "@fullstacksjs/toolbox",
   "version": "2.10.0",
   "license": "MIT",
-  "author": "frontendmonster <frontendmonster@gmail.com>",
-  "description": "Common JavaScript utility functions",
+  "author": "ASafaeirad <frontendmonster@gmail.com>",
+  "description": "a collection of missing helpers for all JavaScript runtimes",
   "repository": {
     "type": "git",
     "url": "git@github.com:fullstacksjs/toolbox.git"
@@ -18,7 +18,7 @@
   ],
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
-  "typings": "./lib/types/index.d.ts",
+  "typings": "./lib/index.d.ts",
   "exports": {
     ".": {
       "import": "./lib/esm/index.js",
@@ -28,9 +28,8 @@
   "sideEffects": false,
   "scripts": {
     "commit": "git-cz",
-    "clean": "shx rm -rf lib/*",
-    "prebuild": "npm run clean",
-    "build": "tsc --project ./tsconfig.cjs.json && tsc --project ./tsconfig.esm.json && ./fixup",
+    "prebuild": "shx rm -rf lib/*",
+    "build": "tsup --dts-only && tsup --tsconfig tsconfig.build.json && ./postbuild",
     "type-check": "tsc --noEmit",
     "lint": "npm run lint:ci -- --fix",
     "lint:ci": "eslint . --ext .js,.ts,.tsx",
@@ -68,6 +67,7 @@
     "semantic-release": "21.0.5",
     "shx": "0.3.4",
     "standard-version": "9.5.0",
+    "tsup": "7.1.0",
     "typescript": "5.1.5",
     "vitest": "0.32.2"
   },

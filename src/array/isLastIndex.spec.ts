@@ -13,10 +13,10 @@ describe('array', () => {
       { arr: [[], [], []], index: 2, expected: true },
       { arr: [undefined], index: 0, expected: true },
       { arr: [null], index: 0, expected: true },
-      { arr: [,], index: 0, expected: true }, // eslint-disable-line no-sparse-arrays
-      { arr: [, ,], index: 1, expected: true }, // eslint-disable-line no-sparse-arrays
-      { arr: [, null], index: 1, expected: true }, // eslint-disable-line no-sparse-arrays
-      { arr: [, undefined], index: 1, expected: true }, // eslint-disable-line no-sparse-arrays
+      { arr: [,], index: 0, expected: true },
+      { arr: [, ,], index: 1, expected: true },
+      { arr: [, null], index: 1, expected: true },
+      { arr: [, undefined], index: 1, expected: true },
     ];
 
     it.each(cases)('%o', ({ expected, arr, index }) => {

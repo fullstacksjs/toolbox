@@ -56,7 +56,8 @@ Before submitting a pull request, please make sure the following is done:
 - Fork the repository and create your feature branch from dev.
 - Run `npm install` to have all dependencies.
 - To start development run `npm run test:watch`.
-- Write tests and the utility function.
+- Write tests in `src/<scope>/<name>.test.ts` and implementation in `src/<scope>/<name>.ts`.
+- Add the documentation page to the `docs/<scope>/<function>.mdx` and update `docs/<scope>/_meta.json` file.
 - Ensure everything is ok `npm run verify`.
 
 ## Code of Conduct
@@ -65,7 +66,7 @@ Before submitting a pull request, please make sure the following is done:
 
 ## Documentation
 
-Please check out the [documentation page](./DOCUMENTATION.md)
+Please check out the [documentation page](https://toolbox.fullstacksjs.com)
 
 [logo]: https://raw.githubusercontent.com/fullstacksjs/toolbox/main/assets/logo.svg
 [download-badge]: https://img.shields.io/npm/dm/@fullstacksjs/toolbox?color=EA5F12&label=DOWNLOADS&style=flat-square

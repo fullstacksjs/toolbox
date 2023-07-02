@@ -1,0 +1,28 @@
+# isDev
+
+Check whether NodeJS Env is development.
+
+### Import
+
+```typescript copy
+import { isDev } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function isDev(): boolean {}
+```
+
+### Examples
+
+```typescript copy
+/* NODE_ENV=development node */
+isDev() // true
+
+/* NODE_ENV=production node */
+isDev() // false
+
+/* NODE_ENV="" node */
+isDev() // false
+```

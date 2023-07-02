@@ -1,0 +1,4 @@
+{
+  "is-dev": "isDev",
+  "is-prod": "isProd"
+}

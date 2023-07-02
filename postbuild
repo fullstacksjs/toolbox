@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+pushd lib/ || exit 1
+
+mkdir cjs
+mv index.js index.js.map cjs
+
+cat >cjs/package.json <<!EOF
+{
+  "type": "commonjs"
+}
+!EOF
+
+cat >esm/package.json <<!EOF
+{
+  "type": "module"
+}
+!EOF

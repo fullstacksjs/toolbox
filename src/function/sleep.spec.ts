@@ -5,7 +5,7 @@ import { sleep } from './sleep.ts';
 describe('sleep', () => {
   beforeEach(() => {
     vi.useFakeTimers();
-    vi.spyOn(global, 'setTimeout');
+    vi.spyOn(globalThis, 'setTimeout');
   });
 
   afterEach(() => {
@@ -15,7 +15,7 @@ describe('sleep', () => {
   it('should call the inner timeout function', () => {
     sleep(1000);
 
-    expect(global.setTimeout).toBeCalledTimes(1);
+    expect(globalThis.setTimeout).toBeCalledTimes(1);
   });
 
   it('should resolve after the timeout', () => {

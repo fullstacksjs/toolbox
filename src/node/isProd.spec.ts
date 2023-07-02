@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { isProd } from './isProd';
+import { isProd } from './isProd.ts';
 
 describe('isProd', () => {
   beforeEach(() => {

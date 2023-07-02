@@ -1,2 +1,2 @@
-export * from './isDev';
-export * from './isProd';
+export * from './isDev.ts';
+export * from './isProd.ts';

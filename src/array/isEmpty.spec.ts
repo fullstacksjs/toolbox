@@ -7,9 +7,9 @@ describe('isEmpty', () => {
     { arr: [1], expected: false },
     { arr: [undefined], expected: false },
     { arr: [null], expected: false },
-    { arr: [,], expected: false }, // eslint-disable-line no-sparse-arrays
-    { arr: [, null], expected: false }, // eslint-disable-line no-sparse-arrays
-    { arr: [, undefined], expected: false }, // eslint-disable-line no-sparse-arrays
+    { arr: [,], expected: false },
+    { arr: [, null], expected: false },
+    { arr: [, undefined], expected: false },
   ];
 
   it.each(cases)('%j', ({ expected, arr }) => {

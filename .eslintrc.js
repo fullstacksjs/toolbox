@@ -24,6 +24,8 @@ module.exports = init({
       files: ['./src/guards/**/*.ts', '*.spec.ts'],
       rules: {
         'func-style': 'off',
+        'fp/no-loops': 'off',
+        'no-sparse-arrays': 'off',
       },
     },
   ],

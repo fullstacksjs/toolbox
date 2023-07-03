@@ -28,7 +28,7 @@
     "commit": "git-cz",
     "prebuild": "shx rm -rf lib/*",
     "build": "tsup --dts-only && tsup --tsconfig tsconfig.build.json && ./postbuild",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --emitDeclarationOnly false --noEmit",
     "lint": "npm run lint:ci -- --fix",
     "lint:ci": "eslint . --ext .js,.ts,.tsx",
     "test": "vitest --run",

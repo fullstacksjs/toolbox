@@ -56,3 +56,14 @@ jobs:
 
       - name: Test
         run: npm run test:ci
+
+      - name: Run tests with code coverage
+        run: npm run test:coverage
+
+      - name: Build TypeScript
+        run: tsc ./docs/coverageGen/coverageBadgeGenerator.ts
+
+      - name: Generate coverage badge
+        run: |
+          BADGE_URL=$(node ./docs/coverageGen/coverageBadgeGenerator.js)
+          sed -i "s|<COVERAGE_BADGE_URL>|$BADGE_URL|g" README.md

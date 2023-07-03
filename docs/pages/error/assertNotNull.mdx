@@ -1,0 +1,23 @@
+# fallback
+
+Asserts a value is not null or undefined
+
+### Import
+
+```typescript copy
+import { fallback } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function assertNotNull<T>(value: Nullable<T>, error: string = 'Value is required'): asserts value is NonNullable<T> {}
+```
+
+### Examples
+
+```typescript copy
+assertNotNull(null, 'WTF')      // Throw 'WTF'
+assertNotNull(undefined, 'WTF') // Throw 'WTF'
+assertNotNull(true)             // noop
+```

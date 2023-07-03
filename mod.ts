@@ -8,6 +8,5 @@ export * from './src/object/index.ts';
 export * from './src/regex/index.ts';
 export * from './src/string/index.ts';
 export * from './src/types/types.ts';
-export * from './src/values/index.ts';
 export * from './src/guards/index.ts';
 export * from './src/types/types.ts';

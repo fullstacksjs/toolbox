@@ -1,16 +1,16 @@
 {
+  "compare-paths": "comparePaths",
   "crlf-to-lf": "crlfToLf",
+  "get-initials": "getInitials",
   "is-lower-case": "isLowerCase",
+  "is-null-or-empty": "toSpaceCase",
+  "join-paths": "joinPaths",
+  "remove-leading-slashes": "removeLeadingSlashes",
+  "remove-trailing-slashes": "removeTrailingSlashes",
   "to-camel-case": "toCamelCase",
   "to-capital-case": "toCapitalCase",
   "to-kebab-case": "toKebabCase",
   "to-pascal-case": "toPascalCase",
   "to-snake-case": "toSnakeCase",
-  "to-space-case": "toSpaceCase",
-  "is-null-or-empty": "toSpaceCase",
-  "get-initials": "getInitials",
-  "compare-paths": "comparePaths",
-  "join-paths": "joinPaths",
-  "remove-leading-slashes": "removeLeadingSlashes",
-  "remove-trailing-slashes": "removeTrailingSlashes"
+  "to-space-case": "toSpaceCase"
 }

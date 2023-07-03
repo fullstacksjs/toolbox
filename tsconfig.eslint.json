@@ -3,5 +3,6 @@
   "compilerOptions": {
     "noEmit": true
   },
+  "files": ["./mod.ts"],
   "exclude": ["lib/"]
 }

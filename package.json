@@ -3,7 +3,7 @@
   "version": "2.10.0",
   "license": "MIT",
   "author": "ASafaeirad <frontendmonster@gmail.com>",
-  "description": "a collection of missing helpers for all JavaScript runtimes",
+  "description": "a zero-dependency collection of missing JavaScript utilities",
   "repository": {
     "type": "git",
     "url": "git@github.com:fullstacksjs/toolbox.git"

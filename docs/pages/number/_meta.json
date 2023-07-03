@@ -1,6 +1,7 @@
 {
   "clamp": "clamp",
   "divide": "divide",
+  "fallback": "fallback",
   "is-in-range": "isInRange",
   "percent": "percent",
   "random-int": "randomInt",

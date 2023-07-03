@@ -1,6 +1,7 @@
 {
   "compare-paths": "comparePaths",
   "crlf-to-lf": "crlfToLf",
+  "fallback": "fallback",
   "get-initials": "getInitials",
   "is-lower-case": "isLowerCase",
   "is-null-or-empty": "toSpaceCase",

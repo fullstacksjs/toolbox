@@ -1,12 +1,12 @@
 {
+  "compact": "compact",
+  "copy": "copy",
   "ensure-array": "ensureArray",
   "get-random": "getRandom",
-  "range": "range",
-  "to-array": "toArray",
-  "copy": "copy",
-  "shuffle": "shuffle",
-  "compact": "compact",
   "is-empty": "isEmpty",
   "is-last-index": "isLastIndex",
-  "join-path": "joinPath"
+  "join-path": "joinPath",
+  "range": "range",
+  "shuffle": "shuffle",
+  "to-array": "toArray"
 }

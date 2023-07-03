@@ -1,15 +1,4 @@
 {
   "index": "Introduction",
-  "getting-started": "Getting Started",
-  "array": "Array",
-  "env": "Env",
-  "function": "Function",
-  "guard": "Guard",
-  "number": "Number",
-  "object": "Object",
-  "string": "String",
-  "regex": "Regex",
-  "error": "Error",
-  "nullable": "Nullable",
-  "type": "Type"
+  "getting-started": "Getting Started"
 }

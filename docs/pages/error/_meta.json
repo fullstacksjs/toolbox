@@ -1,3 +1,4 @@
 {
+  "assert": "assert",
   "throw-err": "throwErr"
 }

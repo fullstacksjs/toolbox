@@ -23,6 +23,6 @@ export function getInitials(name: string, fallback: string = '?'): string {
   return name
     .replace(/\s+/g, ' ')
     .split(' ')
-    .map(v => (v == null || v === '' ? '' : v.slice(0, 1).toUpperCase()))
+    .map(v => v.slice(0, 1).toUpperCase())
     .join('');
 }

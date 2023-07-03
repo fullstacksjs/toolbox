@@ -3,6 +3,7 @@
   "compilerOptions": {
     "noEmit": true
   },
-  "files": ["./mod.ts"],
+  "files": ["./mod.ts", "./tsup.config.ts"],
+  "include": ["./src", "./docs/"],
   "exclude": ["lib/"]
 }

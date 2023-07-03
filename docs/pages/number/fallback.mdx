@@ -1,0 +1,27 @@
+# fallback
+
+Returns the value if the given value is finite; otherwise, it returns the fallback value.
+
+### Import
+
+```typescript copy
+import { fallback } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function fallback<T extends number = number>(value: Nullable<T>, fallbackValue: T): NonNullable<T> {}
+```
+
+### Examples
+
+```typescript copy
+fallback(0, 1)         // 0
+fallback(-1, 1)        // -1
+fallback(1, -1)        // 1
+fallback(-0, 1)        // -0
+fallback(NaN, 1)       // 1
+fallback(Infinity, 1)  // 1
+fallback(-Infinity, 1) // 1
+```

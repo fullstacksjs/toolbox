@@ -18,7 +18,6 @@
 export function concatArrays<T extends any[]>(
   ...mas: T
 ): Exclude<T[number], null | undefined>[number][] {
-  if (!mas) return [];
   let result: unknown[] = [];
 
   for (let i = 0; i < mas.length; i++) {

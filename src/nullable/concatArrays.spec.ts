@@ -2,6 +2,10 @@ import { describe, expect, it } from 'vitest';
 import { concatArrays } from './concatArrays.ts';
 
 describe('concatArrays', () => {
+  it('should return empty array with no argument', () => {
+    expect(concatArrays()).toEqual([]);
+  });
+
   it('should return empty array with undefined argument', () => {
     expect(concatArrays(undefined)).toEqual([]);
   });

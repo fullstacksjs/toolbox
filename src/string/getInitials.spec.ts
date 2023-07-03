@@ -7,6 +7,7 @@ describe('getInitials', () => {
     { x: ' ', expected: '?' },
     { x: ' ', fallback: 'fb', expected: 'fb' },
     { x: 'frontend', expected: 'F' },
+    { x: 'frontend ', expected: 'F' },
     { x: 'frontend monsters', expected: 'FM' },
     { x: 'frontend monster rides a dinosaur in office', expected: 'FMRADIO' },
     { x: '2', expected: '2' },
@@ -15,7 +16,7 @@ describe('getInitials', () => {
   ];
 
   it.each(cases)(
-    'should return $expected for $x as input',
+    '($x, $fallback) -> $expected',
     ({ x, fallback, expected }) => {
       expect(getInitials(x, fallback)).toBe(expected);
     },

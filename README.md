@@ -70,11 +70,11 @@ Before submitting a pull request, please make sure the following is done:
 Please check out the [documentation page](https://toolbox.fullstacksjs.com)
 
 [logo]: https://raw.githubusercontent.com/fullstacksjs/toolbox/main/assets/logo.svg
-[download-badge]: https://img.shields.io/npm/dm/@fullstacksjs/toolbox?color=EA5F12&label=DOWNLOADS&style=flat-square
-[version-badge]: https://img.shields.io/npm/v/@fullstacksjs/toolbox?color=EA5F12&label=VERSION&style=flat-square
+[download-badge]: https://img.shields.io/npm/dm/@fullstacksjs/toolbox?color=EF6969&label=DOWNLOADS&style=flat-square
+[version-badge]: https://img.shields.io/npm/v/@fullstacksjs/toolbox?color=098FAA&label=VERSION&style=flat-square
 [coverage-badge]: <COVERAGE_BADGE_URL>
 [license-badge]: https://img.shields.io/npm/l/@fullstacksjs/toolbox?color=EA5F12&label=LICENSE&style=flat-square
-[semantic-badge]: https://img.shields.io/badge/semantic-release-e10079.svg?logo=semantic-release&color=EA5F12&label=SEMANTIC&style=flat-square (https://github.com/semantic-release/semantic-release)
+[semantic-badge]: https://img.shields.io/badge/semantic-release-e10079.svg?logo=semantic-release&color=7E98F7&label=SEMANTIC&style=flat-square (https://github.com/semantic-release/semantic-release)
 [nodejs]: https://nodejs.org/en/
 [volta]: https://volta.sh/
 [npm]: https://www.npmjs.com/

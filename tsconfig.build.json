@@ -4,5 +4,5 @@
     "incremental": false
   },
   "include": ["./src"],
-  "exclude": []
+  "exclude": ["**/*.spec.ts"]
 }

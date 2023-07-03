@@ -16,13 +16,11 @@
     "LICENSE",
     "README.md"
   ],
-  "main": "./lib/cjs/index.js",
-  "module": "./lib/esm/index.js",
-  "typings": "./lib/index.d.ts",
   "exports": {
     ".": {
       "import": "./lib/esm/index.js",
-      "require": "./lib/cjs/index.js"
+      "require": "./lib/cjs/index.js",
+      "types": "./lib/index.d.ts"
     }
   },
   "sideEffects": false,

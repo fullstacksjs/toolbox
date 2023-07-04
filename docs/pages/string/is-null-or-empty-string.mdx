@@ -1,0 +1,24 @@
+# isNullOrEmptyString
+
+Checks whether the given value is null, undefined or empty string.
+
+### Import
+
+```typescript copy
+import { isNullOrEmptyString } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function isNullOrEmptyString(str: Nullable<string>): str is Nullable<''> {}
+```
+
+### Examples
+
+```typescript copy
+isNullOrEmptyString(null)      // true
+isNullOrEmptyString(undefined) // true
+isNullOrEmptyString('')        // true
+isNullOrEmptyString('f')       // false
+```

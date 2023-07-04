@@ -1,4 +1,4 @@
-import type { Nullable } from '../types/types.ts';
+import type { Nullable } from '../types/types.js';
 
 /**
  * Checks whether the given value is null, undefined or empty string.
@@ -13,6 +13,8 @@ import type { Nullable } from '../types/types.ts';
  * isNullOrEmpty('')        // true
  * isNullOrEmpty('f')       // false
  */
-export function isNullOrEmpty(str: Nullable<string>): str is Nullable<''> {
+export function isNullOrEmptyString(
+  str: Nullable<string>,
+): str is Nullable<''> {
   return str == null || str === '';
 }

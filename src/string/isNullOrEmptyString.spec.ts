@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { isNullOrEmpty } from './isNullOrEmpty.ts';
+import { isNullOrEmptyString } from './isNullOrEmptyString.js';
 
-describe('isNullOrEmpty', () => {
+describe('isNullOrEmptyString', () => {
   const cases = [
     { x: null, expected: true },
     { x: undefined, expected: true },
@@ -12,7 +12,7 @@ describe('isNullOrEmpty', () => {
   it.each(cases)(
     'should return $expected for $x as input',
     ({ x, expected }) => {
-      expect(isNullOrEmpty(x)).toBe(expected);
+      expect(isNullOrEmptyString(x)).toBe(expected);
     },
   );
 });

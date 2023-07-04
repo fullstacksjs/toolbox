@@ -4,7 +4,7 @@
   "fallback": "fallback",
   "get-initials": "getInitials",
   "is-lower-case": "isLowerCase",
-  "is-null-or-empty": "toSpaceCase",
+  "is-null-or-empty-string": "isNullOrEmptyString{",
   "join-paths": "joinPaths",
   "remove-leading-slashes": "removeLeadingSlashes",
   "remove-trailing-slashes": "removeTrailingSlashes",

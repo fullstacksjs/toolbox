@@ -1,20 +1,57 @@
 #!/usr/bin/env bash
+shopt -s globstar
 
-pushd lib/ || exit 1
 
-mkdir cjs
-mv index.js index.js.map cjs
-
-rm index.d.mts
-
-cat >cjs/package.json <<!EOF
+function create_packages() {
+  cat >cjs/package.json <<!EOF
 {
   "type": "commonjs"
 }
 !EOF
 
-cat >esm/package.json <<!EOF
+  cat >esm/package.json <<!EOF
 {
   "type": "module"
 }
 !EOF
+}
+
+function copy_esm_dts() {
+  mkdir types
+  pushd cjs || exit 1
+  find . -type f -name "*.d.ts" -exec cp --parents {} ../types \;
+  rm ./**/*.{d.mts,d.ts}
+  popd || exit1
+}
+
+function copy_esm() {
+  mv ./cjs/esm ./esm
+}
+
+function fix_esm_extensions() {
+  esm="./esm"
+
+  find "$esm" -type f -name "*.js" | while read -r file; do
+    content=$(cat "$file")
+    updated_content=$(echo "$content" | sed "s/import \(.*\) from '\(.*\)\.ts'/import \1 from '\2\.js'/g")
+    updated_content=$(echo "$updated_content" | sed "s/export \(.*\) from '\(.*\)\.ts'/export \1 from '\2\.js'/g")
+    echo "$updated_content" >"$file"
+  done
+}
+
+function fix_cjs_extensions() {
+  cjs="./cjs"
+
+  find "$cjs" -type f -name "*.js" | while read -r file; do
+    content=$(cat "$file")
+    updated_content=$(echo "$content" | sed "s/require('\(.*\)\.ts'/require('\1\.js'/g")
+    echo "$updated_content" >"$file"
+  done
+}
+
+cd lib/ || exit 1
+copy_esm_dts
+copy_esm
+create_packages
+fix_cjs_extensions
+fix_esm_extensions

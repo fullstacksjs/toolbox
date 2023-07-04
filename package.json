@@ -13,22 +13,23 @@
     ".npmignore",
     ".npmrc",
     "lib/",
+    "src/",
     "LICENSE",
     "README.md"
   ],
-  "types": "./lib/index.d.ts",
+  "types": "./lib/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./lib/esm/index.js",
       "require": "./lib/cjs/index.js",
-      "types": "./lib/index.d.ts"
+      "types": "./lib/types/index.d.ts"
     }
   },
   "sideEffects": false,
   "scripts": {
     "commit": "git-cz",
     "prebuild": "shx rm -rf lib/*",
-    "build": "tsup --dts-only && tsup --tsconfig tsconfig.build.json && ./postbuild",
+    "build": "tsup --dts-only && tsup --config tsup.browser.ts && tsup --tsconfig tsconfig.build.json && ./postbuild",
     "type-check": "tsc --emitDeclarationOnly false --noEmit",
     "lint": "npm run lint:ci -- --fix",
     "lint:ci": "eslint . --ext .js,.ts,.tsx",

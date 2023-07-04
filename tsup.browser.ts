@@ -1,12 +1,13 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: ['src/**/!(*.spec).ts'],
+  entry: ['src/index.ts'],
   splitting: true,
   sourcemap: true,
   treeshake: true,
+  minify: true,
   legacyOutput: true,
-  bundle: false,
-  format: ['esm', 'cjs'],
-  outDir: './lib/cjs',
+  bundle: true,
+  format: 'iife',
+  outDir: './lib',
 });

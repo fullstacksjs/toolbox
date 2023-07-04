@@ -3,7 +3,6 @@
   "compilerOptions": {
     "noEmit": true
   },
-  "files": ["./mod.ts", "./tsup.config.ts", "./vite.config.ts"],
-  "include": ["./src", "./docs/"],
+  "include": ["./src", "./docs/", "./*.ts"],
   "exclude": ["lib/"]
 }

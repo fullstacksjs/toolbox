@@ -1,3 +1,5 @@
+import type { Nullable } from '../types/types';
+
 /**
  * a HOC function that can call all given functions.
  *
@@ -10,7 +12,7 @@
  * callAll(bar, 'string', 5, null, undefined, baz)(); // void (bar(), baz());
  */
 export function callAll<T extends any[]>(
-  ...fns: ((...args: T) => unknown | null | undefined)[]
+  ...fns: Nullable<(...args: T) => unknown>[]
 ) {
   return (...args: T) =>
     fns.forEach(fn => {

@@ -11,12 +11,12 @@ import { callAll } from '@fullstacksjs/toolbox';
 ### Signature
 
 ```typescript copy
-function callAll<T>(...fns: Function[]) {}
+function callAll<T>(...fns: Nullable<Function>[]) {}
 ```
 
 ### Examples
 
 ```typescript copy
 callAll(foo, bar, baz)(1);                         // void(foo(1), bar(1), baz(1))
-callAll(bar, 'string', 5, null, undefined, baz)(); // void (bar(), baz());
+callAll(bar, null, undefined, baz)(); // void (bar(), baz());
 ```

@@ -11,7 +11,7 @@ describe('callAll', () => {
 
   it('should not throw with not-callable arguments', () => {
     const fns = [vi.fn<number[]>(), vi.fn<number[]>()] as const;
-    const nonFns = [undefined as any, 'string' as any, null as any, 5 as any];
+    const nonFns = [undefined, 'string' as any, null, 5 as any];
     const args = [1, 2, 3];
     callAll(fns[0], ...nonFns, fns[1])(...args);
     fns.forEach(fn => expect(fn).toHaveBeenCalledWith(...args));

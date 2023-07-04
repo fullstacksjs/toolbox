@@ -25,21 +25,11 @@ export type NodeEnv<T extends string = never> = EnvironmentVariable<
   T | 'development' | 'production'
 >;
 
-// From https://twitter.com/diegohaz/status/1309489079378219009
-type PathDots<T, Key extends keyof T> = Key extends string
-  ? T[Key] extends Record<string, any>
-    ?
-        | `${Key}.${Exclude<keyof T[Key], keyof any[]> & string}`
-        | `${Key}.${PathDots<T[Key], Exclude<keyof T[Key], keyof any[]>> &
-            string}`
-    : never
-  : never;
-
-type Path<T> = PathDots<T, keyof T> | keyof T;
-
-export type ObjectPath<T> = Path<T> extends string | keyof T
-  ? Path<T>
-  : keyof T;
+export type ObjectPath<ObjectType extends object> = {
+  [Key in keyof ObjectType & (number | string)]: ObjectType[Key] extends object
+    ? `${Key}.${ObjectPath<ObjectType[Key]>}` | `${Key}`
+    : `${Key}`;
+}[keyof ObjectType & (number | string)];
 
 export type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 

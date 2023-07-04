@@ -8,10 +8,10 @@ import type { Nullable } from '../types/types.js';
  *
  * @example
  *
- * isNullOrEmpty(null)      // true
- * isNullOrEmpty(undefined) // true
- * isNullOrEmpty('')        // true
- * isNullOrEmpty('f')       // false
+ * isNullOrEmptyString(null)      // true
+ * isNullOrEmptyString(undefined) // true
+ * isNullOrEmptyString('')        // true
+ * isNullOrEmptyString('f')       // false
  */
 export function isNullOrEmptyString(
   str: Nullable<string>,

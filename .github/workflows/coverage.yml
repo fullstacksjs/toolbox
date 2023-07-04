@@ -21,21 +21,32 @@ jobs:
         run: npm ci
 
       - name: Get Coverage
+        id: get-coverage
         shell: bash
         run: |
+          npm run test:coverage
           COV=$(node -p 't=require(`./coverage/coverage-summary.json`).total,Math.min(...`lines|statements|functions|branches`.split(`|`).map(k=>t[k].pct))')
           echo "coverage=$COV" >> $GITHUB_OUTPUT
+
+      - name: Checkout assets
+        uses: actions/checkout@v3
+        with:
+          ref: 'assets'
 
       - name: Create Badge
         shell: bash
         run: |
           npm i -g badgen-cli
-          export COV=${{ steps.get-values.outputs.coverage }}
-          badgen -j coverage --status $COV% --flat --color 4CEB9C > assets/coverage.svg
+          export COV=${{ steps.get-coverage.outputs.coverage }}
+          badgen -j coverage --status $COV% --flat --color 319663 > assets/coverage.svg
 
       - name: Deploy Badge
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'Update badges [skip ci]'
+          commit_message: 'ci: update coverage badge'
           skip_fetch: true
           skip_checkout: true
+          commit_options: '--no-verify'
+          push_options: '--no-verify'
+
+

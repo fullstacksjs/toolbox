@@ -1,0 +1,28 @@
+# getNodeEnv
+
+Check whether NodeJS Env is development.
+
+### Import
+
+```typescript copy
+import { getNodeEnv } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function getNodeEnv(fallback?: string): string {}
+```
+
+### Examples
+
+```typescript copy
+/* NODE_ENV=development node */
+getNodeEnv() // "development"
+
+/* NODE_ENV=production node */
+getNodeEnv() // "production"
+
+/* NODE_ENV="" node */
+getNodeEnv('development') // "development"
+```

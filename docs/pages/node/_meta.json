@@ -1,4 +1,5 @@
 {
+  "get-node-env": "getNodeEnv",
   "is-dev": "isDev",
   "is-prod": "isProd"
 }

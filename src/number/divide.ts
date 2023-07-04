@@ -1,4 +1,4 @@
-import { fallback as fallbackNumber } from '../number/fallback.ts';
+import { fallbackNumber } from './fallbackNumber.ts';
 
 /**
  * Divides two numbers returns fallback if result is not a finite number

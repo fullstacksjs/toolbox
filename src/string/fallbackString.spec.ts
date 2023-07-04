@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { fallback } from './fallback.ts';
+import { fallbackString } from './fallbackString.js';
 
-describe('fallback', () => {
+describe('fallbackString', () => {
   const cases = [
     { x: '', defaultValue: 'd', expected: 'd' },
     { x: ' ', defaultValue: 'd', expected: ' ' },
@@ -13,7 +13,7 @@ describe('fallback', () => {
   it.each(cases)(
     '($x, $fallback) -> $expected',
     ({ expected, defaultValue, x }) => {
-      expect(fallback(x, defaultValue)).toBe(expected);
+      expect(fallbackString(x, defaultValue)).toBe(expected);
     },
   );
 });

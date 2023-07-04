@@ -15,7 +15,7 @@ import type { Nullable } from '../types/types.ts';
  * fallback(null, 'd')      // 'd'
  * fallback(undefined, 'd') // 'd'
  */
-export function fallback<T extends string = string>(
+export function fallbackString<T extends string = string>(
   value: Nullable<T>,
   fallbackValue: T,
 ): NonNullable<T> {

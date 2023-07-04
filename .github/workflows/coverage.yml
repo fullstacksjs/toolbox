@@ -23,6 +23,7 @@ jobs:
       - name: Get Coverage
         shell: bash
         run: |
+          npm run test:coverage
           COV=$(node -p 't=require(`./coverage/coverage-summary.json`).total,Math.min(...`lines|statements|functions|branches`.split(`|`).map(k=>t[k].pct))')
           echo "coverage=$COV" >> $GITHUB_OUTPUT
 

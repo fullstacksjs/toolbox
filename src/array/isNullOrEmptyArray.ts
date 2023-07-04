@@ -17,7 +17,7 @@ import type { Nullable } from '../types/types.js';
  * isNullOrEmptyArray([undefined]) // false
  */
 export function isNullOrEmptyArray<T extends any[]>(
-  arr: Nullable<T>,
-): arr is Nullable<T> {
+  arr: Nullable<T | []>,
+): arr is Nullable<[]> {
   return arr == null || arr.length === 0;
 }

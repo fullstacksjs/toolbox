@@ -57,11 +57,3 @@ jobs:
 
       - name: Test
         run: npm run test:ci
-
-      - name: Run tests with code coverage
-        run: npm run test:coverage
-
-      - name: Generate coverage badge
-        run: |
-          BADGE_URL=$(node ./docs/generateCodeCoverage.js)
-          sed -i "s|<COVERAGE_BADGE_URL>|$BADGE_URL|g" README.md

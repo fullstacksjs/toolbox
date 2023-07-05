@@ -17,12 +17,15 @@
 
 </div>
 
+Welcome to Toolbox! A zero-dependency 📦, tree-shakable🌲 collection of missing JavaScript utilities.
+
+
 ## Table of Contents <!-- omit in toc -->
 
 <!-- cspell:disable -->
 
 - [Installation](#installation)
-- [CONTRIBUTING](#contributing)
+- [Contributing](#contributing)
   - [Prerequisite](#prerequisite)
   - [Pull Request](#pull-request)
 - [Code of Conduct](#code-of-conduct)
@@ -32,20 +35,30 @@
 
 ## Installation
 
+#### NodeJS
+
 ```sh
 $ npm add --save-dev @fullstacksjs/toolbox
 ```
 
-or using yarn
+#### Deno
 
-```sh
-$ yarn add --dev @fullstacksjs/toolbox
+```typescript
+import * as toolbox from 'https://raw.githubusercontent.com/fullstacksjs/toolbox/main/mod.ts'
 ```
 
-## CONTRIBUTING
+#### Browser
 
-Development of Codeit happens in GitHub, and we appreciate contributions. Learn
-how you can help improving Codeit by reading the sections below.
+```html
+<script src='https://www.unpkg.com/@fullstacksjs/toolbox/iife/index.js'></script>
+<script>
+  console.log(window.Toolbox)
+</script>
+```
+
+## Contributing
+
+Development of Codeit happens in GitHub, and we appreciate contributions.
 
 ### Prerequisite
 
@@ -54,8 +67,7 @@ how you can help improving Codeit by reading the sections below.
 
 ### Pull Request
 
-The FullstacksJS team is monitoring for pull requests. We will review your
-pull request as soon as possible.
+The FullstacksJS team is monitoring for pull requests. We will go ahead and review your pull request as soon as possible.
 
 Before submitting a pull request, please make sure the following is done:
 

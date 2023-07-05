@@ -15,9 +15,11 @@
 ![MIT License][license-badge]
 ![semantic-release][semantic-badge]
 
+
+Welcome to Toolbox! A zero-dependency 📦 tree-shakable🌲 collection of missing JavaScript utilities.
+
 </div>
 
-Welcome to Toolbox! A zero-dependency 📦, tree-shakable🌲 collection of missing JavaScript utilities.
 
 
 ## Table of Contents <!-- omit in toc -->
@@ -63,7 +65,7 @@ Development of Codeit happens in GitHub, and we appreciate contributions.
 ### Prerequisite
 
 - [volta][volta]
-- [npm][npm] >= 9
+- [bash][bash]
 
 ### Pull Request
 
@@ -93,4 +95,4 @@ Please check out the [documentation page](https://toolbox.fullstacksjs.com)
 [semantic-badge]: https://img.shields.io/badge/semantic-release-e10079.svg?logo=semantic-release&color=7E98F7&label=SEMANTIC&style=flat-square (https://github.com/semantic-release/semantic-release)
 [nodejs]: https://nodejs.org/en/
 [volta]: https://volta.sh/
-[npm]: https://www.npmjs.com/
+[bash]: https://www.gnu.org/software/bash/

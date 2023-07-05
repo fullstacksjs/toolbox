@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { joinPaths } from '@fullstacksjs/toolbox';
 
 const title = 'We Grow together';
 const description = 'We Grow together';
@@ -6,6 +7,8 @@ const ogImage = {
   url: 'https://toolbox.fullstacksjs.com/thumbnail.png',
   alt: 'FullstacksJS - Toolbox',
 };
+
+const repo = 'https://github.com/fullstacksjs/toolbox';
 
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
 const themeConfig = {
@@ -20,7 +23,7 @@ const themeConfig = {
     </div>
   ),
   project: {
-    link: 'https://github.com/fullstacksjs/toolbox',
+    link: repo,
   },
   head: (
     <>
@@ -32,7 +35,7 @@ const themeConfig = {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage.url} />
-      <meta property="og:image:alt" content={ogImage.alt}/>
+      <meta property="og:image:alt" content={ogImage.alt} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage.url} />
@@ -62,6 +65,26 @@ const themeConfig = {
   },
   sidebar: {
     defaultMenuCollapseLevel: 1,
+  },
+  feedback: {
+    content() {
+      return 'Suggest a new function'
+    },
+    useLink() {
+      return 'https://github.com/fullstacksjs/toolbox/issues/new?assignees=&labels=proposal&projects=&template=proposal.md'
+    }
+  },
+  editLink: {
+    component: ({ filePath, children, className }) => {
+      return (
+        <a
+          href={joinPaths(repo, 'blob/main/docs', filePath)}
+          className={className}
+        >
+          {children}
+        </a>
+      );
+    },
   },
 };
 

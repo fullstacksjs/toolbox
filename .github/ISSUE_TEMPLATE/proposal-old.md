@@ -1,5 +1,5 @@
 ---
-name: Proposal
+name: Proposal-Old
 about: Suggest an utility function
 labels: 'proposal'
 ---

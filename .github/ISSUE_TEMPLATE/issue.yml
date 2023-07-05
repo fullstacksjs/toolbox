@@ -1,0 +1,27 @@
+name: Proposal
+description: File a new utility function
+title: '[Proposal]: '
+labels: ['proposal']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to contribute!
+  - type: input
+    id: signature
+    attributes:
+      label: Function Signature
+      description: What the function name, input and, output should be?
+      placeholder: 'ex. function sleep(ms: number): Promise<void> {}'
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: What's the motivation or use-case?
+      placeholder: >
+        ex. It's very common in react setState to toggle the boolean state, like
+        setState(s => !s). This function can help us to write the code like setState(toggle).
+    validations:
+      required: true

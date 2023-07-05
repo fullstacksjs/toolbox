@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Thanks for taking the time to contribute!
-  - type: input
+  - type: textarea
     id: signature
     attributes:
       label: Function Signature

@@ -8,6 +8,7 @@ export default defineConfig({
   minify: true,
   legacyOutput: true,
   bundle: true,
+  globalName: 'Toolbox',
   format: 'iife',
   outDir: './lib',
 });

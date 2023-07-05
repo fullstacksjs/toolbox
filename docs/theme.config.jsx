@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { joinPaths } from '@fullstacksjs/toolbox';
 
-const title = 'We Grow together';
-const description = 'We Grow together';
+const title = 'FullstacksJS - Toolbox';
+const description = 'A zero-dependency 📦 tree-shakable🌲 collection of missing JavaScript utilities.';
 const ogImage = {
   url: 'https://toolbox.fullstacksjs.com/thumbnail.png',
   alt: 'FullstacksJS - Toolbox',

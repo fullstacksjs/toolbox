@@ -27,6 +27,9 @@ Welcome to Toolbox! A zero-dependency 📦 tree-shakable🌲 collection of missi
 <!-- cspell:disable -->
 
 - [Installation](#installation)
+  - [NodeJS](#nodejs)
+  - [Deno](#deno)
+  - [Browser](#browser)
 - [Contributing](#contributing)
   - [Prerequisite](#prerequisite)
   - [Pull Request](#pull-request)
@@ -37,19 +40,19 @@ Welcome to Toolbox! A zero-dependency 📦 tree-shakable🌲 collection of missi
 
 ## Installation
 
-#### NodeJS
+### NodeJS
 
 ```sh
-$ npm add --save-dev @fullstacksjs/toolbox
+$ npm install --save-dev @fullstacksjs/toolbox
 ```
 
-#### Deno
+### Deno
 
 ```typescript
 import * as toolbox from 'https://raw.githubusercontent.com/fullstacksjs/toolbox/main/mod.ts'
 ```
 
-#### Browser
+### Browser
 
 ```html
 <script src='https://www.unpkg.com/@fullstacksjs/toolbox/iife/index.js'></script>

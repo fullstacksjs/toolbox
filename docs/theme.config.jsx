@@ -67,12 +67,10 @@ const themeConfig = {
     defaultMenuCollapseLevel: 1,
   },
   feedback: {
-    content() {
-      return 'Suggest a new function'
-    },
+    content: 'Suggest a new function',
     useLink() {
-      return 'https://github.com/fullstacksjs/toolbox/issues/new?assignees=&labels=proposal&projects=&template=proposal.md'
-    }
+      return 'https://github.com/fullstacksjs/toolbox/issues/new?assignees=&labels=proposal&projects=&template=proposal.yml&title=%5BProposal%5D%3A+';
+    },
   },
   editLink: {
     component: ({ filePath, children, className }) => {

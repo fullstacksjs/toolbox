@@ -10,13 +10,13 @@ import { divide } from './divide.ts';
  *
  * @example
  *
- * clamp(0, 10)   // 0
- * clamp(1, 10)   // 10
- * clamp(-1, 10)  // 0
- * clamp(20, 10)  // 100
- * clamp(NaN, 10) // 0
- * clamp(10, NaN) // 0
- * clamp(1, 3)    // 33.33333333333333
+ * percent(0, 10)   // 0
+ * percent(1, 10)   // 10
+ * percent(-1, 10)  // 0
+ * percent(20, 10)  // 100
+ * percent(NaN, 10) // 0
+ * percent(10, NaN) // 0
+ * percent(1, 3)    // 33.33333333333333
  */
 export function percent(value: number, max: number): number {
   return clamp(divide(value, max, 0), 0, 1) * 100;

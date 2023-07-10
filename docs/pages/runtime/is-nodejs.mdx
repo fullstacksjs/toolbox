@@ -1,0 +1,22 @@
+# isNodeJS
+
+Returns `true` when runtime is NodeJS.
+
+### Import
+
+```typescript copy
+import { isNodeJS } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function isNodeJS(): boolean {}
+```
+
+### Examples
+
+```typescript copy
+if (isNodeJS()) global.process.env;
+if (!isNodeJS()) console.log('Deno, bun, or browser?');
+```

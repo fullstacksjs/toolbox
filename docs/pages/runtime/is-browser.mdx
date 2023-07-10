@@ -1,0 +1,22 @@
+# isBrowser
+
+Returns `true` when runtime is a browser.
+
+### Import
+
+```typescript copy
+import { isBrowser } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function isBrowser(): boolean {}
+```
+
+### Examples
+
+```typescript copy
+if (isBrowser()) alert('I will run in the client only');
+if (!isBrowser()) console.log('This runs in server environment');
+```

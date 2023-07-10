@@ -1,0 +1,22 @@
+# isDeno
+
+Returns `true` when runtime is Deno.
+
+### Import
+
+```typescript copy
+import { isDeno } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function isDeno(): boolean {}
+```
+
+### Examples
+
+```typescript copy
+if (isDeno()) Deno.cwd();
+if (!isDeno()) console.log('NodeJS, bun, or browser?');
+```

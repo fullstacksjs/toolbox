@@ -1,4 +1,4 @@
-import { isServer } from './isServer';
-import { isDeno } from './isDeno';
-import { isBrowser } from './isBrowser';
-import { isNodeJS } from './isNodeJS';
+export { isServer } from './isServer';
+export { isDeno } from './isDeno';
+export { isBrowser } from './isBrowser';
+export { isNodeJS } from './isNodeJS';

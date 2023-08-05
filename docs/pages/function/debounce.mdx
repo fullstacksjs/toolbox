@@ -1,0 +1,55 @@
+# debounce
+
+debounce returns a function which will call the callback function provided to it, only if
+a certain delay is past since its last call. Useful for seachboxes, buttons, etc.
+
+### Import
+
+```typescript copy
+import { debounce } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function debounce<F extends (...args: any[]) => any>(
+  cb: F,
+  delay: number,
+  immediate: boolean = false,
+): (...args: Parameters<F>) => void {}
+```
+
+### Examples
+
+`immediate` flag being false as default:
+```typescript copy
+function execute(id: number) {
+    console.log(id);
+}
+
+const debounced = debounce(execute, 1000);
+
+debounced(1);
+debounced(2);
+debounced(3);
+debounced(4);
+debounced(5); // will log 5 after 1 second
+```
+
+`immediate` flag being true:
+```typescript copy
+function execute(id: number) {
+    console.log(id);
+}
+
+const debounced = debounce(execute, 1000 , true);
+
+debounced(1); // will log 1 immediately
+debounced(2);
+debounced(3);
+debounced(4);
+debounced(5); // will log 5 after 1 second
+```
+
+if `immediate` is true, the function will always execute the callback if the
+delay is passed since the last time it was called.

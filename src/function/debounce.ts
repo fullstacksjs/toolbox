@@ -29,7 +29,7 @@
  * debounced(5); // will log 5 after 1 second
  * ```
  *
- * @returns {Function} sdf
+ * @returns {Function} a wrapper function
  *
  */
 export function debounce<F extends (...args: any[]) => any>(

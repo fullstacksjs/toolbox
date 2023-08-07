@@ -38,7 +38,8 @@ export function debounce<F extends (...args: any[]) => any>(
   immediate: boolean = false,
 ): (...args: Parameters<F>) => void {
   let timeout: ReturnType<typeof setTimeout> | null;
-  return ((...args: any[]) => {
+
+  return (...args: Parameters<F>) => {
     if (timeout) clearTimeout(timeout);
     const immediateCall = immediate && !timeout;
 
@@ -48,5 +49,5 @@ export function debounce<F extends (...args: any[]) => any>(
       timeout = null;
       if (!immediateCall) cb(...args);
     }, delay);
-  }) as (...args: Parameters<F>) => void;
+  };
 }

@@ -1,15 +1,5 @@
 /**
  * Return a function which will only call {@link cb} when a delay is passed after its last call
- * @example
- * function test(id: number) {
- *    console.log(id);
- * }
- * const debounced = debounce(test, 1000);
- * debounced(1);
- * debounced(2);
- * debounced(3);
- * debounced(4);
- * debounced(5);
  * // will log 5 after 1 second
  * @param {Function} cb function to be executed after the delay
  * @param {number} delay delay in milliseconds
@@ -31,6 +21,16 @@
  *
  * @returns {Function} a wrapper function
  *
+ * @example
+ * function test(id: number) {
+ *    console.log(id);
+ * }
+ * const debounced = debounce(test, 1000);
+ * debounced(1);
+ * debounced(2);
+ * debounced(3);
+ * debounced(4);
+ * debounced(5);
  */
 export function debounce<F extends (...args: any[]) => any>(
   cb: F,

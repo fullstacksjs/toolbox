@@ -10,6 +10,15 @@ describe('debounce', () => {
     vi.restoreAllMocks();
   });
 
+  it('should execute the function with the same arguments passed to it', () => {
+    const execute = vi.fn((_a: any, _b: any) => 0);
+    const debouncedFunction = debounce(execute, 1000, false);
+    debouncedFunction(1, 2);
+    vi.advanceTimersByTime(1000);
+
+    expect(execute).toBeCalledWith(1, 2);
+  });
+
   it('should execute once after the delay', () => {
     const execute = vi.fn(() => 0);
 

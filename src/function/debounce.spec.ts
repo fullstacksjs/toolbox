@@ -23,7 +23,7 @@ describe('debounce', () => {
   });
 
   it('should execute once after the delay', () => {
-    const execute = vi.fn(() => 0);
+    const execute = vi.fn();
 
     const debouncedFunction = debounce({ delay: 1000 }, execute);
     debouncedFunction();
@@ -33,7 +33,7 @@ describe('debounce', () => {
   });
 
   it('should not execute before the delay', () => {
-    const execute = vi.fn(() => 0);
+    const execute = vi.fn();
 
     const debouncedFunction = debounce({ delay: 1000 }, execute);
     debouncedFunction();
@@ -43,7 +43,7 @@ describe('debounce', () => {
   });
 
   it('should execute once after the last call with delay', () => {
-    const execute = vi.fn(() => 0);
+    const execute = vi.fn();
 
     const debouncedFunction = debounce({ delay: 1000 }, execute);
 
@@ -57,7 +57,7 @@ describe('debounce', () => {
   });
 
   it('should execute whenever not called within the delay period', () => {
-    const execute = vi.fn(() => 0);
+    const execute = vi.fn();
 
     const debouncedFunction = debounce({ delay: 1000 }, execute);
 
@@ -73,7 +73,7 @@ describe('debounce', () => {
   });
 
   it('should execute immediately', () => {
-    const execute = vi.fn(() => 0);
+    const execute = vi.fn();
 
     const debouncedFunction = debounce(
       { delay: 1000, immediate: true },
@@ -85,7 +85,7 @@ describe('debounce', () => {
   });
 
   it('should not execute after the delay if immediate is true', () => {
-    const execute = vi.fn(() => 0);
+    const execute = vi.fn();
 
     const debouncedFunction = debounce(
       { delay: 1000, immediate: true },
@@ -98,7 +98,7 @@ describe('debounce', () => {
   });
 
   it('should execute whenever not called within the delay period and then execute immediately with another call', () => {
-    const execute = vi.fn(() => 0);
+    const execute = vi.fn();
 
     const debouncedFunction = debounce(
       { delay: 1000, immediate: true },

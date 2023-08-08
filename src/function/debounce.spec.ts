@@ -12,7 +12,10 @@ describe('debounce', () => {
 
   it('should execute the function with the same arguments passed to it', () => {
     const execute = vi.fn((_a: any, _b: any) => 0);
-    const debouncedFunction = debounce(execute, 1000, false);
+    const debouncedFunction = debounce(
+      { delay: 1000, immediate: false },
+      execute,
+    );
     debouncedFunction(1, 2);
     vi.advanceTimersByTime(1000);
 
@@ -22,7 +25,7 @@ describe('debounce', () => {
   it('should execute once after the delay', () => {
     const execute = vi.fn(() => 0);
 
-    const debouncedFunction = debounce(execute, 1000, false);
+    const debouncedFunction = debounce({ delay: 1000 }, execute);
     debouncedFunction();
     vi.advanceTimersByTime(1000);
 
@@ -32,7 +35,7 @@ describe('debounce', () => {
   it('should not execute before the delay', () => {
     const execute = vi.fn(() => 0);
 
-    const debouncedFunction = debounce(execute, 1000, false);
+    const debouncedFunction = debounce({ delay: 1000 }, execute);
     debouncedFunction();
     vi.advanceTimersByTime(500);
 
@@ -42,7 +45,7 @@ describe('debounce', () => {
   it('should execute once after the last call with delay', () => {
     const execute = vi.fn(() => 0);
 
-    const debouncedFunction = debounce(execute, 1000, false);
+    const debouncedFunction = debounce({ delay: 1000 }, execute);
 
     for (let i = 0; i < 10; i++) {
       debouncedFunction();
@@ -56,7 +59,7 @@ describe('debounce', () => {
   it('should execute whenever not called within the delay period', () => {
     const execute = vi.fn(() => 0);
 
-    const debouncedFunction = debounce(execute, 1000, false);
+    const debouncedFunction = debounce({ delay: 1000 }, execute);
 
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < 10; j++) {
@@ -72,7 +75,10 @@ describe('debounce', () => {
   it('should execute immediately', () => {
     const execute = vi.fn(() => 0);
 
-    const debouncedFunction = debounce(execute, 1000, true);
+    const debouncedFunction = debounce(
+      { delay: 1000, immediate: true },
+      execute,
+    );
     debouncedFunction();
 
     expect(execute).toBeCalledTimes(1);
@@ -81,7 +87,10 @@ describe('debounce', () => {
   it('should not execute after the delay if immediate is true', () => {
     const execute = vi.fn(() => 0);
 
-    const debouncedFunction = debounce(execute, 1000, true);
+    const debouncedFunction = debounce(
+      { delay: 1000, immediate: true },
+      execute,
+    );
     debouncedFunction();
     vi.advanceTimersByTime(1000);
 
@@ -91,7 +100,10 @@ describe('debounce', () => {
   it('should execute whenever not called within the delay period and then execute immediately with another call', () => {
     const execute = vi.fn(() => 0);
 
-    const debouncedFunction = debounce(execute, 1000, true);
+    const debouncedFunction = debounce(
+      { delay: 1000, immediate: true },
+      execute,
+    );
 
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < 10; j++) {

@@ -31,7 +31,7 @@
  *  throttled(5); // ignored
  * }, 150)
  */
-export function throttle<F extends (...args: any[]) => void>(
+export function throttle<F extends (...args: any[]) => any>(
   options: {
     delay: number;
   },

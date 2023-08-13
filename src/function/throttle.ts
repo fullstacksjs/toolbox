@@ -4,7 +4,7 @@
  * @template F - The type of the function being throttled.
  * @param {Object} options - The throttling options.
  * @param {F} cb - The function to throttle.
- * @returns {(...args: Parameters<F>) => void} - The throttled function.
+ * @returns {Funcion} - The throttled function.
  *
  * @example
  *

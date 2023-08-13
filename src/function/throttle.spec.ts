@@ -57,82 +57,8 @@ describe('throttle', () => {
   it('should not execute callback function when throttled function is never called', () => {
     const callback = vi.fn();
 
-    const throttled = throttle({ delay: DELAY }, callback);
+    throttle({ delay: DELAY }, callback);
 
     expect(callback).toHaveBeenCalledTimes(0);
   });
-
-  //   it('should execute once after the last call with delay', () => {
-  //     const execute = vi.fn();
-
-  //     const debouncedFunction = debounce({ delay: 1000 }, execute);
-
-  //     for (let i = 0; i < 10; i++) {
-  //       debouncedFunction();
-  //       vi.advanceTimersByTime(500);
-  //     }
-  //     vi.advanceTimersByTime(500);
-
-  //     expect(execute).toBeCalledTimes(1);
-  //   });
-
-  //   it('should execute whenever not called within the delay period', () => {
-  //     const execute = vi.fn();
-
-  //     const debouncedFunction = debounce({ delay: 1000 }, execute);
-
-  //     for (let i = 0; i < 5; i++) {
-  //       for (let j = 0; j < 10; j++) {
-  //         debouncedFunction();
-  //         vi.advanceTimersByTime(500);
-  //       }
-  //       vi.advanceTimersByTime(500);
-  //     }
-
-  //     expect(execute).toBeCalledTimes(5);
-  //   });
-
-  //   it('should execute immediately', () => {
-  //     const execute = vi.fn();
-
-  //     const debouncedFunction = debounce(
-  //       { delay: 1000, immediate: true },
-  //       execute,
-  //     );
-  //     debouncedFunction();
-
-  //     expect(execute).toBeCalledTimes(1);
-  //   });
-
-  //   it('should not execute after the delay if immediate is true', () => {
-  //     const execute = vi.fn();
-
-  //     const debouncedFunction = debounce(
-  //       { delay: 1000, immediate: true },
-  //       execute,
-  //     );
-  //     debouncedFunction();
-  //     vi.advanceTimersByTime(1000);
-
-  //     expect(execute).toBeCalledTimes(1);
-  //   });
-
-  //   it('should execute whenever not called within the delay period and then execute immediately with another call', () => {
-  //     const execute = vi.fn();
-
-  //     const debouncedFunction = debounce(
-  //       { delay: 1000, immediate: true },
-  //       execute,
-  //     );
-
-  //     for (let i = 0; i < 5; i++) {
-  //       for (let j = 0; j < 10; j++) {
-  //         debouncedFunction();
-  //         vi.advanceTimersByTime(500);
-  //       }
-  //       vi.advanceTimersByTime(500);
-  //     }
-
-  //     expect(execute).toBeCalledTimes(10);
-  //   });
 });

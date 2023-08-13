@@ -1,0 +1,48 @@
+# throttle
+
+Returns a new function that triggers the given callback only if a specified
+interval of time has elapsed since its previous invocation.
+
+### Import
+
+```typescript copy
+import { throttle } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function throttle<F extends (...args: any[]) => any>(
+  options: {
+    delay: number;
+  },
+  cb: F,
+): (...args: Parameters<F>) => void {}
+```
+
+### Examples
+
+```typescript copy
+// callback function
+function execute(id: number) {
+  console.log(id);
+}
+
+// Logs id at most once per 100ms
+const throttled = throttle({ delay: 100 }, execute);
+
+setTimeout(function () {
+  throttled(0); // 0
+  throttled(1); // ignored
+}, 0);
+
+setTimeout(function () {
+  throttled(2); // ignored
+  throttled(3); // ignored
+}, 50);
+
+setTimeout(function () {
+  throttled(4); // 4
+  throttled(5); // ignored
+}, 150);
+```

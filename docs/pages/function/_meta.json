@@ -2,5 +2,6 @@
   "call-all": "callAll",
   "noop": "noop",
   "not": "not",
-  "sleep": "sleep"
+  "sleep": "sleep",
+  "throttle": "throttle"
 }

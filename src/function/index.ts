@@ -6,3 +6,5 @@ export { debounce } from './debounce.ts';
 export { asyncTryCatch } from './asyncTryCatch.ts';
 export { tryCatch } from './tryCatch.ts';
 export { throttle } from './throttle.ts';
+export { asyncTryCatch } from './asyncTryCatch.ts';
+export { tryCatch } from './tryCatch.ts';

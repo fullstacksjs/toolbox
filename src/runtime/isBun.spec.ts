@@ -1,14 +1,14 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import {
   clearMocks,
-  mockBunGlobal,
   mockDenoGlobal,
+  mockBunGlobal,
   mockNodeGlobal,
   mockWindowGlobal,
 } from './fixtures';
-import { isDeno } from './isDeno';
+import { isBun } from './isBun';
 
-describe('isDeno', () => {
+describe('isBun', () => {
   beforeEach(() => {
     clearMocks();
   });
@@ -16,24 +16,24 @@ describe('isDeno', () => {
   it('should return false in browser', () => {
     mockWindowGlobal();
 
-    expect(isDeno()).toBe(false);
+    expect(isBun()).toBe(false);
   });
 
-  it('should return false in node', () => {
+  it('should return true in node', () => {
     mockNodeGlobal();
 
-    expect(isDeno()).toBe(false);
+    expect(isBun()).toBe(false);
   });
 
-  it('should return false in bun', () => {
+  it('should return true in bun', () => {
     mockBunGlobal();
 
-    expect(isDeno()).toBe(false);
+    expect(isBun()).toBe(true);
   });
 
   it('should return true in deno', () => {
     mockDenoGlobal();
 
-    expect(isDeno()).toBe(true);
+    expect(isBun()).toBe(false);
   });
 });

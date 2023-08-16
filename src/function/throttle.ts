@@ -1,20 +1,18 @@
 /**
  * Throttles a function to only be executed once per delay.
  *
- * @template F - The type of the function being throttled.
- * @param {Object} options - The throttling options.
- * @param {F} cb - The function to throttle.
- * @returns {Funcion} - The throttled function.
+ * @template {F} type of the function being throttled.
+ * @param {Object} options The throttling options.
+ * @param {F} cb The function to throttle.
+ * @returns {Function} the throttled function.
  *
  * @example
  *
- * // callback function
- * function test(id: number) {
+ * function log(id: number) {
  *   console.log(id);
  * }
  *
- * // Logs id at most once per 100ms
- * const throttled = throttle({ delay: 100 }, test);
+ * const throttled = throttle({ delay: 100 }, log);
  *
  * setTimeout(function () {
  *   throttled(0); // 0
@@ -31,16 +29,16 @@
  *  throttled(5); // ignored
  * }, 150)
  */
-export function throttle<F extends (...args: any[]) => any>(
-  options: {
-    delay: number;
-  },
+export function throttle<F extends (...args: unknown[]) => unknown>(
+  options: { delay: number },
   cb: F,
 ): (...args: Parameters<F>) => void {
   const { delay } = options;
   let shouldExecute = true;
+
   return (...args) => {
     if (!shouldExecute) return;
+
     cb(...args);
     shouldExecute = false;
     setTimeout(() => {

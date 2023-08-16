@@ -1,8 +1,12 @@
 # debounce
 
-debounce returns a function which will call the callback function provided to
-it, only if a certain delay is past since its last call. Useful for seachboxes,
-buttons, etc.
+The `debounce` function is commonly used to ensure that time-consuming tasks do
+not fire too often. It waits for a set interval after the last invocation before
+executing the callback function.
+
+If `immediate` is set to `true`, the original function will be called
+immediately. However, the function won't be called again unless the debounced
+function stops being invoked for the specified duration.
 
 ### Import
 
@@ -13,48 +17,38 @@ import { debounce } from '@fullstacksjs/toolbox';
 ### Signature
 
 ```typescript copy
-function debounce<F extends (...args: any[]) => any>(
-  options: {
-    delay: number;
-    immediate?: boolean;
-  },
+function debounce<F>(
+  options: { delay: number; immediate?: boolean },
   cb: F,
 ): (...args: Parameters<F>) => void {}
 ```
 
 ### Examples
 
-`immediate` flag being false as default:
-
 ```typescript copy
-function execute(id: number) {
+function log(id: number) {
   console.log(id);
 }
 
-const debounced = debounce({ delay: 1000 }, execute);
+const debounced = debounce({ delay: 1000 }, log);
 
-debounced(1);
-debounced(2);
-debounced(3);
-debounced(4);
-debounced(5); // will log 5 after 1 second
+debounced(1); // ignored
+debounced(2); // ignored
+debounced(3); // ignored
+
+setTimeout(function () {
+  throttled(4); // 4
+  throttled(5); // ignored
+}, 1000);
+
+const debounced = debounce({ delay: 1000, immediate: true }, log);
+
+debounced(1); // 1
+debounced(2); // ignored
+debounced(3); // ignored
+
+setTimeout(function () {
+  throttled(4); // 4
+  throttled(5); // ignored
+}, 1000);
 ```
-
-`immediate` flag being true:
-
-```typescript copy
-function execute(id: number) {
-  console.log(id);
-}
-
-const debounced = debounce({ delay: 1000, immediate: true }, execute);
-
-debounced(1); // will log 1 immediately
-debounced(2);
-debounced(3);
-debounced(4);
-debounced(5); // will log 5 after 1 second
-```
-
-if `immediate` is true, the function will always execute the callback if the
-delay is passed since the last time it was called.

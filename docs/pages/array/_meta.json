@@ -9,5 +9,6 @@
   "join-path": "joinPath",
   "range": "range",
   "shuffle": "shuffle",
-  "to-array": "toArray"
+  "to-array": "toArray",
+  "uniq": "uniq"
 }

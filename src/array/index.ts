@@ -8,3 +8,4 @@ export { isNullOrEmptyArray } from './isNullOrEmptyArray.ts';
 export { range } from './range.ts';
 export { shuffle } from './shuffle.ts';
 export { toArray } from './toArray.ts';
+export { uniq } from './uniq.ts';

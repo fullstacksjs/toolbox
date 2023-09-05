@@ -63,7 +63,7 @@ import * as toolbox from 'https://raw.githubusercontent.com/fullstacksjs/toolbox
 
 ## Contributing
 
-Development of Codeit happens in GitHub, and we appreciate contributions.
+Development of toolbox happens in GitHub, and we appreciate contributions.
 
 ### Prerequisite
 

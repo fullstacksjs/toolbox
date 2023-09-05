@@ -1,0 +1,22 @@
+# Bun
+
+Returns `true` when runtime is Bun
+
+### Import
+
+```typescript copy
+import { isBun } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function isBun(): boolean {}
+```
+
+### Examples
+
+```typescript copy
+if (isBun()) console.log(Bun.version);
+if (!isBun()) console.log('Node, Deno, or browser?');
+```

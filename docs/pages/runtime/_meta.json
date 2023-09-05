@@ -1,6 +1,7 @@
 {
-  "is-nodejs": "isNodejs",
   "is-browser": "isBrowser",
-  "is-server": "isServer",
-  "is-deno": "isDeno"
+  "is-bun": "isBun",
+  "is-deno": "isDeno",
+  "is-nodejs": "isNodejs",
+  "is-server": "isServer"
 }

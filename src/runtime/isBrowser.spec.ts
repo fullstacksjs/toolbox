@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import {
   clearMocks,
+  mockBunGlobal,
   mockDenoGlobal,
   mockNodeGlobal,
   mockWindowGlobal,
@@ -20,6 +21,12 @@ describe('isBrowser', () => {
 
   it('should return false in node', () => {
     mockNodeGlobal();
+
+    expect(isBrowser()).toBe(false);
+  });
+
+  it('should return false in bun', () => {
+    mockBunGlobal();
 
     expect(isBrowser()).toBe(false);
   });

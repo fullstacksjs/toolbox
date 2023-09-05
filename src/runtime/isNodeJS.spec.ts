@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import {
   clearMocks,
+  mockBunGlobal,
   mockDenoGlobal,
   mockNodeGlobal,
   mockWindowGlobal,
@@ -22,6 +23,12 @@ describe('isNode', () => {
     mockNodeGlobal();
 
     expect(isNodeJS()).toBe(true);
+  });
+
+  it('should return false in bun', () => {
+    mockBunGlobal();
+
+    expect(isNodeJS()).toBe(false);
   });
 
   it('should return true in deno', () => {

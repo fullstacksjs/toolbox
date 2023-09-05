@@ -8,6 +8,7 @@
     "type": "git",
     "url": "git@github.com:fullstacksjs/toolbox.git"
   },
+  "homepage": "https://toolbox.fullstacksjs.com",
   "files": [
     ".husky/prepare",
     ".npmignore",

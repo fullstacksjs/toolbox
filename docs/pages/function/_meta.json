@@ -1,6 +1,8 @@
 {
   "call-all": "callAll",
+  "debounce": "debounce",
   "noop": "noop",
   "not": "not",
-  "sleep": "sleep"
+  "sleep": "sleep",
+  "throttle": "throttle"
 }

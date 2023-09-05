@@ -1,0 +1,29 @@
+# toArray
+
+Returns a new array with all duplicate elements removed.
+
+- the passed array would not be mutated.
+- objects are compared by reference.
+
+### Import
+
+```typescript copy
+import { uniq } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+export function uniq<T>(array: T[]): T[];
+```
+
+### Examples
+
+```typescript copy
+let object = { key: 'value' };
+
+uniq([object, object])        // [{ key: 'value' }]
+uniq([object, { ...object }]) // [{ key: 'value' }, { key: 'value' }]
+uniq([1, 1, 2, 3, 4, 4])      // [1, 2, 3, 4]
+uniq([1, 2, 3, 4])            // [1, 2, 3, 4]
+```

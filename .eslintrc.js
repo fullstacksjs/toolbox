@@ -12,12 +12,12 @@ module.exports = init({
     {
       files: ['./src/**/*.ts'],
       rules: {
-        'valid-jsdoc': 'error',
         '@typescript-eslint/ban-types': 'off',
-        'fp/no-let': 'off',
         '@typescript-eslint/prefer-for-of': 'off',
+        'fp/no-let': 'off',
         'fp/no-loops': 'off',
         'func-style': ['error', 'declaration'],
+        'valid-jsdoc': 'error',
       },
     },
     {

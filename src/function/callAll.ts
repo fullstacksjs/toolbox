@@ -1,4 +1,4 @@
-import type { Nullable } from '../types/types';
+import type { Nullable } from '../types/types.ts';
 
 /**
  * a HOC function that can call all given functions.

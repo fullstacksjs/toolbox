@@ -1,4 +1,4 @@
-import { isPromise } from '../guards';
+import { isPromise } from '../guards/isPromise.ts';
 
 /**
  * @template THandlerReturn

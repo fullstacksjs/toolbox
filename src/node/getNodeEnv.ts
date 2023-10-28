@@ -17,5 +17,6 @@
  */
 export function getNodeEnv(fallback?: string): string | undefined {
   const env = process.env['NODE_ENV'];
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   return env == null || env === '' ? fallback : env;
 }

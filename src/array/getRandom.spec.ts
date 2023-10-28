@@ -34,7 +34,7 @@ describe('getRandom', () => {
   it('should not select out of range', () => {
     let i = 0;
 
-    // eslint-disable-next-line jest/no-conditional-in-test
+    // eslint-disable-next-line jest/no-conditional-in-test, @typescript-eslint/no-unnecessary-condition
     for (; i < 100; i++) if (getRandom([0, 1]) == null) break;
 
     expect(i).toBe(100);

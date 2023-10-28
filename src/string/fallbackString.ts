@@ -19,5 +19,5 @@ export function fallbackString<T extends string = string>(
   value: Nullable<T>,
   fallbackValue: T,
 ): NonNullable<T> {
-  return value == null || value === '' ? fallbackValue : (value as T);
+  return value == null || value === '' ? fallbackValue : value;
 }

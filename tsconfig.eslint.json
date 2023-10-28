@@ -1,6 +1,7 @@
 {
   "extends": "@fullstacksjs/tsconfig/cjs",
   "compilerOptions": {
+    "noUncheckedIndexedAccess": true,
     "noEmit": true
   },
   "include": ["./src", "./docs/", "./*.ts"],

@@ -14,6 +14,8 @@ module.exports = init({
       rules: {
         '@typescript-eslint/ban-types': 'off',
         '@typescript-eslint/prefer-for-of': 'off',
+        '@typescript-eslint/no-throw-literal': 'off',
+        '@typescript-eslint/dot-notation': 'off',
         'fp/no-let': 'off',
         'fp/no-loops': 'off',
         'func-style': ['error', 'declaration'],

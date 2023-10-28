@@ -11,7 +11,7 @@ describe('sleep', () => {
   });
 
   it('should call the inner timeout function', () => {
-    sleep(1000);
+    void sleep(1000);
 
     expect(globalThis.setTimeout).toHaveBeenCalledTimes(1);
   });

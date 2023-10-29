@@ -1,1 +1,1 @@
-export { randomBool } from './randomBool';
+export { randomBool } from './randomBool.ts';

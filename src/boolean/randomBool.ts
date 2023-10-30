@@ -1,4 +1,4 @@
-import { randomInt } from '../number.ts';
+import { randomInt } from '../number/randomInt.ts';
 
 /**
  * Generate a random boolean.

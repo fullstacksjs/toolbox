@@ -1,4 +1,5 @@
 export * from './array/index.ts';
+export * from './boolean/index.ts';
 export * from './error/index.ts';
 export * from './function/index.ts';
 export * from './guards/index.ts';

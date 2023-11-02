@@ -37,8 +37,8 @@ debounced(2); // ignored
 debounced(3); // ignored
 
 setTimeout(function () {
-  throttled(4); // 4
-  throttled(5); // ignored
+  debounced(4); // 4
+  debounced(5); // ignored
 }, 1000);
 
 const debounced = debounce({ delay: 1000, immediate: true }, log);
@@ -48,7 +48,7 @@ debounced(2); // ignored
 debounced(3); // ignored
 
 setTimeout(function () {
-  throttled(4); // 4
-  throttled(5); // ignored
+  debounced(4); // 4
+  debounced(5); // ignored
 }, 1000);
 ```

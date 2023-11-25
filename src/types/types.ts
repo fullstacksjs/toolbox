@@ -88,3 +88,17 @@ export type Nullable<T = never> = T | null | undefined;
 export type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
 
 export type ObjectType = Record<number | string | symbol, any>;
+
+export type DeepMerge<
+  T extends ObjectType,
+  U extends ObjectType,
+  Composer extends ObjectType = {},
+> = T | U extends ObjectType
+  ? {
+      [P in keyof T | keyof U]: P extends keyof Composer
+        ? Exclude<Composer[P], undefined>
+        : DeepMerge<T[P], U[P], Composer>;
+    }
+  : unknown extends U
+  ? T
+  : U;

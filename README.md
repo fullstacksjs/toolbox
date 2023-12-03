@@ -85,7 +85,7 @@ Before submitting a pull request, please make sure the following is done:
 
 ## Code of Conduct
 
-[FullstacksJS Rules Page](https://fullstacksjs.com/rules)
+[FullstacksJS Rules Page](https://fullstacksjs.com/en/rules)
 
 ## Documentation
 

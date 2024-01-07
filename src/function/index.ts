@@ -5,3 +5,4 @@ export { callAll } from './callAll.ts';
 export { debounce } from './debounce.ts';
 export { throttle } from './throttle.ts';
 export { tryOr } from './tryOr.ts';
+export { getTypeOf } from './getTypeOf.ts';

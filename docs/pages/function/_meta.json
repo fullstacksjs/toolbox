@@ -1,6 +1,7 @@
 {
   "call-all": "callAll",
   "debounce": "debounce",
+  "get-type-of": "getTypeOf",
   "noop": "noop",
   "not": "not",
   "sleep": "sleep",

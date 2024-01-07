@@ -1,0 +1,25 @@
+# getTypeOf
+
+Returns the subtype of the objects and the primitives.
+
+### Import
+
+```typescript copy
+import { getTypeOf } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function getTypeOf(value: unknown): string {}
+```
+
+### Examples
+
+```typescript copy
+getTypeOf(null); // null
+getTypeOf({}); // object
+getTypeOf('foo'); // string
+getTypeOf(new Map()); // map
+getTypeOf([1, 2]); // array
+```

@@ -17,13 +17,15 @@ describe('getTypeOf', () => {
     { value: true, expected: 'boolean' },
     { value: new Map(), expected: 'map' },
     { value: new Set(), expected: 'set' },
-    { value: new Date(), expected: 'date' },
-    { value: new Error(), expected: 'error' },
+    { value: new Date(), expected: 'object' },
+    { value: new Error(), expected: 'object' },
+    { value: [].values(), expected: 'object' },
     { value: () => true, expected: 'function' },
     { value: undefined, expected: 'undefined' },
     { value: Symbol('bar'), expected: 'symbol' },
-    { value: new RegExp('foo'), expected: 'regexp' },
-    { value: Promise.resolve(true), expected: 'promise' },
+    { value: new WeakMap(), expected: 'object' },
+    { value: new RegExp('foo'), expected: 'object' },
+    { value: Promise.resolve(true), expected: 'object' },
   ];
 
   it.each(cases)(

@@ -23,8 +23,9 @@ describe('getTypeOf', () => {
     { value: () => true, expected: 'function' },
     { value: undefined, expected: 'undefined' },
     { value: Symbol('bar'), expected: 'symbol' },
-    { value: new WeakMap(), expected: 'object' },
-    { value: new RegExp('foo'), expected: 'object' },
+    { value: new WeakMap(), expected: 'weakmap' },
+    { value: new WeakSet(), expected: 'weakset' },
+    { value: new RegExp('foo'), expected: 'regexp' },
     { value: Promise.resolve(true), expected: 'object' },
   ];
 

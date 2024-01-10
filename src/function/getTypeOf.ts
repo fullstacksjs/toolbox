@@ -3,11 +3,14 @@ const types = [
   'set',
   'null',
   'array',
+  'regexp',
   'bigint',
   'number',
   'object',
   'string',
   'symbol',
+  'weakset',
+  'weakmap',
   'boolean',
   'function',
   'undefined',
@@ -33,11 +36,12 @@ type TypeNames = (typeof types)[number];
  * getTypeOf(new Date())              // 'object'
  * getTypeOf(new Error())             // 'object'
  * getTypeOf([].values())             // 'object'
- * getTypeOf(new WeakMap())           // 'object'
- * getTypeOf(new RegExp('foo'))       // 'object'
  * getTypeOf(Promise.resolve(true))   // 'object'
+ * getTypeOf(new RegExp('foo'))       // 'regexp'
  * getTypeOf(10n)                     // 'bigint'
  * getTypeOf('foo')                   // 'string'
+ * getTypeOf(new WeakMap())           // 'weakmap'
+ * getTypeOf(new WeakSet())           // 'weakset'
  * getTypeOf(true)                    // 'boolean'
  * getTypeOf(() => true)              // 'function'
  * getTypeOf(undefined)               // 'undefined'

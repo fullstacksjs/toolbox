@@ -1,6 +1,6 @@
 # getTypeOf
 
-Returns the subtype of the objects and the primitives.
+Returns common data structure and primitive types.
 
 ### Import
 
@@ -17,9 +17,22 @@ function getTypeOf(value: unknown): string {}
 ### Examples
 
 ```typescript copy
-getTypeOf(null); // null
-getTypeOf({}); // object
-getTypeOf('foo'); // string
-getTypeOf(new Map()); // map
-getTypeOf([1, 2]); // array
+getTypeOf(new Map())               // 'map'
+getTypeOf(new Set())               // 'set'
+getTypeOf(null)                    // 'null'
+getTypeOf([])                      // 'array'
+getTypeOf(Symbol('bar'))           // 'symbol'
+getTypeOf(1)                       // 'number'
+getTypeOf({})                      // 'object'
+getTypeOf(new Date())              // 'object'
+getTypeOf(new Error())             // 'object'
+getTypeOf([].values())             // 'object'
+getTypeOf(new WeakMap())           // 'object'
+getTypeOf(new RegExp('foo'))       // 'object'
+getTypeOf(Promise.resolve(true))   // 'object'
+getTypeOf(10n)                     // 'bigint'
+getTypeOf('foo')                   // 'string'
+getTypeOf(true)                    // 'boolean'
+getTypeOf(() => true)              // 'function'
+getTypeOf(undefined)               // 'undefined'
 ```

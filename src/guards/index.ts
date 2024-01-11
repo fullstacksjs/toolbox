@@ -8,3 +8,4 @@ export { isString } from './isString.ts';
 export { isTruthy } from './isTruthy.ts';
 export { isPromise } from './isPromise.ts';
 export { isMap } from './isMap.ts';
+export { isSet } from './isSet.ts';

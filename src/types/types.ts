@@ -90,3 +90,18 @@ export type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
 export type ObjectType = Record<number | string | symbol, unknown>;
 
 export type NullishCoalescing<T, U> = U extends null | undefined ? T : U;
+
+export type Merge<T, U> = T | U extends ObjectType
+  ? {
+      [P in keyof T | keyof U]: Merge<
+        P extends keyof T ? T[P] : undefined,
+        P extends keyof U ? U[P] : undefined
+      >;
+    }
+  : T | U extends [...infer ArrayValues]
+  ? ArrayValues[number][]
+  : T | U extends Set<infer SetValues>
+  ? Set<SetValues>
+  : T | U extends Map<infer MapKeys, infer MapValues>
+  ? Map<MapKeys, MapValues>
+  : NullishCoalescing<T, U>;

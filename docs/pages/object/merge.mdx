@@ -1,0 +1,69 @@
+# merge
+
+This function `recursively` merges two objects and accepts a `composer` function
+to modify values based on a `path` or `key`.For array, map, and set, it
+concatenates values together, other values are overwritten by the second object.
+
+### Import
+
+```typescript copy
+import { merge } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function merge<T extends ObjectType, U extends ObjectType>(
+  obj1: T,
+  obj2: U,
+  composer: Composer,
+): unknown;
+function merge<T extends ObjectType, U extends ObjectType>(
+  obj1: T,
+  obj2: U,
+): Merge<T, U>;
+function merge<T extends ObjectType, U extends ObjectType>(
+  obj1: T,
+  obj2: U,
+  composer: Composer = defaultComposer,
+): Merge<T, U>;
+```
+
+### Examples
+
+```typescript copy
+const obj1 = {
+  a: 1,
+  b: {
+    c: [1, 2, 3],
+    b: {
+      b: {
+        foo: false,
+      },
+    },
+  },
+};
+
+const obj2 = {
+  b: {
+    c: [4, 5, 6],
+    d: 'bar',
+    b: {
+      b: {
+        bar: [true, 1, 2, 3],
+      },
+    },
+  },
+  f: 2,
+};
+
+const merged = merge(obj1, obj2);
+// { a: 1, b: { c: [ 1, 2, 3, 4, 5, 6 ], b: { b: { foo: false, bar: [ true, 1, 2, 3 ] } }, d: 'bar' }, f: 2 }
+
+const mergedWithComposer = merge(obj1, obj2, args => {
+  if (args.path === 'obj.b.b.b') return 'foo';
+
+  return merge.defaultComposer(args);
+});
+// { a: 1, b: { c: [ 1, 2, 3, 4, 5, 6 ], b: { b: 'foo' }, d: 'bar' }, f: 2 };
+```

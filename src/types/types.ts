@@ -88,3 +88,5 @@ export type Nullable<T = never> = T | null | undefined;
 export type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
 
 export type ObjectType = Record<number | string | symbol, unknown>;
+
+export type NullishCoalescing<T, U> = U extends null | undefined ? T : U;

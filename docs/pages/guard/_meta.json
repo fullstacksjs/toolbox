@@ -2,6 +2,7 @@
   "is-boolean": "isBoolean",
   "is-function": "isFunction",
   "is-iterable": "isIterable",
+  "is-map": "isMap",
   "is-not-null": "isNotNull",
   "is-null": "isNull",
   "is-object": "isObject",

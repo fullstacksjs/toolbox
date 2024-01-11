@@ -10,4 +10,4 @@ export * from './object/index.ts';
 export * from './regex/index.ts';
 export * from './runtime/index.ts';
 export * from './string/index.ts';
-export * from './types/types.ts';
+export * from './types/index.ts';

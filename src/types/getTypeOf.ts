@@ -1,6 +1,7 @@
 const types = [
   'map',
   'set',
+  'date',
   'null',
   'array',
   'regexp',
@@ -28,12 +29,12 @@ type TypeNames = (typeof types)[number];
  *
  * getTypeOf(new Map())               // 'map'
  * getTypeOf(new Set())               // 'set'
+ * getTypeOf(new Date())              // 'date'
  * getTypeOf(null)                    // 'null'
  * getTypeOf([])                      // 'array'
  * getTypeOf(Symbol('bar'))           // 'symbol'
  * getTypeOf(1)                       // 'number'
  * getTypeOf({})                      // 'object'
- * getTypeOf(new Date())              // 'object'
  * getTypeOf(new Error())             // 'object'
  * getTypeOf([].values())             // 'object'
  * getTypeOf(Promise.resolve(true))   // 'object'

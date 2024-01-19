@@ -17,7 +17,7 @@ describe('getTypeOf', () => {
     { value: true, expected: 'boolean' },
     { value: new Map(), expected: 'map' },
     { value: new Set(), expected: 'set' },
-    { value: new Date(), expected: 'object' },
+    { value: new Date(), expected: 'date' },
     { value: new Error(), expected: 'object' },
     { value: [].values(), expected: 'object' },
     { value: () => true, expected: 'function' },

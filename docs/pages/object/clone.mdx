@@ -1,0 +1,55 @@
+# clone
+
+Returns a deep clone of `Object`, `Array`, `Map`, `Set` and `Date`.
+
+### Import
+
+```typescript copy
+import { clone } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function clone<T>(value: T): T;
+```
+
+### Examples
+
+```typescript copy
+const object = {
+  a: 1,
+  b: {
+    c: 2,
+    d: {
+      e: 3,
+    },
+  },
+};
+
+const clonedObject = clone(object);
+console.log(object === clonedObject); // false
+console.log(object.b.d === clonedObject.b.d); // false
+
+const date = new Date();
+const clonedDate = clone(date);
+console.log(date === clonedDate); // false
+
+const array = ['a', ['b', ['c', ['d']]]];
+const clonedArray = clone(array);
+console.log(array === clonedArray); // false
+console.log(array[1][1][1] === clonedArray[1][1][1]); // false
+
+const mapCollection = new Map([
+  ['a', 1],
+  ['b', 2],
+  ['c', { d: { e: { f: 1 } } }],
+]);
+const clonedMapCollection = clone(mapCollection);
+console.log(mapCollection === clonedMapCollection); // false
+console.log(mapCollection.get('c').d.e === clonedMapCollection.get('c').d.e); // false
+
+const setCollection = new Set([1, 2, 3, 4]);
+const clonedSetCollection = clone(setCollection);
+console.log(setCollection === clonedSetCollection); // false
+```

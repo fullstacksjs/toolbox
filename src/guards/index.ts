@@ -9,3 +9,4 @@ export { isTruthy } from './isTruthy.ts';
 export { isPromise } from './isPromise.ts';
 export { isMap } from './isMap.ts';
 export { isSet } from './isSet.ts';
+export { isPlainObject } from './isPlainObject.ts';

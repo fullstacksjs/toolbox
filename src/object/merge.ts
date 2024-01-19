@@ -1,4 +1,5 @@
-import { isObject, isMap, isSet } from '../guards';
+import { isMap, isSet } from '../guards';
+import { isPlainObject } from '../guards/isPlainObject';
 import type { Merge, ObjectType } from '../types/types';
 
 interface ComposerArguments {
@@ -19,7 +20,7 @@ function defaultComposer({
   path,
   extract,
 }: ComposerArguments): unknown {
-  if (isObject(v1) && isObject(v2)) return extract(v1, v2, path);
+  if (isPlainObject(v1) && isPlainObject(v2)) return extract(v1, v2, path);
   else if (Array.isArray(v1) && Array.isArray(v2)) return [...v1, ...v2];
   else if (isSet(v1) && isSet(v2)) return new Set([...v1, ...v2]);
   else if (isMap(v1) && isMap(v2)) return new Map([...v1, ...v2]);

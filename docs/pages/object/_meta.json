@@ -1,4 +1,5 @@
 {
+  "clone": "clone",
   "merge": "merge",
   "prune-key-when": "pruneKeyWhen",
   "prune-value-when": "pruneValueWhen"

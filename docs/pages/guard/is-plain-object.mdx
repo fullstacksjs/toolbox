@@ -1,0 +1,37 @@
+# isPlainObject
+
+Chec whether the given value was created by the Object constructor, or `Object.create(null)`.
+
+### Import
+
+```typescript copy
+import { isPlainObject } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function isPlainObject(x: unknown): x is ObjectType;
+```
+
+### Examples
+
+```typescript copy
+isPlainObject('')                // false
+isPlainObject('hello world')     // false
+isPlainObject(null)              // false
+isPlainObject(true)              // false
+isPlainObject(undefined)         // false
+isPlainObject(NaN)               // false
+isPlainObject(0)                 // false
+isPlainObject(isPlainObject)     // false
+isPlainObject(false)             // false
+isPlainObject([])                // false
+isPlainObject([2])               // false
+isPlainObject(new Map())         // false
+isPlainObject(new Set())         // false
+isPlainObject(new RegExp('foo')) // false
+isPlainObject({})                // true
+isPlainObject({ a: 2 })          // true
+isPlainObject({ 2: 'a' })        // true
+```

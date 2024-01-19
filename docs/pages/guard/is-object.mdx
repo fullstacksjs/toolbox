@@ -1,6 +1,6 @@
 # isObject
 
-Check whether the given value is an object
+Check whether the given value is an object.
 
 ### Import
 
@@ -17,21 +17,21 @@ function isObject(x: unknown): x is ObjectType;
 ### Examples
 
 ```typescript copy
-isObject('')                  // false
-isObject('hello world')       // false
-isObject(null)                // false
-isObject(true)                // false
-isObject(undefined)           // false
-isObject(NaN)                 // false
-isObject(0)                   // false
-isObject(isObject)            // false
-isObject(false)               // false
-isObject([])                  // false
-isObject([2])                 // false
-isObject(new Map())           // false
-isObject(new Set())           // false
-isObject(new RegExp('foo'))   // false
-isObject({})                  // true
-isObject({ a: 2 })            // true
-isObject({ 2: 'a' })          // true
+isObject('')                // false
+isObject('hello world')     // false
+isObject(null)              // false
+isObject(true)              // false
+isObject(undefined)         // false
+isObject(NaN)               // false
+isObject(0)                 // false
+isObject(isObject)          // false
+isObject(false)             // false
+isObject([])                // false
+isObject([2])               // false
+isObject(new Map())         // true
+isObject(new Set())         // true
+isObject(new RegExp('foo')) // true
+isObject({})                // true
+isObject({ a: 2 })          // true
+isObject({ 2: 'a' })        // true
 ```

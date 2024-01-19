@@ -1,6 +1,6 @@
-import { isObject } from './isObject.ts';
+import { isPlainObject } from './isPlainObject.ts';
 
-describe('isObject', () => {
+describe('isPlainObject', () => {
   const cases = [
     { x: '', expected: false },
     { x: 'hello world', expected: false },
@@ -9,13 +9,13 @@ describe('isObject', () => {
     { x: undefined, expected: false },
     { x: NaN, expected: false },
     { x: 0, expected: false },
-    { x: isObject, expected: false },
+    { x: isPlainObject, expected: false },
     { x: false, expected: false },
     { x: [], expected: false },
     { x: [2], expected: false },
-    { x: new Map(), expected: true },
-    { x: new Set(), expected: true },
-    { x: new RegExp('foo'), expected: true },
+    { x: new Map(), expected: false },
+    { x: new Set(), expected: false },
+    { x: new RegExp('foo'), expected: false },
     { x: {}, expected: true },
     { x: { a: 2 }, expected: true },
     { x: { 2: 'a' }, expected: true },
@@ -24,7 +24,7 @@ describe('isObject', () => {
   it.each(cases)(
     'should return $expected for $x as input',
     ({ x, expected }) => {
-      expect(isObject(x)).toBe(expected);
+      expect(isPlainObject(x)).toBe(expected);
     },
   );
 });

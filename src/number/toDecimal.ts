@@ -1,3 +1,4 @@
+import type { Nullable } from '../types/types.ts';
 import { fallbackNumber } from './fallbackNumber.ts';
 
 /**
@@ -16,6 +17,6 @@ import { fallbackNumber } from './fallbackNumber.ts';
  * toInteger('S', 10)        // 10
  * toInteger('S', undefined) // NaN
  */
-export function toDecimal(s: string, fallback: number = NaN): number {
-  return fallbackNumber(Number.parseInt(s, 10), fallback);
+export function toDecimal(s: Nullable<string>, fallback: number = NaN): number {
+  return fallbackNumber(Number.parseInt(s!, 10), fallback);
 }

@@ -13,7 +13,7 @@ describe('toDecimal', () => {
     expect(toDecimal('S')).toBeNaN();
   });
 
-  it('should return undefined if input is not a number and fallback is undefined', () => {
+  it('should return fallback if input is not a number', () => {
     expect(toDecimal('S', 10)).toBe(10);
   });
 

@@ -119,3 +119,9 @@ export type Replace<T, P, V> = [T] extends [never]
         ? V
         : T[Key];
     };
+
+export type RemoveDeepReadonly<T> = keyof T extends never
+  ? T
+  : {
+      -readonly [P in keyof T]: RemoveDeepReadonly<T[P]>;
+    };

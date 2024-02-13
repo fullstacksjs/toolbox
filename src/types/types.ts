@@ -107,3 +107,15 @@ export type Merge<T, U> = T | U extends ObjectType
   : NullishCoalescing<T, U>;
 
 export type AsyncVoidFn = () => Promise<void>;
+
+export type Replace<T, P, V> = [T] extends [never]
+  ? T
+  : {
+      [Key in keyof T]: P extends `${infer Head}.${infer Tail}`
+        ? Head extends Key
+          ? Replace<T[Key], Tail, V>
+          : T[Key]
+        : P extends Key
+        ? V
+        : T[Key];
+    };

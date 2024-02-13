@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/padding-line-between-statements */
 
-import type { Nullable } from '../types/types.ts';
+import type { Nullable } from '../types';
 
 /**
  * Safely pass a nullable value to composition of functions

@@ -1,4 +1,4 @@
-import type { Nullable } from '../types/types.js';
+import type { Nullable } from '../types';
 
 /**
  * Asserts a value is not null or undefined

@@ -1,5 +1,5 @@
 import { isMap, isSet, isPlainObject } from '../guards';
-import type { Merge, ObjectType } from '../types/types';
+import type { Merge, ObjectType } from '../types';
 
 interface ComposerArguments {
   v1: unknown;

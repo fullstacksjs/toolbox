@@ -1,4 +1,4 @@
-import type { ObjectType } from '../types/types';
+import type { ObjectType } from '../types';
 
 function isObject(o: unknown): o is ObjectType {
   return Object.prototype.toString.call(o) === '[object Object]';

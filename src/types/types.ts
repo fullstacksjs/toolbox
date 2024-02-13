@@ -105,3 +105,15 @@ export type Merge<T, U> = T | U extends ObjectType
   : T | U extends Map<infer MapKeys, infer MapValues>
   ? Map<MapKeys, MapValues>
   : NullishCoalescing<T, U>;
+
+export type Replace<T, P, V> = [T] extends [never]
+  ? T
+  : {
+      [Key in keyof T]: P extends `${infer Head}.${infer Tail}`
+        ? Head extends Key
+          ? Replace<T[Key], Tail, V>
+          : T[Key]
+        : P extends Key
+        ? V
+        : T[Key];
+    };

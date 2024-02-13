@@ -1,5 +1,5 @@
 import { bind } from './bind.ts';
-import type { Nullable } from '../types/types.ts';
+import type { Nullable } from '../types';
 
 const getNull = () => null;
 const fromNullToNum = (_n: null) => 100;

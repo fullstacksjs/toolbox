@@ -1,4 +1,4 @@
-import type { Nullable } from '../types/types';
+import type { Nullable } from '../types';
 
 /**
  * Given a number and fallback value, returns the value when it is finite otherwise the fallback value.

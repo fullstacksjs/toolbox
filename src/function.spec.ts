@@ -1,6 +1,15 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import {
+  Mock,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 
-import { callAll, noop, not, sleep } from './function';
+import { callAll, noop, not, sleep, bindArgs } from './function';
 
 describe('function', () => {
   describe('noop', () => {
@@ -71,6 +80,30 @@ describe('function', () => {
       vi.advanceTimersByTime(1000);
 
       expect(v).resolves.toBe(undefined);
+    });
+  });
+
+  describe('bindArgs', () => {
+    const mockedFn = vi.fn(
+      (prefix: 'prefix', message: 'message', count: 1 | 2): 'fail' | 'ok' => {
+        [prefix, message, count].join('-');
+        return count === 1 ? 'ok' : 'fail';
+      },
+    );
+
+    let boundFn: (...args: any) => any;
+
+    beforeEach(() => {
+      boundFn = bindArgs(mockedFn as any, 'prefix');
+    });
+
+    it('should return bound function', () => {
+      expect(boundFn).toBeTypeOf('function');
+    });
+
+    it('should bind given function with an rest args', () => {
+      expect(boundFn('message', 1)).toEqual('ok');
+      expect(boundFn('message', 2)).toEqual('fail');
     });
   });
 });

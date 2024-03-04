@@ -51,3 +51,18 @@ export const sleep = (ms: number): Promise<void> =>
   new Promise<void>(resolve => {
     setTimeout(() => resolve(), ms);
   });
+
+/**
+ * @param {Function} target function to bind to itself and arguments
+ * @param {...Partial<args>} part_args the arguments should be bind to target
+ * @return {Function} bounded target with arguments
+ */
+export const bindArgs = <
+  TFn extends (...args: any) => any,
+  TArgs extends Parameters<TFn> = Parameters<TFn>,
+>(
+  fn: TFn,
+  ...args: [...Partial<[...TArgs]>]
+): ((...args: any) => ReturnType<TFn>) => {
+  return fn.bind(fn, ...(args as unknown[]));
+};

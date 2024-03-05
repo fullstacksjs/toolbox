@@ -1,5 +1,6 @@
 {
   "is-boolean": "isBoolean",
+  "is-empty-object": "isEmptyObject",
   "is-function": "isFunction",
   "is-iterable": "isIterable",
   "is-map": "isMap",

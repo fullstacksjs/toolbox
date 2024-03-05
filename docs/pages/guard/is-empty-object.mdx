@@ -1,0 +1,33 @@
+# isEmptyObject
+
+Check whether the given value is an empty object or not
+
+### Import
+
+```typescript copy
+import { isEmptyObject } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function isEmptyObject(x: unknown): x is boolean {};
+```
+
+### Examples
+
+```typescript copy
+isEmptyObject({})                    // true
+isEmptyObject([])                    // false
+isEmptyObject(10)                    // false
+isEmptyObject(true)                  // false
+isEmptyObject(null)                  // false
+isEmptyObject("bar")                 // false
+isEmptyObject({a: 1})                // false
+isEmptyObject(() => {})              // false
+isEmptyObject(new Map())             // false
+isEmptyObject(new Set())             // false
+isEmptyObject([1, "foo"])            // false
+isEmptyObject(new Set([1, true]))    // false
+isEmptyObject(new Map([["a", 1]]))   // false
+```

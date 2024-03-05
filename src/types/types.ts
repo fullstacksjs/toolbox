@@ -105,3 +105,5 @@ export type Merge<T, U> = T | U extends ObjectType
   : T | U extends Map<infer MapKeys, infer MapValues>
   ? Map<MapKeys, MapValues>
   : NullishCoalescing<T, U>;
+
+export type AsyncVoidFn = () => Promise<void>;

@@ -1,0 +1,44 @@
+# replace
+
+This function replaces a value in an `object` or `array` at the given `path`. If
+you intend to change a value in an array, it's better to `explicitly` specify
+the data type or `pass` the value explicitly to the function to avoid any data
+`type` issues.
+
+
+### Import
+
+```typescript copy
+import { replace } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function replace<
+  const T extends ObjectType | unknown[] | readonly unknown[],
+  P extends string,
+  V,
+>(obj: T, path: P, value: V): RemoveDeepReadonly<Replace<T, P, V>>;
+```
+
+### Examples
+
+```typescript copy
+const array = [1, 2, [3, ['x', 'bar', 'baz'], 4], 5, 6] as const;
+const replacedArray = replace(array, '2.1.0', 'foo');
+// [1, 2, [3, ['foo', 'bar', 'baz'], 4], 5, 6]
+
+const object = replace(
+  {
+    a: {
+      a: {
+        b: [1, 2, 3],
+      },
+    },
+  },
+  'a.a.b.2',
+  1,
+);
+// { a: { a: { b: [1, 2, 1] } } }
+```

@@ -1,4 +1,4 @@
-import type { Nullable } from '../types/types.ts';
+import type { Nullable } from '../types';
 
 /**
  * Returns the provided fallback value if the given value is null, undefined, or an empty string; otherwise, it returns the original value.

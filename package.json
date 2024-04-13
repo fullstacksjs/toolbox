@@ -46,32 +46,31 @@
     "prepare": ".husky/prepare"
   },
   "devDependencies": {
-    "@commitlint/cli": "18.2.0",
-    "@commitlint/config-conventional": "18.1.0",
-    "@frontendmonster/builder": "2.2.0",
-    "@fullstacksjs/eslint-config": "10.4.0",
+    "@commitlint/cli": "19.2.1",
+    "@commitlint/config-conventional": "19.1.0",
+    "@fullstacksjs/eslint-config": "10.11.1",
     "@fullstacksjs/tsconfig": "1.1.0",
-    "@semantic-release/github": "9.2.1",
-    "@semantic-release/npm": "11.0.0",
-    "@semantic-release/release-notes-generator": "12.0.0",
-    "@types/node": "20.8.9",
-    "@vitest/coverage-v8": "0.34.6",
+    "@semantic-release/github": "10.0.3",
+    "@semantic-release/npm": "12.0.0",
+    "@semantic-release/release-notes-generator": "13.0.0",
+    "@types/node": "20.12.7",
+    "@vitest/coverage-v8": "1.5.0",
     "commitizen": "4.3.0",
-    "cspell": "7.3.8",
+    "cspell": "8.7.0",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.52.0",
-    "husky": "8.0.3",
-    "lint-staged": "15.0.2",
+    "eslint": "8.57.0",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.2",
     "npm-run-all": "4.1.5",
     "pinst": "3.0.0",
     "pkg-ok": "3.0.0",
-    "prettier": "3.0.3",
-    "semantic-release": "22.0.5",
+    "prettier": "3.2.5",
+    "semantic-release": "23.0.8",
     "shx": "0.3.4",
     "standard-version": "9.5.0",
-    "tsup": "7.2.0",
-    "typescript": "5.2.2",
-    "vitest": "0.34.6"
+    "tsup": "8.0.2",
+    "typescript": "5.4.5",
+    "vitest": "1.5.0"
   },
   "config": {
     "commitizen": {
@@ -82,7 +81,7 @@
     "node": ">=16"
   },
   "volta": {
-    "node": "20.9.0",
-    "npm": "10.2.1"
+    "node": "20.12.1",
+    "npm": "10.5.2"
   }
 }

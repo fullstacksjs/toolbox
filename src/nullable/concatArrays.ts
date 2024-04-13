@@ -21,7 +21,7 @@ export function concatArrays<T extends any[]>(
   let result: unknown[] = [];
 
   for (let i = 0; i < mas.length; i++) {
-    if (mas[i]) result = result.concat(mas[i]!);
+    if (mas[i]) result = result.concat(mas[i]);
   }
 
   return result;

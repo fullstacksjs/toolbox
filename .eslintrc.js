@@ -6,6 +6,7 @@ module.exports = init({
     typescript: {
       parserProject: './tsconfig.eslint.json',
     },
+    prettier: true,
     test: true,
   },
   overrides: [
@@ -29,6 +30,7 @@ module.exports = init({
         'fp/no-loops': 'off',
         'no-sparse-arrays': 'off',
         '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/prefer-promise-reject-errors': 'off',
       },
     },
   ],

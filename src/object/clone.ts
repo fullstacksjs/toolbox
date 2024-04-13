@@ -1,5 +1,5 @@
-import { getTypeOf } from '../types';
-import { isPlainObject } from '../guards';
+import { getTypeOf } from '../types/getTypeOf.js';
+import { isPlainObject } from '../guards/isPlainObject.js';
 import type { ObjectType } from '../types/types';
 
 type HelperTags = keyof typeof cloneFns;

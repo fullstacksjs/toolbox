@@ -1,4 +1,4 @@
-import { getTypeOf } from '../types';
+import { getTypeOf } from '../types/getTypeOf.js';
 
 /**
  * Check whether the given value is a Map or not.

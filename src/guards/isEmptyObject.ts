@@ -1,4 +1,4 @@
-import { isPlainObject } from './isPlainObject';
+import { isPlainObject } from './isPlainObject.js';
 
 /**
  * Check whether the given value is an empty object or not

@@ -43,18 +43,18 @@ type FilterNullishReadonlyTuple<T extends readonly unknown[]> =
   T extends readonly []
     ? []
     : T extends readonly [infer H, ...infer R]
-    ? H extends null | undefined
-      ? FilterNullishReadonlyTuple<R>
-      : readonly [H, ...FilterNullishReadonlyTuple<R>]
-    : readonly [NonNullable<T[0]>];
+      ? H extends null | undefined
+        ? FilterNullishReadonlyTuple<R>
+        : readonly [H, ...FilterNullishReadonlyTuple<R>]
+      : readonly [NonNullable<T[0]>];
 
 type FilterNullishTuple<T extends unknown[]> = T extends []
   ? []
   : T extends [infer H, ...infer R]
-  ? H extends null | undefined
-    ? FilterNullishTuple<R>
-    : [H, ...FilterNullishTuple<R>]
-  : [NonNullable<T[0]>];
+    ? H extends null | undefined
+      ? FilterNullishTuple<R>
+      : [H, ...FilterNullishTuple<R>]
+    : [NonNullable<T[0]>];
 
 type FilterNullishArray<T extends unknown[]> = T[number] extends infer R
   ? NonNullable<R>[]
@@ -66,8 +66,8 @@ export type FilterNullish<T extends unknown[] | readonly unknown[]> =
       ? FilterNullishTuple<T>
       : FilterNullishArray<T>
     : T extends (number extends T['length'] ? readonly [] : readonly any[])
-    ? FilterNullishReadonlyTuple<T>
-    : FilterNullishReadonlyArray<T>;
+      ? FilterNullishReadonlyTuple<T>
+      : FilterNullishReadonlyArray<T>;
 
 type TupleOf<T, N extends number, R extends unknown[]> = R['length'] extends N
   ? R
@@ -99,12 +99,12 @@ export type Merge<T, U> = T | U extends ObjectType
       >;
     }
   : T | U extends [...infer ArrayValues]
-  ? ArrayValues[number][]
-  : T | U extends Set<infer SetValues>
-  ? Set<SetValues>
-  : T | U extends Map<infer MapKeys, infer MapValues>
-  ? Map<MapKeys, MapValues>
-  : NullishCoalescing<T, U>;
+    ? ArrayValues[number][]
+    : T | U extends Set<infer SetValues>
+      ? Set<SetValues>
+      : T | U extends Map<infer MapKeys, infer MapValues>
+        ? Map<MapKeys, MapValues>
+        : NullishCoalescing<T, U>;
 
 export type AsyncVoidFn = () => Promise<void>;
 
@@ -116,8 +116,8 @@ export type Replace<T, P, V> = [T] extends [never]
           ? Replace<T[Key], Tail, V>
           : T[Key]
         : P extends Key
-        ? V
-        : T[Key];
+          ? V
+          : T[Key];
     };
 
 export type RemoveDeepReadonly<T> = keyof T extends never

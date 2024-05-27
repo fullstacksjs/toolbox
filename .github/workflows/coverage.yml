@@ -12,7 +12,7 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v3
         with:
@@ -31,7 +31,7 @@ jobs:
           echo "coverage=$COV" >> $GITHUB_OUTPUT
 
       - name: Checkout assets
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: 'assets'
 
@@ -50,5 +50,3 @@ jobs:
           skip_checkout: true
           commit_options: '--no-verify'
           push_options: '--no-verify'
-
-

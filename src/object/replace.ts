@@ -1,4 +1,4 @@
-import { clone } from './clone';
+import { clone } from './clone.js';
 import type { ObjectType, RemoveDeepReadonly, Replace } from '../types';
 
 /**

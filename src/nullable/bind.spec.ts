@@ -31,6 +31,10 @@ describe('bind', () => {
     expect(bind(null, f, g, h, j, k)).eq(null);
   });
 
+  it('should return undefined if first arg is undefined', () => {
+    expect(bind(undefined, f, g, h, j, k)).eq(undefined);
+  });
+
   it('should return null if any composed function returned null', () => {
     expect(bind('normal', f, g, getNull, h, j)).eq(null);
   });

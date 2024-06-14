@@ -11,13 +11,14 @@ import { bind } from '@fullstacksjs/toolbox';
 ### Signature
 
 ```typescript copy
-function bind<T, U>(x: Nullable<T>, ...fns: Function[]): U {}
+function bind<T, U>(x: Nullable<T>, ...fns: Function[]): Nullable<U> {}
 ```
 
 ### Examples
 
 ```typescript copy
-bind(null,f)           // null
+bind(undefined, f)     // undefined
+bind(null, f)          // null
 bind(1, f)             // f(1)
 bind(2, f, g, h)       // h(g(f(2)))
 bind(null, f, g, h, j) // null

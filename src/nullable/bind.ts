@@ -12,12 +12,13 @@ import type { Nullable } from '../types';
  *
  * @example
  *
+ * bind(undefined ,f)     // undefined
  * bind(null,f)           // null
  * bind(1, f)             // f(1)
  * bind(2, f, g, h)       // h(g(f(2)))
  * bind(null, f, g, h, j) // null
  */
-export function bind(x: null, ...fns: any[]): null;
+export function bind(x: Nullable, ...fns: any[]): Nullable;
 export function bind<A, B>(
   x: Nullable<A>,
   f: (x: A) => Nullable<B>,
@@ -58,5 +59,5 @@ export function bind<A, B, C, D, E, F, G>(
   l: (x: F) => Nullable<G>,
 ): Nullable<G>;
 export function bind<A>(x: Nullable<A>, ...fns: any[]) {
-  return fns.reduce((v, f) => (v === null ? null : f(v)), x);
+  return fns.reduce((v, f) => (v == null ? v : f(v)), x);
 }

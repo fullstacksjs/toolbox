@@ -14,6 +14,6 @@
  * isEmpty([, null])      // false
  * isEmpty([, undefined]) // false
  */
-export function isEmpty(x: unknown[]): boolean {
+export function isEmpty(x: unknown[] | readonly unknown[]): boolean {
   return x.length === 0;
 }

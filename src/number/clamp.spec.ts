@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { clamp } from './clamp.ts';
+import {describe, expect, it} from 'vitest';
+import {clamp} from './clamp.ts';
 
 describe('clamp', () => {
   it('should clamp if value less than min', () => {

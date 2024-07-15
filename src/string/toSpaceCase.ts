@@ -1,4 +1,4 @@
-import { changeCase } from '../internals/changeCase.ts';
+import {changeCase} from '../internals/changeCase.ts';
 
 /**
  * Separates words by space and makes them lowercase.
@@ -26,5 +26,5 @@ import { changeCase } from '../internals/changeCase.ts';
  * toSpaceCase('ThisIs-fullstacksjs radio__and--I-loveCoding') // 'this is fullstacksjs radio and i love coding'
  */
 export function toSpaceCase(str: string): string {
-  return changeCase(str, { delimiter: ' ' });
+  return changeCase(str, {delimiter: ' '});
 }

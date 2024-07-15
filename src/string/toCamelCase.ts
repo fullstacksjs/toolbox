@@ -1,5 +1,5 @@
-import { capitalize } from '../internals/capitalize.ts';
-import { changeCase } from '../internals/changeCase.ts';
+import {capitalize} from '../internals/capitalize.ts';
+import {changeCase} from '../internals/changeCase.ts';
 
 export function camelCaseTransform(input: string, index: number) {
   return index === 0 ? input.toLowerCase() : capitalize(input);
@@ -28,5 +28,5 @@ export function camelCaseTransform(input: string, index: number) {
  * toCamelCase('ThisIs-fullstacksjs radio__and--I-loveCoding') // 'thisIsFullstacksjsRadioAndILoveCoding'
  */
 export function toCamelCase(str: string): string {
-  return changeCase(str, { map: camelCaseTransform, delimiter: '' });
+  return changeCase(str, {map: camelCaseTransform, delimiter: ''});
 }

@@ -1,5 +1,5 @@
-import { clamp } from './clamp.ts';
-import { divide } from './divide.ts';
+import {clamp} from './clamp.ts';
+import {divide} from './divide.ts';
 
 /**
  * Returns percentage value of a number from a maximum number

@@ -1,8 +1,8 @@
-import { vi } from 'vitest';
+import {vi} from 'vitest';
 
 export function mockNodeGlobal() {
   vi.spyOn(globalThis.process, 'versions', 'get').mockImplementationOnce(() => {
-    return { ...globalThis.process.versions, node: 'mocked' };
+    return {...globalThis.process.versions, node: 'mocked'};
   });
 }
 

@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest';
+import {describe, expect, it} from 'vitest';
 
-import { isInRange } from './isInRange.ts';
+import {isInRange} from './isInRange.ts';
 
 describe('isInRange', () => {
   it('should return false when value is greater than max', () => {

@@ -1,6 +1,6 @@
-import type { Sensitivity } from '../types/types.ts';
-import { removeLeadingSlashes } from './removeLeadingSlashes.ts';
-import { removeTrailingSlashes } from './removeTrailingSlashes.ts';
+import type {Sensitivity} from '../types/types.ts';
+import {removeLeadingSlashes} from './removeLeadingSlashes.ts';
+import {removeTrailingSlashes} from './removeTrailingSlashes.ts';
 
 /**
  * Compare two path without trailing and leading slashes
@@ -24,7 +24,7 @@ import { removeTrailingSlashes } from './removeTrailingSlashes.ts';
 export function comparePaths(
   path1: string,
   path2: string,
-  { sensitivity = 'accent' }: { sensitivity?: Sensitivity } = {},
+  {sensitivity = 'accent'}: {sensitivity?: Sensitivity} = {},
 ): number {
   const normalPath1 = removeLeadingSlashes(removeTrailingSlashes(path1));
   const normalPath2 = removeLeadingSlashes(removeTrailingSlashes(path2));

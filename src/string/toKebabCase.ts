@@ -1,4 +1,4 @@
-import { changeCase } from '../internals/changeCase.ts';
+import {changeCase} from '../internals/changeCase.ts';
 
 /**
  * Converts any casing to kebab-case
@@ -23,5 +23,5 @@ import { changeCase } from '../internals/changeCase.ts';
  * toKebabCase('ThisIs-fullstacksjs radio__and--I-loveCoding') // 'this-is-fullstacksjs-radio-and-i-love-coding',
  */
 export function toKebabCase(str: string): string {
-  return changeCase(str, { delimiter: '-' });
+  return changeCase(str, {delimiter: '-'});
 }

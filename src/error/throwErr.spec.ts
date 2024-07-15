@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { throwErr } from './throwErr.ts';
+import {describe, expect, it} from 'vitest';
+import {throwErr} from './throwErr.ts';
 
 describe('throwErr', () => {
   it('should throw Error instance', () => {

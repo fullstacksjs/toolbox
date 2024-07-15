@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { escapeRegex } from './escapeRegex.ts';
+import {describe, expect, it} from 'vitest';
+import {escapeRegex} from './escapeRegex.ts';
 
 describe('escapeRegex', () => {
   it('should escape all especial characters', () => {

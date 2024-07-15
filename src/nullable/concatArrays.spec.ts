@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { concatArrays } from './concatArrays.ts';
+import {describe, expect, it} from 'vitest';
+import {concatArrays} from './concatArrays.ts';
 
 describe('concatArrays', () => {
   it('should return empty array with no argument', () => {

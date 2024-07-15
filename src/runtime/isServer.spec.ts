@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, it } from 'vitest';
-import { clearMocks, mockDenoGlobal, mockWindowGlobal } from './fixtures';
-import { isServer } from './isServer';
+import {beforeEach, describe, expect, it} from 'vitest';
+import {clearMocks, mockDenoGlobal, mockWindowGlobal} from './fixtures';
+import {isServer} from './isServer';
 
 describe('isServer', () => {
   beforeEach(() => {

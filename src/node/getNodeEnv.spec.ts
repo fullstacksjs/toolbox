@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { getNodeEnv } from './getNodeEnv.ts';
+import {beforeEach, describe, expect, it, vi} from 'vitest';
+import {getNodeEnv} from './getNodeEnv.ts';
 
 describe('getNodeEnv', () => {
   beforeEach(() => {

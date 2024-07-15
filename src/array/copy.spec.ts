@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { copy } from './copy.ts';
+import {describe, expect, it} from 'vitest';
+import {copy} from './copy.ts';
 
 describe('copyArray', () => {
   it('return value should be a new array', () => {

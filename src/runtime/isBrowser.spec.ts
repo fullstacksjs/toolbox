@@ -1,11 +1,11 @@
-import { afterEach, describe, expect, it } from 'vitest';
+import {afterEach, describe, expect, it} from 'vitest';
 import {
   clearMocks,
   mockDenoGlobal,
   mockNodeGlobal,
   mockWindowGlobal,
 } from './fixtures';
-import { isBrowser } from './isBrowser';
+import {isBrowser} from './isBrowser';
 
 describe('isBrowser', () => {
   afterEach(() => {

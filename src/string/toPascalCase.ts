@@ -1,5 +1,5 @@
-import { capitalize } from '../internals/capitalize.ts';
-import { changeCase } from '../internals/changeCase.ts';
+import {capitalize} from '../internals/capitalize.ts';
+import {changeCase} from '../internals/changeCase.ts';
 
 /**
  * Converts any casing to PascalCase
@@ -25,5 +25,5 @@ import { changeCase } from '../internals/changeCase.ts';
  * toPascalCase('ThisIs-fullstacksjs radio__and--I-loveCoding') // 'ThisIsFullstacksjsRadioAndILoveCoding'
  */
 export function toPascalCase(str: string): string {
-  return changeCase(str, { delimiter: '', map: capitalize });
+  return changeCase(str, {delimiter: '', map: capitalize});
 }

@@ -1,11 +1,11 @@
-import { Card, Cards } from 'nextra-theme-docs';
+import {Card, Cards} from 'nextra-theme-docs';
 
 interface Props {
   base: string;
   meta: Record<string, string>;
 }
 
-export const TOC = ({ base, meta }: Props): React.JSX.Element => {
+export const TOC = ({base, meta}: Props): React.JSX.Element => {
   return (
     <Cards>
       {Object.entries(meta).map(([key, value]) => (

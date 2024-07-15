@@ -1,11 +1,11 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import {beforeEach, describe, expect, it} from 'vitest';
 import {
   clearMocks,
   mockDenoGlobal,
   mockNodeGlobal,
   mockWindowGlobal,
 } from './fixtures';
-import { isDeno } from './isDeno';
+import {isDeno} from './isDeno';
 
 describe('isDeno', () => {
   beforeEach(() => {

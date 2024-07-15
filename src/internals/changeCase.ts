@@ -8,7 +8,7 @@ const wordRegex = /([a-z0-9])([A-Z])|([A-Z])([A-Z][a-z])/g;
 
 export function changeCase(
   input: string,
-  { map = s => s.toLowerCase(), delimiter = ' ' }: Options = {},
+  {map = s => s.toLowerCase(), delimiter = ' '}: Options = {},
 ) {
   return input
     .replace(wordRegex, '$1 $2')

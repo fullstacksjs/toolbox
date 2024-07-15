@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { assertNotNull } from './assertNotNull.ts';
+import {describe, expect, it} from 'vitest';
+import {assertNotNull} from './assertNotNull.ts';
 
 describe('assertNotNull', () => {
   it('should throw error when condition is null', () => {

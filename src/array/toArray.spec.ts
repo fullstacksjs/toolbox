@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { toArray } from './toArray.ts';
+import {describe, expect, it} from 'vitest';
+import {toArray} from './toArray.ts';
 
 describe('toArray', () => {
   it('should return an empty array for null', () => {

@@ -1,5 +1,5 @@
-import { capitalize } from '../internals/capitalize.ts';
-import { changeCase } from '../internals/changeCase.ts';
+import {capitalize} from '../internals/capitalize.ts';
+import {changeCase} from '../internals/changeCase.ts';
 
 /**
  * Converts the starting letter of every word into an upper case
@@ -25,5 +25,5 @@ import { changeCase } from '../internals/changeCase.ts';
  * toCapitalCase('ThisIs-fullstacksjs radio__and--I-loveCoding') // This Is Fullstacksjs Radio And I Love Coding
  */
 export function toCapitalCase(str: string): string {
-  return changeCase(str, { map: capitalize });
+  return changeCase(str, {map: capitalize});
 }

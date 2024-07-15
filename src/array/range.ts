@@ -20,5 +20,5 @@ export function range(
   offset: number = 0,
   step: number = 1,
 ): number[] {
-  return Array.from({ length }, (_, i) => i * step + offset);
+  return Array.from({length}, (_, i) => i * step + offset);
 }

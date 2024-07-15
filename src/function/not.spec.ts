@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { not } from './not.ts';
+import {describe, expect, it} from 'vitest';
+import {not} from './not.ts';
 
 describe('not', () => {
   it('should negate boolean', () => {

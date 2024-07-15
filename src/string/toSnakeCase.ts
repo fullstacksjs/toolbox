@@ -1,4 +1,4 @@
-import { changeCase } from '../internals/changeCase.ts';
+import {changeCase} from '../internals/changeCase.ts';
 
 /**
  * Converts any casing to snake_case
@@ -23,5 +23,5 @@ import { changeCase } from '../internals/changeCase.ts';
  * toSnakeCase('ThisIs-fullstacksjs radio__and--I-loveCoding') // 'this_is_fullstacksjs_radio_and_i_love_coding'
  */
 export function toSnakeCase(str: string): string {
-  return changeCase(str, { delimiter: '_' });
+  return changeCase(str, {delimiter: '_'});
 }

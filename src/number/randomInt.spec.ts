@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { randomInt } from './randomInt.ts';
+import {describe, expect, it} from 'vitest';
+import {randomInt} from './randomInt.ts';
 
 describe('randomInt', () => {
   it('should return an integer between the range of min and max', () => {

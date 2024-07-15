@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { isIterable } from './isIterable.ts';
+import {describe, expect, it} from 'vitest';
+import {isIterable} from './isIterable.ts';
 
 describe('isIterable', () => {
   it('should return false for undefined', () => {

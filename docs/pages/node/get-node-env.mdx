@@ -18,11 +18,11 @@ function getNodeEnv(fallback?: string): string {}
 
 ```typescript copy
 /* NODE_ENV=development node */
-getNodeEnv() // "development"
+getNodeEnv(); // "development"
 
 /* NODE_ENV=production node */
-getNodeEnv() // "production"
+getNodeEnv(); // "production"
 
 /* NODE_ENV="" node */
-getNodeEnv('development') // "development"
+getNodeEnv('development'); // "development"
 ```

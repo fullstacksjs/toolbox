@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { getRandom } from './getRandom.ts';
+import {describe, expect, it} from 'vitest';
+import {getRandom} from './getRandom.ts';
 
 describe('getRandom', () => {
   it('should return undefined when given empty array', () => {
@@ -33,7 +33,7 @@ describe('getRandom', () => {
   it('should not select out of range', () => {
     let i = 0;
 
-    for (; i < 100; i++) if (getRandom([0, 1]) == null) break;
+    for (; i < 100; i++) if (getRandom<number | null>([0, 1]) === null) break;
 
     expect(i).toBe(100);
   });

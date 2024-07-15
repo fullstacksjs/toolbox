@@ -17,9 +17,9 @@ function isIterable<T>(x: unknown): x is Iterable<T> {}
 ### Examples
 
 ```typescript copy
-isIterable([])        // true
-isIterable(new Map()) // true
-isIterable('some')    // true
-isIterable({})        // false
-isIterable(undefined) // false
+isIterable([]); // true
+isIterable(new Map()); // true
+isIterable('some'); // true
+isIterable({}); // false
+isIterable(undefined); // false
 ```

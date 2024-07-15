@@ -17,6 +17,6 @@ function callAll<T>(...fns: Nullable<Function>[]) {}
 ### Examples
 
 ```typescript copy
-callAll(foo, bar, baz)(1);                         // void(foo(1), bar(1), baz(1))
+callAll(foo, bar, baz)(1); // void(foo(1), bar(1), baz(1))
 callAll(bar, null, undefined, baz)(); // void (bar(), baz());
 ```

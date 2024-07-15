@@ -17,6 +17,7 @@ function sleep(ms: number): Promise<void> {}
 ### Examples
 
 ```typescript copy
-sleep(1000).then(() => console.log("Hi")) // Logs hi after 1 second
-await sleep(1000); console.log("Hi")      // Logs hi after 1 second
+sleep(1000).then(() => console.log('Hi')); // Logs hi after 1 second
+await sleep(1000);
+console.log('Hi'); // Logs hi after 1 second
 ```

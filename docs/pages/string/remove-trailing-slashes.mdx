@@ -17,11 +17,11 @@ function removeTrailingSlashes(str: string): string {}
 ### Examples
 
 ```typescript copy
-removeTrailingSlashes('')           // ''
-removeTrailingSlashes('/')          // ''
-removeTrailingSlashes('string')     // 'string'
-removeTrailingSlashes('/string')    // 'string'
-removeTrailingSlashes('//string')   // 'string'
-removeTrailingSlashes('//string/')  // 'string/'
-removeTrailingSlashes('//string/a') // 'string/a'
+removeTrailingSlashes(''); // ''
+removeTrailingSlashes('/'); // ''
+removeTrailingSlashes('string'); // 'string'
+removeTrailingSlashes('/string'); // 'string'
+removeTrailingSlashes('//string'); // 'string'
+removeTrailingSlashes('//string/'); // 'string/'
+removeTrailingSlashes('//string/a'); // 'string/a'
 ```

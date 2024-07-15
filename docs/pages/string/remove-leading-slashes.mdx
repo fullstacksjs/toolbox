@@ -17,11 +17,11 @@ function removeLeadingSlashes(str: string): string {}
 ### Examples
 
 ```typescript copy
-removeLeadingSlashes('')           // ''
-removeLeadingSlashes('/')          // ''
-removeLeadingSlashes('string')     // 'string'
-removeLeadingSlashes('/string')    // 'string'
-removeLeadingSlashes('//string')   // 'string'
-removeLeadingSlashes('//string/')  // 'string/'
-removeLeadingSlashes('//string/a') // 'string/a'
+removeLeadingSlashes(''); // ''
+removeLeadingSlashes('/'); // ''
+removeLeadingSlashes('string'); // 'string'
+removeLeadingSlashes('/string'); // 'string'
+removeLeadingSlashes('//string'); // 'string'
+removeLeadingSlashes('//string/'); // 'string/'
+removeLeadingSlashes('//string/a'); // 'string/a'
 ```

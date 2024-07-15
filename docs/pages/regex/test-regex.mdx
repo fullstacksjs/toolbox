@@ -17,11 +17,11 @@ function testRegex(regex: RegExp, str: string): boolean {}
 ### Examples
 
 ```typescript copy
-const regexA = /a/g
-testRegex(regexA, 'a') // true
-regexA.lastIndex       // 0
+const regexA = /a/g;
+testRegex(regexA, 'a'); // true
+regexA.lastIndex; // 0
 
-const regexB = /b/g
-testRegex(regexB, 'a') // false
-regexB.lastIndex       // 0
+const regexB = /b/g;
+testRegex(regexB, 'a'); // false
+regexB.lastIndex; // 0
 ```

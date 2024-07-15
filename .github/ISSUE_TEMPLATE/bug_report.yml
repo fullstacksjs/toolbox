@@ -12,7 +12,9 @@ body:
     attributes:
       label: Describe the issue
       description: Describe what function is not working as expected?
-      placeholder: 'ex. the sleep function does not work as expected, it throws ReferenceError in Node 12'
+      placeholder:
+        'ex. the sleep function does not work as expected, it throws
+        ReferenceError in Node 12'
     validations:
       required: true
   - type: textarea

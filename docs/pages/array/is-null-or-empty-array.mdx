@@ -11,17 +11,19 @@ import { isNullOrEmptyArray } from '@fullstacksjs/toolbox';
 ### Signature
 
 ```typescript copy
-function isNullOrEmptyArray<T extends any[]>(arr: Nullable<T | []>): arr is Nullable<[]> {}
+function isNullOrEmptyArray<T extends any[]>(
+  arr: Nullable<T | []>,
+): arr is Nullable<[]> {}
 ```
 
 ### Examples
 
 ```typescript copy
-isNullOrEmptyArray(null)        // true
-isNullOrEmptyArray(undefined)   // true
-isNullOrEmptyArray([])          // true
-isNullOrEmptyArray([0])         // false
-isNullOrEmptyArray([,])         // false
-isNullOrEmptyArray([null])      // false
-isNullOrEmptyArray([undefined]) // false
+isNullOrEmptyArray(null); // true
+isNullOrEmptyArray(undefined); // true
+isNullOrEmptyArray([]); // true
+isNullOrEmptyArray([0]); // false
+isNullOrEmptyArray([,]); // false
+isNullOrEmptyArray([null]); // false
+isNullOrEmptyArray([undefined]); // false
 ```

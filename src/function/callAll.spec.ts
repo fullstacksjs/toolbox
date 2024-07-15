@@ -1,19 +1,20 @@
-import { describe, it, vi, expect } from 'vitest';
-import { callAll } from './callAll.ts';
+import {describe, it, vi, expect} from 'vitest';
+import {callAll} from './callAll.ts';
 
 describe('callAll', () => {
   it('should call given functions with an args', () => {
-    const fns = [vi.fn<number[]>(), vi.fn<number[]>(), vi.fn<number[]>()];
     const args = [1, 2, 3];
-    callAll(...fns)(...args);
+    const fns = [vi.fn(() => args), vi.fn(() => () => args), vi.fn(() => args)];
+
+    callAll<number[]>(...fns)(...args);
     fns.forEach(fn => expect(fn).toHaveBeenCalledWith(...args));
   });
 
   it('should not throw with not-callable arguments', () => {
-    const fns = [vi.fn<number[]>(), vi.fn<number[]>()] as const;
-    const nonFns = [undefined, 'string' as any, null, 5 as any];
     const args = [1, 2, 3];
-    callAll(fns[0], ...nonFns, fns[1])(...args);
+    const fns = [vi.fn(() => args), vi.fn(() => args)] as const;
+    const nonFns = [undefined, 'string' as any, null, 5 as any];
+    callAll<number[]>(fns[0], ...nonFns, fns[1])(...args);
     fns.forEach(fn => expect(fn).toHaveBeenCalledWith(...args));
   });
 });

@@ -43,18 +43,18 @@ type FilterNullishReadonlyTuple<T extends readonly unknown[]> =
   T extends readonly []
     ? []
     : T extends readonly [infer H, ...infer R]
-    ? H extends null | undefined
-      ? FilterNullishReadonlyTuple<R>
-      : readonly [H, ...FilterNullishReadonlyTuple<R>]
-    : readonly [NonNullable<T[0]>];
+      ? H extends null | undefined
+        ? FilterNullishReadonlyTuple<R>
+        : readonly [H, ...FilterNullishReadonlyTuple<R>]
+      : readonly [NonNullable<T[0]>];
 
 type FilterNullishTuple<T extends unknown[]> = T extends []
   ? []
   : T extends [infer H, ...infer R]
-  ? H extends null | undefined
-    ? FilterNullishTuple<R>
-    : [H, ...FilterNullishTuple<R>]
-  : [NonNullable<T[0]>];
+    ? H extends null | undefined
+      ? FilterNullishTuple<R>
+      : [H, ...FilterNullishTuple<R>]
+    : [NonNullable<T[0]>];
 
 type FilterNullishArray<T extends unknown[]> = T[number] extends infer R
   ? NonNullable<R>[]
@@ -66,8 +66,8 @@ export type FilterNullish<T extends unknown[] | readonly unknown[]> =
       ? FilterNullishTuple<T>
       : FilterNullishArray<T>
     : T extends (number extends T['length'] ? readonly [] : readonly any[])
-    ? FilterNullishReadonlyTuple<T>
-    : FilterNullishReadonlyArray<T>;
+      ? FilterNullishReadonlyTuple<T>
+      : FilterNullishReadonlyArray<T>;
 
 type TupleOf<T, N extends number, R extends unknown[]> = R['length'] extends N
   ? R

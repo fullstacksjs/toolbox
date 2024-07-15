@@ -18,11 +18,11 @@ function isProd(): boolean {}
 
 ```typescript copy
 /* NODE_ENV=development node */
-isProd() // true
+isProd(); // true
 
 /* NODE_ENV=production node */
-isProd() // false
+isProd(); // false
 
 /* NODE_ENV="" node */
-isProd() // false
+isProd(); // false
 ```

@@ -1,4 +1,4 @@
-import type { Nullable } from '../types/types';
+import type {Nullable} from '../types/types';
 
 /**
  * Given a number and fallback value, returns the value when it is finite otherwise the fallback value.
@@ -21,5 +21,5 @@ export function fallbackNumber<T extends number = number>(
   value: Nullable<T>,
   fallbackValue: T,
 ): NonNullable<T> {
-  return Number.isFinite(value) ? (value as T) : fallbackValue;
+  return Number.isFinite(value) ? value! : fallbackValue;
 }

@@ -11,17 +11,17 @@ import { isNull } from '@fullstacksjs/toolbox';
 ### Signature
 
 ```typescript copy
-function isNull(x: unknown): x is Nullish {};
+function isNull(x: unknown): x is Nullish {}
 ```
 
 ### Examples
 
 ```typescript copy
-isNull(undefined) // true
-isNull(null)      // true
-isNull('null')    // false
-isNull(0)         // false
-isNull([])        // false
-isNull({})        // false
-isNull(false)     // false
+isNull(undefined); // true
+isNull(null); // true
+isNull('null'); // false
+isNull(0); // false
+isNull([]); // false
+isNull({}); // false
+isNull(false); // false
 ```

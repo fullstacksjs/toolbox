@@ -11,13 +11,16 @@ import { pruneKeyWhen } from '@fullstacksjs/toolbox';
 ### Signature
 
 ```typescript copy
-function pruneKeyWhen(min: number = 0, max: number = Number.MAX_SAFE_INTEGER): number {}
+function pruneKeyWhen(
+  min: number = 0,
+  max: number = Number.MAX_SAFE_INTEGER,
+): number {}
 ```
 
 ### Examples
 
 ```typescript copy
-pruneKeyWhen({ a: { b: null } }, () => false)      // { a: { b: null } }
-pruneKeyWhen({ a: 'John', b: {} }, () => true)     // {}
-pruneKeyWhen({ a: null, age: '' }, k => k === 'a') // { a: null }
+pruneKeyWhen({ a: { b: null } }, () => false); // { a: { b: null } }
+pruneKeyWhen({ a: 'John', b: {} }, () => true); // {}
+pruneKeyWhen({ a: null, age: '' }, k => k === 'a'); // { a: null }
 ```

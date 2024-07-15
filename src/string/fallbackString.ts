@@ -1,4 +1,4 @@
-import type { Nullable } from '../types/types.ts';
+import type {Nullable} from '../types/types.ts';
 
 /**
  * Returns the provided fallback value if the given value is null, undefined, or an empty string; otherwise, it returns the original value.
@@ -19,5 +19,5 @@ export function fallbackString<T extends string = string>(
   value: Nullable<T>,
   fallbackValue: T,
 ): NonNullable<T> {
-  return value == null || value === '' ? fallbackValue : (value as T);
+  return value == null || value === '' ? fallbackValue : value;
 }

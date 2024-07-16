@@ -11,17 +11,17 @@ import { isBoolean } from '@fullstacksjs/toolbox';
 ### Signature
 
 ```typescript copy
-function isBoolean(x: unknown): x is boolean {}
+function isBoolean(x: unknown): x is boolean {};
 ```
 
 ### Examples
 
 ```typescript copy
-isBoolean(true); // true
-isBoolean(false); // true
-isBoolean(''); // false
-isBoolean(undefined); // false
-isBoolean(null); // false
-isBoolean(1); // false
-isBoolean(['1']); // false
+isBoolean(true)      // true
+isBoolean(false)     // true
+isBoolean('')        // false
+isBoolean(undefined) // false
+isBoolean(null)      // false
+isBoolean(1)         // false
+isBoolean(['1'])     // false
 ```

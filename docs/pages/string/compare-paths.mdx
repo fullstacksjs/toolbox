@@ -21,13 +21,13 @@ function comparePaths(
 ### Examples
 
 ```typescript copy
-comparePaths('b', 'a'); // 1
-comparePaths('a', 'b'); // -1
-comparePaths('path', 'PAth'); // 0
-comparePaths('reserve', 'réservé'); // 0
-comparePaths('/path1/', '/path1/'); // 0
-comparePaths('reserve', 'reserve//'); // 0
-comparePaths('//reserve', 'reserve'); // 0
-comparePaths('reserve//', 'reserve/'); // 0
-comparePaths('/reserve', '//reserve'); // 0
+comparePaths('b', 'a')                // 1
+comparePaths('a', 'b')                // -1
+comparePaths('path', 'PAth')          // 0
+comparePaths('reserve', 'réservé')    // 0
+comparePaths('/path1/', '/path1/')    // 0
+comparePaths('reserve', 'reserve//')  // 0
+comparePaths('//reserve', 'reserve')  // 0
+comparePaths('reserve//', 'reserve/') // 0
+comparePaths('/reserve', '//reserve') // 0
 ```

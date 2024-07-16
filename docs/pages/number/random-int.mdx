@@ -11,16 +11,13 @@ import { randomInt } from '@fullstacksjs/toolbox';
 ### Signature
 
 ```typescript copy
-function randomInt(
-  min: number = 0,
-  max: number = Number.MAX_SAFE_INTEGER,
-): number {}
+function randomInt(min: number = 0, max: number = Number.MAX_SAFE_INTEGER): number {}
 ```
 
 ### Examples
 
 ```typescript copy
-randomInt(); // Random between 0,  MAX_SAFE_INTEGER
-randomInt(10); // Random between 10, MAX_SAFE_INTEGER
-randomInt(0, 1); // 0 | 1
+randomInt()      // Random between 0,  MAX_SAFE_INTEGER
+randomInt(10)    // Random between 10, MAX_SAFE_INTEGER
+randomInt(0, 1)  // 0 | 1
 ```

@@ -17,11 +17,11 @@ function isNotNull<T>(x: T): x is NonNullable<T> {}
 ### Examples
 
 ```typescript copy
-isNotNull(undefined); // false
-isNotNull(null); // false
-isNotNull('null'); // true
-isNotNull(0); // true
-isNotNull([]); // true
-isNotNull({}); // true
-isNotNull(false); // true
+isNotNull(undefined) // false
+isNotNull(null)      // false
+isNotNull('null')    // true
+isNotNull(0)         // true
+isNotNull([])        // true
+isNotNull({})        // true
+isNotNull(false)     // true
 ```

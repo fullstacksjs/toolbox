@@ -17,10 +17,10 @@ function crlfToLf(str: string): string {}
 ### Examples
 
 ```typescript copy
-crlfToLf('hello world\r\n'); // 'hello world\n'
-crlfToLf('hello world\r\n\n'); // 'hello world\n\n'
-crlfToLf('hello world\n'); // 'hello world\n'
-crlfToLf('hello world'); // 'hello world'
-crlfToLf(''); // ''
-crlfToLf(' '); // ' '
+crlfToLf('hello world\r\n')   // 'hello world\n'
+crlfToLf('hello world\r\n\n') // 'hello world\n\n'
+crlfToLf('hello world\n')     // 'hello world\n'
+crlfToLf('hello world')       // 'hello world'
+crlfToLf('')                  // ''
+crlfToLf(' ')                 // ' '
 ```

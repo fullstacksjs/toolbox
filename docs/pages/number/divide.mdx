@@ -11,17 +11,13 @@ import { divide } from '@fullstacksjs/toolbox';
 ### Signature
 
 ```typescript copy
-function divide(
-  dividend: number,
-  divisor: number,
-  fallback: number = NaN,
-): number {}
+function divide(dividend: number, divisor: number, fallback: number = NaN): number {}
 ```
 
 ### Examples
 
 ```typescript copy
-divide(4, 2); // 2
-divide(4, 0, 42); // 42
-divide(4, 0); // NaN
+divide(4, 2)     // 2
+divide(4, 0, 42) // 42
+divide(4, 0)     // NaN
 ```

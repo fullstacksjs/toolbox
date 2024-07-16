@@ -11,18 +11,15 @@ function toDecimal(s: string, fallback: number = NaN): number {}
 ### Signature
 
 ```typescript copy
-function toDecimal(
-  min: number = 0,
-  max: number = Number.MAX_SAFE_INTEGER,
-): number {}
+function toDecimal(min: number = 0, max: number = Number.MAX_SAFE_INTEGER): number {}
 ```
 
 ### Examples
 
 ```typescript copy
-toDecimal('S'); // NaN
-toDecimal('100'); // 100
-toDecimal('1.42'); // 1
-toDecimal('S', 10); // 10
-toDecimal('S', undefined); // NaN
+toDecimal('S')            // NaN
+toDecimal('100')          // 100
+toDecimal('1.42')         // 1
+toDecimal('S', 10)        // 10
+toDecimal('S', undefined) // NaN
 ```

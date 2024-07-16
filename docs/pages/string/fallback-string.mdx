@@ -1,7 +1,6 @@
 # fallbackString
 
-Returns the provided fallback value if the given value is null, undefined, or an
-empty string; otherwise, it returns the original value.
+Returns the provided fallback value if the given value is null, undefined, or an empty string; otherwise, it returns the original value.
 
 ### Import
 
@@ -12,18 +11,15 @@ import { fallbackString } from '@fullstacksjs/toolbox';
 ### Signature
 
 ```typescript copy
-function fallbackString<T extends string = string>(
-  value: Nullable<T>,
-  fallbackStringValue: T,
-): NonNullable<T> {}
+function fallbackString<T extends string = string>(value: Nullable<T>, fallbackStringValue: T): NonNullable<T> {}
 ```
 
 ### Examples
 
 ```typescript copy
-fallbackString('', 'd'); // 'd'
-fallbackString(' ', 'd'); // ' '
-fallbackString('x', 'd'); // 'x'
-fallbackString(null, 'd'); // 'd'
-fallbackString(undefined, 'd'); // 'd'
+fallbackString('', 'd')        // 'd'
+fallbackString(' ', 'd')       // ' '
+fallbackString('x', 'd')       // 'x'
+fallbackString(null, 'd')      // 'd'
+fallbackString(undefined, 'd') // 'd'
 ```

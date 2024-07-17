@@ -2,7 +2,7 @@ import { copy } from './copy.ts';
 
 describe('copyArray', () => {
   it('return value should be a new array', () => {
-    const array = [1];
+    const array = [1] satisfies [1];
     const copied = copy(array);
     copied[0]++;
 

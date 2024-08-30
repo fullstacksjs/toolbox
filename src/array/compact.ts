@@ -14,5 +14,7 @@ import type { FilterNullish } from '../types';
  * compact([0, '', null, false, NaN, undefined]) // [0, '', false, NaN, {}]
  */
 export function compact<T extends readonly any[]>(xs: T): FilterNullish<T> {
+  console.log('Here is a bug!');
+
   return xs.filter(x => x != null) as FilterNullish<T>;
 }

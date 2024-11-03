@@ -1,0 +1,70 @@
+
+# formatSeconds
+
+The `formatSeconds` function is designed to convert a given number of seconds into a human-readable time string.
+By accepting a specified format, this function allows for flexible output options, such as displaying time in hours, minutes, and seconds, or just in minutes and seconds. Whether you need to present durations in a detailed format like `hh:mm:ss` or a more concise `mm:ss`, this function caters to various use cases in applications that require time representation.
+
+
+### Import
+
+```typescript
+import { formatSeconds } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript
+function formatSeconds(
+  durationInSeconds: number,
+  options
+): string;
+```
+
+## Parameters
+
+- **`durationInSeconds`** (`number`): The total number of seconds to be converted.
+- **`options`** (`{ format: 'hh:mm:ss' | 'hh:mm' | 'mm:ss' }`): The desired output format.
+
+## Returns
+
+- **`string`**: The formatted time string based on the specified format.
+
+## Examples
+
+### Formatting to `hh:mm:ss`
+
+```typescript
+const time1 = formatSeconds(3661, { format: 'hh:mm:ss' });
+// Output: '01:01:01'
+```
+
+### Formatting to `hh:mm`
+
+```typescript
+const time2 = formatSeconds(3661, { format: 'hh:mm' });
+// Output: '01:01'
+```
+
+### Formatting to `mm:ss`
+
+```typescript
+const time3 = formatSeconds(61, { format: 'mm:ss' });
+// Output: '01:01'
+```
+
+### Formatting Zero Seconds
+
+```typescript
+const time4 = formatSeconds(0, { format: 'mm:ss' });
+// Output: '00:00'
+```
+
+## Error Handling
+
+If an invalid format is provided, the function will throw an error:
+
+```typescript
+  formatSeconds(120, { format: 'ss:ss:ss' });
+   // 'Invalid format: 'ss:ss:ss'. Accepted formats are 'hh:mm:ss', 'hh:mm', or 'mm:ss'.'
+```
+

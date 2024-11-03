@@ -6,5 +6,5 @@
   "sleep": "sleep",
   "throttle": "throttle",
   "try-or": "tryOr",
-  "seconds-to-time": "seconds-to-time"
+  "format-seconds": "format-seconds"
 }

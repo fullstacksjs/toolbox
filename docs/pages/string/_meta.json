@@ -3,7 +3,7 @@
   "crlf-to-lf": "crlfToLf",
   "get-initials": "getInitials",
   "is-lower-case": "isLowerCase",
-  "is-null-or-empty-string": "isNullOrEmptyString{",
+  "is-null-or-empty-string": "isNullOrEmptyString",
   "join-paths": "joinPaths",
   "remove-leading-slashes": "removeLeadingSlashes",
   "remove-trailing-slashes": "removeTrailingSlashes",

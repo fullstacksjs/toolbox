@@ -7,6 +7,7 @@ export { isNotNull } from './isNotNull.ts';
 export { isNull } from './isNull.ts';
 export { isObject } from './isObject.ts';
 export { isPlainObject } from './isPlainObject.ts';
+export { isPositive } from './isPositive.ts';
 export { isPromise } from './isPromise.ts';
 export { isSet } from './isSet.ts';
 export { isString } from './isString.ts';

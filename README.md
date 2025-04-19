@@ -79,7 +79,7 @@ Before submitting a pull request, please make sure the following is done:
 - Fork the repository and create your feature branch from dev.
 - Run `npm install` to have all dependencies.
 - To start development run `npm run test:watch`.
-- Write tests in `src/<scope>/<name>.test.ts` and implementation in `src/<scope>/<name>.ts`.
+- Write tests in `src/<scope>/<name>.spec.ts` and implementation in `src/<scope>/<name>.ts`.
 - Add the documentation page to the `docs/<scope>/<function>.mdx` and update `docs/<scope>/_meta.json` file.
 - Ensure everything is ok `npm run verify`.
 

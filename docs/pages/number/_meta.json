@@ -3,6 +3,8 @@
   "divide": "divide",
   "fallback-number": "fallbackNumber",
   "is-in-range": "isInRange",
+  "is-negative": "isNegative",
+  "is-positive": "isPositive",
   "percent": "percent",
   "random-int": "randomInt",
   "to-decimal": "toDecimal"

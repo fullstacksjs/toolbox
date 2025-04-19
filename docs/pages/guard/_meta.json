@@ -11,7 +11,5 @@
   "is-promise": "isPromise",
   "is-set": "isSet",
   "is-string": "isString",
-  "is-truthy": "isTruthy",
-  "is-positive": "isPositive",
-  "is-negative": "isNegative"
+  "is-truthy": "isTruthy"
 }

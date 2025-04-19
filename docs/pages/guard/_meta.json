@@ -12,5 +12,6 @@
   "is-set": "isSet",
   "is-string": "isString",
   "is-truthy": "isTruthy",
-  "is-positive": "isPositive"
+  "is-positive": "isPositive",
+  "is-negative": "isNegative"
 }

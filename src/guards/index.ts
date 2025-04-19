@@ -3,6 +3,7 @@ export { isEmptyObject } from './isEmptyObject.ts';
 export { isFunction } from './isFunction.ts';
 export { isIterable } from './isIterable.ts';
 export { isMap } from './isMap.ts';
+export { isNegative } from './isNegative.ts';
 export { isNotNull } from './isNotNull.ts';
 export { isNull } from './isNull.ts';
 export { isObject } from './isObject.ts';

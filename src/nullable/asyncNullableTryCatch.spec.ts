@@ -1,4 +1,5 @@
-import { describe, it, vi, expect } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
+
 import { asyncNullableTryCatch } from './asyncNullableTryCatch';
 
 describe('Nullable async try catch', () => {
@@ -6,7 +7,7 @@ describe('Nullable async try catch', () => {
     const execute = vi.fn();
     await asyncNullableTryCatch(execute);
 
-    expect(execute).toBeCalled();
+    expect(execute).toBeCalledWith();
   });
 
   it('should return the function return value', async () => {
@@ -19,6 +20,6 @@ describe('Nullable async try catch', () => {
   it('should return null if there is an error', async () => {
     const execute = () => Promise.reject('custom error message');
 
-    expect(await asyncNullableTryCatch(execute)).toBeNull();
+    await expect(asyncNullableTryCatch(execute)).resolves.toBeNull();
   });
 });

@@ -1,5 +1,6 @@
-import { clone } from './clone.js';
 import type { ObjectType, RemoveDeepReadonly, Replace } from '../types';
+
+import { clone } from './clone.js';
 
 /**
  * Replaces a value in an object or array at the given path.

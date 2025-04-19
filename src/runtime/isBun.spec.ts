@@ -1,7 +1,7 @@
 import {
   clearMocks,
-  mockDenoGlobal,
   mockBunGlobal,
+  mockDenoGlobal,
   mockNodeGlobal,
   mockWindowGlobal,
 } from './fixtures';

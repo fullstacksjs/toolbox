@@ -1,4 +1,5 @@
 import type { Nullable } from '../types';
+
 import { fallbackNumber } from './fallbackNumber.ts';
 
 /**

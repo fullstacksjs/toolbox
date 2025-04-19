@@ -22,14 +22,14 @@ export type EnsureArray<T> = T extends any[] ? T : [T];
 export type EnvironmentVariable<T extends string = string> = T | undefined;
 
 export type NodeEnv<T extends string = never> = EnvironmentVariable<
-  T | 'development' | 'production'
+  'development' | 'production' | T
 >;
 
-export type ObjectPath<ObjectType extends object> = {
-  [Key in keyof ObjectType & (number | string)]: ObjectType[Key] extends object
-    ? `${Key}.${ObjectPath<ObjectType[Key]>}` | `${Key}`
+export type ObjectPath<T extends object> = {
+  [Key in keyof T & (number | string)]: T[Key] extends object
+    ? `${Key}.${ObjectPath<T[Key]>}` | `${Key}`
     : `${Key}`;
-}[keyof ObjectType & (number | string)];
+}[keyof T & (number | string)];
 
 export type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 

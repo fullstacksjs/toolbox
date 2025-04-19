@@ -14,7 +14,7 @@ export async function asyncNullableTryCatch<T>(
 ): Promise<T | null> {
   try {
     return await fn();
-  } catch (err) {
+  } catch {
     return null;
   }
 }

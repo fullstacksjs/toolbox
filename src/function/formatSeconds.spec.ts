@@ -13,7 +13,9 @@ describe('secondToTime', () => {
     const sec = 120;
 
     // @ts-expect-error : not assignable type, ignored in order to have a test
-    expect(formatSeconds({ sec, format: inValidFormat })).toThrow();
+    expect(formatSeconds({ sec, format: inValidFormat })).toThrow(
+      "Invalid format: 'ss:ss:ss'. Accepted formats are 'hh:mm:ss', 'hh:mm', or 'mm:ss'.",
+    );
   });
 
   it.each([

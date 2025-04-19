@@ -24,8 +24,7 @@
   "exports": {
     ".": {
       "import": "./lib/esm/index.js",
-      "require": "./lib/cjs/index.js",
-      "types": "./lib/types/index.d.ts"
+      "require": "./lib/cjs/index.js"
     }
   },
   "sideEffects": false,
@@ -46,32 +45,32 @@
     "prepare": ".husky/prepare"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.3.0",
-    "@commitlint/config-conventional": "19.2.2",
-    "@fullstacksjs/eslint-config": "10.11.1",
+    "@commitlint/cli": "19.8.0",
+    "@commitlint/config-conventional": "19.8.0",
+    "@fullstacksjs/eslint-config": "12.1.1",
     "@fullstacksjs/tsconfig": "1.1.0",
-    "@semantic-release/github": "10.0.5",
+    "@semantic-release/github": "11.0.1",
     "@semantic-release/npm": "12.0.1",
-    "@semantic-release/release-notes-generator": "13.0.0",
-    "@types/node": "20.12.12",
-    "@vitest/coverage-v8": "1.6.0",
-    "commitizen": "4.3.0",
-    "cspell": "8.8.3",
+    "@semantic-release/release-notes-generator": "14.0.3",
+    "@types/node": "22.14.1",
+    "@vitest/coverage-v8": "3.1.1",
+    "commitizen": "4.3.1",
+    "cspell": "8.19.1",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.57.0",
-    "husky": "9.0.11",
-    "lint-staged": "15.2.5",
+    "eslint": "9.25.0",
+    "husky": "9.1.7",
+    "lint-staged": "15.5.1",
     "npm-run-all": "4.1.5",
     "pinst": "3.0.0",
     "pkg-ok": "3.0.0",
-    "pkg-pr-new": "0.0.20",
-    "prettier": "3.2.5",
-    "semantic-release": "23.1.1",
-    "shx": "0.3.4",
+    "pkg-pr-new": "0.0.42",
+    "prettier": "3.5.3",
+    "semantic-release": "24.2.3",
+    "shx": "0.4.0",
     "standard-version": "9.5.0",
-    "tsup": "8.0.2",
+    "tsup": "8.4.0",
     "typescript": "5.4.5",
-    "vitest": "1.6.0"
+    "vitest": "3.1.1"
   },
   "config": {
     "commitizen": {

@@ -1,6 +1,0 @@
-*.md
-lib/**
-node_modules/
-.next/
-out/
-lib.deno.d.ts

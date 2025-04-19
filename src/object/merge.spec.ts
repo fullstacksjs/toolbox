@@ -86,13 +86,13 @@ describe('merge', () => {
         a: new Set([1, 2, 3]),
       };
       const obj2 = {
-        a: new Set(['a', 'b', true, ['foo', 'bar', false]]),
+        a: new Set([['foo', 'bar', false], 'a', 'b', true]),
       };
 
       const merged = merge(obj1, obj2);
 
       expect(merged).toStrictEqual({
-        a: new Set([1, 2, 3, 'a', 'b', true, ['foo', 'bar', false]]),
+        a: new Set([['foo', 'bar', false], 1, 2, 3, 'a', 'b', true]),
       });
     });
 

@@ -13,7 +13,6 @@ describe('randomInt', () => {
   it('should select the first item', () => {
     let i = 0;
 
-    // eslint-disable-next-line jest/no-conditional-in-test
     for (; i < 100; i++) if (randomInt(0, 1) === 0) break;
 
     expect(i).toBeLessThan(100);
@@ -22,7 +21,6 @@ describe('randomInt', () => {
   it('should select the last item', () => {
     let i = 0;
 
-    // eslint-disable-next-line jest/no-conditional-in-test
     for (; i < 100; i++) if (randomInt(0, 1) === 1) break;
 
     expect(i).toBeLessThan(100);

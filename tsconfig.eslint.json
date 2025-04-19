@@ -1,9 +1,9 @@
 {
   "extends": "@fullstacksjs/tsconfig/cjs",
   "compilerOptions": {
-    "noUncheckedIndexedAccess": true,
-    "noEmit": true
+    "composite": true,
+    "noUncheckedIndexedAccess": true
   },
-  "include": ["./src", "./docs/", "./*.ts"],
+  "include": ["./*.ts"],
   "exclude": ["lib/"]
 }

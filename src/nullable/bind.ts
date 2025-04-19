@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/padding-line-between-statements */
-
 import type { Nullable } from '../types';
 
 /**
@@ -24,7 +22,6 @@ export function bind<A, B>(
   f: (x: A) => Nullable<B>,
 ): Nullable<B>;
 export function bind<A, B, C>(
-  x: Nullable<A>,
   f: (x: A) => Nullable<B>,
   g: (x: B) => Nullable<C>,
 ): Nullable<C>;

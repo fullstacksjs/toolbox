@@ -15,7 +15,7 @@ describe('isObject', () => {
     { x: [2], expected: false },
     { x: new Map(), expected: true },
     { x: new Set(), expected: true },
-    { x: new RegExp('foo'), expected: true },
+    { x: /'foo'/, expected: true },
     { x: {}, expected: true },
     { x: { a: 2 }, expected: true },
     { x: { 2: 'a' }, expected: true },

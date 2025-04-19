@@ -16,7 +16,6 @@ describe('getRandom', () => {
   it('should be able to select the first item', () => {
     let i = 0;
 
-    // eslint-disable-next-line jest/no-conditional-in-test
     for (; i < 100; i++) if (getRandom([0, 1]) === 0) break;
 
     expect(i).toBeLessThan(100);
@@ -25,7 +24,6 @@ describe('getRandom', () => {
   it('should be able to select the last item', () => {
     let i = 0;
 
-    // eslint-disable-next-line jest/no-conditional-in-test
     for (; i < 100; i++) if (getRandom([0, 1]) === 1) break;
 
     expect(i).toBeLessThan(100);
@@ -34,8 +32,10 @@ describe('getRandom', () => {
   it('should not select out of range', () => {
     let i = 0;
 
-    // eslint-disable-next-line jest/no-conditional-in-test, @typescript-eslint/no-unnecessary-condition
-    for (; i < 100; i++) if (getRandom([0, 1]) == null) break;
+    for (; i < 100; i++) {
+      const rng = getRandom([0, 1]);
+      if (rng < 0 || rng > 1) break;
+    }
 
     expect(i).toBe(100);
   });

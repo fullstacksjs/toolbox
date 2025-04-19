@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/padding-line-between-statements */
-
 import { isIterable } from '../guards/isIterable.ts';
 
 /**

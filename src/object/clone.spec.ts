@@ -56,7 +56,7 @@ describe('clone', () => {
   });
 
   it('the set collection should not change if its clone changes', () => {
-    const setCollection = new Set<unknown>([1, 2, true, 'foo']);
+    const setCollection = new Set<unknown>([1, 2, 'foo', true]);
     const clonedSetCollection = clone(setCollection);
 
     clonedSetCollection.add(['bar', false]);

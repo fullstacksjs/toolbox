@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
+
 import { tryOr } from './tryOr';
 
 describe('Try catch', () => {
@@ -6,7 +7,7 @@ describe('Try catch', () => {
     const fn = vi.fn();
     tryOr(fn);
 
-    expect(fn).toBeCalled();
+    expect(fn).toBeCalledWith();
   });
 
   it('should return the function return value', () => {

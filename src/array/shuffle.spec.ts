@@ -1,5 +1,5 @@
-import { shuffle } from './shuffle.ts';
 import { range } from './range.ts';
+import { shuffle } from './shuffle.ts';
 
 describe('shuffle', () => {
   it('should return an empty array for empty array', () => {

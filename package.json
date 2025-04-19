@@ -20,11 +20,11 @@
   ],
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
-  "types": "./lib/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./lib/esm/index.js",
-      "require": "./lib/cjs/index.js"
+      "require": "./lib/cjs/index.js",
+      "types": "./lib/types/index.d.ts"
     }
   },
   "sideEffects": false,
@@ -81,7 +81,7 @@
     "node": ">=16"
   },
   "volta": {
-    "node": "20.12.1",
-    "npm": "10.5.2"
+    "node": "20.19.0",
+    "npm": "10.9.2"
   }
 }

@@ -2,6 +2,7 @@
   "clamp": "clamp",
   "divide": "divide",
   "inc": "inc",
+  "dec": "dec",
   "fallback-number": "fallbackNumber",
   "is-in-range": "isInRange",
   "is-negative": "isNegative",

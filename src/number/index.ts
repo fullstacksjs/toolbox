@@ -1,8 +1,8 @@
 export { clamp } from './clamp.ts';
-export { divide } from './divide.ts';
-export { inc } from './inc.ts';
 export { dec } from './dec.ts';
+export { divide } from './divide.ts';
 export { fallbackNumber } from './fallbackNumber.ts';
+export { inc } from './inc.ts';
 export { isInRange } from './isInRange.ts';
 export { isNegative } from './isNegative.ts';
 export { isPositive } from './isPositive.ts';

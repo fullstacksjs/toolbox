@@ -1,14 +1,14 @@
 /**
- * Decrements a number by 1 or a specified step.
+ * Decrements a number by 1.
  *
  * @param {number} n - The number to decrement.
- * @param {number} [step=1] - The step size to decrement by. Defaults to 1.
  * @returns {number} The decremented number.
  *
  * @example
- * dec(3)       // 2
- * dec(3, 2)    // 1
+ * dec(3) // 2
+ * dec(5) // 4
  */
-export function dec(n: number, step: number = 1): number {
-  return n - step;
+
+export function dec(n: number): number {
+  return n - 1;
 }

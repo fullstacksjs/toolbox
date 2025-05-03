@@ -1,6 +1,6 @@
 # inc
 
-Increments the given number by 1, or by a specified step. Useful for counters and mathematical operations.
+Increments the given number by 1. Useful for counters and mathematical operations.
 
 ### Import
 
@@ -11,12 +11,12 @@ import { inc } from '@fullstacksjs/toolbox';
 ### Signature
 
 ```typescript copy
-function inc(n: number, step?: number): number {}
+function inc(n: number): number {}
 ```
 
 ### Examples
 
 ```typescript copy
-inc(3)       // 4
-inc(3, 2)    // 5
+inc(3) // 4
+inc(5) // 6
 ```

@@ -8,13 +8,13 @@ describe('secondToTime', () => {
     expect(formatSeconds(sec, { format })).toBe('00:00');
   });
 
-  it.todo('should throw an error when pass invalid format', () => {
+  it('should throw an error when pass invalid format', () => {
     const inValidFormat = 'ss:ss:ss';
     const sec = 120;
 
     // @ts-expect-error : not assignable type, ignored in order to have a test
-    expect(formatSeconds({ sec, format: inValidFormat })).toThrow(
-      "Invalid format: 'ss:ss:ss'. Accepted formats are 'hh:mm:ss', 'hh:mm', or 'mm:ss'.",
+    expect(() => formatSeconds(sec, { format: inValidFormat })).toThrow(
+      "Invalid format: 'ss:ss:ss'. Accepted formats are 'hh:mm:ss', 'hh:mm', or 'mm:ss'",
     );
   });
 

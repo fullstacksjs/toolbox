@@ -15,6 +15,7 @@ describe('toPascalCase', () => {
     { x: 'foo_bar_code', expected: 'FooBarCode' },
     { x: 'FOO_BAR_CODE', expected: 'FooBarCode' },
     { x: 'foo_ -BaRC ode', expected: 'FooBaRcOde' },
+    { x: 'IDCard', expected: 'IdCard' },
     {
       x: 'ThisIs-fullstacksjs radio__and--I-loveCoding',
       expected: 'ThisIsFullstacksjsRadioAndILoveCoding',

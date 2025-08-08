@@ -14,6 +14,7 @@ describe('toKebabCase', () => {
     { x: 'fooBarCode', expected: 'foo-bar-code' },
     { x: 'foo_bar_code', expected: 'foo-bar-code' },
     { x: 'FOO_BAR_CODE', expected: 'foo-bar-code' },
+    { x: 'IDCard', expected: 'id-card' },
     {
       x: 'ThisIs-fullstacksjs radio__and--I-loveCoding',
       expected: 'this-is-fullstacksjs-radio-and-i-love-coding',

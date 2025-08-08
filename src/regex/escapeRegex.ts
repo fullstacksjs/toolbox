@@ -15,5 +15,5 @@
  * new RegExp(escapeRegex('^a$')).test('a')             // false
  */
 export function escapeRegex(s: string): string {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return s.replace(/[$(-+.?[-^{|}]/g, '\\$&');
 }

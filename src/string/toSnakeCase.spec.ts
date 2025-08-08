@@ -14,6 +14,7 @@ describe('toSnakeCase', () => {
     { x: 'fooBarCode', expected: 'foo_bar_code' },
     { x: 'foo_bar_code', expected: 'foo_bar_code' },
     { x: 'FOO_BAR_CODE', expected: 'foo_bar_code' },
+    { x: 'IDCard', expected: 'id_card' },
     {
       x: 'ThisIs-fullstacksjs radio__and--I-loveCoding',
       expected: 'this_is_fullstacksjs_radio_and_i_love_coding',

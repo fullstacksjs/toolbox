@@ -19,5 +19,6 @@ import { fallbackNumber } from './fallbackNumber.ts';
  * toInteger('S', undefined) // NaN
  */
 export function toDecimal(s: Nullable<string>, fallback: number = NaN): number {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return fallbackNumber(Number.parseInt(s!, 10), fallback);
 }

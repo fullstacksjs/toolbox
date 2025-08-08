@@ -16,6 +16,7 @@ describe('toSpaceCase', () => {
     { x: 'FOO_BAR_CODE', expected: 'foo bar code' },
     { x: 'FOO BAR CODE', expected: 'foo bar code' },
     { x: 'foo_ -BaRC ode', expected: 'foo ba rc ode' },
+    { x: 'IDCard', expected: 'id card' },
     {
       x: 'ThisIs-fullstacksjs radio__and--I-loveCoding',
       expected: 'this is fullstacksjs radio and i love coding',

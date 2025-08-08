@@ -2,6 +2,7 @@ import { defineConfig } from '@fullstacksjs/eslint-config';
 
 export default defineConfig(
   {
+    strict: true,
     typescript: {
       tsconfigRootDir: import.meta.dirname,
     },
@@ -23,6 +24,8 @@ export default defineConfig(
     files: ['./src/guards/**/*.ts', '**/*.spec.ts'],
     rules: {
       'func-style': 'off',
+      '@typescript-eslint/only-throw-error': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
     },
   },
 );

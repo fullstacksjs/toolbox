@@ -14,6 +14,7 @@ describe('toCapitalCase', () => {
     { x: 'fooBarCode', expected: 'Foo Bar Code' },
     { x: 'foo_bar_code', expected: 'Foo Bar Code' },
     { x: 'FOO_BAR_CODE', expected: 'Foo Bar Code' },
+    { x: 'IDCard', expected: 'Id Card' },
     {
       x: 'ThisIs-fullstacksjs radio__and--I-loveCoding',
       expected: 'This Is Fullstacksjs Radio And I Love Coding',

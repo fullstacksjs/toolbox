@@ -21,5 +21,6 @@ export function fallbackNumber<T extends number = number>(
   value: Nullable<T>,
   fallbackValue: T,
 ): NonNullable<T> {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return Number.isFinite(value) ? value! : fallbackValue;
 }

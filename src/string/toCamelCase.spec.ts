@@ -14,6 +14,7 @@ describe('toCamelCase', () => {
     { x: 'fooBarCode', expected: 'fooBarCode' },
     { x: 'foo_bar_code', expected: 'fooBarCode' },
     { x: 'FOO_BAR_CODE', expected: 'fooBarCode' },
+    { x: 'IDCard', expected: 'idCard' },
     {
       x: 'ThisIs-fullstacksjs radio__and--I-loveCoding',
       expected: 'thisIsFullstacksjsRadioAndILoveCoding',

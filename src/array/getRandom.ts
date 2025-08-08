@@ -15,5 +15,6 @@ import { randomInt } from '../number/randomInt.ts';
  */
 export function getRandom<T>(arr: T[]): T {
   const randomIndex = randomInt(0, arr.length - 1);
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return arr[randomIndex]!;
 }

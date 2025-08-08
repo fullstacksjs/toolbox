@@ -9,6 +9,7 @@
  * if (!isNodeJS()) console.log('Deno, bun, or browser?');
  */
 export function isNodeJS(): boolean {
+  console.log('Bun' in globalThis);
   return (
     !('Bun' in globalThis) &&
     'process' in globalThis &&

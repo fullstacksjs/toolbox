@@ -8,7 +8,7 @@ import {
 import { isNodeJS } from './isNodeJS';
 
 describe('isNode', () => {
-  beforeEach(() => {
+  afterEach(() => {
     clearMocks();
   });
 

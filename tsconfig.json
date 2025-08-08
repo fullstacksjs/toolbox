@@ -5,7 +5,6 @@
     "allowImportingTsExtensions": true,
     "types": ["vitest/globals"]
   },
-  "files": ["./mod.ts", "vite.config.ts"],
   "include": ["src/"],
   "references": [{ "path": "./tsconfig.eslint.json" }],
   "exclude": []

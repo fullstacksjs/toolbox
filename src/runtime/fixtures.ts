@@ -40,7 +40,7 @@ export function mockDenoGlobal() {
 }
 
 export function clearMocks() {
-  vi.clearAllMocks();
+  vi.resetAllMocks();
   Reflect.deleteProperty(globalThis, 'Deno');
   Reflect.deleteProperty(globalThis, 'Bun');
 }

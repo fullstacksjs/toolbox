@@ -17,5 +17,5 @@ import type { EnsureArray } from '../types';
  * ensureArray({ foo: 'bar' }); // [{ foo: 'bar' }]
  */
 export function ensureArray<T>(x: T): EnsureArray<T> {
-  return Array.isArray(x) ? (x as any) : [x];
+  return (Array.isArray(x) ? x : [x]) as EnsureArray<T>;
 }

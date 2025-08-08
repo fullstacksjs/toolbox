@@ -67,8 +67,8 @@ Development of toolbox happens in GitHub, and we appreciate contributions.
 
 ### Prerequisite
 
-- [volta][volta]
 - [bash][bash]
+- Node.JS>=20
 
 ### Pull Request
 
@@ -97,5 +97,4 @@ Please check out the [documentation page](https://toolbox.fullstacksjs.com)
 [license-badge]: https://img.shields.io/npm/l/@fullstacksjs/toolbox?color=EA5F12&label=LICENSE&style=flat-square
 [semantic-badge]: https://img.shields.io/badge/semantic-release-e10079.svg?logo=semantic-release&color=7E98F7&label=SEMANTIC&style=flat-square (https://github.com/semantic-release/semantic-release)
 [nodejs]: https://nodejs.org/en/
-[volta]: https://volta.sh/
 [bash]: https://www.gnu.org/software/bash/

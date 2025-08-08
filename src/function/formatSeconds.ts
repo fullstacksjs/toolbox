@@ -49,7 +49,7 @@ export function formatSeconds(
   }: {
     format: 'hh:mm:ss' | 'hh:mm' | 'mm:ss';
   },
-): number | string {
+): string {
   const { hours, minutes, seconds } = splitTime(durationInSeconds);
 
   switch (format) {

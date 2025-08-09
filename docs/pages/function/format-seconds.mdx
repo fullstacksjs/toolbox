@@ -23,7 +23,7 @@ function formatSeconds(
 ## Parameters
 
 - **`durationInSeconds`** (`number`): The total number of seconds to be converted.
-- **`options`** (`{ format: 'hh:mm:ss' | 'hh:mm' | 'mm:ss' }`): The desired output format.
+- **`options`** (`{ format: 'hh:mm:ss' | 'hh:mm' | 'mm:ss' | '(hh):mm:ss' }`): The desired output format.
 
 ## Returns
 
@@ -34,29 +34,32 @@ function formatSeconds(
 ### Formatting to `hh:mm:ss`
 
 ```typescript
-const time1 = formatSeconds(3661, { format: 'hh:mm:ss' });
-// Output: '01:01:01'
+formatSeconds(3661, { format: 'hh:mm:ss' }); // Output: '01:01:01'
 ```
 
 ### Formatting to `hh:mm`
 
 ```typescript
-const time2 = formatSeconds(3661, { format: 'hh:mm' });
-// Output: '01:01'
+formatSeconds(3661, { format: 'hh:mm' }); // Output: '01:01'
 ```
 
 ### Formatting to `mm:ss`
 
 ```typescript
-const time3 = formatSeconds(61, { format: 'mm:ss' });
-// Output: '01:01'
+formatSeconds(61, { format: 'mm:ss' }); // Output: '01:01'
 ```
 
 ### Formatting Zero Seconds
 
 ```typescript
-const time4 = formatSeconds(0, { format: 'mm:ss' });
-// Output: '00:00'
+formatSeconds(0, { format: 'mm:ss' }); // Output: '00:00'
+```
+
+### Flexible hours
+
+```typescript
+formatSeconds(3599, { format: '(hh):mm:ss' }); // Output: '59:59'
+formatSeconds(3600, { format: '(hh):mm:ss' }); // Output: '01:00:00'
 ```
 
 ## Error Handling

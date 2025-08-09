@@ -19,10 +19,19 @@ describe('secondToTime', () => {
   });
 
   it.each([
-    [3661, { format: 'hh:mm:ss' as const }, '01:01:01'],
-    [3661, { format: 'hh:mm' as const }, '01:01'],
-    [61, { format: 'mm:ss' as const }, '01:01'],
-  ])(
+    [3661, { format: 'hh:mm:ss' }, '01:01:01'],
+    [3661, { format: 'hh:mm' }, '01:01'],
+    [61, { format: 'mm:ss' }, '01:01'],
+    [120.5, { format: 'hh:mm:ss' }, '00:02:00'],
+    [120.5, { format: 'hh:mm' }, '00:02'],
+    [120.5, { format: 'mm:ss' }, '02:00'],
+    [61, { format: '(hh):mm:ss' }, '01:01'],
+    [3661.5, { format: '(hh):mm:ss' }, '01:01:01'],
+  ] satisfies [
+    Parameters<typeof formatSeconds>[0],
+    Parameters<typeof formatSeconds>[1],
+    ReturnType<typeof formatSeconds>,
+  ][])(
     'should format seconds to %s for input %o',
     (durationInSeconds, options, expected) => {
       expect(formatSeconds(durationInSeconds, options)).toBe(expected);

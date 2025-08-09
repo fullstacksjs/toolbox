@@ -6,7 +6,7 @@
  */
 
 function formatToTwoDigits(value: number): string {
-  return String(value).padStart(2, '0');
+  return String(Math.trunc(value)).padStart(2, '0');
 }
 
 /**
@@ -40,6 +40,8 @@ function splitTime(durationInSeconds: number): {
  * formatSeconds(3661, { format: 'hh:mm:ss' }) // '01:01:01'
  * formatSeconds(3661, { format: 'hh:mm' })    // '01:01'
  * formatSeconds(61, { format: 'mm:ss' })      // '01:01'
+ * formatSeconds(3661, { format: '(hh):mm:ss' }) // '01:01:01'
+ * formatSeconds(61, { format: '(hh):mm:ss' }) // '01:01'
  */
 
 export function formatSeconds(
@@ -47,12 +49,16 @@ export function formatSeconds(
   {
     format,
   }: {
-    format: 'hh:mm:ss' | 'hh:mm' | 'mm:ss';
+    format: '(hh):mm:ss' | 'hh:mm:ss' | 'hh:mm' | 'mm:ss';
   },
 ): string {
   const { hours, minutes, seconds } = splitTime(durationInSeconds);
 
   switch (format) {
+    case '(hh):mm:ss':
+      return hours > 0
+        ? `${formatToTwoDigits(hours)}:${formatToTwoDigits(minutes)}:${formatToTwoDigits(seconds)}`
+        : `${formatToTwoDigits(minutes)}:${formatToTwoDigits(seconds)}`;
     case 'hh:mm:ss':
       return `${formatToTwoDigits(hours)}:${formatToTwoDigits(minutes)}:${formatToTwoDigits(seconds)}`;
     case 'hh:mm':

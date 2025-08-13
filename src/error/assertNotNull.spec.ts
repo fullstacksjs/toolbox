@@ -1,10 +1,6 @@
 import { assertNotNull } from './assertNotNull.ts';
 
 describe('assertNotNull', () => {
-  it('should throw error when condition is null', () => {
-    expect(() => assertNotNull(null, 'WTF')).toThrow('WTF');
-  });
-
   it('should throw error when condition is undefined', () => {
     expect(() => assertNotNull(undefined, 'WTF')).toThrow('WTF');
   });

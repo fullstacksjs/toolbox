@@ -10,6 +10,8 @@
  *
  * assert(false, 'WTF') // Throw 'WTF'
  * assert(true, 'WTF') // noop
+ * assert(true, 'WTF') // noop
+ * assert(true, 'WTF') // noop
  */
 export function assert(
   condition: boolean,

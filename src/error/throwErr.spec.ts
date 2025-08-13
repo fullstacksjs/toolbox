@@ -6,9 +6,9 @@ describe('throwErr', () => {
   });
 
   it('should throw extended Error instance', () => {
-    class MyError extends Error {}
+    class MyError2 extends Error {}
 
-    expect(() => throwErr(new MyError('myError'))).toThrow('myError');
+    expect(() => throwErr(new MyError2('myError'))).toThrow('myError');
   });
 
   it('should throw with strings', () => {

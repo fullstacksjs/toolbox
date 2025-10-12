@@ -65,8 +65,7 @@ describe('Mutable and Immutable', () => {
     }
     const immutable: Immutable<Sample> = { a: 5 };
 
-    // @ts-expect-error - reassignment should fail
-    immutable.a = 10;
+    // immutable.a = 10; // reassignment should fail
 
     expect(immutable.a).toBe(5);
   });

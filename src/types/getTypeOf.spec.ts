@@ -46,7 +46,7 @@ describe('asNonEmptyArray', () => {
   });
 
   // @ts-expect-error - should not allow zero elements
-  // asNonEmptyArray();
+  asNonEmptyArray();
 });
 
 describe('Mutable and Immutable', () => {

@@ -1,0 +1,13 @@
+# pipe
+
+```ts
+const result = pipe(
+  2,
+  (x: number) => x + 3,
+  (x: number) => x * 2
+); // 10
+```
+
+Applies a sequence of functions to a value in order.
+
+**Use case:** Simplifies chaining of transformations without deeply nested calls.

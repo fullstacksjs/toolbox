@@ -1,0 +1,42 @@
+# Result
+
+```ts
+type Result<Ok, Err> =
+  | { ok: true; value: Ok }
+  | { ok: false; error: Err }
+
+const success: Result<number, string> = { ok: true, value: 42 };
+const failure: Result<number, string> = { ok: false, error: 'Something went wrong' };
+```
+
+Represents a **success/failure outcome** without using exceptions. Pattern commonly used in functional programming.
+
+# AsyncResult
+
+```ts
+type AsyncResult<Ok, Err> = Promise<Result<Ok, Err>>;
+
+const asyncRes: AsyncResult<number, string> = Promise.resolve({ ok: true, value: 42 });
+```
+
+A `Promise` wrapper around a `Result` type for async operations. Use for cleaner error handling with `await`.
+
+# Ok
+
+```ts
+const success = Ok(42); // { ok: true, value: 42 }
+```
+
+Helper function to create a `Result` in the success state.
+
+**Type-safe alternative** to manually writing `{ ok: true, value: ... }`.
+
+# Err
+
+```ts
+const failure = Err('Something went wrong'); // { ok: false, error: 'Something went wrong' }
+```
+
+Helper function to create a `Result` in the error state.
+
+**Type-safe alternative** to manually writing `{ ok: false, error: ... }`.

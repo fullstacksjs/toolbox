@@ -85,6 +85,8 @@ export type IdFn = <T>(x: T) => T;
 
 export type Nullable<T = never> = T | null | undefined;
 
+export type Optional<T> = T | undefined;
+
 export type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
 
 export type ObjectType = Record<number | string | symbol, unknown>;
@@ -125,3 +127,35 @@ export type RemoveDeepReadonly<T> = keyof T extends never
   : {
       -readonly [P in keyof T]: RemoveDeepReadonly<T[P]>;
     };
+
+export type NonEmptyArray<T> = [T, ...T[]];
+
+export function asNonEmptyArray<T>(...items: [T, ...T[]]): NonEmptyArray<T> {
+  return items;
+}
+
+export type Mutable<T> = {
+  -readonly [P in keyof T]: T[P];
+};
+
+export type Immutable<T> = {
+  readonly [P in keyof T]: T[P];
+};
+
+export type Result<Ok, Err> =
+  | { ok: false; error: Err }
+  | { ok: true; value: Ok };
+
+export type AsyncResult<Ok, Err> = Promise<Result<Ok, Err>>;
+
+export function Ok<T>(value: T): Result<T, never> {
+  return { ok: true, value };
+}
+
+export function Err<E>(error: E): Result<never, E> {
+  return { ok: false, error };
+}
+
+export function pipe<T>(value: T, ...fns: ((input: T) => T)[]): T {
+  return fns.reduce((acc, fn) => fn(acc), value);
+}

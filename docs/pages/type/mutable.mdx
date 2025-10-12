@@ -1,0 +1,19 @@
+# Mutable
+
+```ts
+type Sample = { readonly a: number };
+const obj: Mutable<Sample> = { a: 5 };
+obj.a = 10; // allowed
+```
+
+Transforms a type by **removing `readonly` modifiers**, allowing mutation of properties.
+
+# Immutable
+
+```ts
+type Sample = { a: number };
+const obj: Immutable<Sample> = { a: 5 };
+obj.a = 10; // type error
+```
+
+Transforms a type by **adding `readonly` modifiers** to all properties. Useful for state or API responses that must not be changed.

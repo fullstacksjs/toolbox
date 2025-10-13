@@ -1,4 +1,4 @@
-import { pipe, pipeWith } from './pipe';
+import { pipe } from './pipe';
 
 const zeroParamGetNumber = () => 1;
 const singleParamFnAdd1 = (n: number) => n + 1;
@@ -47,45 +47,5 @@ describe('pipe', () => {
 
   it('works when first function has multiple params', () => {
     expect(pipe(multipleParamFnDifference, singleParamFnAdd1)(5, 4)).toBe(2);
-  });
-});
-
-describe('pipeWith', () => {
-  it('works', () => {
-    expect(pipeWith(1, singleParamFnAdd1)).toBe(2);
-    expect(pipeWith(1, singleParamFnAdd1, singleParamFnTimes2)).toBe(4);
-    expect(
-      pipeWith(1, singleParamFnAdd1, singleParamFnTimes2, singleParamFnAdd1),
-    ).toBe(5);
-    expect(
-      pipeWith(
-        1,
-        singleParamFnAdd1,
-        singleParamFnTimes2,
-        singleParamFnAdd1,
-        singleParamFnTimes2,
-      ),
-    ).toBe(10);
-    expect(
-      pipeWith(
-        1,
-        singleParamFnAdd1,
-        singleParamFnTimes2,
-        singleParamFnAdd1,
-        singleParamFnTimes2,
-        singleParamFnAdd1,
-      ),
-    ).toBe(11);
-    expect(
-      pipeWith(
-        1,
-        singleParamFnAdd1,
-        singleParamFnTimes2,
-        singleParamFnAdd1,
-        singleParamFnTimes2,
-        singleParamFnAdd1,
-        singleParamFnTimes2,
-      ),
-    ).toBe(22);
   });
 });

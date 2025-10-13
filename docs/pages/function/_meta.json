@@ -3,6 +3,7 @@
   "debounce": "debounce",
   "noop": "noop",
   "not": "not",
+  "pipe": "pipe",
   "sleep": "sleep",
   "throttle": "throttle",
   "try-or": "tryOr",

@@ -1,5 +1,22 @@
 # Nullable
 
-```javascript
-type name = Nullable<string> // null | string
+A type wrapper for values that may be null or undefined.
+
+### Import
+
+```ts copy
+import type { Nullable } from '@fullstacksjs/toolbox';
+type name = Nullable<string> // string | null | undefined
+```
+
+### Signature
+
+```ts
+type name = Nullable<string> // string | null | undefined
+```
+
+### Example
+
+```ts copy
+type name = Nullable<string> // string | null | undefined
 ```

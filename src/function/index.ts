@@ -1,4 +1,5 @@
 export { callAll } from './callAll.ts';
+export { compose } from './compose.ts';
 export { debounce } from './debounce.ts';
 export { formatSeconds } from './formatSeconds.ts';
 export { noop } from './noop.ts';

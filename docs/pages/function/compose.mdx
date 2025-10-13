@@ -1,0 +1,28 @@
+# compose
+
+Returns a new function that applies the provided functions in sequence.
+
+## Import
+
+```ts copy
+import { compose } from '@fullstacksjs/toolbox';
+```
+
+## Signature
+
+```ts copy
+function compose<A extends unknown[], B>(
+  ...fns: Function[]
+): (...args: A) => B;
+```
+
+### Examples
+
+```ts copy
+const increment = (x: number) => x + 1;
+const double = (x: number) => x * 2;
+const toString = (x: number) => x.toString();
+
+const fn = compose(increment, double, increment, toString);
+console.log(fn(2)); // (((2 + 1) * 2) + 1).toString() => "7"
+```

@@ -1,4 +1,6 @@
 {
   "get-type-of": "getTypeOf",
-  "nullable": "Nullable"
+  "nullable": "Nullable",
+  "mutable": "Mutable",
+  "optional": "Optional"
 }

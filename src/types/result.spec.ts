@@ -17,6 +17,6 @@ describe('Result, Ok, Err, AsyncResult', () => {
     const promise: Promise<Result<string, never>> = Promise.resolve(Ok('done'));
     const res = await promise;
     expect(res.ok).toBe(true);
-    if (res.ok) expect(res.value).toBe('done');
+    expect((res as Ok<string>).value).toBe('done');
   });
 });

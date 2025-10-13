@@ -6,14 +6,12 @@ Transforms a type by removing `readonly` modifiers, allowing mutation of propert
 import type { Mutable } from '@fullstacksjs/toolbox';
 ```
 
-
 ### Signature
 
 ```ts copy
 type Mutable<T> = {
   -readonly [P in keyof T]: T[P];
 };
-
 ```
 
 ### Example
@@ -22,30 +20,4 @@ type Mutable<T> = {
 type Sample = { readonly a: number };
 const obj: Mutable<Sample> = { a: 5 };
 obj.a = 10; // allowed
-```
-
-## Immutable
-
-Transforms a type by **adding `readonly` modifiers** to all properties. Useful for state or API responses that must not be changed.
-
-### Import
-
-```ts copy
-import type { Immutable } from '@fullstacksjs/toolbox';
-```
-
-### Signature
-
-```ts copy
-export type Immutable<T> = {
-  readonly [P in keyof T]: T[P];
-};
-```
-
-### Example
-
-```ts copy
-type Sample = { a: number };
-const obj: Immutable<Sample> = { a: 5 };
-obj.a = 10; // type error
 ```

@@ -11,13 +11,13 @@ describe('Mutable and Immutable', () => {
   });
 
   it('Immutable prevents reassignment', () => {
+    expect.assertions(0);
     interface Sample {
       a: number;
     }
     const immutable: Immutable<Sample> = { a: 5 };
 
-    // immutable.a = 10; // reassignment should fail
-
-    expect(immutable.a).toBe(5);
+    // @ts-expect-error - should not allow reassignment
+    immutable.a = 10;
   });
 });

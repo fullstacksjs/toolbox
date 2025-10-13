@@ -1,6 +1,12 @@
-export type Result<Ok, Err> =
-  | { ok: false; error: Err }
-  | { ok: true; value: Ok };
+export interface Ok<T> {
+  ok: true;
+  value: T;
+}
+export interface Err<E> {
+  ok: false;
+  error: E;
+}
+export type Result<V, E> = Err<E> | Ok<V>;
 
 export type AsyncResult<Ok, Err> = Promise<Result<Ok, Err>>;
 

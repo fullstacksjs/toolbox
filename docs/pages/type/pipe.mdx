@@ -1,13 +1,112 @@
-# pipe
+# `pipe` & `pipeWith`
+
+`pipe` and `pipeWith` are utilities to compose multiple functions in sequence. They allow you to transform values step by step without nested function calls.
+
+* `pipe`: Returns a new function that applies the provided functions in sequence.
+* `pipeWith`: Immediately applies the first value to the chain of functions.
+
+Both utilities support up to 10 function arguments with type-safe inference, making them flexible for common use cases.
+
+## Type Definitions
 
 ```ts
-const result = pipe(
+type UnknownFunction = (...params: unknown[]) => unknown;
+```
+
+## `pipe`
+
+```ts
+function pipe<A extends unknown[], B>(
+  ab: (...a: A) => B
+): (...args: A) => B;
+
+function pipe<A extends unknown[], B, C>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C
+): (...args: A) => C;
+
+// ...supports up to 7 functions in sequence
+```
+
+### Usage
+
+```ts
+const increment = (x: number) => x + 1;
+const double = (x: number) => x * 2;
+
+const fn = pipe(increment, double, increment);
+console.log(fn(2)); // ((2 + 1) * 2) + 1 => 7
+```
+
+**Notes:**
+
+* The first function can take multiple parameters.
+* Subsequent functions must take exactly one parameter, the result of the previous function.
+* Returns a new function.
+
+---
+
+## `pipeWith`
+
+```ts
+function pipeWith<A, B>(a: A, ab: (a: A) => B): B;
+
+function pipeWith<A, B, C>(
+  a: A,
+  ab: (a: A) => B,
+  bc: (b: B) => C
+): C;
+
+// ...supports up to 7 functions in sequence
+```
+
+### Usage
+
+```ts
+const result = pipeWith(
+  2,
+  increment,
+  double,
+  increment
+);
+console.log(result); // 7
+```
+
+**Notes:**
+
+* The first argument is the initial value.
+* Subsequent arguments are functions applied in sequence.
+* Immediately returns the final result.
+
+## Examples
+
+### Basic `pipe`
+
+```ts
+const resultFn = pipe(
+  (x: number) => x + 3,
+  (x: number) => x * 2
+);
+console.log(resultFn(2)); // (2 + 3) * 2 => 10
+```
+
+### Basic `pipeWith`
+
+```ts
+const result = pipeWith(
   2,
   (x: number) => x + 3,
   (x: number) => x * 2
-); // 10
+);
+console.log(result); // 10
 ```
 
-Applies a sequence of functions to a value in order.
+### Using multiple parameters in the first function
 
-**Use case:** Simplifies chaining of transformations without deeply nested calls.
+```ts
+const subtract = (a: number, b: number) => a - b;
+const square = (x: number) => x * x;
+
+const fn = pipe(subtract, square);
+console.log(fn(5, 3)); // (5 - 3) ^ 2 => 4
+```

@@ -85,6 +85,8 @@ export type IdFn = <T>(x: T) => T;
 
 export type Nullable<T = never> = T | null | undefined;
 
+export type Optional<T> = T | undefined;
+
 export type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
 
 export type ObjectType = Record<number | string | symbol, unknown>;

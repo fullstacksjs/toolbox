@@ -1,0 +1,27 @@
+# `pipe`
+
+Returns a new function that applies the provided functions in sequence.
+
+## Import
+
+```ts
+import { pipe } from '@fullstacksjs/toolbox';
+```
+
+## Signature
+
+```ts
+function pipe<A extends unknown[], B>(
+  ...fns: Funciton[]
+): (...args: A) => B;
+```
+
+### Examples
+
+```ts
+const increment = (x: number) => x + 1;
+const double = (x: number) => x * 2;
+
+const fn = pipe(increment, double, increment);
+console.log(fn(2)); // ((2 + 1) * 2) + 1 => 7
+```

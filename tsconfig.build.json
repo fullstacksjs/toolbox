@@ -4,5 +4,5 @@
     "incremental": false
   },
   "include": ["./src"],
-  "exclude": ["**/*.spec.ts"]
+  "exclude": ["**/*.spec.ts", "src/runtime/fixtures.ts"]
 }

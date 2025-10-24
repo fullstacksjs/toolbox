@@ -1,3 +1,5 @@
+/// <reference lib="DOM" />
+
 /**
  * Throttles a function to only be executed once per delay.
  *

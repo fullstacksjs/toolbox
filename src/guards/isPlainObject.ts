@@ -9,7 +9,6 @@ export function isPlainObject(o: unknown): o is ObjectType {
 
   const ctor = o.constructor;
 
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (ctor == null) return true;
 
   const prototype = ctor.prototype;

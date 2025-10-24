@@ -28,7 +28,7 @@ describe('throttle', () => {
     throttled();
     throttled();
 
-    expect(callback).toHaveBeenCalledTimes(1);
+    expect(callback).toHaveBeenCalledOnce();
   });
 
   it('should execute callback again after delay', () => {
@@ -52,7 +52,7 @@ describe('throttle', () => {
     throttled(3);
     throttled(4);
 
-    expect(callback).toHaveBeenCalledTimes(1);
+    expect(callback).toHaveBeenCalledOnce();
   });
 
   it('should not execute callback function when throttled function is never called', () => {

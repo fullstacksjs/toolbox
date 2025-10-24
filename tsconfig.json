@@ -6,6 +6,5 @@
     "types": ["vitest/globals"]
   },
   "include": ["src/"],
-  "references": [{ "path": "./tsconfig.eslint.json" }],
   "exclude": []
 }

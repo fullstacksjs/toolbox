@@ -1,3 +1,5 @@
+/// <reference lib="DOM" />
+
 /**
  * Returns a promise that resolves after a certain milliseconds.
  *

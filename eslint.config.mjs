@@ -4,27 +4,15 @@ export default defineConfig(
   {
     strict: true,
     typescript: {
-      tsconfigRootDir: import.meta.dirname,
+      projectService: {
+        allowDefaultProject: ['*.ts'],
+      },
     },
     ignores: ['lib'],
   },
   {
-    files: ['./src/**/*.ts'],
-    rules: {
-      '@typescript-eslint/ban-types': 'off',
-      '@typescript-eslint/prefer-for-of': 'off',
-      '@typescript-eslint/no-throw-literal': 'off',
-      '@typescript-eslint/dot-notation': 'off',
-      'fp/no-let': 'off',
-      'fp/no-loops': 'off',
-      'func-style': ['error', 'declaration'],
-    },
-  },
-  {
     files: ['./src/guards/**/*.ts', '**/*.spec.ts'],
     rules: {
-      'func-style': 'off',
-      '@typescript-eslint/only-throw-error': 'off',
       '@typescript-eslint/no-non-null-assertion': 'off',
     },
   },

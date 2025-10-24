@@ -28,7 +28,7 @@ describe('debounce', () => {
     debouncedFunction();
     vi.advanceTimersByTime(1000);
 
-    expect(execute).toHaveBeenCalledTimes(1);
+    expect(execute).toHaveBeenCalledOnce();
   });
 
   it('should not execute before the delay', () => {
@@ -52,7 +52,7 @@ describe('debounce', () => {
     }
     vi.advanceTimersByTime(500);
 
-    expect(execute).toHaveBeenCalledTimes(1);
+    expect(execute).toHaveBeenCalledOnce();
   });
 
   it('should execute whenever not called within the delay period', () => {
@@ -80,7 +80,7 @@ describe('debounce', () => {
     );
     debouncedFunction();
 
-    expect(execute).toHaveBeenCalledTimes(1);
+    expect(execute).toHaveBeenCalledOnce();
   });
 
   it('should not execute after the delay if immediate is true', () => {
@@ -93,7 +93,7 @@ describe('debounce', () => {
     debouncedFunction();
     vi.advanceTimersByTime(1000);
 
-    expect(execute).toHaveBeenCalledTimes(1);
+    expect(execute).toHaveBeenCalledOnce();
   });
 
   it('should execute whenever not called within the delay period and then execute immediately with another call', () => {

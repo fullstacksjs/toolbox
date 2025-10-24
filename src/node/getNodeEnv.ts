@@ -1,3 +1,4 @@
+/// <reference types="node" />
 /**
  * Get `process.env.NODE_ENV` and return fallback when environment is empty string or undefined.
  *

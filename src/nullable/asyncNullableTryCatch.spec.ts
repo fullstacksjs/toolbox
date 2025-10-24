@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { asyncNullableTryCatch } from './asyncNullableTryCatch';
 
-describe('Nullable async try catch', () => {
+describe('nullable async try catch', () => {
   it('should call the passed function to it', async () => {
     const execute = vi.fn();
     await asyncNullableTryCatch(execute);

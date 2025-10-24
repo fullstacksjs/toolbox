@@ -1,17 +1,19 @@
 import type { Immutable, Mutable } from './mutability';
 
-describe('Mutable and Immutable', () => {
-  it('Mutable allows reassignment', () => {
+describe('mutable and Immutable', () => {
+  it('mutable allows reassignment', () => {
     interface Sample {
       readonly a: number;
     }
     const mutable: Mutable<Sample> = { a: 5 };
     mutable.a = 10;
+
     expect(mutable.a).toBe(10);
   });
 
-  it('Immutable prevents reassignment', () => {
+  it('immutable prevents reassignment', () => {
     expect.assertions(0);
+
     interface Sample {
       a: number;
     }

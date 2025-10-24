@@ -13,10 +13,8 @@ export function changeCase(
 ) {
   return input
     .replace(wordRegex, (match, p1, p2, p3, p4) => {
-      /* eslint-disable @typescript-eslint/restrict-template-expressions */
       if (p1 && p2) return `${p1} ${p2}`;
       if (p3 && p4) return `${p3} ${p4}`;
-      /* eslint-enable @typescript-eslint/restrict-template-expressions */
 
       return match;
     })

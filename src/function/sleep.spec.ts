@@ -13,7 +13,7 @@ describe('sleep', () => {
   it('should call the inner timeout function', () => {
     void sleep(1000);
 
-    expect(globalThis.setTimeout).toHaveBeenCalledTimes(1);
+    expect(globalThis.setTimeout).toHaveBeenCalledOnce();
   });
 
   it('should resolve after the timeout', async () => {

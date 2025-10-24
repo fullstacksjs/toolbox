@@ -1,9 +1,0 @@
-{
-  "extends": "@fullstacksjs/tsconfig/cjs",
-  "compilerOptions": {
-    "composite": true,
-    "noUncheckedIndexedAccess": true
-  },
-  "include": ["./*.ts"],
-  "exclude": ["lib/"]
-}

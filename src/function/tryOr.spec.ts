@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { tryOr } from './tryOr';
 
-describe('Try catch', () => {
+describe('try catch', () => {
   it('should call the passed function to it', () => {
     const fn = vi.fn();
     tryOr(fn);

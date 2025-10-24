@@ -32,6 +32,7 @@ describe('changeCase', () => {
 
   it('supports custom map', () => {
     const upper = (s: string) => s.toUpperCase();
+
     expect(changeCase('foo-bar_code', { map: upper })).toBe('FOO BAR CODE');
   });
 
@@ -40,6 +41,7 @@ describe('changeCase', () => {
       delimiter: '!',
       map: (part, index, parts) => `${index}-${part}-${parts.length}`,
     });
+
     expect(result).toBe('0-Foo-3!1-Bar-3!2-Baz-3');
   });
 });

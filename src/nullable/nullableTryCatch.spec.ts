@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { nullableTryCatch } from './nullableTryCatch';
 
-describe('Nullable try catch', () => {
+describe('nullable try catch', () => {
   it('should call the passed function to it', () => {
     const execute = vi.fn();
     nullableTryCatch(execute);

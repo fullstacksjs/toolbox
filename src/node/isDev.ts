@@ -1,3 +1,4 @@
+/// <reference types="node" />
 /**
  * Check whether NodeJS Env is development.
  *

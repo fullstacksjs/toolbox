@@ -1,43 +1,28 @@
 # pipe
 
-Composes multiple functions from left to right.  
-Each function receives the output of the previous one.
+Composes multiple functions from left to right. Each function receives the output of the previous one.
 
 ### Import
 
 ```typescript copy
 import { pipe } from '@fullstacksjs/toolbox';
-````
+```
 
 ### Signature
 
 ```typescript copy
-function pipe<T>(...fns: ((arg: T) => T)[]): (initial: T) => T
+function pipe<A extends unknown[], B>(
+  ...fns: Function[]
+): (...args: A) => B;
 ```
 
 ### Examples
 
 ```typescript copy
-// Compose number functions
-const add = (x: number) => x + 1;
-const multiply = (x: number) => x * 2;
+const add = (x: number, y: number) => x + y;
+const double = (x: number) => x * 2;
+const toString = (x: number) => x.toString();
 
-const addThenMultiply = pipe(add, multiply);
-console.log(addThenMultiply(5)); // 12
-
-// Single function
-const square = (x: number) => x * x;
-const squarePipe = pipe(square);
-console.log(squarePipe(4)); // 16
-
-// String functions
-const trim = (s: string) => s.trim();
-const toUpper = (s: string) => s.toUpperCase();
-
-const normalize = pipe(trim, toUpper);
-console.log(normalize('  hello  ')); // "HELLO"
-
-// Identity (no functions)
-const identity = pipe();
-console.log(identity(42)); // 42
+const calculate = pipe(add, double, toString);
+console.log(calculate(3, 4)); // ((3 + 4) * 2).toString() => "14"
 ```

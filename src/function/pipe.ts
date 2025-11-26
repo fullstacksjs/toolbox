@@ -1,19 +1,43 @@
-/**
- * Creates a left-to-right function composition.
- *
- * Each function receives the output of the previous one.
- *
- * @param fns - A list of functions to compose from left to right.
- * @returns A new function that takes an initial value and runs it through all functions.
- *
- * @example
- * const add = (x: number) => x + 1;
- * const multiply = (x: number) => x * 2;
- *
- * const addThenMultiply = pipe(add, multiply);
- *
- * console.log(addThenMultiply(5)); // Output: 12
- */
-export function pipe<T>(...fns: ((arg: T) => T)[]) {
-  return (initial: T): T => fns.reduce((value, fn) => fn(value), initial);
+type UnknownFunction = (...args: unknown[]) => unknown;
+
+export function pipe<A extends unknown[], B>(
+  ab: (...a: A) => B,
+): (...a: A) => B;
+export function pipe<A extends unknown[], B, C>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+): (...a: A) => C;
+export function pipe<A extends unknown[], B, C, D>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+): (...a: A) => D;
+export function pipe<A extends unknown[], B, C, D, E>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+): (...a: A) => E;
+export function pipe<A extends unknown[], B, C, D, E, F>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+  ef: (e: E) => F,
+): (...a: A) => F;
+export function pipe<A extends unknown[], B, C, D, E, F, G>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+  ef: (e: E) => F,
+  fg: (f: F) => G,
+): (...a: A) => G;
+
+export function pipe(...fns: UnknownFunction[]): UnknownFunction {
+  return fns.reduce(
+    (acc, fn) =>
+      (...args: unknown[]) =>
+        fn(acc(...args)),
+  );
 }

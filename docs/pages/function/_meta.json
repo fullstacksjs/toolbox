@@ -1,5 +1,6 @@
 {
   "call-all": "callAll",
+  "compose": "compose",
   "debounce": "debounce",
   "noop": "noop",
   "not": "not",

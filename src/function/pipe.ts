@@ -1,43 +1,38 @@
-type UnknownFunction = (...args: unknown[]) => unknown;
+type UnknownFunction = (arg: unknown) => unknown;
 
-export function pipe<A extends unknown[], B>(
-  ab: (...a: A) => B,
-): (...a: A) => B;
-export function pipe<A extends unknown[], B, C>(
-  ab: (...a: A) => B,
-  bc: (b: B) => C,
-): (...a: A) => C;
-export function pipe<A extends unknown[], B, C, D>(
-  ab: (...a: A) => B,
+export function pipe<A, B>(value: A, ab: (a: A) => B): B;
+export function pipe<A, B, C>(value: A, ab: (a: A) => B, bc: (b: B) => C): C;
+export function pipe<A, B, C, D>(
+  value: A,
+  ab: (a: A) => B,
   bc: (b: B) => C,
   cd: (c: C) => D,
-): (...a: A) => D;
-export function pipe<A extends unknown[], B, C, D, E>(
-  ab: (...a: A) => B,
+): D;
+export function pipe<A, B, C, D, E>(
+  value: A,
+  ab: (a: A) => B,
   bc: (b: B) => C,
   cd: (c: C) => D,
   de: (d: D) => E,
-): (...a: A) => E;
-export function pipe<A extends unknown[], B, C, D, E, F>(
-  ab: (...a: A) => B,
+): E;
+export function pipe<A, B, C, D, E, F>(
+  value: A,
+  ab: (a: A) => B,
   bc: (b: B) => C,
   cd: (c: C) => D,
   de: (d: D) => E,
   ef: (e: E) => F,
-): (...a: A) => F;
-export function pipe<A extends unknown[], B, C, D, E, F, G>(
-  ab: (...a: A) => B,
+): F;
+export function pipe<A, B, C, D, E, F, G>(
+  value: A,
+  ab: (a: A) => B,
   bc: (b: B) => C,
   cd: (c: C) => D,
   de: (d: D) => E,
   ef: (e: E) => F,
   fg: (f: F) => G,
-): (...a: A) => G;
+): G;
 
-export function pipe(...fns: UnknownFunction[]): UnknownFunction {
-  return fns.reduce(
-    (acc, fn) =>
-      (...args: unknown[]) =>
-        fn(acc(...args)),
-  );
+export function pipe(value: unknown, ...fns: UnknownFunction[]): unknown {
+  return fns.reduce((acc, fn) => fn(acc), value);
 }

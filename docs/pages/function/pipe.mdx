@@ -1,0 +1,34 @@
+# pipe
+
+Pipes a value through multiple functions from left to right. Each function receives the output of the previous one.
+
+### Import
+
+```typescript copy
+import { pipe } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function pipe<A, B>(value: A, ...fns: Function[]): B;
+```
+
+### Examples
+
+```typescript copy
+const add = (x: number) => x + 1;
+const double = (x: number) => x * 2;
+const toString = (x: number) => x.toString();
+
+const result = pipe(5, add, double, toString);
+console.log(result); // ((5 + 1) * 2).toString() => "12"
+
+
+const split = (str: string) => str.split(' ');
+const getLength = (arr: string[]) => arr.length;
+const isEven = (num: number) => num % 2 === 0;
+
+const hasEvenWordCount = pipe('hello world from typescript', split, getLength, isEven);
+console.log(hasEvenWordCount); // true (4 words)
+```

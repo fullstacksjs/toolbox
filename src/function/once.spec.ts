@@ -93,14 +93,27 @@ describe('once', () => {
     expect(fn).toHaveBeenCalledOnce();
   });
 
-  it('should handle functions that throw errors', () => {
+  it('should not cache errors and retry on subsequent calls', () => {
+    let callCount = 0;
     const fn = vi.fn(() => {
-      throw new Error('Test error');
+      callCount++;
+      if (callCount < 2) {
+        throw new Error('Test error');
+      }
+      return 'success';
     });
     const onceFn = once(fn);
 
+    // First call throws
     expect(() => onceFn()).toThrow('Test error');
-    expect(() => onceFn()).not.toThrow(); // Returns cached undefined
     expect(fn).toHaveBeenCalledOnce();
+
+    // Second call succeeds and caches result
+    expect(onceFn()).toBe('success');
+    expect(fn).toHaveBeenCalledTimes(2);
+
+    // Third call returns cached result
+    expect(onceFn()).toBe('success');
+    expect(fn).toHaveBeenCalledTimes(2);
   });
 });

@@ -36,8 +36,8 @@ export function once<T extends (...args: any[]) => any>(fn: T): T {
     ...args: Parameters<T>
   ): ReturnType<T> {
     if (!called) {
-      called = true;
       result = fn.apply(this, args) as ReturnType<T>;
+      called = true;
       return result;
     }
     return result;

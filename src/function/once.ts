@@ -2,7 +2,7 @@
  * Creates a function that is restricted to invoking the given function once.
  * Repeat calls to the function return the value of the first invocation.
  *
- * @template {T} type of the function being wrapped.
+ * @template T type of the function being wrapped.
  * @param {T} fn The function to restrict.
  * @returns {T} Returns the new restricted function.
  *

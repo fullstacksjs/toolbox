@@ -45,7 +45,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest --coverage",
     "verify": "run-p lint type-check test",
-    "prepublishOnly": "pinst --disable && pkg-ok ./lib",
+    "prepublishOnly": "pinst --disable && pkg-ok ./lib/esm && pkg-ok ./lib/cjs",
     "postpublish": "pinst --enable",
     "prepare": ".husky/prepare"
   },

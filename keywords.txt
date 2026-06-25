@@ -37,6 +37,7 @@ jsdoc
 unoptimized
 nojekyll
 treeshake
+tsdown
 tsup
 postbuild
 runtimes

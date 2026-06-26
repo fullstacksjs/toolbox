@@ -8,6 +8,7 @@
     "type": "git",
     "url": "git@github.com:fullstacksjs/toolbox.git"
   },
+  "type": "module",
   "homepage": "https://toolbox.fullstacksjs.com",
   "files": [
     ".husky/prepare",
@@ -18,13 +19,13 @@
     "LICENSE",
     "README.md"
   ],
-  "main": "./lib/cjs/index.js",
+  "main": "./lib/cjs/index.cjs",
   "module": "./lib/esm/index.js",
   "types": "./lib/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./lib/esm/index.js",
-      "require": "./lib/cjs/index.js",
+      "require": "./lib/cjs/index.cjs",
       "types": "./lib/types/index.d.ts"
     }
   },
@@ -35,7 +36,7 @@
   "sideEffects": false,
   "scripts": {
     "prebuild": "shx rm -rf lib/*",
-    "build": "tsup --dts-only && tsup --config tsup.browser.ts && tsup --tsconfig tsconfig.build.json && ./postbuild",
+    "build": "tsdown && tsc --emitDeclarationOnly --outDir lib/types",
     "type-check": "tsc --emitDeclarationOnly false --noEmit",
     "lint": "npm run lint:ci -- --fix",
     "lint:ci": "eslint . --ext .js,.ts,.tsx",
@@ -69,7 +70,7 @@
     "semantic-release": "25.0.2",
     "shx": "0.4.0",
     "standard-version": "9.5.0",
-    "tsup": "8.5.1",
+    "tsdown": "0.22.3",
     "typescript": "5.9.3",
     "vitest": "4.0.16"
   },
@@ -79,5 +80,6 @@
   "packageManager": "npm@11.7.0",
   "volta": {
     "node": "24.12.0"
-  }
+  },
+  "unpkg": "./lib/browser/index.iife.js"
 }

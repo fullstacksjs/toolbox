@@ -1,0 +1,27 @@
+# mod
+
+Returns the modulo of value in the range [0, divisor). Unlike JavaScript's % operator, the result is always non-negative (assuming divisor is positive).
+
+### Import
+
+```ts copy
+import { mod } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```ts copy
+function mod(value: number, divisor: number): number {}
+```
+
+### Examples
+
+```ts copy
+mod(10, 10)  // 0
+mod(11, 10)  // 1
+mod(20, 10)  // 0
+mod(-1, 10)  // 9
+mod(-9, 10)  // 1
+mod(-10, 10) // 0
+mod(-11, 10) // 9
+```

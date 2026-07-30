@@ -1,4 +1,2 @@
-#!/usr/bin/env sh
-
 cat "$1" | vpx cspell stdin
 vpx commitlint --edit "$1"

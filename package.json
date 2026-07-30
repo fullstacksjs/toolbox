@@ -4,30 +4,25 @@
   "license": "MIT",
   "author": "ASafaeirad <frontendmonster@gmail.com>",
   "description": "a zero-dependency collection of missing JavaScript utilities",
+  "homepage": "https://toolbox.fullstacksjs.com",
   "repository": {
     "type": "git",
     "url": "git@github.com:fullstacksjs/toolbox.git"
   },
+  "bugs": {
+    "url": "https://github.com/fullstacksjs/toolbox/issues"
+  },
   "type": "module",
-  "homepage": "https://toolbox.fullstacksjs.com",
   "files": [
-    ".husky/prepare",
-    ".npmignore",
-    ".npmrc",
-    "lib/",
+    "dist/",
     "src/",
+    "mode.ts",
     "LICENSE",
     "README.md"
   ],
-  "main": "./lib/cjs/index.cjs",
-  "module": "./lib/esm/index.js",
-  "types": "./lib/types/index.d.ts",
   "exports": {
-    ".": {
-      "import": "./lib/esm/index.js",
-      "require": "./lib/cjs/index.cjs",
-      "types": "./lib/types/index.d.ts"
-    }
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
   },
   "publishConfig": {
     "access": "public",
@@ -36,7 +31,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "vp pack",
-    "type-check": "tsc --emitDeclarationOnly false --noEmit",
+    "type-check": "tsc",
     "lint": "pnpm run lint:ci -- --fix",
     "lint:ci": "eslint . --ext .js,.ts,.tsx",
     "test": "vp test",

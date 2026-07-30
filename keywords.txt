@@ -45,3 +45,4 @@ iife
 stefanzweifel
 badgen
 vite
+oxlint

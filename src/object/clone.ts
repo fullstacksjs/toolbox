@@ -18,16 +18,13 @@ function clonePlainObject<T extends ObjectType>(input: T): T {
   if (!isPlainObject(input)) return input;
 
   return Object.keys(input).reduce(
-    (prevState, key) => ({
-      ...prevState,
-      [key]: clone(input[key]),
-    }),
+    (prevState, key) => Object.assign(prevState, { [key]: clone(input[key]) }),
     {},
   ) as T;
 }
 
 function cloneArray<T extends any[]>(input: T): T {
-  return input.reduce((prevState, value) => [...prevState, clone(value)], []);
+  return input.map(value => clone(value)) as T;
 }
 
 function cloneMap<T extends Map<any, any>>(input: T): T {

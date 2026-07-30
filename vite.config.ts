@@ -21,7 +21,7 @@ export default defineConfig({
     trailingComma: 'all',
     useTabs: false,
     sortPackageJson: false,
-    ignorePatterns: ['node_modules', 'dist', 'coverage', '*.mdx'],
+    ignorePatterns: ['node_modules', 'dist', 'coverage', '*.mdx', 'AGENTS.md'],
   },
   test: {
     globals: true,

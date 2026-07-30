@@ -73,6 +73,5 @@
       "version": "24.18.0",
       "onFail": "download"
     }
-  },
-  "unpkg": "./lib/browser/index.iife.js"
+  }
 }

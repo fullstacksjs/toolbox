@@ -1,8 +1,0 @@
-{
-  "extends": "@fullstacksjs/tsconfig/esm",
-  "compilerOptions": {
-    "incremental": false
-  },
-  "include": ["./src"],
-  "exclude": ["**/*.spec.ts", "src/runtime/fixtures.ts"]
-}

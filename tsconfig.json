@@ -1,10 +1,21 @@
 {
-  "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "emitDeclarationOnly": true,
+    "target": "esnext",
+    "lib": ["es2023"],
+    "moduleDetection": "force",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "types": ["node", "vitest/globals"],
+    "strict": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "noEmit": true,
     "allowImportingTsExtensions": true,
-    "types": ["vitest/globals"]
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true
   },
-  "include": ["src/"],
-  "exclude": []
+  "include": ["./src"]
 }

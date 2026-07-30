@@ -9,27 +9,73 @@ on:
     paths:
       - src/**
 
+concurrency:
+  group: Release
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  id-token: write
+
 jobs:
   release:
-    name: Release
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # to be able to publish a GitHub release
-      issues: write # to be able to comment on released issues
-      pull-requests: write # to be able to comment on released pull requests
-      id-token: write # to enable use of OIDC for trusted publishing and npm provenance
-
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
         with:
-          node-version-file: 'package.json'
+          fetch-depth: 0
 
-      - run: npm ci
-      - run: npm test
-      - run: npm run build
+      - uses: voidzero-dev/setup-vp@v1
+        with:
+          cache: true
+          registry-url: https://registry.npmjs.org
 
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
+      - run: vp check
+      - run: vp test
+
+      - name: Find the current version
+        id: current
+        shell: bash
+        run: |
+          tag="$(git describe --tags --abbrev=0 --match 'v[0-9]*' 2>/dev/null || true)"
+
+          if [[ -n "$tag" ]]; then
+            echo "version=${tag#v}" >> "$GITHUB_OUTPUT"
+
+            if [[ "$(git rev-list -n 1 "$tag")" == "$GITHUB_SHA" ]]; then
+              echo "release=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          else
+            echo "version=0.0.0" >> "$GITHUB_OUTPUT"
+          fi
+
+          echo "release=true" >> "$GITHUB_OUTPUT"
+
+      - name: Apply the conventional version
+        if: steps.current.outputs.release == 'true'
+        run:
+          vp exec bumpp --release conventional --current-version "${{
+          steps.current.outputs.version }}" --yes --no-commit --no-tag --no-push
+
+      - name: Build the package
+        if: steps.current.outputs.release == 'true'
+        run: vp pack
+
+      - name: Publish the package
+        if: steps.current.outputs.release == 'true'
+        run: vp pm publish --access public --provenance --no-git-checks
+
+      - name: Test publishing the package
+        if: steps.current.outputs.release == 'true'
+        run: vp pm publish --dry-run --no-git-checks
+
+      - name: Tag the release
+        if: steps.current.outputs.release == 'true'
+        shell: bash
+        run: |
+          version="$(node --print "JSON.parse(require('node:fs').readFileSync('package.json', 'utf8')).version")"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag --annotate "v$version" --message "Release v$version" "$GITHUB_SHA"
+          git push origin "v$version"

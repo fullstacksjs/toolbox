@@ -1,6 +1,4 @@
-import { describe, expect, it, vi } from 'vitest';
-
-import { asyncNullableTryCatch } from './asyncNullableTryCatch';
+import { asyncNullableTryCatch } from './asyncNullableTryCatch.ts';
 
 describe('nullable async try catch', () => {
   it('should call the passed function to it', async () => {

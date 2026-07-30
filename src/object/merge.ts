@@ -1,6 +1,6 @@
-import type { Merge, ObjectType } from '../types/types';
+import type { Merge, ObjectType } from '../types/types.ts';
 
-import { isMap, isPlainObject, isSet } from '../guards/index.js';
+import { isMap, isPlainObject, isSet } from '../guards/index.ts';
 
 interface ComposerArguments {
   v1: unknown;

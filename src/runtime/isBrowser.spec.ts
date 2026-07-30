@@ -4,8 +4,8 @@ import {
   mockDenoGlobal,
   mockNodeGlobal,
   mockWindowGlobal,
-} from './fixtures';
-import { isBrowser } from './isBrowser';
+} from './fixtures.ts';
+import { isBrowser } from './isBrowser.ts';
 
 describe('isBrowser', () => {
   afterEach(() => {

@@ -3,8 +3,8 @@ import {
   mockBunGlobal,
   mockDenoGlobal,
   mockWindowGlobal,
-} from './fixtures';
-import { isServer } from './isServer';
+} from './fixtures.ts';
+import { isServer } from './isServer.ts';
 
 describe('isServer', () => {
   beforeEach(() => {

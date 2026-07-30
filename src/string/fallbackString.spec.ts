@@ -1,4 +1,4 @@
-import { fallbackString } from './fallbackString.js';
+import { fallbackString } from './fallbackString.ts';
 
 describe('fallbackString', () => {
   const cases = [

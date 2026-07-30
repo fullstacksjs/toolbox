@@ -1,4 +1,4 @@
-import { getTypeOf } from './getTypeOf';
+import { getTypeOf } from './getTypeOf.ts';
 
 describe('getTypeOf', () => {
   const cases = [

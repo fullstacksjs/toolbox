@@ -4,8 +4,8 @@ import {
   mockDenoGlobal,
   mockNodeGlobal,
   mockWindowGlobal,
-} from './fixtures';
-import { isNodeJS } from './isNodeJS';
+} from './fixtures.ts';
+import { isNodeJS } from './isNodeJS.ts';
 
 describe('isNode', () => {
   afterEach(() => {

@@ -1,7 +1,7 @@
-import type { ObjectType } from '../types/types';
+import type { ObjectType } from '../types/types.ts';
 
-import { isPlainObject } from '../guards/isPlainObject.js';
-import { getTypeOf } from '../types/getTypeOf.js';
+import { isPlainObject } from '../guards/isPlainObject.ts';
+import { getTypeOf } from '../types/getTypeOf.ts';
 
 type HelperTags = keyof typeof cloneFns;
 type Helper<T> = (arg: T) => T;

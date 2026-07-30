@@ -1,6 +1,10 @@
-import type { ObjectType, RemoveDeepReadonly, Replace } from '../types';
+import type {
+  ObjectType,
+  RemoveDeepReadonly,
+  Replace,
+} from '../types/index.ts';
 
-import { clone } from './clone.js';
+import { clone } from './clone.ts';
 
 /**
  * Replaces a value in an object or array at the given path.

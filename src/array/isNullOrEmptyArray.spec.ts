@@ -1,4 +1,4 @@
-import { isNullOrEmptyArray } from './isNullOrEmptyArray.js';
+import { isNullOrEmptyArray } from './isNullOrEmptyArray.ts';
 
 describe('isNullOrEmptyArray', () => {
   const cases = [

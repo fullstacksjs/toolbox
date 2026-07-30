@@ -1,4 +1,4 @@
-import { inc } from './inc';
+import { inc } from './inc.ts';
 
 describe('inc', () => {
   it('should increment by 1', () => {

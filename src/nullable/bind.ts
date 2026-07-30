@@ -1,4 +1,4 @@
-import type { Nullable } from '../types';
+import type { Nullable } from '../types/index.ts';
 
 /**
  * Safely pass a nullable value to composition of functions

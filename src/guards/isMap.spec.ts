@@ -1,4 +1,4 @@
-import { isMap } from './isMap';
+import { isMap } from './isMap.ts';
 
 describe('isMap', () => {
   const cases = [

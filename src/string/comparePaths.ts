@@ -1,4 +1,4 @@
-import type { Sensitivity } from '../types';
+import type { Sensitivity } from '../types/index.ts';
 
 import { removeLeadingSlashes } from './removeLeadingSlashes.ts';
 import { removeTrailingSlashes } from './removeTrailingSlashes.ts';

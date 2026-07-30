@@ -15,3 +15,5 @@ peerDependencyRules:
     vitest: '*'
 allowBuilds:
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@fullstacksjs/oxlint-config@0.6.1'

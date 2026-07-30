@@ -1,6 +1,4 @@
-import type { Result } from './result.ts';
-
-import { Err, Ok } from './result.ts';
+import { Err, Ok, type Result } from './result.ts';
 
 describe('result, Ok, Err, AsyncResult', () => {
   it('ok wraps value correctly', () => {

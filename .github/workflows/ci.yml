@@ -1,19 +1,23 @@
 name: CI
 
 on:
-  pull_request:
   push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
+  verify:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: voidzero-dev/setup-vp@v1
         with:
-          node-version-file: 'package.json'
-      - run: npm ci
-      - run: npm run lint:ci
-      - run: npm run type-check
-      - run: npm run build
-      - run: npm run test:ci
+          cache: true
+      - run: vp check
+      - run: vp test
+      - run: vp pack

@@ -62,12 +62,8 @@
   "engines": {
     "node": ">=20"
   },
+  "packageManager": "pnpm@11.18.0",
   "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.18.0",
-      "onFail": "download"
-    },
     "runtime": {
       "name": "node",
       "version": "24.18.0",

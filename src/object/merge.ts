@@ -70,8 +70,7 @@ export function merge<T extends ObjectType, U extends ObjectType>(
       const v1 = oV1[key];
       const v2 = oV2[key];
 
-      return {
-        ...state,
+      return Object.assign(state, {
         [key]: composer({
           v1,
           v2,
@@ -81,7 +80,7 @@ export function merge<T extends ObjectType, U extends ObjectType>(
           extract,
           path: `${path}.${key}`,
         }),
-      };
+      });
     }, {});
   }
 

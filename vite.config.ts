@@ -1,10 +1,25 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite-plus';
+import { defineOxlintConfig } from '@fullstacksjs/oxlint-config';
 
 export default defineConfig({
   staged: {
     '*': 'vp check --fix',
   },
+  lint: defineOxlintConfig({
+    ignorePatterns: [
+      'node_modules',
+      'dist',
+      'docs',
+      'coverage',
+      '*.mdx',
+      'AGENTS.md',
+    ],
+    modules: {},
+    rules: {
+      'max-params': 'off',
+    },
+  }),
   fmt: {
     arrowParens: 'avoid',
     bracketSpacing: true,

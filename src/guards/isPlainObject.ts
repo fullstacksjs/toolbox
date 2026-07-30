@@ -11,7 +11,7 @@ export function isPlainObject(o: unknown): o is ObjectType {
 
   if (ctor == null) return true;
 
-  const prototype = ctor.prototype;
+  const { prototype } = ctor;
   if (!isObject(prototype)) return false;
 
   // If constructor does not have an Object-specific method

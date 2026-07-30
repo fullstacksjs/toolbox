@@ -14,6 +14,7 @@ export async function asyncNullableTryCatch<T>(
 ): Promise<T | null> {
   try {
     return await fn();
+    // oxlint-disable-next-line preserve-caught-error
   } catch {
     return null;
   }

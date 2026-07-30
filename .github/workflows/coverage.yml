@@ -10,21 +10,20 @@ on:
 
 jobs:
   coverage:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: voidzero-dev/setup-vp@v1
         with:
-          node-version-file: 'package.json'
-      - run: npm ci
+          cache: true
 
       - name: Get Coverage
         id: get-coverage
         shell: bash
         run: |
-          npm run test:coverage
+          vp test --coverage
           COV=$(node -p 't=require(`./coverage/coverage-summary.json`).total,Math.min(...`lines|statements|functions|branches`.split(`|`).map(k=>t[k].pct))')
-          echo "coverage=$COV" >> $GITHUB_OUTPUT
+          echo "coverage=$COV" >> "$GITHUB_OUTPUT"
 
       - name: Checkout assets
         uses: actions/checkout@v6

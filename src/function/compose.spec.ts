@@ -1,4 +1,4 @@
-import { compose } from './compose';
+import { compose } from './compose.ts';
 
 const one = () => 1;
 const inc = (n: number) => n + 1;

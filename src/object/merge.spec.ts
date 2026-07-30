@@ -1,4 +1,4 @@
-import { merge } from './merge';
+import { merge } from './merge.ts';
 
 describe('merge', () => {
   it('should have all properties', () => {

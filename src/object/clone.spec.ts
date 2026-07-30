@@ -1,4 +1,4 @@
-import { clone } from './clone';
+import { clone } from './clone.ts';
 
 describe('clone', () => {
   it('the date should not change if its clone changes', () => {

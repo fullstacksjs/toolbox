@@ -1,4 +1,4 @@
-import { uniq } from './uniq';
+import { uniq } from './uniq.ts';
 
 describe('uniq', () => {
   it('should not mutate original array', () => {

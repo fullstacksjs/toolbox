@@ -1,4 +1,4 @@
-import type { Immutable, Mutable } from './mutability';
+import type { Immutable, Mutable } from './mutability.ts';
 
 describe('mutable and Immutable', () => {
   it('mutable allows reassignment', () => {

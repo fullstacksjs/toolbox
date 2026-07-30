@@ -1,4 +1,4 @@
-import { pipe } from './pipe';
+import { pipe } from './pipe.ts';
 
 describe('pipe', () => {
   it('should pipe value through functions from left to right', () => {

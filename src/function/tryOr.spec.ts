@@ -1,6 +1,4 @@
-import { describe, expect, it, vi } from 'vitest';
-
-import { tryOr } from './tryOr';
+import { tryOr } from './tryOr.ts';
 
 describe('try catch', () => {
   it('should call the passed function to it', () => {

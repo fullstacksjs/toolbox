@@ -1,4 +1,4 @@
-import { isNegative } from './isNegative';
+import { isNegative } from './isNegative.ts';
 
 describe('isNegative', () => {
   it('should return true for negative numbers', () => {

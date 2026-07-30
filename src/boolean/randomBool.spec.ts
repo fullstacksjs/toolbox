@@ -1,4 +1,4 @@
-import { randomBool } from './randomBool';
+import { randomBool } from './randomBool.ts';
 
 describe('randomBool', () => {
   it('should return an boolean', () => {

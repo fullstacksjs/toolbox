@@ -1,4 +1,4 @@
-import { isSet } from './isSet';
+import { isSet } from './isSet.ts';
 
 describe('isSet', () => {
   const cases = [

@@ -1,4 +1,4 @@
-import { dec } from './dec';
+import { dec } from './dec.ts';
 
 describe('dec', () => {
   it('should decrement by 1', () => {

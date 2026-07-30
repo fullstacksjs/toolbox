@@ -1,5 +1,5 @@
-export { isBrowser } from './isBrowser.js';
-export { isBun } from './isBun.js';
-export { isDeno } from './isDeno.js';
-export { isNodeJS } from './isNodeJS.js';
-export { isServer } from './isServer.js';
+export { isBrowser } from './isBrowser.ts';
+export { isBun } from './isBun.ts';
+export { isDeno } from './isDeno.ts';
+export { isNodeJS } from './isNodeJS.ts';
+export { isServer } from './isServer.ts';

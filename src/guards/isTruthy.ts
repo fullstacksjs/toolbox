@@ -1,4 +1,4 @@
-import type { Truthy } from '../types';
+import type { Truthy } from '../types/index.ts';
 
 /**
  * Check whether the given value is truthy

@@ -1,4 +1,4 @@
-import { replace } from './replace';
+import { replace } from './replace.ts';
 
 describe('replace', () => {
   it('should not affect the source', () => {

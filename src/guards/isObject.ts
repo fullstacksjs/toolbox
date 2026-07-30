@@ -1,4 +1,4 @@
-import type { ObjectType } from '../types';
+import type { ObjectType } from '../types/index.ts';
 
 /**
  * Check whether the given value is an object

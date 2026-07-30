@@ -1,4 +1,4 @@
-import type { Nullable } from '../types';
+import type { Nullable } from '../types/index.ts';
 
 /**
  * Asserts a value is not null or undefined

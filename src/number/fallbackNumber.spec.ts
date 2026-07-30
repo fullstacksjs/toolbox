@@ -1,4 +1,4 @@
-import { fallbackNumber } from './fallbackNumber.js';
+import { fallbackNumber } from './fallbackNumber.ts';
 
 describe('fallbackNumber', () => {
   const cases = [

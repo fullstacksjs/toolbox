@@ -1,4 +1,4 @@
-import { isNullOrEmptyString } from './isNullOrEmptyString.js';
+import { isNullOrEmptyString } from './isNullOrEmptyString.ts';
 
 describe('isNullOrEmptyString', () => {
   const cases = [

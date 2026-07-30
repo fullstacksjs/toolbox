@@ -4,8 +4,8 @@ import {
   mockDenoGlobal,
   mockNodeGlobal,
   mockWindowGlobal,
-} from './fixtures';
-import { isBun } from './isBun';
+} from './fixtures.ts';
+import { isBun } from './isBun.ts';
 
 describe('isBun', () => {
   beforeEach(() => {

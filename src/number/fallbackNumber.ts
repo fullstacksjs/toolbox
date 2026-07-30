@@ -1,4 +1,4 @@
-import type { Nullable } from '../types';
+import type { Nullable } from '../types/index.ts';
 
 /**
  * Given a number and fallback value, returns the value when it is finite otherwise the fallback value.
@@ -15,7 +15,7 @@ import type { Nullable } from '../types';
  * fallbackNumber(-0, 1)        // -0
  * fallbackNumber(NaN, 1)       // 1
  * fallbackNumber(-1, 1)        // -1
- * fallbackNumber(1, -)         // 1
+ * fallbackNumber(1, -1         // 1
  */
 export function fallbackNumber<T extends number = number>(
   value: Nullable<T>,

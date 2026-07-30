@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
-npm run verify
+vp test
+vp pack

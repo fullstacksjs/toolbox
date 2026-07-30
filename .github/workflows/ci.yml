@@ -19,5 +19,6 @@ jobs:
         with:
           cache: true
       - run: vp check
+      - run: vp run type-check
       - run: vp test
       - run: vp pack

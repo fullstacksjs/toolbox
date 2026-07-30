@@ -45,6 +45,7 @@ iife
 stefanzweifel
 badgen
 vite
+oxlint
 pagefind
 shuding
 mdx

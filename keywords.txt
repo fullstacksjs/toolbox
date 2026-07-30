@@ -44,3 +44,4 @@ runtimes
 iife
 stefanzweifel
 badgen
+vite

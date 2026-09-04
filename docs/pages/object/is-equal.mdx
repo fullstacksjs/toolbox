@@ -1,0 +1,57 @@
+# isEqual
+
+Compares two values of primitives, `Object`, `Array`, `Map`, `Set`, `Date`, `RegExp`, and `Function` deeply for equality.
+
+### Import
+
+```ts copy
+import { isEqual } from "@fullstacksjs/toolbox";
+```
+
+### Signature
+
+```ts copy
+function isEqual(a: unknown, b: unknown): boolean;
+```
+
+### Examples
+
+```ts copy
+// Primitive types
+console.log(isEqual("abc", "abc")); // true
+console.log(isEqual(1, 1)); // true
+console.log(isEqual(null, null)); // true
+
+// Deep object comparison
+const obj = { a: { b: { c: 1 } } };
+const clonedObj = clone(obj);
+console.log(isEqual(obj, clonedObj)); // true
+
+// Deep array comparison
+const array = [1, 2, [3, [4, 5, [6, 7]]]];
+const clonedArray = clone(array);
+console.log(isEqual(array, clonedArray)); // true
+
+// Date comparison
+const date1 = new Date("2026-01-01");
+const date2 = new Date("2026-01-01");
+console.log(isEqual(date1, date2)); // true
+
+// RegExp comparison
+const regex1 = new RegExp("abc", "g");
+const regex2 = new RegExp("abc", "g");
+console.log(isEqual(regex1, regex2)); // true
+
+// Map comparison
+const map = new Map([
+  ["a", 1],
+  ["b", { c: [1, 2] }],
+]);
+const clonedMap = clone(map);
+console.log(isEqual(map, clonedMap)); // true
+
+// Set comparison
+const set = new Set([1, 2, "a"]);
+const clonedSet = clone(set);
+console.log(isEqual(set, clonedSet)); // true
+```

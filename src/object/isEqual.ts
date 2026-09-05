@@ -124,6 +124,7 @@ function isEqualImpl(
   b: unknown,
   comparedObjects: ComparedMap,
 ): boolean {
+  if(isPrimitiveEqual(a, b)) return true;
   const aTag = getTypeOf(a);
   const bTag = getTypeOf(b);
 

@@ -1,5 +1,6 @@
 {
   "clone": "clone",
+  "is-equal": "isEqual",
   "merge": "merge",
   "prune-key-when": "pruneKeyWhen",
   "prune-value-when": "pruneValueWhen",

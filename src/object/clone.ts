@@ -4,7 +4,8 @@ import { isPlainObject } from '../guards/isPlainObject.ts';
 import { getTypeOf } from '../types/getTypeOf.ts';
 
 type HelperTags = keyof typeof cloneFns;
-type Helper<T> = (arg: T) => T;
+type Helper<T> = (arg: T, cache: Cache) => T;
+type Cache = WeakMap<object, unknown>;
 
 const cloneFns = {
   map: cloneMap,
@@ -14,33 +15,47 @@ const cloneFns = {
   object: clonePlainObject,
 };
 
-function clonePlainObject<T extends ObjectType>(input: T): T {
+function clonePlainObject<T extends ObjectType>(input: T, cache: Cache): T {
   if (!isPlainObject(input)) return input;
 
-  return Object.keys(input).reduce(
-    (prevState, key) => ({
-      ...prevState,
-      [key]: clone(input[key]),
-    }),
-    {},
-  ) as T;
+  const result: ObjectType = {};
+  cache.set(input, result);
+
+  Object.keys(input).forEach(key => {
+    result[key] = cloneValue(input[key], cache);
+  });
+
+  return result as T;
 }
 
-function cloneArray<T extends any[]>(input: T): T {
-  return input.reduce((prevState, value) => [...prevState, clone(value)], []);
+function cloneArray<T extends any[]>(input: T, cache: Cache): T {
+  const result: any[] = [];
+  cache.set(input, result);
+
+  input.forEach((value, index) => {
+    result[index] = cloneValue(value, cache);
+  });
+
+  return result as T;
 }
 
-function cloneMap<T extends Map<any, any>>(input: T): T {
-  return new Map(
-    Object.entries(clonePlainObject(Object.fromEntries(input))),
-  ) as T;
+function cloneMap<T extends Map<any, any>>(input: T, cache: Cache): T {
+  const result = new Map();
+  cache.set(input, result);
+
+  input.forEach((value, key) => {
+    result.set(key, cloneValue(value, cache));
+  });
+
+  return result as T;
 }
 
-function cloneSet<T extends Set<unknown>>(input: T): T {
+function cloneSet<T extends Set<unknown>>(input: T, cache: Cache): T {
   const result = new Set();
+  cache.set(input, result);
 
   input.forEach(value => {
-    result.add(clone(value));
+    result.add(cloneValue(value, cache));
   });
 
   return result as T;
@@ -50,8 +65,23 @@ function cloneDate<T extends Date>(input: T): T {
   return new Date(input) as T;
 }
 
+function cloneValue<T>(value: T, cache: Cache): T {
+  const tag = getTypeOf(value);
+
+  if (!(tag in cloneFns)) return value;
+
+  if (cache.has(value as object)) return cache.get(value as object) as T;
+
+  const helper = cloneFns[tag as HelperTags] as Helper<T>;
+
+  return helper(value, cache);
+}
+
 /**
  * Clones the Object | Array | Date | Map | Set.
+ *
+ * Circular references are preserved: a value that appears more than once in
+ * the input is cloned once and shared by every reference in the output.
  *
  * @param {T} value - The value to be cloned.
  * @return {T} The cloned value.
@@ -80,15 +110,12 @@ function cloneDate<T extends Date>(input: T): T {
  * const set = new Set([1, 2, 'a']);
  * const clonedSet = clone(set);
  * console.log(set === clonedSet); // false
+ *
+ * const circular = { self: null };
+ * circular.self = circular;
+ * const clonedCircular = clone(circular);
+ * console.log(clonedCircular.self === clonedCircular); // true
  */
 export function clone<T>(value: T): T {
-  const tag = getTypeOf(value);
-
-  if (tag in cloneFns) {
-    const helper = cloneFns[tag as HelperTags] as Helper<T>;
-
-    return helper(value);
-  }
-
-  return value;
+  return cloneValue(value, new WeakMap());
 }

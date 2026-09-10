@@ -1,6 +1,6 @@
 import { isPromise } from './isPromise.ts';
 
-describe('isPromise', () => {
+describe(isPromise, () => {
   const falseCases = [
     null,
     undefined,

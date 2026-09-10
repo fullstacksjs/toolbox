@@ -6,7 +6,7 @@ import {
 } from './fixtures.ts';
 import { isServer } from './isServer.ts';
 
-describe('isServer', () => {
+describe(isServer, () => {
   beforeEach(() => {
     clearMocks();
   });

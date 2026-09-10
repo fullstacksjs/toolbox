@@ -1,6 +1,6 @@
 import { toDecimal } from './toDecimal.ts';
 
-describe('toDecimal', () => {
+describe(toDecimal, () => {
   it('should convert the string to an integer', () => {
     expect(toDecimal('100')).toBe(100);
   });

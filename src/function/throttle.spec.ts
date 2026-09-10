@@ -2,7 +2,7 @@ import { throttle } from './throttle.ts';
 
 const oneSecond = 1000;
 
-describe('throttle', () => {
+describe(throttle, () => {
   beforeEach(() => {
     vi.useFakeTimers();
   });

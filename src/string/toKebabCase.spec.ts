@@ -1,6 +1,6 @@
 import { toKebabCase } from './toKebabCase.ts';
 
-describe('toKebabCase', () => {
+describe(toKebabCase, () => {
   const cases = [
     { x: '', expected: '' },
     { x: ' ', expected: '' },

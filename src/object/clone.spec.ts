@@ -1,6 +1,6 @@
 import { clone } from './clone.ts';
 
-describe('clone', () => {
+describe(clone, () => {
   it('the date should not change if its clone changes', () => {
     const date = new Date();
     const clonedDate = clone(date);

@@ -1,6 +1,6 @@
 import { assert } from './assert.ts';
 
-describe('assert', () => {
+describe(assert, () => {
   it('should throw error when condition is false', () => {
     expect(() => assert(false, 'WTF')).toThrow('WTF');
   });

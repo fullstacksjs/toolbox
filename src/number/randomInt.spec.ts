@@ -1,6 +1,7 @@
+/* oxlint-disable vitest/no-conditional-in-test */
 import { randomInt } from './randomInt.ts';
 
-describe('randomInt', () => {
+describe(randomInt, () => {
   it('should return an integer between the range of min and max', () => {
     for (let i = 0; i < 100; i++) {
       const number = randomInt(1, 2);

@@ -1,6 +1,6 @@
 import { throwErr } from './throwErr.ts';
 
-describe('throwErr', () => {
+describe(throwErr, () => {
   it('should throw Error instance', () => {
     expect(() => throwErr(new Error('error'))).toThrow('error');
   });

@@ -1,6 +1,6 @@
 import { getNodeEnv } from './getNodeEnv.ts';
 
-describe('getNodeEnv', () => {
+describe(getNodeEnv, () => {
   beforeEach(() => {
     vi.unstubAllEnvs();
   });

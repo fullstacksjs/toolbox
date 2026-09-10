@@ -1,6 +1,6 @@
 import { callAll } from './callAll.ts';
 
-describe('callAll', () => {
+describe(callAll, () => {
   it('should call given functions with an args', () => {
     const fns = [vi.fn(), vi.fn(), vi.fn()];
     const args = [1, 2, 3];

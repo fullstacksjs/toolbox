@@ -7,7 +7,7 @@ const diff = (a: number, b: number) => a - b;
 const toString = (n: number) => n.toString();
 const padStart = (s: string) => s.padStart(2, '0');
 
-describe('compose', () => {
+describe(compose, () => {
   it('works when first function has 0 params', () => {
     expect(compose(one, inc)()).toBe(2);
   });

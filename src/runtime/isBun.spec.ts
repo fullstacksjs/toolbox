@@ -7,7 +7,7 @@ import {
 } from './fixtures.ts';
 import { isBun } from './isBun.ts';
 
-describe('isBun', () => {
+describe(isBun, () => {
   beforeEach(() => {
     clearMocks();
   });

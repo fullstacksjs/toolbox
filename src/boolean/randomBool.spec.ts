@@ -1,6 +1,7 @@
+/* oxlint-disable vitest/no-conditional-in-test */
 import { randomBool } from './randomBool.ts';
 
-describe('randomBool', () => {
+describe(randomBool, () => {
   it('should return an boolean', () => {
     for (let i = 0; i < 100; i++) {
       const boolean = randomBool();

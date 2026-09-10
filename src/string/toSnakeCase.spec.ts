@@ -1,6 +1,6 @@
 import { toSnakeCase } from './toSnakeCase.ts';
 
-describe('toSnakeCase', () => {
+describe(toSnakeCase, () => {
   const cases = [
     { x: '', expected: '' },
     { x: ' ', expected: '' },

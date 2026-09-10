@@ -1,11 +1,11 @@
 import { asyncNullableTryCatch } from './asyncNullableTryCatch.ts';
 
-describe('nullable async try catch', () => {
+describe(asyncNullableTryCatch, () => {
   it('should call the passed function to it', async () => {
     const execute = vi.fn();
     await asyncNullableTryCatch(execute);
 
-    expect(execute).toBeCalledWith();
+    expect(execute).toHaveBeenCalledWith();
   });
 
   it('should return the function return value', async () => {

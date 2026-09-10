@@ -1,6 +1,6 @@
 import { fallbackNumber } from './fallbackNumber.ts';
 
-describe('fallbackNumber', () => {
+describe(fallbackNumber, () => {
   const cases = [
     { x: 0, defaultValue: 1, expected: 0 },
     { x: null, defaultValue: 1, expected: 1 },

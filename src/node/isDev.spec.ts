@@ -1,6 +1,6 @@
 import { isDev } from './isDev.ts';
 
-describe('isDev', () => {
+describe(isDev, () => {
   beforeEach(() => {
     vi.unstubAllEnvs();
   });

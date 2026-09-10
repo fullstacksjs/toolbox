@@ -1,6 +1,6 @@
 import { getTypeOf } from './getTypeOf.ts';
 
-describe('getTypeOf', () => {
+describe(getTypeOf, () => {
   const cases = [
     {
       value: class Foo {

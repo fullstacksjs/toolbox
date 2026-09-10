@@ -1,6 +1,6 @@
 import { isNegative } from './isNegative.ts';
 
-describe('isNegative', () => {
+describe(isNegative, () => {
   it('should return true for negative numbers', () => {
     expect(isNegative(-0.1)).toBe(true);
     expect(isNegative(-1)).toBe(true);

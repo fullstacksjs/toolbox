@@ -1,6 +1,6 @@
 import { isString } from './isString.ts';
 
-describe('isString', () => {
+describe(isString, () => {
   const cases = [
     { x: '', expected: true },
     { x: undefined, expected: false },

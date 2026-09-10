@@ -1,6 +1,6 @@
 import { isObject } from './isObject.ts';
 
-describe('isObject', () => {
+describe(isObject, () => {
   const cases = [
     { x: '', expected: false },
     { x: 'hello world', expected: false },

@@ -1,6 +1,6 @@
 import { isNull } from './isNull.ts';
 
-describe('isNull', () => {
+describe(isNull, () => {
   const cases = [
     { x: undefined, expected: true },
     { x: null, expected: true },

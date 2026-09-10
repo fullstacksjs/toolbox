@@ -1,6 +1,6 @@
 import { getInitials } from './getInitials.ts';
 
-describe('getInitials', () => {
+describe(getInitials, () => {
   const cases = [
     { x: '', expected: '?' },
     { x: ' ', expected: '?' },

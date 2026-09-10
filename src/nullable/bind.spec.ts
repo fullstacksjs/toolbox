@@ -11,7 +11,7 @@ const j = (_x: Record<string, unknown>): Nullable<boolean> => false;
 const k = (x: Nullable<boolean>) => x;
 const l = (_x: (number | string)[]) => 50;
 
-describe('bind', () => {
+describe(bind, () => {
   const cases = [
     { x: 'normal', fns: [f], expected: 2 },
     { x: 'normal', fns: [f, g], expected: [1, 3] },

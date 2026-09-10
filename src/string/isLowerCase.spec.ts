@@ -1,6 +1,6 @@
 import { isLowerCase } from './isLowerCase.ts';
 
-describe('isLowerCase', () => {
+describe(isLowerCase, () => {
   it.each([
     { x: '', expected: false },
     { x: 'test', expected: true },

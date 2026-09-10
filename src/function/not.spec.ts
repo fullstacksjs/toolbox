@@ -1,6 +1,6 @@
 import { not } from './not.ts';
 
-describe('not', () => {
+describe(not, () => {
   it('should negate boolean', () => {
     const t = true;
     const f = false;

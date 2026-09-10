@@ -1,6 +1,6 @@
 import { isPositive } from './isPositive.ts';
 
-describe('isPositive', () => {
+describe(isPositive, () => {
   it('should return true for positive numbers', () => {
     expect(isPositive(0.1)).toBe(true);
     expect(isPositive(1)).toBe(true);

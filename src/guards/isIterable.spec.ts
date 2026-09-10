@@ -1,6 +1,6 @@
 import { isIterable } from './isIterable.ts';
 
-describe('isIterable', () => {
+describe(isIterable, () => {
   it('should return false for undefined', () => {
     expect(isIterable(undefined)).toBe(false);
   });

@@ -7,7 +7,7 @@ import {
 } from './fixtures.ts';
 import { isBrowser } from './isBrowser.ts';
 
-describe('isBrowser', () => {
+describe(isBrowser, () => {
   afterEach(() => {
     clearMocks();
   });

@@ -1,6 +1,6 @@
 import { isMap } from './isMap.ts';
 
-describe('isMap', () => {
+describe(isMap, () => {
   const cases = [
     { x: new Map([['a', 1]]), expected: true },
     { x: new Map(), expected: true },

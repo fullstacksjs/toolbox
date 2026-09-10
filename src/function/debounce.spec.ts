@@ -1,6 +1,6 @@
 import { debounce } from './debounce.ts';
 
-describe('debounce', () => {
+describe(debounce, () => {
   beforeEach(() => {
     vi.useFakeTimers();
   });

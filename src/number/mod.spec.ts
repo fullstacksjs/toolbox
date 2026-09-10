@@ -1,6 +1,6 @@
 import { mod } from './mod.ts';
 
-describe('mod', () => {
+describe(mod, () => {
   it.each([
     { value: 10, divisor: 10, expected: 0 },
     { value: 11, divisor: 10, expected: 1 },

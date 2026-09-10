@@ -1,6 +1,6 @@
 import { isEmpty } from './isEmpty.ts';
 
-describe('isEmpty', () => {
+describe(isEmpty, () => {
   const cases = [
     { arr: [], expected: true },
     { arr: [1], expected: false },

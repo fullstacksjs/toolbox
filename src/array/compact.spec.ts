@@ -1,6 +1,6 @@
 import { compact } from './compact.ts';
 
-describe('compact', () => {
+describe(compact, () => {
   it('should return empty array with an empty array as arg', () => {
     expect(compact([])).toEqual([]);
   });

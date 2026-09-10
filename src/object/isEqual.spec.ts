@@ -1,7 +1,7 @@
 import { clone } from './clone.ts';
 import { isEqual } from './isEqual.ts';
 
-describe('isEqual', () => {
+describe(isEqual, () => {
   it('should be able to compare primitives', () => {
     expect(isEqual('abc', 'abc')).toBe(true);
     expect(isEqual(1, 1)).toBe(true);

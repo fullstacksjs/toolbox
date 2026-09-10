@@ -45,3 +45,7 @@ iife
 stefanzweifel
 badgen
 vite
+pagefind
+shuding
+mdx
+flexsearch

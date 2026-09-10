@@ -1,0 +1,18 @@
+import type { MetaRecord } from 'nextra';
+
+export default {
+  'compare-paths': 'comparePaths',
+  'crlf-to-lf': 'crlfToLf',
+  'get-initials': 'getInitials',
+  'is-lower-case': 'isLowerCase',
+  'is-null-or-empty-string': 'isNullOrEmptyString',
+  'join-paths': 'joinPaths',
+  'remove-leading-slashes': 'removeLeadingSlashes',
+  'remove-trailing-slashes': 'removeTrailingSlashes',
+  'to-camel-case': 'toCamelCase',
+  'to-capital-case': 'toCapitalCase',
+  'to-kebab-case': 'toKebabCase',
+  'to-pascal-case': 'toPascalCase',
+  'to-snake-case': 'toSnakeCase',
+  'to-space-case': 'toSpaceCase',
+} satisfies MetaRecord;

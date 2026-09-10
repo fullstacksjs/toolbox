@@ -1,0 +1,16 @@
+import type { MetaRecord } from 'nextra';
+
+export default {
+  'clamp': 'clamp',
+  'divide': 'divide',
+  'inc': 'inc',
+  'dec': 'dec',
+  'fallback-number': 'fallbackNumber',
+  'is-in-range': 'isInRange',
+  'is-negative': 'isNegative',
+  'is-positive': 'isPositive',
+  'mod': 'mod',
+  'percent': 'percent',
+  'random-int': 'randomInt',
+  'to-decimal': 'toDecimal',
+} satisfies MetaRecord;

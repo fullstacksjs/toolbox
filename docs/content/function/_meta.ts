@@ -1,0 +1,14 @@
+import type { MetaRecord } from 'nextra';
+
+export default {
+  'call-all': 'callAll',
+  'compose': 'compose',
+  'debounce': 'debounce',
+  'noop': 'noop',
+  'not': 'not',
+  'pipe': 'pipe',
+  'sleep': 'sleep',
+  'throttle': 'throttle',
+  'try-or': 'tryOr',
+  'format-seconds': 'format-seconds',
+} satisfies MetaRecord;

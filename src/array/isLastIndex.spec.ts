@@ -1,7 +1,7 @@
 import { isLastIndex } from './isLastIndex.ts';
 
-describe('array', () => {
-  describe('isLastIndex', () => {
+describe(isLastIndex, () => {
+  describe(isLastIndex, () => {
     const cases = [
       { arr: [], index: 0, expected: false },
       { arr: [1], index: 0, expected: true },

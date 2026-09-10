@@ -1,6 +1,6 @@
 import { fallbackString } from './fallbackString.ts';
 
-describe('fallbackString', () => {
+describe(fallbackString, () => {
   const cases = [
     { x: '', defaultValue: 'd', expected: 'd' },
     { x: ' ', defaultValue: 'd', expected: ' ' },

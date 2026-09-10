@@ -1,6 +1,6 @@
 import { divide } from './divide.ts';
 
-describe('divide', () => {
+describe(divide, () => {
   it('should return the division of two number', () => {
     expect(divide(4, 2)).toBe(2);
   });

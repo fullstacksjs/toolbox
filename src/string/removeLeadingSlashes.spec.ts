@@ -1,6 +1,6 @@
 import { removeLeadingSlashes } from './removeLeadingSlashes.ts';
 
-describe('removeLeadingSlash', () => {
+describe(removeLeadingSlashes, () => {
   const cases = [
     { x: '', expected: '' },
     { x: '/', expected: '' },

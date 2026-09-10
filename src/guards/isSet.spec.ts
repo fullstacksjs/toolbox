@@ -1,6 +1,6 @@
 import { isSet } from './isSet.ts';
 
-describe('isSet', () => {
+describe(isSet, () => {
   const cases = [
     { x: new Set([1, 2]), expected: true },
     { x: new Set(), expected: true },

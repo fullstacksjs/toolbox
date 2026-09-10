@@ -1,6 +1,6 @@
 import { isInRange } from './isInRange.ts';
 
-describe('isInRange', () => {
+describe(isInRange, () => {
   it('should return false when value is greater than max', () => {
     expect(isInRange(51, 0, 50)).toBe(false);
   });

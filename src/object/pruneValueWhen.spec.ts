@@ -1,6 +1,6 @@
 import { pruneValueWhen } from './pruneValueWhen.ts';
 
-describe('pruneValueWhen', () => {
+describe(pruneValueWhen, () => {
   it('should return empty object', () => {
     expect(
       pruneValueWhen({ a: null, b: '', c: undefined }, value => !value),

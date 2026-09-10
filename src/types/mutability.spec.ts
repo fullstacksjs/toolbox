@@ -1,6 +1,6 @@
 import type { Immutable, Mutable } from './mutability.ts';
 
-describe('mutable and Immutable', () => {
+describe('Mutable and Immutable', () => {
   it('mutable allows reassignment', () => {
     interface Sample {
       readonly a: number;

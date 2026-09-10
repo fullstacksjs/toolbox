@@ -1,6 +1,6 @@
 import { ensureArray } from './ensureArray.ts';
 
-describe('ensureArray', () => {
+describe(ensureArray, () => {
   it(`should return [undefined] when arg is undefined array`, () => {
     expect(ensureArray(undefined)).toStrictEqual([undefined]);
   });

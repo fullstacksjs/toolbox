@@ -1,6 +1,6 @@
 import { uniq } from './uniq.ts';
 
-describe('uniq', () => {
+describe(uniq, () => {
   it('should not mutate original array', () => {
     const arr = [1, 2];
 

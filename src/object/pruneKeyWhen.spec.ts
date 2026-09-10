@@ -1,6 +1,6 @@
 import { pruneKeyWhen } from './pruneKeyWhen.ts';
 
-describe('pruneKeyWhen', () => {
+describe(pruneKeyWhen, () => {
   it('should return empty object', () => {
     expect(pruneKeyWhen({ a: null, b: '' }, key => key === 'b')).toEqual({
       a: null,

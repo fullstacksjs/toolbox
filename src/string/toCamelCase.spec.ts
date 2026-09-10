@@ -1,6 +1,6 @@
 import { toCamelCase } from './toCamelCase.ts';
 
-describe('toCamelCase', () => {
+describe(toCamelCase, () => {
   const cases = [
     { x: '', expected: '' },
     { x: ' ', expected: '' },

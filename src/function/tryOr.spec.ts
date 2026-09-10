@@ -1,11 +1,11 @@
 import { tryOr } from './tryOr.ts';
 
-describe('try catch', () => {
+describe(tryOr, () => {
   it('should call the passed function to it', () => {
     const fn = vi.fn();
     tryOr(fn);
 
-    expect(fn).toBeCalledWith();
+    expect(fn).toHaveBeenCalledWith();
   });
 
   it('should return the function return value', () => {
@@ -23,7 +23,7 @@ describe('try catch', () => {
     };
     tryOr(fn, handler);
 
-    expect(handler).toBeCalledWith('custom error message');
+    expect(handler).toHaveBeenCalledWith('custom error message');
   });
 
   it('should return the handler return value if there is an error', () => {
@@ -49,7 +49,7 @@ describe('try catch', () => {
 
     tryOr(fn, handler);
 
-    expect(handler).toBeCalledWith(error);
+    expect(handler).toHaveBeenCalledWith(error);
   });
 
   it('the default handler should return error', () => {
@@ -75,7 +75,7 @@ describe('try catch', () => {
     const handler = vi.fn();
     await tryOr(fn, handler);
 
-    expect(handler).toBeCalledWith(1);
+    expect(handler).toHaveBeenCalledWith(1);
   });
 
   it("should return the handler return value if it's rejected", async () => {

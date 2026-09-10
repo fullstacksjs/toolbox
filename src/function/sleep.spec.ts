@@ -1,6 +1,6 @@
 import { sleep } from './sleep.ts';
 
-describe('sleep', () => {
+describe(sleep, () => {
   beforeEach(() => {
     vi.useFakeTimers();
     vi.spyOn(globalThis, 'setTimeout');

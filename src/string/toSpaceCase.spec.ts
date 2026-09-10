@@ -1,6 +1,6 @@
 import { toSpaceCase } from './toSpaceCase.ts';
 
-describe('toSpaceCase', () => {
+describe(toSpaceCase, () => {
   const cases = [
     { x: '', expected: '' },
     { x: ' ', expected: '' },

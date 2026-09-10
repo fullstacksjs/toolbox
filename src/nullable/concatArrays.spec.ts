@@ -1,6 +1,6 @@
 import { concatArrays } from './concatArrays.ts';
 
-describe('concatArrays', () => {
+describe(concatArrays, () => {
   it('should return empty array with no argument', () => {
     expect(concatArrays()).toEqual([]);
   });

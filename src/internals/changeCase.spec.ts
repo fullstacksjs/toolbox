@@ -1,6 +1,6 @@
 import { changeCase } from './changeCase.ts';
 
-describe('changeCase', () => {
+describe(changeCase, () => {
   const defaultCases = [
     { x: '', expected: '' },
     { x: ' ', expected: '' },

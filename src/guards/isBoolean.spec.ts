@@ -1,6 +1,6 @@
 import { isBoolean } from './isBoolean.ts';
 
-describe('isBoolean', () => {
+describe(isBoolean, () => {
   const cases = [
     { x: true, expected: true },
     { x: false, expected: true },

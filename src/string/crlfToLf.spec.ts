@@ -1,6 +1,6 @@
 import { crlfToLf } from './crlfToLf.ts';
 
-describe('crlfToLf', () => {
+describe(crlfToLf, () => {
   const cases = [
     { x: '', expected: '' },
     { x: ' ', expected: ' ' },

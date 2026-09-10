@@ -1,6 +1,6 @@
 import { copy } from './copy.ts';
 
-describe('copyArray', () => {
+describe(copy, () => {
   it('return value should be a new array', () => {
     const array = [1];
     const copied = copy(array);

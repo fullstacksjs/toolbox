@@ -1,6 +1,6 @@
 import { assertNotNull } from './assertNotNull.ts';
 
-describe('assertNotNull', () => {
+describe(assertNotNull, () => {
   it('should throw error when condition is null', () => {
     expect(() => assertNotNull(null, 'WTF')).toThrow('WTF');
   });

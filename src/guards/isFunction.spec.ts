@@ -1,6 +1,6 @@
 import { isFunction } from './isFunction.ts';
 
-describe('isFunction', () => {
+describe(isFunction, () => {
   it('should return false for undefined', () => {
     expect(isFunction(undefined)).toBe(false);
   });

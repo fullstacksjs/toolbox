@@ -1,7 +1,7 @@
 import { range } from './range.ts';
 import { shuffle } from './shuffle.ts';
 
-describe('shuffle', () => {
+describe(shuffle, () => {
   it('should return an empty array for empty array', () => {
     expect(shuffle([])).toEqual([]);
   });

@@ -1,6 +1,6 @@
 import { isTruthy } from './isTruthy.ts';
 
-describe('isTruthy', () => {
+describe(isTruthy, () => {
   const cases = [
     { x: undefined, expected: false },
     { x: NaN, expected: false },

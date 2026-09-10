@@ -1,6 +1,7 @@
+/* oxlint-disable vitest/no-conditional-in-test */
 import { getRandom } from './getRandom.ts';
 
-describe('getRandom', () => {
+describe(getRandom, () => {
   it('should return undefined when given empty array', () => {
     expect(getRandom([])).toBeUndefined();
   });

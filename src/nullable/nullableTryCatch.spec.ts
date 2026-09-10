@@ -1,11 +1,11 @@
 import { nullableTryCatch } from './nullableTryCatch.ts';
 
-describe('nullable try catch', () => {
+describe(nullableTryCatch, () => {
   it('should call the passed function to it', () => {
     const execute = vi.fn();
     nullableTryCatch(execute);
 
-    expect(execute).toBeCalledWith();
+    expect(execute).toHaveBeenCalledWith();
   });
 
   it('should return the function return value', () => {

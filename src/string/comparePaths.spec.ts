@@ -1,6 +1,6 @@
 import { comparePaths } from './comparePaths.ts';
 
-describe('comparePaths', () => {
+describe(comparePaths, () => {
   it('should return 0 if paths are the same', () => {
     expect(comparePaths('/path1/', '/path1/')).toBe(0);
   });

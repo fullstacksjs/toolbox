@@ -1,6 +1,6 @@
 import { formatSeconds } from './formatSeconds.ts';
 
-describe('secondToTime', () => {
+describe(formatSeconds, () => {
   it('should return zero when pass 0 seconds', () => {
     const format = 'mm:ss';
     const sec = 0;

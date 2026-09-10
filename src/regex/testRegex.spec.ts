@@ -1,6 +1,6 @@
 import { testRegex } from './testRegex.ts';
 
-describe('testRegex', () => {
+describe(testRegex, () => {
   it('should return true when regex is found', () => {
     const regex = /a/g;
 

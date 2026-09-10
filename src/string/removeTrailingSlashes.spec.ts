@@ -1,6 +1,6 @@
 import { removeTrailingSlashes } from './removeTrailingSlashes.ts';
 
-describe('removeTrailingSlash', () => {
+describe(removeTrailingSlashes, () => {
   const cases = [
     { x: '', expected: '' },
     { x: '/', expected: '' },

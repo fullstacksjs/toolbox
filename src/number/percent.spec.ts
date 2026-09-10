@@ -1,6 +1,6 @@
 import { percent } from './percent.ts';
 
-describe('percent', () => {
+describe(percent, () => {
   const cases = [
     { min: 0, max: 10, expected: 0 },
     { min: 1, max: 10, expected: 10 },

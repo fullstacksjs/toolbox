@@ -1,6 +1,6 @@
 import { pipe } from './pipe.ts';
 
-describe('pipe', () => {
+describe(pipe, () => {
   it('should pipe value through functions from left to right', () => {
     const add = (x: number) => x + 1;
     const multiply = (x: number) => x * 2;

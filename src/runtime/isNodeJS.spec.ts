@@ -7,7 +7,7 @@ import {
 } from './fixtures.ts';
 import { isNodeJS } from './isNodeJS.ts';
 
-describe('isNode', () => {
+describe(isNodeJS, () => {
   afterEach(() => {
     clearMocks();
   });

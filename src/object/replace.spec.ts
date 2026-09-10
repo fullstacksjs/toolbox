@@ -1,6 +1,6 @@
 import { replace } from './replace.ts';
 
-describe('replace', () => {
+describe(replace, () => {
   it('should not affect the source', () => {
     const path = 'foo.a.b';
     const source = {

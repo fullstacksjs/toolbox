@@ -1,6 +1,6 @@
 import { merge } from './merge.ts';
 
-describe('merge', () => {
+describe(merge, () => {
   it('should have all properties', () => {
     const obj1 = {
       color: 'black',

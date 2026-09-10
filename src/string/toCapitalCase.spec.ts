@@ -1,6 +1,6 @@
 import { toCapitalCase } from './toCapitalCase.ts';
 
-describe('toCapitalCase', () => {
+describe(toCapitalCase, () => {
   const cases = [
     { x: '', expected: '' },
     { x: ' ', expected: '' },

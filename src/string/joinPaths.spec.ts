@@ -1,6 +1,6 @@
 import { joinPaths } from './joinPaths.ts';
 
-describe('joinPaths', () => {
+describe(joinPaths, () => {
   const cases = [
     { args: ['a', 'b'], expected: 'a/b' },
     { args: ['a', '/b'], expected: 'a/b' },

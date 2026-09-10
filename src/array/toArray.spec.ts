@@ -1,6 +1,6 @@
 import { toArray } from './toArray.ts';
 
-describe('toArray', () => {
+describe(toArray, () => {
   it('should return an empty array for null', () => {
     expect(toArray(null)).toStrictEqual([]);
   });

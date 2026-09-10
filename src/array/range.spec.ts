@@ -1,6 +1,6 @@
 import { range } from './range.ts';
 
-describe('range', () => {
+describe(range, () => {
   it('should create an empty array for zero-length', () => {
     expect(range(0)).toStrictEqual([]);
   });

@@ -1,6 +1,6 @@
 import { isNullOrEmptyArray } from './isNullOrEmptyArray.ts';
 
-describe('isNullOrEmptyArray', () => {
+describe(isNullOrEmptyArray, () => {
   const cases = [
     { x: null, expected: true },
     { x: undefined, expected: true },

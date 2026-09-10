@@ -1,6 +1,7 @@
 export function mockNodeGlobal() {
-  vi.spyOn(globalThis.process, 'versions', 'get').mockImplementationOnce(() => {
-    return { ...globalThis.process.versions, node: 'mocked' };
+  vi.spyOn(globalThis.process, 'versions', 'get').mockReturnValueOnce({
+    ...globalThis.process.versions,
+    node: 'mocked',
   });
 }
 
@@ -16,16 +17,10 @@ export function mockBunGlobal() {
 }
 
 export function mockWindowGlobal() {
-  vi.spyOn(globalThis.constructor, 'name', 'get').mockImplementationOnce(
-    () => 'Window',
-  );
+  vi.spyOn(globalThis.constructor, 'name', 'get').mockReturnValueOnce('Window');
 
-  vi.spyOn(globalThis.process, 'versions', 'get').mockImplementationOnce(
-    // @ts-expect-error Deleting versions from process
-    () => {
-      return {};
-    },
-  );
+  // @ts-expect-error Deleting versions from process
+  vi.spyOn(globalThis.process, 'versions', 'get').mockReturnValueOnce({});
 }
 
 export function mockDenoGlobal() {

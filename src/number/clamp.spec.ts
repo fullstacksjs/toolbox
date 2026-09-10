@@ -1,6 +1,6 @@
 import { clamp } from './clamp.ts';
 
-describe('clamp', () => {
+describe(clamp, () => {
   it('should clamp if value less than min', () => {
     expect(clamp(-10, 0, 100)).toBe(0);
   });

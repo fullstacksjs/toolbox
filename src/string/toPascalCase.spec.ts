@@ -1,6 +1,6 @@
 import { toPascalCase } from './toPascalCase.ts';
 
-describe('toPascalCase', () => {
+describe(toPascalCase, () => {
   const cases = [
     { x: '', expected: '' },
     { x: ' ', expected: '' },

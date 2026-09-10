@@ -1,6 +1,6 @@
 import { isNullOrEmptyString } from './isNullOrEmptyString.ts';
 
-describe('isNullOrEmptyString', () => {
+describe(isNullOrEmptyString, () => {
   const cases = [
     { x: null, expected: true },
     { x: undefined, expected: true },

@@ -1,4 +1,5 @@
 import type { UseMDXComponents } from 'nextra/mdx-components';
+
 import { useMDXComponents as getDocsMDXComponents } from 'nextra-theme-docs';
 
 const docsComponents = getDocsMDXComponents();

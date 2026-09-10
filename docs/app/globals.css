@@ -1,11 +1,12 @@
 @import 'nextra-theme-docs/style.css';
 @import 'tailwindcss';
 
-@variant dark (&:where(.dark *));
+@custom-variant dark (&:where(.dark *));
 
 :root {
   --card-bg-hover: rgb(27, 30, 37);
   --card-border: #ffffff1a;
+  --x-color-black: #13131988;
 }
 
 .nextra-card {

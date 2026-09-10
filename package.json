@@ -32,8 +32,8 @@
   "scripts": {
     "build": "vp pack",
     "type-check": "tsc",
-    "lint": "pnpm run lint:ci -- --fix",
-    "lint:ci": "eslint . --ext .js,.ts,.tsx",
+    "lint": "pnpm run lint:ci --fix",
+    "lint:ci": "eslint .",
     "test": "vp test",
     "test:coverage": "vp test --coverage",
     "prepublishOnly": "pkg-ok",

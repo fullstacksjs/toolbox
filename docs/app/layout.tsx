@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+
+import { Inter } from 'next/font/google';
+import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
-import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 
 import './globals.css';
 
@@ -16,7 +17,11 @@ const ogImage = {
 
 const repo = 'https://github.com/fullstacksjs/toolbox';
 const proposalLink = `${repo}/issues/new?assignees=&labels=proposal&projects=&template=proposal.yml&title=%5BProposal%5D%3A+`;
-
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--default-font-family',
+});
 export const metadata: Metadata = {
   metadataBase: new URL('https://toolbox.fullstacksjs.com'),
   title: { default: title, template: '%s - Toolbox' },
@@ -41,9 +46,9 @@ export const metadata: Metadata = {
 const navbar = (
   <Navbar
     logo={
-      <div className="flex gap-1 items-center">
-        <Image src="/logo.svg" alt="Logo" width={60} height={60} />
-        <span>Toolbox</span>
+      <div className="flex gap-2 items-center">
+        <img alt="Logo" className="h-8" src="/logo.svg" />
+        <span className="font-semibold translate-y-1">Toolbox</span>
       </div>
     }
     projectLink={repo}
@@ -56,18 +61,18 @@ export default async function RootLayout({
   children: React.ReactNode;
 }): Promise<React.JSX.Element> {
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
-      <Head color={{ hue: 31 }} backgroundColor={{ dark: 'rgb(35,37,46)' }} />
-      <body>
+    <html dir="ltr" lang="en" suppressHydrationWarning>
+      <Head backgroundColor={{ dark: 'rgb(35,37,46)' }} color={{ hue: 31 }} />
+      <body className={inter.variable}>
         <Layout
-          darkMode={false}
-          nextThemes={{ defaultTheme: 'dark', forcedTheme: 'dark' }}
-          navbar={navbar}
-          footer={<Footer>MIT 2023 Fullstacksjs Toolbox</Footer>}
-          docsRepositoryBase={`${repo}/blob/main/docs`}
+          editLink={null}
           feedback={{ content: 'Suggest a new function', link: proposalLink }}
-          sidebar={{ defaultMenuCollapseLevel: 1 }}
+          navbar={navbar}
+          nextThemes={{ defaultTheme: 'dark', forcedTheme: 'dark' }}
           pageMap={await getPageMap()}
+          sidebar={{ defaultMenuCollapseLevel: 1 }}
+          darkMode={false}
+          docsRepositoryBase={`${repo}/blob/main/docs`}
         >
           {children}
         </Layout>

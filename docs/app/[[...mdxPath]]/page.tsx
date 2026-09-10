@@ -26,7 +26,7 @@ export default async function Page(props: PageProps) {
   } = await importPage(params.mdxPath);
 
   return (
-    <Wrapper toc={toc} metadata={metadata} sourceCode={sourceCode}>
+    <Wrapper metadata={metadata} sourceCode={sourceCode} toc={toc}>
       <MDXContent {...props} params={params} />
     </Wrapper>
   );

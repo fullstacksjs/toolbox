@@ -1,0 +1,17 @@
+import type { MetaRecord } from 'nextra';
+
+export default {
+  'is-boolean': 'isBoolean',
+  'is-empty-object': 'isEmptyObject',
+  'is-function': 'isFunction',
+  'is-iterable': 'isIterable',
+  'is-map': 'isMap',
+  'is-not-null': 'isNotNull',
+  'is-null': 'isNull',
+  'is-object': 'isObject',
+  'is-plain-object': 'isPlainObject',
+  'is-promise': 'isPromise',
+  'is-set': 'isSet',
+  'is-string': 'isString',
+  'is-truthy': 'isTruthy',
+} satisfies MetaRecord;

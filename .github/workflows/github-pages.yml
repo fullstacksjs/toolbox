@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          # Nextra reads Git history to render each page's last-updated date.
+          fetch-depth: 0
       - uses: actions/setup-node@v6
         with:
           node-version-file: 'package.json'
@@ -25,9 +28,9 @@ jobs:
         working-directory: docs/
         run: npm ci
 
-      - name: Build Stories
+      - name: Build docs
         working-directory: docs/
-        run: npm run export
+        run: npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.0.0

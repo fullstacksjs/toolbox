@@ -1,4 +1,4 @@
-import { Card, Cards } from 'nextra-theme-docs';
+import { Cards } from 'nextra/components';
 
 interface Props {
   base: string;
@@ -9,7 +9,7 @@ export const TOC = ({ base, meta }: Props): React.JSX.Element => {
   return (
     <Cards>
       {Object.entries(meta).map(([key, value]) => (
-        <Card
+        <Cards.Card
           href={`${base}/${key}`}
           key={key}
           title={value}
@@ -29,9 +29,7 @@ export const TOC = ({ base, meta }: Props): React.JSX.Element => {
               />
             </svg>
           }
-        >
-          {' '}
-        </Card>
+        />
       ))}
     </Cards>
   );

@@ -1,0 +1,9 @@
+import type { MetaRecord } from 'nextra';
+
+export default {
+  'clone': 'clone',
+  'merge': 'merge',
+  'prune-key-when': 'pruneKeyWhen',
+  'prune-value-when': 'pruneValueWhen',
+  'replace': 'replace',
+} satisfies MetaRecord;

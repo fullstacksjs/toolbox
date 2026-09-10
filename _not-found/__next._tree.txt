@@ -1,0 +1,3 @@
+:HL["/_next/static/chunks/3thb4lfqcfjjg.css","style"]
+:HL["/logo.svg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"5MYmCxyswPD_2KusG6Ypi"}

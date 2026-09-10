@@ -2,19 +2,21 @@
 import { defineConfig } from 'vite-plus';
 import { defineOxlintConfig } from '@fullstacksjs/oxlint-config';
 
+const ignorePatterns = [
+  'node_modules',
+  'dist',
+  'coverage',
+  '*.mdx',
+  'AGENTS.md',
+  'docs/next-env.d.ts',
+];
+
 export default defineConfig({
   staged: {
     '*': 'vp check --fix',
   },
   lint: defineOxlintConfig({
-    ignorePatterns: [
-      'node_modules',
-      'dist',
-      'docs',
-      'coverage',
-      '*.mdx',
-      'AGENTS.md',
-    ],
+    ignorePatterns,
     modules: {},
     rules: {
       'max-params': 'off',
@@ -36,7 +38,7 @@ export default defineConfig({
     trailingComma: 'all',
     useTabs: false,
     sortPackageJson: false,
-    ignorePatterns: ['node_modules', 'dist', 'coverage', '*.mdx', 'AGENTS.md'],
+    ignorePatterns,
   },
   test: {
     globals: true,

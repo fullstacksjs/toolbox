@@ -1,5 +1,6 @@
 import { generateStaticParamsFor, importPage } from 'nextra/pages';
 
+// oxlint-disable-next-line import/extensions
 import { useMDXComponents as getMDXComponents } from '../../mdx-components';
 
 interface PageProps {

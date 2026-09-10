@@ -4,6 +4,7 @@ export { debounce } from './debounce.ts';
 export { formatSeconds } from './formatSeconds.ts';
 export { noop } from './noop.ts';
 export { not } from './not.ts';
+export { once } from './once.ts';
 export { pipe } from './pipe.ts';
 export { sleep } from './sleep.ts';
 export { throttle } from './throttle.ts';

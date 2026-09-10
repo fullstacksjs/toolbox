@@ -4,6 +4,7 @@
   "debounce": "debounce",
   "noop": "noop",
   "not": "not",
+  "once": "once",
   "pipe": "pipe",
   "sleep": "sleep",
   "throttle": "throttle",

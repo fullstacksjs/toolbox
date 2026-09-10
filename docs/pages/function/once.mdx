@@ -1,0 +1,35 @@
+# once
+
+Creates a function that is restricted to invoking the given function once.
+Repeat calls to the function return the value of the first invocation.
+
+### Import
+
+```typescript copy
+import { once } from '@fullstacksjs/toolbox';
+```
+
+### Signature
+
+```typescript copy
+function once<T extends (...args: any[]) => any>(fn: T): T {}
+```
+
+### Examples
+
+```typescript copy
+const initialize = once(() => {
+  console.log('Initializing...');
+  return { initialized: true };
+});
+
+initialize(); // Logs: 'Initializing...' and returns { initialized: true }
+initialize(); // Returns { initialized: true } without logging
+```
+
+```typescript copy
+const greet = once((name: string) => `Hello, ${name}!`);
+
+greet('Alice'); // 'Hello, Alice!'
+greet('Bob');   // 'Hello, Alice!' (cached result)
+```

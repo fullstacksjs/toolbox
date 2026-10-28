@@ -16,11 +16,11 @@ jobs:
     concurrency: gh-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
         with:
           # Nextra reads Git history to render each page's last-updated date.
           fetch-depth: 0
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version-file: 'package.json'
 
@@ -33,7 +33,7 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.0.0
+        uses: JamesIves/github-pages-deploy-action@v4.9.0
         with:
           branch: gh-pages
           folder: docs/out/

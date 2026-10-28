@@ -12,7 +12,7 @@ jobs:
   coverage:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
       - uses: voidzero-dev/setup-vp@v1
         with:
           cache: true
@@ -26,7 +26,7 @@ jobs:
           echo "coverage=$COV" >> "$GITHUB_OUTPUT"
 
       - name: Checkout assets
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7.0.1
         with:
           ref: 'assets'
 
@@ -38,7 +38,7 @@ jobs:
           badgen -j coverage --status $COV% --flat --color 319663 > assets/coverage.svg
 
       - name: Deploy Badge
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v7.2.1
         with:
           commit_message: 'ci: update coverage badge'
           skip_fetch: true

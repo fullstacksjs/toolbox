@@ -69,4 +69,33 @@ describe(replace, () => {
 
     expect(replacedSource).toHaveProperty(path, 'bar');
   });
+
+  it('should replace falsy leaf values', () => {
+    expect(replace({ a: { b: 0 } }, 'a.b', 1)).toEqual({ a: { b: 1 } });
+    expect(replace({ a: { b: false } }, 'a.b', true)).toEqual({
+      a: { b: true },
+    });
+    expect(replace({ a: { b: '' } }, 'a.b', 'x')).toEqual({ a: { b: 'x' } });
+  });
+
+  it('should not create missing leaf keys', () => {
+    expect(replace({ a: {} }, 'a.b', 1)).toEqual({ a: {} });
+  });
+
+  it('should not throw when an intermediate path is nullish', () => {
+    expect(replace({ a: null }, 'a.b', 1)).toEqual({ a: null });
+    expect(replace({ a: undefined }, 'a.b', 1)).toEqual({ a: undefined });
+  });
+
+  it('should ignore dangerous prototype pollution paths', () => {
+    const source = { a: 1 };
+    const polluted = replace(source, '__proto__.polluted', 'yes') as Record<
+      string,
+      unknown
+    >;
+
+    expect(polluted).toEqual({ a: 1 });
+    expect(Object.hasOwn(polluted, 'polluted')).toBe(false);
+    expect(({} as Record<string, unknown>).polluted).toBeUndefined();
+  });
 });

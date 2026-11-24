@@ -41,17 +41,18 @@ export function debounce<F extends (...args: any[]) => any>(
   },
   cb: F,
 ): (...args: Parameters<F>) => void {
-  let timeout: ReturnType<typeof setTimeout> | null;
+  let timeout: ReturnType<typeof setTimeout> | null = null;
 
   return (...args: Parameters<F>) => {
-    if (timeout) clearTimeout(timeout);
-    const immediateCall = options.immediate && !timeout;
+    const callNow = options.immediate && timeout === null;
 
-    if (immediateCall) cb(...args);
+    if (timeout) clearTimeout(timeout);
 
     timeout = setTimeout(() => {
       timeout = null;
-      if (!immediateCall) cb(...args);
+      if (!options.immediate) cb(...args);
     }, options.delay);
+
+    if (callNow) cb(...args);
   };
 }

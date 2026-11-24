@@ -8,5 +8,6 @@ export * from './src/nullable/index.ts';
 export * from './src/number/index.ts';
 export * from './src/object/index.ts';
 export * from './src/regex/index.ts';
+export * from './src/runtime/index.ts';
 export * from './src/string/index.ts';
 export * from './src/types/index.ts';

@@ -144,11 +144,12 @@ describe(merge, () => {
   it('should skip __proto__ to prevent prototype pollution', () => {
     const obj1 = { a: 1 };
     const obj2 = JSON.parse('{"__proto__":{"polluted":true},"b":2}');
+    const plain: { polluted?: boolean } = {};
 
     const merged = merge(obj1, obj2);
 
     expect(merged).toStrictEqual({ a: 1, b: 2 });
-    expect(({} as { polluted?: boolean }).polluted).toBeUndefined();
+    expect(plain.polluted).toBeUndefined();
     expect(Object.hasOwn(merged, '__proto__')).toBe(false);
   });
 });

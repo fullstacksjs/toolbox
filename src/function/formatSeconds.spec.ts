@@ -22,6 +22,7 @@ describe(formatSeconds, () => {
     [3661, { format: 'hh:mm:ss' }, '01:01:01'],
     [3661, { format: 'hh:mm' }, '01:01'],
     [61, { format: 'mm:ss' }, '01:01'],
+    [3661, { format: 'mm:ss' }, '61:01'],
     [120.5, { format: 'hh:mm:ss' }, '00:02:00'],
     [120.5, { format: 'hh:mm' }, '00:02'],
     [120.5, { format: 'mm:ss' }, '02:00'],

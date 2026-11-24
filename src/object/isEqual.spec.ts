@@ -136,4 +136,15 @@ describe(isEqual, () => {
 
     expect(isEqual(a, b)).toBe(true);
   });
+
+  it('should not false-positive on asymmetric circular references', () => {
+    const a: any = { self: null };
+    const b: any = { self: null };
+    const c: any = { self: null };
+    a.self = a;
+    b.self = c;
+    c.self = b;
+
+    expect(isEqual(a, b)).toBe(false);
+  });
 });

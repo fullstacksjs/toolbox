@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "pagefind --site .next/server/app --output-path out/_pagefind && touch out/.nojekyll",
+    "postbuild": "pagefind --site out && touch out/.nojekyll",
     "start": "next start"
   },
   "dependencies": {

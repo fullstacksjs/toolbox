@@ -3,7 +3,7 @@ import type { ObjectType } from '../types/types.ts';
 import { isPlainObject } from '../guards/isPlainObject.ts';
 import { getTypeOf } from '../types/getTypeOf.ts';
 
-type ComparedMap = Map<object, object[]>;
+type ComparedStack = [object, object][];
 
 function getSymbols(object: any) {
   return Object.getOwnPropertySymbols(object).filter(symbol =>
@@ -15,26 +15,22 @@ function isComplexType(tag: ReturnType<typeof getTypeOf>) {
   return ['array', 'map', 'object', 'set'].includes(tag);
 }
 
-function isComparedBefore(
+/**
+ * If either value is already being compared on the stack, they are equal only
+ * when paired with the same counterpart. A different pairing means asymmetric
+ * cycles (e.g. self-loop vs 2-cycle) and must be treated as unequal.
+ */
+function cycleResult(
   a: object,
   b: object,
-  comparedObjects: ComparedMap,
-): boolean {
-  const aComparedList = comparedObjects.get(a);
-  const bComparedList = comparedObjects.get(b);
+  stack: ComparedStack,
+): boolean | null {
+  for (const [x, y] of stack) {
+    if (x === a) return y === b;
+    if (y === b) return x === a;
+  }
 
-  return !!(aComparedList && bComparedList && aComparedList.includes(b));
-}
-
-function markAsCompared(a: object, b: object, comparedObjects: ComparedMap) {
-  const aComparedList = comparedObjects.get(a) ?? [];
-  const bComparedList = comparedObjects.get(b) ?? [];
-
-  aComparedList.push(b);
-  bComparedList.push(a);
-
-  comparedObjects.set(a, aComparedList);
-  comparedObjects.set(b, bComparedList);
+  return null;
 }
 
 function isPrimitiveEqual(a: unknown, b: unknown): boolean {
@@ -52,10 +48,10 @@ function isRegExpEqual(a: RegExp, b: RegExp): boolean {
 function isObjectEqual(
   a: ObjectType,
   b: ObjectType,
-  comparedObjects: ComparedMap,
+  stack: ComparedStack,
 ): boolean {
   const fromSameInstance =
-    isEqualImpl(a.constructor, b.constructor, comparedObjects) ||
+    isEqualImpl(a.constructor, b.constructor, stack) ||
     (isPlainObject(a) && isPlainObject(b));
   if (!fromSameInstance) return false;
 
@@ -65,7 +61,7 @@ function isObjectEqual(
   if (aKeys.length !== bKeys.length) return false;
 
   for (const key of aKeys)
-    if (!Object.hasOwn(b, key) || !isEqualImpl(a[key], b[key], comparedObjects))
+    if (!Object.hasOwn(b, key) || !isEqualImpl(a[key], b[key], stack))
       return false;
 
   return true;
@@ -74,13 +70,12 @@ function isObjectEqual(
 function isMapEqual(
   a: Map<unknown, unknown>,
   b: Map<unknown, unknown>,
-  comparedObjects: ComparedMap,
+  stack: ComparedStack,
 ): boolean {
   if (a.size !== b.size) return false;
 
   for (const [key, value] of a.entries())
-    if (!b.has(key) || !isEqualImpl(value, b.get(key), comparedObjects))
-      return false;
+    if (!b.has(key) || !isEqualImpl(value, b.get(key), stack)) return false;
 
   return true;
 }
@@ -88,12 +83,12 @@ function isMapEqual(
 function isArrayEqual(
   a: unknown[],
   b: unknown[],
-  comparedObjects: ComparedMap,
+  stack: ComparedStack,
 ): boolean {
   if (a.length !== b.length) return false;
 
   for (let i = 0; i < a.length; i++)
-    if (!isEqualImpl(a[i], b[i], comparedObjects)) return false;
+    if (!isEqualImpl(a[i], b[i], stack)) return false;
 
   return true;
 }
@@ -101,7 +96,7 @@ function isArrayEqual(
 function isSetEqual(
   a: Set<unknown>,
   b: Set<unknown>,
-  comparedObjects: ComparedMap,
+  stack: ComparedStack,
 ): boolean {
   if (a.size !== b.size) return false;
 
@@ -109,9 +104,7 @@ function isSetEqual(
   const bValues = Array.from(b);
 
   for (const aVal of aValues) {
-    const index = bValues.findIndex(bVal =>
-      isEqualImpl(aVal, bVal, comparedObjects),
-    );
+    const index = bValues.findIndex(bVal => isEqualImpl(aVal, bVal, stack));
     if (index === -1) return false;
     bValues.splice(index, 1);
   }
@@ -119,11 +112,7 @@ function isSetEqual(
   return true;
 }
 
-function isEqualImpl(
-  a: unknown,
-  b: unknown,
-  comparedObjects: ComparedMap,
-): boolean {
+function isEqualImpl(a: unknown, b: unknown, stack: ComparedStack): boolean {
   if (isPrimitiveEqual(a, b)) return true;
 
   const aTag = getTypeOf(a);
@@ -132,37 +121,50 @@ function isEqualImpl(
   if (aTag !== bTag) return false;
 
   if (isComplexType(aTag)) {
-    if (isComparedBefore(a as object, b as object, comparedObjects))
-      return true;
-    markAsCompared(a as object, b as object, comparedObjects);
+    const cycled = cycleResult(a as object, b as object, stack);
+    if (cycled !== null) return cycled;
+    stack.push([a as object, b as object]);
   }
+
+  let result: boolean;
 
   switch (aTag) {
     case 'object':
-      return isObjectEqual(a as ObjectType, b as ObjectType, comparedObjects);
+      result = isObjectEqual(a as ObjectType, b as ObjectType, stack);
+      break;
 
     case 'map':
-      return isMapEqual(
+      result = isMapEqual(
         a as Map<unknown, unknown>,
         b as Map<unknown, unknown>,
-        comparedObjects,
+        stack,
       );
+      break;
 
     case 'array':
-      return isArrayEqual(a as unknown[], b as unknown[], comparedObjects);
+      result = isArrayEqual(a as unknown[], b as unknown[], stack);
+      break;
 
     case 'set':
-      return isSetEqual(a as Set<unknown>, b as Set<unknown>, comparedObjects);
+      result = isSetEqual(a as Set<unknown>, b as Set<unknown>, stack);
+      break;
 
     case 'date':
-      return isDateEqual(a as Date, b as Date);
+      result = isDateEqual(a as Date, b as Date);
+      break;
 
     case 'regexp':
-      return isRegExpEqual(a as RegExp, b as RegExp);
+      result = isRegExpEqual(a as RegExp, b as RegExp);
+      break;
 
     default:
-      return isPrimitiveEqual(a, b);
+      result = isPrimitiveEqual(a, b);
+      break;
   }
+
+  if (isComplexType(aTag)) stack.pop();
+
+  return result;
 }
 
 /**
@@ -210,6 +212,5 @@ function isEqualImpl(
  * console.log(isEqual(set, clonedSet)); // true
  */
 export function isEqual(a: unknown, b: unknown): boolean {
-  const comparedObjects = new Map();
-  return isEqualImpl(a, b, comparedObjects);
+  return isEqualImpl(a, b, []);
 }

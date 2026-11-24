@@ -16,7 +16,7 @@
   "files": [
     "dist/",
     "src/",
-    "mode.ts",
+    "mod.ts",
     "LICENSE",
     "README.md"
   ],

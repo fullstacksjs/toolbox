@@ -6,6 +6,7 @@ export { inc } from './inc.ts';
 export { isInRange } from './isInRange.ts';
 export { isNegative } from './isNegative.ts';
 export { isPositive } from './isPositive.ts';
+export { mod } from './mod.ts';
 export { percent } from './percent.ts';
 export { randomInt } from './randomInt.ts';
 export { toDecimal } from './toDecimal.ts';

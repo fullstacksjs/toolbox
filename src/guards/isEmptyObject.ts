@@ -23,7 +23,7 @@ import { isPlainObject } from './isPlainObject.ts';
  * isEmptyObject(new Map([["a", 1]]))   // false
  */
 
-export function isEmptyObject(x: unknown): x is boolean {
+export function isEmptyObject(x: unknown): x is Record<string, never> {
   if (!isPlainObject(x)) return false;
 
   return Object.keys(x).length === 0;

@@ -50,10 +50,11 @@ import * as toolbox from 'https://raw.githubusercontent.com/fullstacksjs/toolbox
 
 ### Browser
 
+This package is ESM-only.
+
 ```html
-<script src="https://unpkg.com/@fullstacksjs/toolbox"></script>
-<script>
-  console.log(window.Toolbox);
+<script type="module">
+  import * as toolbox from 'https://www.unpkg.com/@fullstacksjs/toolbox@<VERSION>/dist/index.mjs';
 </script>
 ```
 
@@ -65,6 +66,7 @@ Development of toolbox happens in GitHub, and we appreciate contributions.
 
 - [bash][bash]
 - Node.JS>=20
+- pnpm (or Vite+ / `vp`)
 
 ### Pull Request
 
@@ -73,15 +75,16 @@ review your pull request as soon as possible.
 
 Before submitting a pull request, please make sure the following is done:
 
-- Fork the repository and create your feature branch from dev.
-- Run `npm install` to have all dependencies.
-- To start development run `npm run test:watch`.
+- Fork the repository and create your feature branch from main.
+- Run `pnpm install` or `vp install` to have all dependencies.
+- Run `vp test` while developing.
 - Write tests in `src/<scope>/<name>.spec.ts` and implementation in
   `src/<scope>/<name>.ts`.
 - Add JSDoc for you function with signature and examples.
 - Add the documentation using [doc template](./docs/DOC-TEMPLATE.mdx) page to
-  the `docs/<scope>/<function>.mdx` and update `docs/<scope>/_meta.json` file.
-- Ensure everything is ok `npm run verify`.
+  the `docs/content/<scope>/<function>.mdx` and update
+  `docs/content/<scope>/_meta.ts` file.
+- Ensure everything is ok with `vp check`.
 
 ## Code of Conduct
 

@@ -127,4 +127,28 @@ describe(merge, () => {
       });
     });
   });
+
+  it('should handle circular references without stack overflow', () => {
+    const obj1: Record<string, unknown> = { a: 1 };
+    obj1.self = obj1;
+    const obj2: Record<string, unknown> = { b: 2 };
+    obj2.self = obj2;
+
+    const merged = merge(obj1, obj2) as Record<string, unknown>;
+
+    expect(merged.a).toBe(1);
+    expect(merged.b).toBe(2);
+    expect(merged.self).toBe(merged);
+  });
+
+  it('should skip __proto__ to prevent prototype pollution', () => {
+    const obj1 = { a: 1 };
+    const obj2 = JSON.parse('{"__proto__":{"polluted":true},"b":2}');
+
+    const merged = merge(obj1, obj2);
+
+    expect(merged).toStrictEqual({ a: 1, b: 2 });
+    expect(({} as { polluted?: boolean }).polluted).toBeUndefined();
+    expect(Object.hasOwn(merged, '__proto__')).toBe(false);
+  });
 });

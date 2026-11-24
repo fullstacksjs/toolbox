@@ -6,7 +6,15 @@ describe(isInRange, () => {
   });
 
   it('should return false when value is less than min', () => {
-    expect(isInRange(-1, 0, 100)).toBe(true);
+    expect(isInRange(-1, 0, 100)).toBe(false);
+  });
+
+  it('should return false when value is below a non-zero min', () => {
+    expect(isInRange(5, 10, 50)).toBe(false);
+  });
+
+  it('should return false when value is above a non-zero max', () => {
+    expect(isInRange(55, 10, 50)).toBe(false);
   });
 
   it('should return true for max', () => {
@@ -19,5 +27,6 @@ describe(isInRange, () => {
 
   it('should return true for value between min and max', () => {
     expect(isInRange(50, 0, 100)).toBe(true);
+    expect(isInRange(25, 10, 50)).toBe(true);
   });
 });

@@ -3,6 +3,7 @@ import type { MetaRecord } from 'nextra';
 export default {
   'compare-paths': 'comparePaths',
   'crlf-to-lf': 'crlfToLf',
+  'fallback-string': 'fallbackString',
   'get-initials': 'getInitials',
   'is-lower-case': 'isLowerCase',
   'is-null-or-empty-string': 'isNullOrEmptyString',

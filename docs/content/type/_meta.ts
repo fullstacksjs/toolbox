@@ -5,4 +5,5 @@ export default {
   'nullable': 'Nullable',
   'mutable': 'Mutable',
   'optional': 'Optional',
+  'result': 'Result',
 } satisfies MetaRecord;

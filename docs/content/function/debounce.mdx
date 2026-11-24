@@ -4,9 +4,10 @@ The `debounce` function is commonly used to ensure that time-consuming tasks do
 not fire too often. It waits for a set interval after the last invocation before
 executing the callback function.
 
-If `immediate` is set to `true`, the original function will be called
-immediately. However, the function won't be called again unless the debounced
-function stops being invoked for the specified duration.
+If `immediate` is set to `true`, the original function is called on the leading
+edge only. Further calls within the delay are ignored, and there is no trailing
+call after the delay. The next leading call can happen only after the delay has
+elapsed without invocations.
 
 ### Import
 

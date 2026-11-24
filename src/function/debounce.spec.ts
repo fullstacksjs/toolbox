@@ -112,6 +112,23 @@ describe(debounce, () => {
       vi.advanceTimersByTime(500);
     }
 
-    expect(execute).toHaveBeenCalledTimes(10);
+    expect(execute).toHaveBeenCalledTimes(5);
+  });
+
+  it('should only fire the leading call during a burst when immediate is true', () => {
+    const execute = vi.fn();
+
+    const debouncedFunction = debounce(
+      { delay: 1000, immediate: true },
+      execute,
+    );
+
+    for (let i = 0; i < 5; i++) {
+      debouncedFunction();
+      vi.advanceTimersByTime(100);
+    }
+    vi.advanceTimersByTime(1000);
+
+    expect(execute).toHaveBeenCalledOnce();
   });
 });

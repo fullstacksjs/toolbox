@@ -13,6 +13,6 @@ export function isNodeJS(): boolean {
     !('Bun' in globalThis) &&
     'process' in globalThis &&
     'versions' in globalThis.process &&
-    !!global.process.versions.node
+    Boolean(global.process.versions.node)
   );
 }

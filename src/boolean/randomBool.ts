@@ -10,5 +10,5 @@ import { randomInt } from '../number/randomInt.ts';
  * randomBool()     // Returns true or false
  */
 export function randomBool(): boolean {
-  return !!randomInt(0, 1);
+  return randomInt(0, 1) === 1;
 }

@@ -89,13 +89,11 @@ describe(replace, () => {
 
   it('should ignore dangerous prototype pollution paths', () => {
     const source = { a: 1 };
-    const polluted = replace(source, '__proto__.polluted', 'yes') as Record<
-      string,
-      unknown
-    >;
+    const polluted = replace(source, '__proto__.polluted', 'yes');
+    const plain: Record<string, unknown> = {};
 
     expect(polluted).toEqual({ a: 1 });
     expect(Object.hasOwn(polluted, 'polluted')).toBe(false);
-    expect(({} as Record<string, unknown>).polluted).toBeUndefined();
+    expect(plain.polluted).toBeUndefined();
   });
 });

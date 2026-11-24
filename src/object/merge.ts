@@ -14,6 +14,8 @@ interface ComposerArguments {
 
 type Composer = (args: ComposerArguments) => unknown;
 
+const DANGEROUS_KEYS = new Set(['__proto__', 'constructor', 'prototype']);
+
 function defaultComposer({
   v1,
   v2,
@@ -65,13 +67,27 @@ export function merge<T extends ObjectType, U extends ObjectType>(
   obj2: U,
   composer: Composer = defaultComposer,
 ): Merge<T, U> {
+  const cache = new WeakMap<object, WeakMap<object, ObjectType>>();
+
   function extract(oV1: ObjectType, oV2: ObjectType, path = 'obj') {
-    return Object.keys({ ...oV1, ...oV2 }).reduce((state, key) => {
+    let inner = cache.get(oV1);
+    if (inner?.has(oV2)) return inner.get(oV2)!;
+
+    const state: ObjectType = {};
+    if (!inner) {
+      inner = new WeakMap();
+      cache.set(oV1, inner);
+    }
+    inner.set(oV2, state);
+
+    for (const key of new Set([...Object.keys(oV1), ...Object.keys(oV2)])) {
+      if (DANGEROUS_KEYS.has(key)) continue;
+
       const v1 = oV1[key];
       const v2 = oV2[key];
 
-      return Object.assign(state, {
-        [key]: composer({
+      Object.defineProperty(state, key, {
+        value: composer({
           v1,
           v2,
           key,
@@ -80,8 +96,13 @@ export function merge<T extends ObjectType, U extends ObjectType>(
           extract,
           path: `${path}.${key}`,
         }),
+        writable: true,
+        enumerable: true,
+        configurable: true,
       });
-    }, {});
+    }
+
+    return state;
   }
 
   return extract(obj1, obj2) as Merge<T, U>;

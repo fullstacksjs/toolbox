@@ -8,7 +8,6 @@ export default {
   'is-empty': 'isEmpty',
   'is-last-index': 'isLastIndex',
   'is-null-or-empty-array': 'isNullOrEmptyArray',
-  'join-path': 'joinPath',
   'range': 'range',
   'shuffle': 'shuffle',
   'to-array': 'toArray',

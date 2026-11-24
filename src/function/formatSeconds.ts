@@ -64,7 +64,7 @@ export function formatSeconds(
     case 'hh:mm':
       return `${formatToTwoDigits(hours)}:${formatToTwoDigits(minutes)}`;
     case 'mm:ss':
-      return `${formatToTwoDigits(minutes)}:${formatToTwoDigits(seconds)}`;
+      return `${formatToTwoDigits(Math.trunc(durationInSeconds / 60))}:${formatToTwoDigits(seconds)}`;
     default:
       throw new Error(
         `Invalid format: '${format as string}'. Accepted formats are 'hh:mm:ss', 'hh:mm', or 'mm:ss'.`,
